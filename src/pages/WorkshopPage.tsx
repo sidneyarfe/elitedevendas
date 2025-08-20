@@ -54,9 +54,11 @@ const WorkshopPage = () => {
             </Card>
           </div>
           
-          <WorkshopButton className="animate-pulse-glow text-xl py-6 px-12">
-            GARANTIR VAGA AGORA
-          </WorkshopButton>
+          <div className="flex justify-center">
+            <WorkshopButton className="animate-pulse-glow text-lg md:text-xl py-4 md:py-6 px-8 md:px-12">
+              GARANTIR VAGA AGORA
+            </WorkshopButton>
+          </div>
         </div>
       </WorkshopSection>
 
@@ -173,9 +175,11 @@ const WorkshopPage = () => {
             <p>Sem precisar aparecer no Instagram.</p>
           </div>
           
-          <WorkshopButton className="text-xl py-6 px-12">
-            GARANTIR MINHA VAGA
-          </WorkshopButton>
+          <div className="flex justify-center">
+            <WorkshopButton className="text-lg md:text-xl py-3 md:py-4 px-6 md:px-8">
+              GARANTIR MINHA VAGA
+            </WorkshopButton>
+          </div>
         </div>
       </WorkshopSection>
 
@@ -203,9 +207,11 @@ const WorkshopPage = () => {
             Tudo isso em poucas horas, ao vivo, com acompanhamento passo a passo.
           </p>
           
-          <WorkshopButton className="text-xl py-6 px-12">
-            GARANTIR VAGA AGORA
-          </WorkshopButton>
+          <div className="flex justify-center">
+            <WorkshopButton className="text-lg md:text-xl py-3 md:py-4 px-6 md:px-8">
+              GARANTIR VAGA AGORA
+            </WorkshopButton>
+          </div>
         </div>
       </WorkshopSection>
 
@@ -256,7 +262,11 @@ const WorkshopPage = () => {
         </div>
         
         <div className="text-center mt-12">
-          <WorkshopButton>GARANTIR VAGA AGORA</WorkshopButton>
+          <div className="flex justify-center">
+            <WorkshopButton className="text-base md:text-lg py-3 px-6">
+              GARANTIR VAGA AGORA
+            </WorkshopButton>
+          </div>
         </div>
       </WorkshopSection>
 
@@ -274,8 +284,10 @@ const WorkshopPage = () => {
               </div>)}
           </div>
           
-          <div className="mt-12">
-            <WorkshopButton>GARANTIR VAGA AGORA</WorkshopButton>
+          <div className="mt-12 flex justify-center">
+            <WorkshopButton className="text-base md:text-lg py-3 px-6">
+              GARANTIR VAGA AGORA
+            </WorkshopButton>
           </div>
         </div>
       </WorkshopSection>
@@ -296,8 +308,10 @@ const WorkshopPage = () => {
               </div>)}
           </div>
           
-          <div className="mt-12">
-            <WorkshopButton>GARANTIR VAGA AGORA</WorkshopButton>
+          <div className="mt-12 flex justify-center">
+            <WorkshopButton className="text-base md:text-lg py-3 px-6">
+              GARANTIR VAGA AGORA
+            </WorkshopButton>
           </div>
         </div>
       </WorkshopSection>
@@ -367,10 +381,12 @@ const WorkshopPage = () => {
             </div>
             
             <div className="text-center">
-              <p className="text-6xl font-black mb-6 text-gradient">R$197</p>
-              <WorkshopButton className="text-2xl py-8 px-16">
-                GARANTIR VAGA AGORA
-              </WorkshopButton>
+              <p className="text-4xl md:text-6xl font-black mb-6 text-gradient">R$197</p>
+              <div className="flex justify-center">
+                <WorkshopButton className="text-xl md:text-2xl py-6 md:py-8 px-8 md:px-16">
+                  GARANTIR VAGA AGORA
+                </WorkshopButton>
+              </div>
             </div>
           </div>
         </div>
@@ -467,9 +483,11 @@ const WorkshopPage = () => {
             Construa um processo de vendas que funciona todos os dias
           </p>
           
-          <WorkshopButton className="text-2xl py-8 px-16 animate-pulse-glow">
-            GARANTIR VAGA AGORA - R$197
-          </WorkshopButton>
+          <div className="flex justify-center">
+            <WorkshopButton className="text-xl md:text-2xl py-6 md:py-8 px-8 md:px-16 animate-pulse-glow">
+              GARANTIR VAGA AGORA - R$197
+            </WorkshopButton>
+          </div>
           
           <div className="mt-8 flex justify-center items-center gap-4 text-lg">
             <Shield className="w-6 h-6 text-workshop-gold" />
