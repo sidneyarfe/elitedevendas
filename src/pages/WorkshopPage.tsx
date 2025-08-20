@@ -152,7 +152,7 @@ const WorkshopPage = () => {
             <img src="/lovable-uploads/e6ab246c-04f3-40f2-9409-e8d57d75a7d0.png" alt="Workshop Elite de Vendas Logo" className="h-20 mx-auto mb-6 object-contain" />
           </div>
           
-          <p className="text-xl text-muted-foreground mb-12">
+          <p className="text-xl text-muted-foreground mb-12 px-[80px]">
             Para empresários de Belém-PA – que cansaram de perder tempo e dinheiro com soluções de vendas que não funcionam.
           </p>
           
