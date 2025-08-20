@@ -6,20 +6,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Clock, MapPin, Users, Star, Shield, Zap, Target } from "lucide-react";
 import onOfficeImage from "@/assets/on-office-interior.jpg";
-
 const WorkshopPage = () => {
-  return (
-    <div className="min-h-screen bg-background text-foreground">
+  return <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
       <WorkshopSection padding="large" className="text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-workshop-subtle opacity-5"></div>
         <div className="relative z-10">
           <div className="mb-8">
-            <img 
-              src="/lovable-uploads/623148c3-9ddd-4857-a809-1a7b16439a9e.png"
-              alt="Workshop Elite de Vendas - Alavanc Consultoria" 
-              className="h-96 mx-auto mb-8 object-contain"
-            />
+            <img src="/lovable-uploads/623148c3-9ddd-4857-a809-1a7b16439a9e.png" alt="Workshop Elite de Vendas - Alavanc Consultoria" className="h-96 mx-auto mb-8 object-contain" />
           </div>
           
           <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
@@ -111,10 +105,8 @@ const WorkshopPage = () => {
             Existe um jeito prático e imediato de <span className="text-gradient">virar esse jogo…</span>
           </h2>
           
-          <div className="bg-gradient-workshop text-black p-12 rounded-2xl mb-12">
-            <h3 className="text-3xl md:text-4xl font-black mb-8">
-              Participar do WORKSHOP ELITE DE VENDAS
-            </h3>
+          <div className="bg-gradient-workshop text-black p-12 rounded-2xl mb-12 px-0 py-[2px]">
+            <h3 className="text-3xl md:text-4xl font-black mb-8 mx-0 my-[10px]">Participar do Workshop ELITE DE VENDAS</h3>
           </div>
           
           <p className="text-2xl font-bold mb-8">Nele, você vai aprender a:</p>
@@ -157,11 +149,7 @@ const WorkshopPage = () => {
       <WorkshopSection background="card">
         <div className="text-center">
           <div className="mb-8">
-            <img 
-              src="/lovable-uploads/e6ab246c-04f3-40f2-9409-e8d57d75a7d0.png"
-              alt="Workshop Elite de Vendas Logo" 
-              className="h-20 mx-auto mb-6 object-contain"
-            />
+            <img src="/lovable-uploads/e6ab246c-04f3-40f2-9409-e8d57d75a7d0.png" alt="Workshop Elite de Vendas Logo" className="h-20 mx-auto mb-6 object-contain" />
           </div>
           
           <p className="text-xl text-muted-foreground mb-12">
@@ -171,18 +159,10 @@ const WorkshopPage = () => {
           <h3 className="text-3xl font-bold mb-8 text-gradient">O que você vai receber:</h3>
           
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
-            {[
-              "Um processo pronto de prospecção ativa para você atrair clientes mesmo sem gastar R$1",
-              "Um roteiro testado de vendas, pra fechar mais mesmo com objeções",
-              "Ferramentas simples pra acompanhar tudo e saber onde está perdendo dinheiro",
-              "Diagnóstico comercial com especialista pra identificar seus gargalos",
-              "Grupo exclusivo com outros empresários focados em resultado"
-            ].map((item, index) => (
-              <div key={index} className="flex items-start gap-4 text-left">
+            {["Um processo pronto de prospecção ativa para você atrair clientes mesmo sem gastar R$1", "Um roteiro testado de vendas, pra fechar mais mesmo com objeções", "Ferramentas simples pra acompanhar tudo e saber onde está perdendo dinheiro", "Diagnóstico comercial com especialista pra identificar seus gargalos", "Grupo exclusivo com outros empresários focados em resultado"].map((item, index) => <div key={index} className="flex items-start gap-4 text-left">
                 <CheckCircle className="w-6 h-6 text-workshop-gold flex-shrink-0 mt-1" />
                 <p className="text-lg">{item}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
           
           <p className="text-xl mb-8 text-muted-foreground">
@@ -202,29 +182,22 @@ const WorkshopPage = () => {
         </h2>
         
         <div className="grid md:grid-cols-3 gap-8">
-          {[
-            {
-              name: "Rafael",
-              business: "Consultório Odontológico",
-              testimonial: "Antes só vinha cliente por indicação. Apliquei o que aprendi no workshop e em 7 dias fechei 3 contratos novos."
-            },
-            {
-              name: "Patrícia", 
-              business: "Assessoria Contábil",
-              testimonial: "Contratei agência, gastei quase 10 mil em tráfego e não fechei nenhum cliente. Com esse método, consegui 15 reuniões em duas semanas."
-            },
-            {
-              name: "João",
-              business: "Engenharia e Projetos", 
-              testimonial: "Parei de esperar cliente aparecer e fui atrás. Hoje tenho mais controle e previsibilidade."
-            }
-          ].map((testimonial, index) => (
-            <Card key={index} className="bg-card border-workshop-gold/20 hover:shadow-glow transition-all duration-300">
+          {[{
+          name: "Rafael",
+          business: "Consultório Odontológico",
+          testimonial: "Antes só vinha cliente por indicação. Apliquei o que aprendi no workshop e em 7 dias fechei 3 contratos novos."
+        }, {
+          name: "Patrícia",
+          business: "Assessoria Contábil",
+          testimonial: "Contratei agência, gastei quase 10 mil em tráfego e não fechei nenhum cliente. Com esse método, consegui 15 reuniões em duas semanas."
+        }, {
+          name: "João",
+          business: "Engenharia e Projetos",
+          testimonial: "Parei de esperar cliente aparecer e fui atrás. Hoje tenho mais controle e previsibilidade."
+        }].map((testimonial, index) => <Card key={index} className="bg-card border-workshop-gold/20 hover:shadow-glow transition-all duration-300">
               <CardContent className="p-8">
                 <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-workshop-gold text-workshop-gold" />
-                  ))}
+                  {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-workshop-gold text-workshop-gold" />)}
                 </div>
                 <p className="text-lg mb-6 italic">"{testimonial.testimonial}"</p>
                 <div>
@@ -232,8 +205,7 @@ const WorkshopPage = () => {
                   <p className="text-muted-foreground">{testimonial.business}</p>
                 </div>
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
         
         <div className="text-center mt-12">
@@ -249,19 +221,10 @@ const WorkshopPage = () => {
           </h2>
           
           <div className="grid gap-6 text-left">
-            {[
-              "Prestadores de serviço (TI, reformas, marketing, design) que precisam gerar contratos novos todo mês sem depender de indicação",
-              "Consultores e assessores que têm conhecimento, mas falta cliente entrando com consistência",
-              "Profissionais liberais (psicólogos, engenheiros, arquitetos, dentistas) que vivem de agenda cheia e não podem mais contar só com rede social",
-              "Donos de clínicas (estética, odontologia, fisioterapia) que oferecem bom serviço, mas não conseguem atrair pacientes com regularidade",
-              "Escritórios de advocacia, contabilidade e áreas técnicas que querem sair da dependência de indicação e alcançar mais clientes direto",
-              "Donos de loja física ou serviço local que querem atrair gente da cidade e vender todos os dias pelo WhatsApp, sem gastar com tráfego"
-            ].map((item, index) => (
-              <div key={index} className="flex items-start gap-4">
+            {["Prestadores de serviço (TI, reformas, marketing, design) que precisam gerar contratos novos todo mês sem depender de indicação", "Consultores e assessores que têm conhecimento, mas falta cliente entrando com consistência", "Profissionais liberais (psicólogos, engenheiros, arquitetos, dentistas) que vivem de agenda cheia e não podem mais contar só com rede social", "Donos de clínicas (estética, odontologia, fisioterapia) que oferecem bom serviço, mas não conseguem atrair pacientes com regularidade", "Escritórios de advocacia, contabilidade e áreas técnicas que querem sair da dependência de indicação e alcançar mais clientes direto", "Donos de loja física ou serviço local que querem atrair gente da cidade e vender todos os dias pelo WhatsApp, sem gastar com tráfego"].map((item, index) => <div key={index} className="flex items-start gap-4">
                 <CheckCircle className="w-6 h-6 text-workshop-gold flex-shrink-0 mt-1" />
                 <p className="text-lg">{item}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
           
           <div className="mt-12">
@@ -278,23 +241,12 @@ const WorkshopPage = () => {
           </h2>
           
           <div className="grid gap-6 text-left">
-            {[
-              "Como extrair contatos de WhatsApp de clientes prontos para comprar usando Google Maps, redes sociais e LinkedIn.",
-              "Como disparar mensagens pra esses contatos e receber uma enxurrada de \"tenho interesse\" em menos de 10 minutos.",
-              "Como tirar pelo menos R$10.000 dos seus contatos antigos do WhatsApp em 7 dias.",
-              "O erro fatal que trava suas vendas no WhatsApp logo na primeira mensagem – e como evitá-lo com um simples ajuste no início da conversa.",
-              "O CRM mais simples do mundo para controlar suas vendas - que até uma criança aprende a usar em 20 minutos.",
-              "O passo a passo exato (com texto pronto) que reativa o cliente sumido e faz ele responder em menos de 24 horas.",
-              "Como organizar sua rotina comercial em 15 minutos por dia – e manter o funil sempre cheio sem precisar contratar ninguém.",
-              "Como agendar 2 a 4 reuniões por dia, mesmo sem aparecer no Instagram ou investir um centavo em anúncios."
-            ].map((item, index) => (
-              <div key={index} className="flex items-start gap-4">
+            {["Como extrair contatos de WhatsApp de clientes prontos para comprar usando Google Maps, redes sociais e LinkedIn.", "Como disparar mensagens pra esses contatos e receber uma enxurrada de \"tenho interesse\" em menos de 10 minutos.", "Como tirar pelo menos R$10.000 dos seus contatos antigos do WhatsApp em 7 dias.", "O erro fatal que trava suas vendas no WhatsApp logo na primeira mensagem – e como evitá-lo com um simples ajuste no início da conversa.", "O CRM mais simples do mundo para controlar suas vendas - que até uma criança aprende a usar em 20 minutos.", "O passo a passo exato (com texto pronto) que reativa o cliente sumido e faz ele responder em menos de 24 horas.", "Como organizar sua rotina comercial em 15 minutos por dia – e manter o funil sempre cheio sem precisar contratar ninguém.", "Como agendar 2 a 4 reuniões por dia, mesmo sem aparecer no Instagram ou investir um centavo em anúncios."].map((item, index) => <div key={index} className="flex items-start gap-4">
                 <div className="w-8 h-8 bg-gradient-workshop rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <span className="text-black font-bold text-sm">{index + 1}</span>
                 </div>
                 <p className="text-lg">{item}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
           
           <div className="mt-12">
@@ -311,11 +263,7 @@ const WorkshopPage = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
             <div>
               <div className="aspect-video bg-secondary rounded-2xl overflow-hidden mb-6 border border-muted">
-                <img 
-                  src={onOfficeImage}
-                  alt="ON Office - Espaço do Workshop Elite de Vendas"
-                  className="w-full h-full object-cover"
-                />
+                <img src={onOfficeImage} alt="ON Office - Espaço do Workshop Elite de Vendas" className="w-full h-full object-cover" />
               </div>
             </div>
             
@@ -363,18 +311,10 @@ const WorkshopPage = () => {
             <h4 className="text-2xl font-bold mb-8">Você recebe:</h4>
             
             <div className="grid gap-4 text-left max-w-2xl mx-auto mb-12">
-              {[
-                "Acesso ao workshop ao vivo",
-                "Ferramentas e planilhas prontas",
-                "Diagnóstico individual com especialista",
-                "Grupo exclusivo no WhatsApp",
-                "Modelos prontos de abordagem, venda e acompanhamento"
-              ].map((item, index) => (
-                <div key={index} className="flex items-center gap-4">
+              {["Acesso ao workshop ao vivo", "Ferramentas e planilhas prontas", "Diagnóstico individual com especialista", "Grupo exclusivo no WhatsApp", "Modelos prontos de abordagem, venda e acompanhamento"].map((item, index) => <div key={index} className="flex items-center gap-4">
                   <CheckCircle className="w-6 h-6 text-workshop-gold flex-shrink-0" />
                   <p className="text-lg">{item}</p>
-                </div>
-              ))}
+                </div>)}
             </div>
             
             <div className="text-center">
@@ -432,43 +372,33 @@ const WorkshopPage = () => {
           </h2>
           
           <div className="space-y-8">
-            {[
-              {
-                question: "Trabalho com serviço específico. Funciona pro meu tipo de negócio?",
-                answer: "Se você precisa atrair clientes, sim. Já aplicamos com sucesso em clínicas, escritórios, assessorias, consultorias, lojas, restaurantes, agências de marketing, construção e mais."
-              },
-              {
-                question: "E se eu não for \"bom de vendas\"?",
-                answer: "Não precisa ser. O processo é simples, direto e segue roteiro. Você vai saber exatamente o que falar, pra quem falar e quando falar."
-              },
-              {
-                question: "Preciso ter equipe ou alguém pra aplicar o processo?",
-                answer: "Não. O método foi feito pra funcionar mesmo se for só você. Se tiver equipe, melhor ainda – você só vai multiplicar."
-              },
-              {
-                question: "E se eu não conseguir aplicar depois?",
-                answer: "Você vai aplicar durante o workshop. Sai de lá com o processo rodando. Ainda assim, tem suporte por 7 dias e grupo exclusivo com a equipe."
-              },
-              {
-                question: "Vai ter gravação?",
-                answer: "Não. O foco é aplicação ao vivo, com suporte direto. Quer resultado? Senta, presta atenção e executa."
-              },
-              {
-                question: "Já tentei tráfego pago, agência, indicação... e nada funcionou. Isso é diferente?",
-                answer: "Sim. Aqui você assume o controle. Não depende de anúncio, não depende de indicação, não depende de ninguém. É processo testado com empresário real, como você."
-              },
-              {
-                question: "Já vendo bem com indicação. Preciso disso?",
-                answer: "Sim. Indicação é ótimo, mas não é escalável. Com o processo certo, você gera novas oportunidades todos os dias – sem depender da sorte."
-              }
-            ].map((faq, index) => (
-              <Card key={index} className="bg-card border-workshop-gold/20">
+            {[{
+            question: "Trabalho com serviço específico. Funciona pro meu tipo de negócio?",
+            answer: "Se você precisa atrair clientes, sim. Já aplicamos com sucesso em clínicas, escritórios, assessorias, consultorias, lojas, restaurantes, agências de marketing, construção e mais."
+          }, {
+            question: "E se eu não for \"bom de vendas\"?",
+            answer: "Não precisa ser. O processo é simples, direto e segue roteiro. Você vai saber exatamente o que falar, pra quem falar e quando falar."
+          }, {
+            question: "Preciso ter equipe ou alguém pra aplicar o processo?",
+            answer: "Não. O método foi feito pra funcionar mesmo se for só você. Se tiver equipe, melhor ainda – você só vai multiplicar."
+          }, {
+            question: "E se eu não conseguir aplicar depois?",
+            answer: "Você vai aplicar durante o workshop. Sai de lá com o processo rodando. Ainda assim, tem suporte por 7 dias e grupo exclusivo com a equipe."
+          }, {
+            question: "Vai ter gravação?",
+            answer: "Não. O foco é aplicação ao vivo, com suporte direto. Quer resultado? Senta, presta atenção e executa."
+          }, {
+            question: "Já tentei tráfego pago, agência, indicação... e nada funcionou. Isso é diferente?",
+            answer: "Sim. Aqui você assume o controle. Não depende de anúncio, não depende de indicação, não depende de ninguém. É processo testado com empresário real, como você."
+          }, {
+            question: "Já vendo bem com indicação. Preciso disso?",
+            answer: "Sim. Indicação é ótimo, mas não é escalável. Com o processo certo, você gera novas oportunidades todos os dias – sem depender da sorte."
+          }].map((faq, index) => <Card key={index} className="bg-card border-workshop-gold/20">
                 <CardContent className="p-8">
                   <h3 className="text-xl font-bold mb-4 text-workshop-gold">→ {faq.question}</h3>
                   <p className="text-lg text-muted-foreground">{faq.answer}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </WorkshopSection>
@@ -494,8 +424,6 @@ const WorkshopPage = () => {
           </div>
         </div>
       </WorkshopSection>
-    </div>
-  );
+    </div>;
 };
-
 export default WorkshopPage;
