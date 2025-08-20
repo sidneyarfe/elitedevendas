@@ -209,7 +209,7 @@ const WorkshopPage = () => {
           
           <div className="flex justify-center">
             <WorkshopButton className="text-lg md:text-xl py-3 md:py-4 px-6 md:px-8">
-              GARANTIR VAGA AGORA
+              TENHA RESULTADOS OU DEVOLVEMOS SEU DINHEIRO - APENAS 30 VAGAS DISPONÍVEIS
             </WorkshopButton>
           </div>
         </div>
@@ -264,7 +264,7 @@ const WorkshopPage = () => {
         <div className="text-center mt-12">
           <div className="flex justify-center">
             <WorkshopButton className="text-base md:text-lg py-3 px-6">
-              GARANTIR VAGA AGORA
+              TENHA RESULTADOS OU DEVOLVEMOS SEU DINHEIRO - APENAS 30 VAGAS DISPONÍVEIS
             </WorkshopButton>
           </div>
         </div>
@@ -286,7 +286,7 @@ const WorkshopPage = () => {
           
           <div className="mt-12 flex justify-center">
             <WorkshopButton className="text-base md:text-lg py-3 px-6">
-              GARANTIR VAGA AGORA
+              TENHA RESULTADOS OU DEVOLVEMOS SEU DINHEIRO - APENAS 30 VAGAS DISPONÍVEIS
             </WorkshopButton>
           </div>
         </div>
@@ -310,7 +310,7 @@ const WorkshopPage = () => {
           
           <div className="mt-12 flex justify-center">
             <WorkshopButton className="text-base md:text-lg py-3 px-6">
-              GARANTIR VAGA AGORA
+              TENHA RESULTADOS OU DEVOLVEMOS SEU DINHEIRO - APENAS 30 VAGAS DISPONÍVEIS
             </WorkshopButton>
           </div>
         </div>
@@ -406,7 +406,7 @@ const WorkshopPage = () => {
             <div className="text-center">
               <p className="text-4xl md:text-6xl font-black mb-6 text-gradient">R$197</p>
               <div className="flex justify-center">
-                <WorkshopButton className="text-xl md:text-2xl py-6 md:py-8 px-8 md:px-16">
+                <WorkshopButton className="text-lg md:text-xl py-4 md:py-6 px-6 md:px-10 leading-tight">
                   GARANTIR VAGA AGORA
                 </WorkshopButton>
               </div>
