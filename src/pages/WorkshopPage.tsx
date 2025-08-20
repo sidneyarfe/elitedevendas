@@ -29,12 +29,32 @@ const WorkshopPage = () => {
             Workshop 100% prático para empresários que cansaram de depender de indicação, agências e tráfego pago – e querem atrair clientes todos os dias, gastando R$0 com anúncios.
           </p>
           
-          <div className="mb-8 flex justify-center items-center gap-8 flex-wrap">
-            <div className="text-center">
-              <p className="text-workshop-gold font-bold text-lg mb-2">📍 LOCAL</p>
-              <p className="text-xl">BELÉM-PA</p>
-            </div>
-            <CountdownTimer />
+          <div className="mb-8 grid grid-cols-1 md:grid-cols-3 gap-6 items-center max-w-5xl mx-auto">
+            {/* Card Local */}
+            <Card className="bg-card/50 border-workshop-gold/20 backdrop-blur-sm">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-6 h-6 text-workshop-gold mx-auto mb-3" />
+                <p className="text-workshop-gold font-bold text-sm mb-1">LOCAL</p>
+                <p className="text-lg font-semibold">BELÉM-PA</p>
+              </CardContent>
+            </Card>
+            
+            {/* Card Countdown - Destacado */}
+            <Card className="bg-gradient-workshop/10 border-workshop-gold shadow-lg scale-105 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-workshop opacity-5"></div>
+              <CardContent className="p-6 relative z-10">
+                <CountdownTimer />
+              </CardContent>
+            </Card>
+            
+            {/* Card Data */}
+            <Card className="bg-card/50 border-workshop-gold/20 backdrop-blur-sm">
+              <CardContent className="p-6 text-center">
+                <Clock className="w-6 h-6 text-workshop-gold mx-auto mb-3" />
+                <p className="text-workshop-gold font-bold text-sm mb-1">HORÁRIO</p>
+                <p className="text-lg font-semibold">19:00 às 22:00</p>
+              </CardContent>
+            </Card>
           </div>
           
           <WorkshopButton className="animate-pulse-glow text-xl py-6 px-12">
