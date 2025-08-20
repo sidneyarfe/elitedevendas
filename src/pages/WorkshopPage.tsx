@@ -428,6 +428,12 @@ const WorkshopPage = () => {
               Participe do workshop, aplique o método. Se em até 14 dias você não gerar pelo menos 5 reuniões com potenciais clientes, devolvemos 100% do seu investimento, basta mandar uma mensagem.
             </p>
           </div>
+          
+          <div className="mt-12 flex justify-center">
+            <WorkshopButton className="text-base md:text-lg py-3 px-6">
+              GARANTIR MINHA VAGA
+            </WorkshopButton>
+          </div>
         </div>
       </WorkshopSection>
 
@@ -448,6 +454,12 @@ const WorkshopPage = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <CountdownTimer />
             <VagasCounter />
+          </div>
+          
+          <div className="flex justify-center">
+            <WorkshopButton className="text-base md:text-lg py-3 px-6">
+              GARANTIR MINHA VAGA
+            </WorkshopButton>
           </div>
         </div>
       </WorkshopSection>
