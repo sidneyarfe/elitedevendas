@@ -370,8 +370,8 @@ const WorkshopPage = () => {
               <img src="/lovable-uploads/e6ab246c-04f3-40f2-9409-e8d57d75a7d0.png" alt="Workshop Elite de Vendas" className="h-16 mx-auto object-contain" />
             </div>
             <div className="mb-8 flex justify-center">
-              <Card className="bg-card/90 border-border/40 max-w-md w-full">
-                <CardContent className="p-4 flex items-center justify-center gap-4">
+              <Card className="bg-card/90 border-border/40 max-w-lg w-full shadow-none">
+                <CardContent className="p-4 flex items-center justify-center gap-3 flex-wrap">
                   <div className="bg-workshop-gold/20 p-2 rounded-lg">
                     <Calendar className="w-5 h-5 text-workshop-gold" />
                   </div>
@@ -383,6 +383,12 @@ const WorkshopPage = () => {
                   </div>
                   <div className="text-sm">
                     <span className="font-semibold">9h às 13h</span>
+                  </div>
+                  <div className="bg-workshop-gold/20 p-2 rounded-lg">
+                    <MapPin className="w-5 h-5 text-workshop-gold" />
+                  </div>
+                  <div className="text-sm">
+                    <span className="font-semibold">ON Office Belém</span>
                   </div>
                 </CardContent>
               </Card>
