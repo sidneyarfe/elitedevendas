@@ -48,27 +48,27 @@ const CountdownTimer = () => {
 
   return (
     <div className="bg-card p-8 rounded-2xl border border-workshop-gold/20 text-center">
-      <h3 className="text-2xl font-bold mb-6 text-gradient">
-        <Clock className="w-8 h-8 inline-block mr-2" />
+      <h3 className="text-xl md:text-2xl font-bold mb-6 text-gradient">
+        <Clock className="w-6 h-6 md:w-8 md:h-8 inline-block mr-2" />
         Inscrições encerram em:
       </h3>
       
-      <div className="grid grid-cols-4 gap-4">
-        <div className="bg-gradient-workshop text-black p-4 rounded-xl">
-          <div className="text-3xl font-black">{timeLeft.days.toString().padStart(2, '0')}</div>
-          <div className="text-sm font-bold">DIAS</div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
+        <div className="bg-gradient-workshop text-black p-2 md:p-4 rounded-xl">
+          <div className="text-xl md:text-3xl font-black">{timeLeft.days.toString().padStart(2, '0')}</div>
+          <div className="text-xs md:text-sm font-bold">DIAS</div>
         </div>
-        <div className="bg-gradient-workshop text-black p-4 rounded-xl">
-          <div className="text-3xl font-black">{timeLeft.hours.toString().padStart(2, '0')}</div>
-          <div className="text-sm font-bold">HORAS</div>
+        <div className="bg-gradient-workshop text-black p-2 md:p-4 rounded-xl">
+          <div className="text-xl md:text-3xl font-black">{timeLeft.hours.toString().padStart(2, '0')}</div>
+          <div className="text-xs md:text-sm font-bold">HORAS</div>
         </div>
-        <div className="bg-gradient-workshop text-black p-4 rounded-xl">
-          <div className="text-3xl font-black">{timeLeft.minutes.toString().padStart(2, '0')}</div>
-          <div className="text-sm font-bold">MIN</div>
+        <div className="bg-gradient-workshop text-black p-2 md:p-4 rounded-xl">
+          <div className="text-xl md:text-3xl font-black">{timeLeft.minutes.toString().padStart(2, '0')}</div>
+          <div className="text-xs md:text-sm font-bold">MIN</div>
         </div>
-        <div className="bg-gradient-workshop text-black p-4 rounded-xl">
-          <div className="text-3xl font-black">{timeLeft.seconds.toString().padStart(2, '0')}</div>
-          <div className="text-sm font-bold">SEG</div>
+        <div className="bg-gradient-workshop text-black p-2 md:p-4 rounded-xl">
+          <div className="text-xl md:text-3xl font-black">{timeLeft.seconds.toString().padStart(2, '0')}</div>
+          <div className="text-xs md:text-sm font-bold">SEG</div>
         </div>
       </div>
     </div>

@@ -4,6 +4,12 @@ import VagasCounter from "@/components/VagasCounter";
 import CountdownTimer from "@/components/CountdownTimer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { CheckCircle, Clock, MapPin, Users, Star, Shield, Zap, Target, Calendar } from "lucide-react";
 import onOfficeImage from "@/assets/on-office-interior.jpg";
 const WorkshopPage = () => {
@@ -414,7 +420,7 @@ const WorkshopPage = () => {
             Perguntas Frequentes
           </h2>
           
-          <div className="space-y-8">
+          <Accordion type="single" collapsible className="w-full">
             {[{
             question: "Trabalho com serviço específico. Funciona pro meu tipo de negócio?",
             answer: "Se você precisa atrair clientes, sim. Já aplicamos com sucesso em clínicas, escritórios, assessorias, consultorias, lojas, restaurantes, agências de marketing, construção e mais."
@@ -436,13 +442,17 @@ const WorkshopPage = () => {
           }, {
             question: "Já vendo bem com indicação. Preciso disso?",
             answer: "Sim. Indicação é ótimo, mas não é escalável. Com o processo certo, você gera novas oportunidades todos os dias – sem depender da sorte."
-          }].map((faq, index) => <Card key={index} className="bg-card border-workshop-gold/20">
-                <CardContent className="p-8">
-                  <h3 className="text-xl font-bold mb-4 text-workshop-gold">→ {faq.question}</h3>
-                  <p className="text-lg text-muted-foreground">{faq.answer}</p>
-                </CardContent>
-              </Card>)}
-          </div>
+          }].map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`}>
+                <AccordionTrigger className="text-left text-lg font-semibold text-workshop-gold hover:text-workshop-gold/80">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground pt-2">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </WorkshopSection>
 

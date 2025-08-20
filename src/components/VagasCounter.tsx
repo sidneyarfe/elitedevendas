@@ -14,11 +14,11 @@ const VagasCounter = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-workshop text-black p-8 rounded-2xl text-center">
-      <Users className="w-12 h-12 mx-auto mb-4" />
-      <h3 className="text-2xl font-black mb-2">VAGAS RESTANTES</h3>
-      <div className="text-6xl font-black mb-2">{vagasRestantes}</div>
-      <p className="text-lg font-bold">de 30 vagas disponíveis</p>
+    <div className="bg-gradient-workshop text-black p-6 md:p-8 rounded-2xl text-center">
+      <Users className="w-8 h-8 md:w-12 md:h-12 mx-auto mb-4" />
+      <h3 className="text-xl md:text-2xl font-black mb-2">VAGAS RESTANTES</h3>
+      <div className="text-4xl md:text-6xl font-black mb-2">{vagasRestantes}</div>
+      <p className="text-sm md:text-lg font-bold">de 30 vagas disponíveis</p>
       
       {vagasRestantes <= 5 && (
         <div className="mt-4 animate-pulse">
