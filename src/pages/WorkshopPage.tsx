@@ -8,6 +8,11 @@ import { CheckCircle, Clock, MapPin, Users, Star, Shield, Zap, Target } from "lu
 import onOfficeImage from "@/assets/on-office-interior.jpg";
 const WorkshopPage = () => {
   return <div className="min-h-screen bg-background text-foreground">
+      {/* Faixa Exclusiva */}
+      <div className="bg-gradient-workshop text-black py-3 text-center">
+        <p className="font-bold text-lg">Exclusivo para Empresários de BELÉM-PA</p>
+      </div>
+
       {/* Hero Section */}
       <WorkshopSection padding="large" className="text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-workshop-subtle opacity-5"></div>
@@ -23,6 +28,14 @@ const WorkshopPage = () => {
           <p className="text-xl md:text-2xl mb-8 text-muted-foreground max-w-4xl mx-auto font-medium leading-relaxed">
             Workshop 100% prático para empresários que cansaram de depender de indicação, agências e tráfego pago – e querem atrair clientes todos os dias, gastando R$0 com anúncios.
           </p>
+          
+          <div className="mb-8 flex justify-center items-center gap-8 flex-wrap">
+            <div className="text-center">
+              <p className="text-workshop-gold font-bold text-lg mb-2">📍 LOCAL</p>
+              <p className="text-xl">BELÉM-PA</p>
+            </div>
+            <CountdownTimer />
+          </div>
           
           <WorkshopButton className="animate-pulse-glow text-xl py-6 px-12">
             GARANTIR VAGA AGORA
@@ -105,9 +118,9 @@ const WorkshopPage = () => {
             Existe um jeito prático e imediato de <span className="text-gradient">virar esse jogo…</span>
           </h2>
           
-          <div className="bg-gradient-workshop text-black p-12 rounded-2xl mb-12 px-0 py-[2px]">
-            <h3 className="text-3xl md:text-4xl font-black mb-8 mx-0 my-[10px]">Participar do Workshop ELITE DE VENDAS</h3>
-          </div>
+          <p className="text-3xl md:text-4xl font-black mb-12">
+            Participar do Workshop ELITE DE VENDAS
+          </p>
           
           <p className="text-2xl font-bold mb-8">Nele, você vai aprender a:</p>
           
@@ -142,6 +155,10 @@ const WorkshopPage = () => {
             <p>Sem agência.</p>
             <p>Sem precisar aparecer no Instagram.</p>
           </div>
+          
+          <WorkshopButton className="text-xl py-6 px-12">
+            GARANTIR MINHA VAGA
+          </WorkshopButton>
         </div>
       </WorkshopSection>
 
@@ -185,17 +202,30 @@ const WorkshopPage = () => {
           {[{
           name: "Rafael",
           business: "Consultório Odontológico",
-          testimonial: "Antes só vinha cliente por indicação. Apliquei o que aprendi no workshop e em 7 dias fechei 3 contratos novos."
+          testimonial: "Antes só vinha cliente por indicação. Apliquei o que aprendi no workshop e em 7 dias fechei 3 contratos novos.",
+          videoPlaceholder: true
         }, {
           name: "Patrícia",
           business: "Assessoria Contábil",
-          testimonial: "Contratei agência, gastei quase 10 mil em tráfego e não fechei nenhum cliente. Com esse método, consegui 15 reuniões em duas semanas."
+          testimonial: "Contratei agência, gastei quase 10 mil em tráfego e não fechei nenhum cliente. Com esse método, consegui 15 reuniões em duas semanas.",
+          videoPlaceholder: true
         }, {
           name: "João",
           business: "Engenharia e Projetos",
-          testimonial: "Parei de esperar cliente aparecer e fui atrás. Hoje tenho mais controle e previsibilidade."
+          testimonial: "Parei de esperar cliente aparecer e fui atrás. Hoje tenho mais controle e previsibilidade.",
+          videoPlaceholder: true
         }].map((testimonial, index) => <Card key={index} className="bg-card border-workshop-gold/20 hover:shadow-glow transition-all duration-300">
               <CardContent className="p-8">
+                {testimonial.videoPlaceholder && (
+                  <div className="aspect-video bg-secondary rounded-xl flex items-center justify-center mb-6 border border-muted">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-gradient-workshop rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[14px] border-b-black ml-1"></div>
+                      </div>
+                      <p className="text-muted-foreground text-sm">Vídeo Depoimento</p>
+                    </div>
+                  </div>
+                )}
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-workshop-gold text-workshop-gold" />)}
                 </div>
@@ -305,7 +335,9 @@ const WorkshopPage = () => {
           </h2>
           
           <div className="bg-card border-2 border-workshop-gold rounded-2xl p-12 mb-12 shadow-glow">
-            <h3 className="text-3xl font-bold mb-8 text-workshop-gold">Workshop Elite de Vendas</h3>
+            <div className="mb-8">
+              <img src="/lovable-uploads/e6ab246c-04f3-40f2-9409-e8d57d75a7d0.png" alt="Workshop Elite de Vendas" className="h-16 mx-auto object-contain" />
+            </div>
             <p className="text-xl mb-8">Data: DD/MM – das 9h às 13h</p>
             
             <h4 className="text-2xl font-bold mb-8">Você recebe:</h4>
