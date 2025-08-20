@@ -29,32 +29,36 @@ const WorkshopPage = () => {
             Workshop 100% prático para empresários que cansaram de depender de indicação, agências e tráfego pago – e querem atrair clientes todos os dias, gastando R$0 com anúncios.
           </p>
           
-          <div className="mb-8 grid grid-cols-1 md:grid-cols-3 gap-6 items-center max-w-5xl mx-auto">
-            {/* Card Local */}
-            <Card className="bg-card/50 border-workshop-gold/20 backdrop-blur-sm">
-              <CardContent className="p-6 text-center">
-                <MapPin className="w-6 h-6 text-workshop-gold mx-auto mb-3" />
-                <p className="text-workshop-gold font-bold text-sm mb-1">LOCAL</p>
-                <p className="text-lg font-semibold">BELÉM-PA</p>
-              </CardContent>
-            </Card>
-            
-            {/* Card Countdown - Destacado */}
-            <Card className="bg-gradient-workshop/10 border-workshop-gold shadow-lg scale-105 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-workshop opacity-5"></div>
-              <CardContent className="p-6 relative z-10">
+          <div className="mb-8 grid grid-cols-1 md:grid-cols-2 gap-4 items-start max-w-3xl mx-auto">
+            {/* Card Countdown */}
+            <Card className="bg-card/30 border-border/20">
+              <CardContent className="p-4">
                 <CountdownTimer />
               </CardContent>
             </Card>
             
-            {/* Card Data */}
-            <Card className="bg-card/50 border-workshop-gold/20 backdrop-blur-sm">
-              <CardContent className="p-6 text-center">
-                <Clock className="w-6 h-6 text-workshop-gold mx-auto mb-3" />
-                <p className="text-workshop-gold font-bold text-sm mb-1">HORÁRIO</p>
-                <p className="text-lg font-semibold">19:00 às 22:00</p>
-              </CardContent>
-            </Card>
+            {/* Cards empilhados - Local e Data */}
+            <div className="space-y-3">
+              <Card className="bg-card/30 border-border/20">
+                <CardContent className="p-3 flex items-center gap-3">
+                  <MapPin className="w-4 h-4 text-workshop-gold flex-shrink-0" />
+                  <div>
+                    <p className="text-xs text-muted-foreground font-medium">LOCAL</p>
+                    <p className="text-sm font-semibold">BELÉM-PA</p>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-card/30 border-border/20">
+                <CardContent className="p-3 flex items-center gap-3">
+                  <Clock className="w-4 h-4 text-workshop-gold flex-shrink-0" />
+                  <div>
+                    <p className="text-xs text-muted-foreground font-medium">DATA & HORÁRIO</p>
+                    <p className="text-sm font-semibold">19:00 às 22:00</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
           
           <WorkshopButton className="animate-pulse-glow text-xl py-6 px-12">
