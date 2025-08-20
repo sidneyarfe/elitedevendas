@@ -8,94 +8,64 @@ import { CheckCircle, Clock, MapPin, Users, Star, Shield, Zap, Target } from "lu
 import onOfficeImage from "@/assets/on-office-interior.jpg";
 const WorkshopPage = () => {
   return <div className="min-h-screen bg-background text-foreground">
-      {/* Faixa de Urgência */}
-      <div className="bg-red-600 text-white py-3 text-center">
-        <p className="font-bold text-lg">68% DAS VAGAS PREENCHIDAS</p>
+      {/* Faixa Exclusiva */}
+      <div className="bg-gradient-workshop text-black py-3 text-center">
+        <p className="font-bold text-lg">Exclusivo para Empresários de BELÉM-PA</p>
       </div>
 
-      {/* Hero Section - Layout inspirado na referência */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${onOfficeImage})`
-          }}
-        ></div>
-        
-        {/* Content */}
-        <div className="relative z-10 text-white px-4 py-16 w-full">
-          <div className="container mx-auto max-w-6xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* Hero Section */}
+      <WorkshopSection padding="large" className="text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-workshop-subtle opacity-5"></div>
+        <div className="relative z-10">
+          <div className="mb-8">
+            <img src="/lovable-uploads/e6ab246c-04f3-40f2-9409-e8d57d75a7d0.png" alt="Workshop Elite de Vendas - Alavanc Consultoria" className="h-20 mx-auto mb-8 object-contain" />
+          </div>
+          
+          <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
+            O Fim da <span className="text-gradient">Montanha-Russa</span> no Seu Faturamento
+          </h1>
+          
+          <p className="text-xl md:text-2xl mb-8 text-muted-foreground max-w-4xl mx-auto font-medium leading-relaxed">
+            Workshop 100% prático para empresários que cansaram de depender de indicação, agências e tráfego pago – e querem atrair clientes todos os dias, gastando R$0 com anúncios.
+          </p>
+          
+          <div className="mb-8 grid grid-cols-1 md:grid-cols-2 gap-4 items-start max-w-3xl mx-auto">
+            {/* Card Countdown */}
+            <Card className="bg-card/30 border-border/20">
+              <CardContent className="p-4">
+                <CountdownTimer />
+              </CardContent>
+            </Card>
+            
+            {/* Cards empilhados - Local e Data */}
+            <div className="space-y-3">
+              <Card className="bg-card/30 border-border/20">
+                <CardContent className="p-3 flex items-center gap-3">
+                  <MapPin className="w-4 h-4 text-workshop-gold flex-shrink-0" />
+                  <div>
+                    <p className="text-xs text-muted-foreground font-medium">LOCAL</p>
+                    <p className="text-sm font-semibold">BELÉM-PA</p>
+                  </div>
+                </CardContent>
+              </Card>
               
-              {/* Left Content */}
-              <div className="text-center lg:text-left">
-                {/* Logo */}
-                <div className="mb-8">
-                  <img 
-                    src="/lovable-uploads/e6ab246c-04f3-40f2-9409-e8d57d75a7d0.png" 
-                    alt="Workshop Elite de Vendas - Alavanc Consultoria" 
-                    className="h-16 mx-auto lg:mx-0 object-contain"
-                  />
-                </div>
-                
-                {/* Título Principal */}
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
-                  O Fim da <span className="text-workshop-gold">Montanha-Russa</span> no Seu Faturamento
-                </h1>
-                
-                {/* Subtítulo */}
-                <p className="text-lg md:text-xl mb-8 text-gray-200 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                  Workshop 100% prático para empresários que cansaram de depender de indicação, agências e tráfego pago – e querem atrair clientes todos os dias, gastando R$0 com anúncios.
-                </p>
-                
-                {/* CTA Button */}
-                <WorkshopButton className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-xl py-6 px-12 rounded-lg shadow-lg">
-                  GARANTIR MINHA VAGA
-                </WorkshopButton>
-              </div>
-              
-              {/* Right Content - Info Cards */}
-              <div className="flex flex-col items-center lg:items-end space-y-4">
-                {/* Countdown Card */}
-                <Card className="bg-black/40 border-workshop-gold/20 backdrop-blur-sm w-full max-w-sm">
-                  <CardContent className="p-4">
-                    <CountdownTimer />
-                  </CardContent>
-                </Card>
-                
-                {/* Info Cards */}
-                <div className="flex flex-col sm:flex-row lg:flex-col gap-4 w-full max-w-sm">
-                  <Card className="bg-black/40 border-workshop-gold/20 backdrop-blur-sm flex-1">
-                    <CardContent className="p-4 flex items-center gap-3">
-                      <div className="w-8 h-8 bg-workshop-gold/20 rounded-full flex items-center justify-center">
-                        <MapPin className="w-4 h-4 text-workshop-gold" />
-                      </div>
-                      <div>
-                        <p className="text-xs text-gray-300 font-medium">LOCAL</p>
-                        <p className="text-sm font-semibold text-white">BELÉM-PA</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                  
-                  <Card className="bg-black/40 border-workshop-gold/20 backdrop-blur-sm flex-1">
-                    <CardContent className="p-4 flex items-center gap-3">
-                      <div className="w-8 h-8 bg-workshop-gold/20 rounded-full flex items-center justify-center">
-                        <Clock className="w-4 h-4 text-workshop-gold" />
-                      </div>
-                      <div>
-                        <p className="text-xs text-gray-300 font-medium">HORÁRIO</p>
-                        <p className="text-sm font-semibold text-white">19:00 às 22:00</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-              
+              <Card className="bg-card/30 border-border/20">
+                <CardContent className="p-3 flex items-center gap-3">
+                  <Clock className="w-4 h-4 text-workshop-gold flex-shrink-0" />
+                  <div>
+                    <p className="text-xs text-muted-foreground font-medium">DATA & HORÁRIO</p>
+                    <p className="text-sm font-semibold">19:00 às 22:00</p>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
+          
+          <WorkshopButton className="animate-pulse-glow text-xl py-6 px-12">
+            GARANTIR VAGA AGORA
+          </WorkshopButton>
         </div>
-      </section>
+      </WorkshopSection>
 
       {/* VSL Section */}
       <WorkshopSection background="card">
