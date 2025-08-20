@@ -13,7 +13,7 @@ const WorkshopPage = () => {
         <div className="absolute inset-0 bg-gradient-workshop-subtle opacity-5"></div>
         <div className="relative z-10">
           <div className="mb-8">
-            <img src="/lovable-uploads/e6ab246c-04f3-40f2-9409-e8d57d75a7d0.png" alt="Workshop Elite de Vendas - Alavanc Consultoria" className="h-96 mx-auto mb-8 object-contain" />
+            <img src="/lovable-uploads/e6ab246c-04f3-40f2-9409-e8d57d75a7d0.png" alt="Workshop Elite de Vendas - Alavanc Consultoria" className="h-20 mx-auto mb-8 object-contain" />
           </div>
           
           <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
