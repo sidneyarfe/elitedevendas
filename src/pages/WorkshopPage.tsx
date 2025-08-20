@@ -18,7 +18,7 @@ const WorkshopPage = () => {
             <img 
               src="/lovable-uploads/623148c3-9ddd-4857-a809-1a7b16439a9e.png"
               alt="Workshop Elite de Vendas - Alavanc Consultoria" 
-              className="h-36 mx-auto mb-8 object-contain"
+              className="h-96 mx-auto mb-8 object-contain"
             />
           </div>
           
