@@ -10,7 +10,7 @@ const WorkshopPage = () => {
   return <div className="min-h-screen bg-background text-foreground">
       {/* Faixa Exclusiva */}
       <div className="bg-gradient-workshop text-black py-3 text-center">
-        <p className="font-bold text-lg">Exclusivo para Empresários de BELÉM-PA</p>
+        <p className="font-bold text-lg">Para EMPRESÁRIOS de BELÉM-PA</p>
       </div>
 
       {/* Hero Section */}
