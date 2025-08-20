@@ -4,7 +4,7 @@ import VagasCounter from "@/components/VagasCounter";
 import CountdownTimer from "@/components/CountdownTimer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Clock, MapPin, Users, Star, Shield, Zap, Target } from "lucide-react";
+import { CheckCircle, Clock, MapPin, Users, Star, Shield, Zap, Target, Calendar } from "lucide-react";
 import onOfficeImage from "@/assets/on-office-interior.jpg";
 const WorkshopPage = () => {
   return <div className="min-h-screen bg-background text-foreground">
@@ -33,7 +33,7 @@ const WorkshopPage = () => {
             <Card className="bg-card/90 border-border/40 max-w-md w-full">
               <CardContent className="p-4 flex items-center gap-4">
                 <div className="bg-workshop-gold/20 p-2 rounded-lg">
-                  <Clock className="w-5 h-5 text-workshop-gold" />
+                  <Calendar className="w-5 h-5 text-workshop-gold" />
                 </div>
                 <div className="text-sm">
                   <span className="font-semibold">15/09/2025</span>
