@@ -4,12 +4,7 @@ import VagasCounter from "@/components/VagasCounter";
 import CountdownTimer from "@/components/CountdownTimer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CheckCircle, Clock, MapPin, Users, Star, Shield, Zap, Target, Calendar } from "lucide-react";
 import onOfficeImage from "@/assets/on-office-interior.jpg";
 const WorkshopPage = () => {
@@ -239,16 +234,14 @@ const WorkshopPage = () => {
           videoPlaceholder: true
         }].map((testimonial, index) => <Card key={index} className="bg-card border-workshop-gold/20 hover:shadow-glow transition-all duration-300">
               <CardContent className="p-8">
-                {testimonial.videoPlaceholder && (
-                  <div className="aspect-video bg-secondary rounded-xl flex items-center justify-center mb-6 border border-muted">
+                {testimonial.videoPlaceholder && <div className="aspect-video bg-secondary rounded-xl flex items-center justify-center mb-6 border border-muted">
                     <div className="text-center">
                       <div className="w-16 h-16 bg-gradient-workshop rounded-full flex items-center justify-center mx-auto mb-4">
                         <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[14px] border-b-black ml-1"></div>
                       </div>
                       <p className="text-muted-foreground text-sm">Vídeo Depoimento</p>
                     </div>
-                  </div>
-                )}
+                  </div>}
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-workshop-gold text-workshop-gold" />)}
                 </div>
@@ -371,7 +364,7 @@ const WorkshopPage = () => {
             </div>
             <div className="mb-8 flex justify-center">
               <Card className="bg-card/90 border-border/40 max-w-lg w-full shadow-none">
-                <CardContent className="p-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <CardContent className="p-4 flex items-center justify-center gap-3 flex-wrap">
                   <div className="bg-workshop-gold/20 p-2 rounded-lg">
                     <Calendar className="w-5 h-5 text-workshop-gold" />
                   </div>
@@ -404,7 +397,7 @@ const WorkshopPage = () => {
             </div>
             
             <div className="text-center">
-              <p className="text-4xl md:text-6xl font-black mb-6 text-gradient">R$197</p>
+              <p className="md:text-6xl font-black mb-6 text-gradient text-6xl">R$197</p>
               <div className="flex justify-center">
                 <WorkshopButton className="text-lg md:text-xl py-4 md:py-6 px-6 md:px-10 leading-tight">
                   GARANTIR VAGA AGORA
@@ -493,16 +486,14 @@ const WorkshopPage = () => {
           }, {
             question: "Já vendo bem com indicação. Preciso disso?",
             answer: "Sim. Indicação é ótimo, mas não é escalável. Com o processo certo, você gera novas oportunidades todos os dias – sem depender da sorte."
-          }].map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
+          }].map((faq, index) => <AccordionItem key={index} value={`item-${index}`}>
                 <AccordionTrigger className="text-left text-lg font-semibold text-workshop-gold hover:text-workshop-gold/80">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-base text-muted-foreground pt-2">
                   {faq.answer}
                 </AccordionContent>
-              </AccordionItem>
-            ))}
+              </AccordionItem>)}
           </Accordion>
         </div>
       </WorkshopSection>
