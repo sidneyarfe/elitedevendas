@@ -192,7 +192,7 @@ const WorkshopPage = () => {
           <h3 className="text-3xl font-bold mb-8 text-gradient">O que você vai receber:</h3>
           
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
-            {["Um processo pronto de prospecção ativa para você atrair clientes mesmo sem gastar R$1", "Um roteiro testado de vendas, pra fechar mais mesmo com objeções", "Ferramentas de captação e conversão de leads", "Diagnóstico comercial com especialista pra identificar seus gargalos", "Grupo exclusivo com outros empresários focados em resultado", "Mais de 20 materiais sobre vendas, marketing estratégico e gestão comercial"].map((item, index) => <div key={index} className="flex items-start gap-4 text-left">
+            {["Um processo pronto de prospecção ativa para você atrair clientes mesmo sem gastar R$1", "Um roteiro testado de vendas, pra fechar mais mesmo com objeções", "Ferramentas de captação e conversão de leads", "Diagnóstico comercial com especialista pra identificar seus gargalos", "Grupo exclusivo com outros empresários focados em resultado"].map((item, index) => <div key={index} className="flex items-start gap-4 text-left">
                 <CheckCircle className="w-6 h-6 text-workshop-gold flex-shrink-0 mt-1" />
                 <p className="text-lg">{item}</p>
               </div>)}
