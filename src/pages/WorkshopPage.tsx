@@ -371,7 +371,7 @@ const WorkshopPage = () => {
             </div>
             <div className="mb-8 flex justify-center">
               <Card className="bg-card/90 border-border/40 max-w-lg w-full shadow-none">
-                <CardContent className="p-4 flex items-center justify-center gap-3 flex-wrap">
+                <CardContent className="p-4 flex flex-col sm:flex-row items-center justify-center gap-3">
                   <div className="bg-workshop-gold/20 p-2 rounded-lg">
                     <Calendar className="w-5 h-5 text-workshop-gold" />
                   </div>
