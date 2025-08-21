@@ -177,7 +177,7 @@ const WorkshopPage = () => {
           
           <div className="flex justify-center">
             <WorkshopButton className="text-lg md:text-xl py-3 md:py-4 px-6 md:px-8">
-              GARANTIR MINHA VAGA
+              GARANTIR VAGA AGORA
             </WorkshopButton>
           </div>
         </div>
@@ -209,7 +209,7 @@ const WorkshopPage = () => {
           
           <div className="flex justify-center">
             <WorkshopButton className="text-lg md:text-xl py-3 md:py-4 px-6 md:px-8">
-              TENHA RESULTADOS OU DEVOLVEMOS SEU DINHEIRO - APENAS 30 VAGAS DISPONÍVEIS
+              GARANTIR VAGA AGORA
             </WorkshopButton>
           </div>
         </div>
@@ -264,7 +264,7 @@ const WorkshopPage = () => {
         <div className="text-center mt-12">
           <div className="flex justify-center">
             <WorkshopButton className="text-base md:text-lg py-3 px-6">
-              TENHA RESULTADOS OU DEVOLVEMOS SEU DINHEIRO - APENAS 30 VAGAS DISPONÍVEIS
+              GARANTIR VAGA AGORA
             </WorkshopButton>
           </div>
         </div>
@@ -286,7 +286,7 @@ const WorkshopPage = () => {
           
           <div className="mt-12 flex justify-center">
             <WorkshopButton className="text-base md:text-lg py-3 px-6">
-              TENHA RESULTADOS OU DEVOLVEMOS SEU DINHEIRO - APENAS 30 VAGAS DISPONÍVEIS
+              GARANTIR VAGA AGORA
             </WorkshopButton>
           </div>
         </div>
@@ -310,7 +310,7 @@ const WorkshopPage = () => {
           
           <div className="mt-12 flex justify-center">
             <WorkshopButton className="text-base md:text-lg py-3 px-6">
-              TENHA RESULTADOS OU DEVOLVEMOS SEU DINHEIRO - APENAS 30 VAGAS DISPONÍVEIS
+              GARANTIR VAGA AGORA
             </WorkshopButton>
           </div>
         </div>
@@ -431,7 +431,7 @@ const WorkshopPage = () => {
           
           <div className="mt-12 flex justify-center">
             <WorkshopButton className="text-base md:text-lg py-3 px-6">
-              GARANTIR MINHA VAGA
+              GARANTIR VAGA AGORA
             </WorkshopButton>
           </div>
         </div>
@@ -458,7 +458,7 @@ const WorkshopPage = () => {
           
           <div className="flex justify-center">
             <WorkshopButton className="text-base md:text-lg py-3 px-6">
-              GARANTIR MINHA VAGA
+              GARANTIR VAGA AGORA
             </WorkshopButton>
           </div>
         </div>
