@@ -278,7 +278,7 @@ const WorkshopPage = () => {
           </h2>
           
           <div className="grid gap-6 text-left">
-            {["Prestadores de serviço (TI, reformas, marketing, design) que precisam gerar contratos novos todo mês sem depender de indicação", "Consultores e assessores que têm conhecimento, mas falta cliente entrando com consistência", "Profissionais liberais (psicólogos, engenheiros, arquitetos, dentistas) que vivem de agenda cheia e não podem mais contar só com rede social", "Donos de clínicas (estética, odontologia, fisioterapia) que oferecem bom serviço, mas não conseguem atrair pacientes com regularidade", "Escritórios de advocacia, contabilidade e áreas técnicas que querem sair da dependência de indicação e alcançar mais clientes direto", "Donos de loja física ou serviço local que querem atrair gente da cidade e vender todos os dias pelo WhatsApp, sem gastar com tráfego"].map((item, index) => <div key={index} className="flex items-start gap-4">
+            {["Prestadores de serviço", "Consultores e assessores", "Profissionais liberais (psicólogos, engenheiros, arquitetos, dentistas)", "Donos de clínicas (estética, odontologia, fisioterapia)", "Escritórios de advocacia, contabilidade e áreas técnicas", "Donos de loja física ou serviço local"].map((item, index) => <div key={index} className="flex items-start gap-4">
                 <CheckCircle className="w-6 h-6 text-workshop-gold flex-shrink-0 mt-1" />
                 <p className="text-lg">{item}</p>
               </div>)}
