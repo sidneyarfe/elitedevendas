@@ -316,8 +316,11 @@ const WorkshopPage = () => {
           
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
             <div>
+              <div className="aspect-video bg-secondary rounded-2xl overflow-hidden mb-4 border border-muted">
+                <img src="/lovable-uploads/3a5b9f84-ca5b-4466-87b9-1d6784156054.png" alt="ON Office Belém - Localização no Mapa" className="w-full h-full object-cover" />
+              </div>
               <div className="aspect-video bg-secondary rounded-2xl overflow-hidden mb-6 border border-muted">
-                <img src={onOfficeImage} alt="ON Office - Espaço do Workshop Elite de Vendas" className="w-full h-full object-cover" />
+                <img src="/lovable-uploads/ed4ea9d4-538a-4fbd-8859-0cb483d27cb4.png" alt="ON Office - Sala do Workshop Elite de Vendas" className="w-full h-full object-cover" />
               </div>
             </div>
             
