@@ -555,7 +555,7 @@ const WorkshopPage = () => {
             <h4 className="text-2xl font-bold mb-8">Você recebe:</h4>
             
             <div className="grid gap-4 text-left max-w-2xl mx-auto mb-12">
-              {["Acesso ao Workshop Ao Vivo de 2 dias","Nosso Processo de Prospecção Ativa e Vendas Validado com +50 Empresas","+20 Materiais Exclusivos de Marketing, Vendas e Gestão Comercial", "Diagnóstico Comercial com Especialista", "Acesso ao Grupo VIP de Empresários"].map((item, index) => <div key={index} className="flex items-center gap-4">
+              {["Acesso ao Workshop Ao Vivo de 2 dias","O Processo de Prospecção Ativa e Vendas Validado em +50 Empresas","+20 Materiais Exclusivos de Marketing, Vendas e Gestão Comercial", "Diagnóstico Comercial com Especialista", "Acesso ao Grupo VIP de Empresários"].map((item, index) => <div key={index} className="flex items-center gap-4">
                   <CheckCircle className="w-6 h-6 text-workshop-gold flex-shrink-0" />
                   <p className="text-lg">{item}</p>
                 </div>)}
