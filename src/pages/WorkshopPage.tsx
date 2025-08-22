@@ -1,3 +1,4 @@
+
 import WorkshopButton from "@/components/WorkshopButton";
 import WorkshopSection from "@/components/WorkshopSection";
 import VagasCounter from "@/components/VagasCounter";
@@ -7,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CheckCircle, Clock, MapPin, Users, Star, Shield, Zap, Target, Calendar } from "lucide-react";
 import onOfficeImage from "@/assets/on-office-interior.jpg";
+
 const WorkshopPage = () => {
   return <div className="min-h-screen bg-background text-foreground">
       {/* Faixa Exclusiva */}
@@ -78,11 +80,20 @@ const WorkshopPage = () => {
             Seja sincero comigo…
           </h2>
           
-          <div className="space-y-6 text-xl md:text-2xl font-medium text-muted-foreground">
-            <p>• Você já contratou agência.</p>
-            <p>• Já investiu em anúncios/tráfego pago.</p>
-            <p>• Postou conteúdo no instagram.</p>
-            <p>• Pagou caro… e no fim só teve prejuízo.</p>
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            {[
+              "Você já contratou agência.",
+              "Já investiu em anúncios/tráfego pago.",
+              "Postou conteúdo no instagram.",
+              "Pagou caro… e no fim só teve prejuízo."
+            ].map((item, index) => (
+              <Card key={index} className="bg-workshop-gold/10 border-workshop-gold/20 hover:bg-workshop-gold/15 transition-all duration-300">
+                <CardContent className="p-6 flex items-center gap-4">
+                  <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
+                  <p className="text-xl md:text-2xl font-medium text-foreground">{item}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
           
           <div className="mt-12 text-xl md:text-2xl leading-relaxed">
