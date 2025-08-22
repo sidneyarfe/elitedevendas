@@ -210,99 +210,6 @@ const WorkshopPage = () => {
         </div>
       </WorkshopSection>
 
-      {/* Seção Conheça Seus Mentores */}
-      <WorkshopSection>
-        <div className="text-center max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black mb-16 text-gradient">
-            CONHEÇA SEUS MENTORES
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-12 mb-12">
-            {/* Ana Araújo */}
-            <Card className="bg-card border-workshop-gold/20 hover:shadow-glow transition-all duration-300">
-              <CardContent className="p-8">
-                <div className="flex justify-center mb-6">
-                  <img 
-                    src="/lovable-uploads/61e38533-a3e9-4356-9fcc-4ec651057525.png" 
-                    alt="Ana Araújo - CEO da Ás Marketing & Growth" 
-                    className="w-48 h-48 object-cover rounded-full border-4 border-workshop-gold/30 shadow-xl"
-                  />
-                </div>
-                
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-workshop-gold mb-2">Ana Araújo</h3>
-                  <p className="text-lg text-muted-foreground font-semibold">CEO da Ás Marketing & Growth</p>
-                  <p className="text-lg text-muted-foreground font-semibold">Head de Vendas da Alavanc Negócios</p>
-                </div>
-                
-                <div className="text-left space-y-4 text-muted-foreground">
-                  <p>
-                    Ao longo da minha carreira, me destaquei por realizar consultorias que realmente transformam negócios.
-                  </p>
-                  <p>
-                    Entre as minhas conquistas notáveis, consegui aumentar o faturamento de uma empresa financeira em <span className="text-workshop-gold font-bold">1136%</span>, saltando de 25 mil para 300 mil reais em apenas um mês.
-                  </p>
-                  <p>
-                    Também impulsionei as vendas orgânicas de uma empresa de perfumes em <span className="text-workshop-gold font-bold">60%</span> e otimizei o atendimento de um cliente do ramo alimentício em <span className="text-workshop-gold font-bold">50%</span>, resultando em um crescimento impressionante de <span className="text-workshop-gold font-bold">300%</span> no faturamento.
-                  </p>
-                  <p>
-                    Em minha trajetória, continuo comprometida com a excelência, transformando desafios em oportunidades.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Rodrigo Marques */}
-            <Card className="bg-card border-workshop-gold/20 hover:shadow-glow transition-all duration-300">
-              <CardContent className="p-8">
-                <div className="flex justify-center mb-6">
-                  <img 
-                    src="/lovable-uploads/4e302e75-2474-4c31-864f-5b7a9ee1cd56.png" 
-                    alt="Rodrigo Marques - Fundador da Alavanc Negócios" 
-                    className="w-48 h-48 object-cover rounded-full border-4 border-workshop-gold/30 shadow-xl"
-                  />
-                </div>
-                
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-workshop-gold mb-2">Rodrigo Marques</h3>
-                  <p className="text-lg text-muted-foreground font-semibold">Fundador da Alavanc Negócios</p>
-                  <p className="text-lg text-muted-foreground font-semibold">Especialista em Estruturação Comercial</p>
-                </div>
-                
-                <div className="text-left space-y-4 text-muted-foreground">
-                  <p>
-                    Administrador por formação e especialista em Estruturação Comercial e Gestão de Times.
-                  </p>
-                  <p>
-                    Fundador da Alavanc Negócios, consultoria que já ajudou empresas a organizar processos, estruturar times e crescer de forma sustentável — gerando mais de <span className="text-workshop-gold font-bold">R$ 10 milhões</span> em faturamento para os negócios de nossa carteira.
-                  </p>
-                  <p>
-                    Tenho forte atuação no ecossistema de inovação e empreendedorismo, sendo Diretor de Comunidades e Eventos na Açaí Valley e Alumni da Enactus Brasil.
-                  </p>
-                  <p>
-                    Sempre com o propósito de impulsionar negócios, pessoas e comunidades através de estratégias bem definidas e executadas.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-          
-          <div className="bg-gradient-workshop-subtle p-8 rounded-2xl border border-workshop-gold/20 mb-8">
-            <p className="text-xl font-bold text-center mb-4">
-              💡 Experiência Combinada de Mais de 15 Anos em Vendas e Gestão Comercial
-            </p>
-            <p className="text-lg text-center text-muted-foreground">
-              Juntos, Ana e Rodrigo já transformaram centenas de empresas, sempre com foco em resultados práticos e sustentáveis.
-            </p>
-          </div>
-          
-          <div className="flex justify-center">
-            <WorkshopButton className="text-lg md:text-xl py-3 md:py-4 px-6 md:px-8">
-              APRENDER COM OS ESPECIALISTAS
-            </WorkshopButton>
-          </div>
-        </div>
-      </WorkshopSection>
 
       {/* Seção Bônus */}
       <WorkshopSection background="card" className="relative overflow-hidden">
@@ -438,7 +345,7 @@ const WorkshopPage = () => {
               </div>)}
           </div>
           
-          <div className="mt-12 flex justify-center">
+          <div className="flex justify-center">
             <WorkshopButton className="text-base md:text-lg py-3 px-6">
               GARANTIR VAGA AGORA
             </WorkshopButton>
@@ -465,6 +372,100 @@ const WorkshopPage = () => {
           <div className="mt-12 flex justify-center">
             <WorkshopButton className="text-base md:text-lg py-3 px-6">
               GARANTIR VAGA AGORA
+            </WorkshopButton>
+          </div>
+        </div>
+      </WorkshopSection>
+
+      {/* Seção Conheça Seus Mentores */}
+      <WorkshopSection>
+        <div className="text-center max-w-6xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-black mb-16 text-gradient">
+            CONHEÇA SEUS MENTORES
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-12 mb-12">
+            {/* Ana Araújo */}
+            <Card className="bg-card border-workshop-gold/20 hover:shadow-glow transition-all duration-300">
+              <CardContent className="p-8">
+                <div className="flex justify-center mb-6">
+                  <img 
+                    src="/lovable-uploads/61e38533-a3e9-4356-9fcc-4ec651057525.png" 
+                    alt="Ana Araújo - CEO da Ás Marketing & Growth" 
+                    className="w-48 h-48 object-cover rounded-full border-4 border-workshop-gold/30 shadow-xl"
+                  />
+                </div>
+                
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-workshop-gold mb-2">Ana Araújo</h3>
+                  <p className="text-lg text-muted-foreground font-semibold">CEO da Ás Marketing & Growth</p>
+                  <p className="text-lg text-muted-foreground font-semibold">Head de Vendas da Alavanc Negócios</p>
+                </div>
+                
+                <div className="text-left space-y-4 text-muted-foreground">
+                  <p>
+                    Ao longo da minha carreira, me destaquei por realizar consultorias que realmente transformam negócios.
+                  </p>
+                  <p>
+                    Entre as minhas conquistas notáveis, consegui aumentar o faturamento de uma empresa financeira em <span className="text-workshop-gold font-bold">1136%</span>, saltando de 25 mil para 300 mil reais em apenas um mês.
+                  </p>
+                  <p>
+                    Também impulsionei as vendas orgânicas de uma empresa de perfumes em <span className="text-workshop-gold font-bold">60%</span> e otimizei o atendimento de um cliente do ramo alimentício em <span className="text-workshop-gold font-bold">50%</span>, resultando em um crescimento impressionante de <span className="text-workshop-gold font-bold">300%</span> no faturamento.
+                  </p>
+                  <p>
+                    Em minha trajetória, continuo comprometida com a excelência, transformando desafios em oportunidades.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Rodrigo Marques */}
+            <Card className="bg-card border-workshop-gold/20 hover:shadow-glow transition-all duration-300">
+              <CardContent className="p-8">
+                <div className="flex justify-center mb-6">
+                  <img 
+                    src="/lovable-uploads/4e302e75-2474-4c31-864f-5b7a9ee1cd56.png" 
+                    alt="Rodrigo Marques - Fundador da Alavanc Negócios" 
+                    className="w-48 h-48 object-cover rounded-full border-4 border-workshop-gold/30 shadow-xl"
+                  />
+                </div>
+                
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-workshop-gold mb-2">Rodrigo Marques</h3>
+                  <p className="text-lg text-muted-foreground font-semibold">Fundador da Alavanc Negócios</p>
+                  <p className="text-lg text-muted-foreground font-semibold">Especialista em Estruturação Comercial</p>
+                </div>
+                
+                <div className="text-left space-y-4 text-muted-foreground">
+                  <p>
+                    Administrador por formação e especialista em Estruturação Comercial e Gestão de Times.
+                  </p>
+                  <p>
+                    Fundador da Alavanc Negócios, consultoria que já ajudou empresas a organizar processos, estruturar times e crescer de forma sustentável — gerando mais de <span className="text-workshop-gold font-bold">R$ 10 milhões</span> em faturamento para os negócios de nossa carteira.
+                  </p>
+                  <p>
+                    Tenho forte atuação no ecossistema de inovação e empreendedorismo, sendo Diretor de Comunidades e Eventos na Açaí Valley e Alumni da Enactus Brasil.
+                  </p>
+                  <p>
+                    Sempre com o propósito de impulsionar negócios, pessoas e comunidades através de estratégias bem definidas e executadas.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="bg-gradient-workshop-subtle p-8 rounded-2xl border border-workshop-gold/20 mb-8">
+            <p className="text-xl font-bold text-center mb-4">
+              💡 Experiência Combinada de Mais de 15 Anos em Vendas e Gestão Comercial
+            </p>
+            <p className="text-lg text-center text-muted-foreground">
+              Juntos, Ana e Rodrigo já transformaram centenas de empresas, sempre com foco em resultados práticos e sustentáveis.
+            </p>
+          </div>
+          
+          <div className="flex justify-center">
+            <WorkshopButton className="text-lg md:text-xl py-3 md:py-4 px-6 md:px-8">
+              APRENDER COM OS ESPECIALISTAS
             </WorkshopButton>
           </div>
         </div>
