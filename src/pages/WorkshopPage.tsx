@@ -210,6 +210,73 @@ const WorkshopPage = () => {
         </div>
       </WorkshopSection>
 
+      {/* Seção Bônus */}
+      <WorkshopSection background="card" className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-workshop-subtle opacity-10"></div>
+        <div className="relative z-10">
+          <div className="text-center max-w-6xl mx-auto">
+            <div className="bg-gradient-workshop text-black py-2 px-8 rounded-full inline-block mb-6">
+              <span className="font-bold text-lg">🎁 BÔNUS EXCLUSIVO</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-black mb-6 text-gradient">
+              Para os 10 Primeiros Inscritos
+            </h2>
+            
+            <p className="text-2xl font-bold mb-8 text-workshop-gold">
+              +20 Materiais de Vendas, Marketing Estratégico e Gestão Comercial
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-12 items-center mb-8">
+              <div className="text-left space-y-6">
+                <div className="bg-background/80 backdrop-blur-sm border border-workshop-gold/30 p-6 rounded-2xl hover:shadow-glow transition-all duration-300">
+                  <h4 className="text-2xl font-bold mb-4 text-workshop-gold flex items-center gap-3">
+                    <CheckCircle className="w-6 h-6" />
+                    Processo de Prospecção Ativa
+                  </h4>
+                  <p className="text-lg text-muted-foreground">Material completo com roteiros testados</p>
+                </div>
+                
+                <div className="bg-background/80 backdrop-blur-sm border border-workshop-gold/30 p-6 rounded-2xl hover:shadow-glow transition-all duration-300">
+                  <h4 className="text-2xl font-bold mb-4 text-workshop-gold flex items-center gap-3">
+                    <CheckCircle className="w-6 h-6" />
+                    CRM Simples para WhatsApp
+                  </h4>
+                  <p className="text-lg text-muted-foreground">Sistema prático de gestão comercial</p>
+                </div>
+                
+                <div className="bg-background/80 backdrop-blur-sm border border-workshop-gold/30 p-6 rounded-2xl hover:shadow-glow transition-all duration-300">
+                  <h4 className="text-2xl font-bold mb-4 text-workshop-gold flex items-center gap-3">
+                    <CheckCircle className="w-6 h-6" />
+                    Mais 17 Materiais Exclusivos
+                  </h4>
+                  <p className="text-lg text-muted-foreground">Templates, roteiros e estratégias completas</p>
+                </div>
+              </div>
+              
+              <div className="flex justify-center">
+                <img 
+                  src="/lovable-uploads/118f8b4b-5b9d-4fc8-9002-cc63d1e0131b.png" 
+                  alt="Bônus - 20 Materiais de Vendas, Marketing e Gestão Comercial" 
+                  className="max-w-full h-auto rounded-2xl shadow-2xl border border-workshop-gold/20 hover:shadow-glow transition-all duration-300"
+                />
+              </div>
+            </div>
+            
+            <div className="bg-gradient-workshop text-black p-6 rounded-2xl mb-8">
+              <p className="text-xl font-bold mb-2">⏰ ATENÇÃO: Apenas para os 10 Primeiros!</p>
+              <p className="text-lg">Garante sua vaga agora e receba todos esses materiais como bônus exclusivo</p>
+            </div>
+            
+            <div className="flex justify-center">
+              <WorkshopButton className="animate-pulse-glow text-xl py-6 px-12">
+                GARANTIR VAGA + BÔNUS AGORA
+              </WorkshopButton>
+            </div>
+          </div>
+        </div>
+      </WorkshopSection>
+
       {/* Depoimentos */}
       <WorkshopSection>
         <h2 className="text-4xl font-black text-center mb-16 text-gradient">
