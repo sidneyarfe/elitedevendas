@@ -1,4 +1,3 @@
-
 import WorkshopButton from "@/components/WorkshopButton";
 import WorkshopSection from "@/components/WorkshopSection";
 import VagasCounter from "@/components/VagasCounter";
@@ -8,7 +7,6 @@ import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CheckCircle, Clock, MapPin, Users, Star, Shield, Zap, Target, Calendar } from "lucide-react";
 import onOfficeImage from "@/assets/on-office-interior.jpg";
-
 const WorkshopPage = () => {
   return <div className="min-h-screen bg-background text-foreground">
       {/* Faixa Exclusiva */}
@@ -80,20 +78,11 @@ const WorkshopPage = () => {
             Seja sincero comigo…
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
-            {[
-              "Você já contratou agência.",
-              "Já investiu em anúncios/tráfego pago.",
-              "Postou conteúdo no instagram.",
-              "Pagou caro… e no fim só teve prejuízo."
-            ].map((item, index) => (
-              <Card key={index} className="bg-workshop-gold/10 border-workshop-gold/20 hover:bg-workshop-gold/15 transition-all duration-300">
-                <CardContent className="p-6 flex items-center gap-4">
-                  <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
-                  <p className="text-xl md:text-2xl font-medium text-foreground">{item}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="space-y-6 text-xl md:text-2xl font-medium text-muted-foreground">
+            <p>• Você já contratou agência.</p>
+            <p>• Já investiu em anúncios/tráfego pago.</p>
+            <p>• Postou conteúdo no instagram.</p>
+            <p>• Pagou caro… e no fim só teve prejuízo.</p>
           </div>
           
           <div className="mt-12 text-xl md:text-2xl leading-relaxed">
@@ -552,7 +541,7 @@ const WorkshopPage = () => {
             <h4 className="text-2xl font-bold mb-8">Você recebe:</h4>
             
             <div className="grid gap-4 text-left max-w-2xl mx-auto mb-12">
-              {["Acesso ao workshop ao vivo", "Ferramentas e planilhas prontas", "Diagnóstico individual com especialista", "Grupo exclusivo no WhatsApp", "Modelos prontos de abordagem, venda e acompanhamento"].map((item, index) => <div key={index} className="flex items-center gap-4">
+              {["Acesso aos 2 dias de Workshop Ao Vivo","O Processo de Prospecção e Vendas que Gerou +R$10 Milhões para Nossos Clientes", "+20 Materiais e Ferramentas de Prospecção, Vendas, Marketing e Gestão Comercial", "Diagnóstico Comercial da sua Empresa com Especialista", "Grupo VIP com Empresários Participantes"].map((item, index) => <div key={index} className="flex items-center gap-4">
                   <CheckCircle className="w-6 h-6 text-workshop-gold flex-shrink-0" />
                   <p className="text-lg text-left">{item}</p>
                 </div>)}
