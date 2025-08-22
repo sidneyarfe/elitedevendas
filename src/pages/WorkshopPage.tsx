@@ -256,11 +256,7 @@ const WorkshopPage = () => {
               </div>
               
               <div className="flex justify-center">
-                <img 
-                  src="/lovable-uploads/118f8b4b-5b9d-4fc8-9002-cc63d1e0131b.png" 
-                  alt="Bônus - 20 Materiais de Vendas, Marketing e Gestão Comercial" 
-                  className="max-w-full h-auto rounded-2xl shadow-2xl border border-workshop-gold/20 hover:shadow-glow transition-all duration-300"
-                />
+                <img src="/lovable-uploads/118f8b4b-5b9d-4fc8-9002-cc63d1e0131b.png" alt="Bônus - 20 Materiais de Vendas, Marketing e Gestão Comercial" className="max-w-full h-auto rounded-2xl shadow-2xl border border-workshop-gold/20 hover:shadow-glow transition-all duration-300" />
               </div>
             </div>
             
@@ -389,11 +385,7 @@ const WorkshopPage = () => {
             <Card className="bg-card border-workshop-gold/20 hover:shadow-glow transition-all duration-300">
               <CardContent className="p-8">
                 <div className="flex justify-center mb-6">
-                  <img 
-                    src="/lovable-uploads/61e38533-a3e9-4356-9fcc-4ec651057525.png" 
-                    alt="Ana Araújo - CEO da Ás Marketing & Growth" 
-                    className="w-48 h-48 object-cover rounded-full border-4 border-workshop-gold/30 shadow-xl"
-                  />
+                  <img src="/lovable-uploads/61e38533-a3e9-4356-9fcc-4ec651057525.png" alt="Ana Araújo - CEO da Ás Marketing & Growth" className="w-48 h-48 object-cover rounded-full border-4 border-workshop-gold/30 shadow-xl" />
                 </div>
                 
                 <div className="text-center mb-6">
@@ -423,11 +415,7 @@ const WorkshopPage = () => {
             <Card className="bg-card border-workshop-gold/20 hover:shadow-glow transition-all duration-300">
               <CardContent className="p-8">
                 <div className="flex justify-center mb-6">
-                  <img 
-                    src="/lovable-uploads/4e302e75-2474-4c31-864f-5b7a9ee1cd56.png" 
-                    alt="Rodrigo Marques - Fundador da Alavanc Negócios" 
-                    className="w-48 h-48 object-cover rounded-full border-4 border-workshop-gold/30 shadow-xl"
-                  />
+                  <img src="/lovable-uploads/4e302e75-2474-4c31-864f-5b7a9ee1cd56.png" alt="Rodrigo Marques - Fundador da Alavanc Negócios" className="w-48 h-48 object-cover rounded-full border-4 border-workshop-gold/30 shadow-xl" />
                 </div>
                 
                 <div className="text-center mb-6">
@@ -455,9 +443,7 @@ const WorkshopPage = () => {
           </div>
           
           <div className="bg-gradient-workshop-subtle p-8 rounded-2xl border border-workshop-gold/20 mb-8">
-            <p className="text-xl font-bold text-center mb-4">
-              💡 Experiência Combinada de Mais de 15 Anos em Vendas e Gestão Comercial
-            </p>
+            <p className="text-xl font-bold text-center mb-4">💡 Experiência Combinada de Mais de X Anos em Vendas e Gestão Comercial</p>
             <p className="text-lg text-center text-muted-foreground">
               Juntos, Ana e Rodrigo já transformaram centenas de empresas, sempre com foco em resultados práticos e sustentáveis.
             </p>
@@ -555,9 +541,9 @@ const WorkshopPage = () => {
             <h4 className="text-2xl font-bold mb-8">Você recebe:</h4>
             
             <div className="grid gap-4 text-left max-w-2xl mx-auto mb-12">
-              {["Acesso ao Workshop Ao Vivo de 2 dias","O Processo de Prospecção Ativa e Vendas Validado em +50 Empresas","+20 Materiais Exclusivos de Marketing, Vendas e Gestão Comercial", "Diagnóstico Comercial com Especialista", "Acesso ao Grupo VIP de Empresários"].map((item, index) => <div key={index} className="flex items-center gap-4">
+              {["Acesso ao workshop ao vivo", "Ferramentas e planilhas prontas", "Diagnóstico individual com especialista", "Grupo exclusivo no WhatsApp", "Modelos prontos de abordagem, venda e acompanhamento"].map((item, index) => <div key={index} className="flex items-center gap-4">
                   <CheckCircle className="w-6 h-6 text-workshop-gold flex-shrink-0" />
-                  <p className="text-lg">{item}</p>
+                  <p className="text-lg text-left">{item}</p>
                 </div>)}
             </div>
             
