@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Users } from "lucide-react";
 
 const VagasCounter = () => {
-  const [vagasRestantes, setVagasRestantes] = useState(8); // Simula 8 vagas restantes
+  const [vagasRestantes, setVagasRestantes] = useState(21); // Simula 8 vagas restantes
   
   useEffect(() => {
     // Simula decremento ocasional das vagas para urgência
