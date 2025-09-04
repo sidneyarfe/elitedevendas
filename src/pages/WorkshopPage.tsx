@@ -443,7 +443,7 @@ const WorkshopPage = () => {
           </div>
           
           <div className="bg-gradient-workshop-subtle p-8 rounded-2xl border border-workshop-gold/20 mb-8">
-            <p className="text-xl font-bold text-center mb-4">💡 Experiência Combinada de Mais de X Anos em Vendas e Gestão Comercial</p>
+            <p className="text-xl font-bold text-center mb-4">💡 Experiência Combinada de Mais de 20 Anos em Vendas e Gestão Comercial</p>
             <p className="text-lg text-center text-muted-foreground">
               Juntos, Ana e Rodrigo já transformaram centenas de empresas, sempre com foco em resultados práticos e sustentáveis.
             </p>
@@ -541,7 +541,7 @@ const WorkshopPage = () => {
             <h4 className="text-2xl font-bold mb-8">Você recebe:</h4>
             
             <div className="grid gap-4 text-left max-w-2xl mx-auto mb-12">
-              {["Acesso aos 2 dias de Workshop Ao Vivo","O Processo de Prospecção e Vendas que Gerou +R$10 Milhões para Nossos Clientes", "+20 Materiais e Ferramentas de Prospecção, Vendas, Marketing e Gestão Comercial", "Diagnóstico Comercial da sua Empresa com Especialista", "Grupo VIP com Empresários Participantes"].map((item, index) => <div key={index} className="flex items-center gap-4">
+              {["Acesso aos 2 dias de Workshop Ao Vivo", "O Processo de Prospecção e Vendas que Gerou +R$10 Milhões para Nossos Clientes", "+20 Materiais e Ferramentas de Prospecção, Vendas, Marketing e Gestão Comercial", "Diagnóstico Comercial da sua Empresa com Especialista", "Grupo VIP com Empresários Participantes"].map((item, index) => <div key={index} className="flex items-center gap-4">
                   <CheckCircle className="w-6 h-6 text-workshop-gold flex-shrink-0" />
                   <p className="text-lg text-left">{item}</p>
                 </div>)}
