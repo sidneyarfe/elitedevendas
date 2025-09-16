@@ -481,7 +481,7 @@ const WorkshopPage = () => {
               
               <div>
                 <h3 className="text-2xl font-bold mb-2 text-workshop-gold">Data:</h3>
-                <p className="text-xl">DD/MM</p>
+                <p className="text-xl">15 e 16 de outubro de 2025</p>
               </div>
               
               <div>
@@ -520,7 +520,7 @@ const WorkshopPage = () => {
                     <Calendar className="w-5 h-5 text-workshop-gold" />
                   </div>
                   <div className="text-sm">
-                    <span className="font-semibold">15/09/2025</span>
+                    <span className="font-semibold">15 e 16 de outubro</span>
                   </div>
                   <div className="bg-workshop-gold/20 p-2 rounded-lg">
                     <Clock className="w-5 h-5 text-workshop-gold" />
