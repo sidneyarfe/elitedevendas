@@ -47,5 +47,14 @@
     
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Meta Conversions API - PageView Event -->
+    <script>
+      fetch('https://bnmyqamklrgovqpturmv.supabase.co/functions/v1/meta-conversions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ eventName: 'PageView' })
+      }).catch(console.error);
+    </script>
   </body>
 </html>
