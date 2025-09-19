@@ -7,8 +7,10 @@ import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CheckCircle, Clock, MapPin, Users, Star, Shield, Zap, Target, Calendar } from "lucide-react";
 import onOfficeImage from "@/assets/on-office-interior.jpg";
+
 const WorkshopPage = () => {
-  return <div className="min-h-screen bg-background text-foreground">
+  return (
+    <div className="min-h-screen bg-background text-foreground">
       {/* Faixa Exclusiva */}
       <div className="bg-gradient-workshop text-black py-3 text-center">
         <p className="font-bold text-lg">Para EMPRESÁRIOS de BELÉM-PA</p>
@@ -99,370 +101,469 @@ const WorkshopPage = () => {
         </div>
       </WorkshopSection>
 
-      {/* Empatia Section */}
+      {/* SEÇÃO: DIAGNÓSTICO */}
       <WorkshopSection>
         <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black mb-12 text-gradient">
-            Seja sincero comigo…
-          </h2>
+          <h1 className="text-4xl md:text-5xl font-black mb-12 text-gradient">
+            Você já contratou agência, investiu em tráfego, postou no Instagram, contratou influencer...
+          </h1>
           
-          <div className="space-y-6 text-xl md:text-2xl font-medium text-muted-foreground">
-            <p>• Você já contratou agência.</p>
-            <p>• Já investiu em anúncios/tráfego pago.</p>
-            <p>• Postou conteúdo no instagram.</p>
-            <p>• Pagou caro… e no fim só teve prejuízo.</p>
-          </div>
+          <h2 className="text-3xl font-bold mb-8">E o que conseguiu?</h2>
           
-          <div className="mt-12 text-xl md:text-2xl leading-relaxed">
-            <p className="mb-6">
-              Seu faturamento oscila, os clientes só aparecem quando alguém indica, e todo mês vira uma nova batalha pra fechar no azul.
-            </p>
-            <p>
-              Enquanto isso, o concorrente – que não entrega nem metade do que você entrega – parece ter uma <span className="text-gradient font-bold">fila de clientes</span>.
-            </p>
+          <div className="space-y-4 text-xl md:text-2xl font-medium text-muted-foreground mb-12">
+            <div className="flex items-center gap-4 justify-center">
+              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+              <p>Um ou dois agendamentos que não vieram</p>
+            </div>
+            <div className="flex items-center gap-4 justify-center">
+              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+              <p>Orçamento pedido e ignorado</p>
+            </div>
+            <div className="flex items-center gap-4 justify-center">
+              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+              <p>Clientes aparecendo só por indicação</p>
+            </div>
+            <div className="flex items-center gap-4 justify-center">
+              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+              <p>Mais prejuízo do que retorno</p>
+            </div>
           </div>
         </div>
       </WorkshopSection>
 
-      {/* Quebra de Crença */}
       <WorkshopSection background="card">
         <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black mb-12 text-gradient">
-            Mas POR QUE isso?
-          </h2>
+          <h1 className="text-4xl md:text-5xl font-black mb-12 text-gradient">
+            O problema não é você. Não é seu produto. Não é o mercado.
+          </h1>
           
-          <p className="text-2xl md:text-3xl font-bold mb-8">Eu te digo:</p>
-          
-          <div className="space-y-4 text-xl md:text-2xl mb-12">
-            <p>O problema não é o seu produto.</p>
-            <p>Não é seu preço.</p>
-            <p>Não é o instagram ou a agência de marketing.</p>
-            <p>Não é o mercado.</p>
-            <p>E definitivamente não é você.</p>
-          </div>
-          
-          <div className="bg-gradient-workshop-subtle p-8 rounded-2xl border border-workshop-gold/20">
-            <p className="text-2xl md:text-3xl font-black mb-4">
-              O problema é que sua empresa <span className="text-gradient">não tem um processo de vendas</span>.
-            </p>
-            <p className="text-xl font-medium text-muted-foreground mb-6">E por isso depende da sorte.</p>
-            <p className="text-xl font-medium">
-              Enquanto isso, quem tem processo vende de forma <span className="text-gradient font-bold">previsível, todo dia, sem depender de ninguém</span>.
-            </p>
-          </div>
-        </div>
-      </WorkshopSection>
-
-      {/* Big Idea */}
-      <WorkshopSection>
-        <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black mb-12">
-            Existe um jeito prático e imediato de <span className="text-gradient">virar esse jogo…</span>
-          </h2>
-          
-          <p className="text-3xl md:text-4xl font-black mb-12">
-            Participar do Workshop ELITE DE VENDAS
+          <p className="text-2xl md:text-3xl font-bold mb-8">
+            O problema é que você está tentando vender <span className="text-gradient">sem ter um processo de vendas.</span>
           </p>
           
-          <p className="text-2xl font-bold mb-8">Nele, você vai aprender a:</p>
+          <p className="text-xl md:text-2xl mb-8">
+            Quem tem processo não depende de sorte. Fecha cliente todo dia. E faz isso de forma simples.
+          </p>
           
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <Card className="bg-card border-workshop-gold/20 hover:shadow-glow transition-all duration-300">
-              <CardContent className="p-8 text-center">
-                <Target className="w-16 h-16 text-workshop-gold mx-auto mb-4" />
-                <h4 className="text-xl font-bold mb-4">1. Abordar clientes certos</h4>
-                <p className="text-muted-foreground">mesmo que nunca tenham ouvido falar da sua empresa.</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-card border-workshop-gold/20 hover:shadow-glow transition-all duration-300">
-              <CardContent className="p-8 text-center">
-                <Zap className="w-16 h-16 text-workshop-gold mx-auto mb-4" />
-                <h4 className="text-xl font-bold mb-4">2. Conduzir a conversa</h4>
-                <p className="text-muted-foreground">até o fechamento – com método.</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-card border-workshop-gold/20 hover:shadow-glow transition-all duration-300">
-              <CardContent className="p-8 text-center">
-                <Shield className="w-16 h-16 text-workshop-gold mx-auto mb-4" />
-                <h4 className="text-xl font-bold mb-4">3. Criar um fluxo previsível</h4>
-                <p className="text-muted-foreground">que roda todo dia, no piloto automático.</p>
-              </CardContent>
-            </Card>
-          </div>
-          
-          <div className="text-2xl font-bold space-y-2 mb-12">
-            <p>Sem anúncios.</p>
-            <p>Sem agência.</p>
-            <p>Sem precisar aparecer no Instagram.</p>
+          <div className="bg-gradient-workshop-subtle p-8 rounded-2xl border border-workshop-gold/20 mb-8 max-w-4xl mx-auto">
+            <blockquote className="text-2xl md:text-3xl font-bold mb-4 italic">
+              "Antes só vinha cliente por indicação. Apliquei o que aprendi e em 7 dias fechei 3 contratos novos."
+            </blockquote>
+            <p className="text-xl text-workshop-gold font-semibold">– Rafael, consultório odontológico</p>
           </div>
           
           <div className="flex justify-center">
-            <WorkshopButton className="text-lg md:text-xl py-3 md:py-4 px-6 md:px-8">
-              GARANTIR VAGA AGORA
+            <WorkshopButton className="text-lg md:text-xl py-4 md:py-6 px-8 md:px-12">
+              Quero esse processo funcionando agora
             </WorkshopButton>
           </div>
         </div>
       </WorkshopSection>
 
-      {/* Apresentação do Workshop */}
-      <WorkshopSection background="card">
-        <div className="text-center">
-          <div className="mb-8">
-            <img src="/lovable-uploads/e6ab246c-04f3-40f2-9409-e8d57d75a7d0.png" alt="Workshop Elite de Vendas Logo" className="h-20 mx-auto mb-6 object-contain" />
+      {/* SEÇÃO: APRESENTAÇÃO DA SOLUÇÃO */}
+      <WorkshopSection>
+        <div className="text-center max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-black mb-12 text-gradient">
+            Empresários de Belém estão aplicando um método simples e fechando contrato toda semana.
+          </h2>
+          
+          <h3 className="text-2xl font-bold mb-8">Sem depender de:</h3>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            <div className="bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 p-4 rounded-xl">
+              <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                <span className="text-white text-xl">✕</span>
+              </div>
+              <p className="text-sm font-medium text-red-700 dark:text-red-300">Tráfego pago</p>
+            </div>
+            <div className="bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 p-4 rounded-xl">
+              <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                <span className="text-white text-xl">✕</span>
+              </div>
+              <p className="text-sm font-medium text-red-700 dark:text-red-300">Agência</p>
+            </div>
+            <div className="bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 p-4 rounded-xl">
+              <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                <span className="text-white text-xl">✕</span>
+              </div>
+              <p className="text-sm font-medium text-red-700 dark:text-red-300">Conteúdo no Instagram</p>
+            </div>
+            <div className="bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 p-4 rounded-xl">
+              <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                <span className="text-white text-xl">✕</span>
+              </div>
+              <p className="text-sm font-medium text-red-700 dark:text-red-300">Publi de influencer</p>
+            </div>
           </div>
           
-          <p className="text-xl text-muted-foreground mb-12 px-[80px]">
-            Para empresários de Belém-PA – que cansaram de perder tempo e dinheiro com soluções de vendas que não funcionam.
-          </p>
+          <p className="text-2xl font-bold mb-8">E o melhor: usando apenas o que você já tem.</p>
           
-          <h3 className="text-3xl font-bold mb-8 text-gradient">O que você vai receber:</h3>
-          
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
-            {["Um processo pronto de prospecção ativa para você atrair clientes mesmo sem gastar R$1", "Um roteiro testado de vendas, pra fechar mais mesmo com objeções", "Ferramentas de captação e conversão de leads", "Diagnóstico comercial com especialista pra identificar seus gargalos", "Grupo exclusivo com outros empresários focados em resultado"].map((item, index) => <div key={index} className="flex items-start gap-4 text-left">
-                <CheckCircle className="w-6 h-6 text-workshop-gold flex-shrink-0 mt-1" />
-                <p className="text-lg">{item}</p>
-              </div>)}
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <div className="bg-workshop-gold/20 backdrop-blur-sm border border-workshop-gold/30 px-6 py-3 rounded-xl shadow-glow/30">
+              <div className="flex items-center gap-3">
+                <svg className="w-6 h-6 text-workshop-gold" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                </svg>
+                <span className="font-semibold text-workshop-gold">um celular</span>
+              </div>
+            </div>
+            
+            <div className="bg-workshop-gold/20 backdrop-blur-sm border border-workshop-gold/30 px-6 py-3 rounded-xl shadow-glow/30">
+              <div className="flex items-center gap-3">
+                <svg className="w-6 h-6 text-workshop-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                </svg>
+                <span className="font-semibold text-workshop-gold">uma lista de clientes</span>
+              </div>
+            </div>
+            
+            <div className="bg-workshop-gold/20 backdrop-blur-sm border border-workshop-gold/30 px-6 py-3 rounded-xl shadow-glow/30">
+              <div className="flex items-center gap-3">
+                <svg className="w-6 h-6 text-workshop-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+                <span className="font-semibold text-workshop-gold">e uma mensagem no WhatsApp</span>
+              </div>
+            </div>
           </div>
           
-          <p className="text-xl mb-8 text-muted-foreground">
-            Tudo isso em poucas horas, ao vivo, com acompanhamento passo a passo.
+          <p className="text-2xl font-bold mb-12">
+            Você vai entender tudo isso em detalhes no Workshop <span className="text-gradient">ELITE DE VENDAS</span>.
           </p>
           
           <div className="flex justify-center">
-            <WorkshopButton className="text-lg md:text-xl py-3 md:py-4 px-6 md:px-8">
-              GARANTIR VAGA AGORA
+            <WorkshopButton className="text-lg md:text-xl py-4 md:py-6 px-8 md:px-12">
+              Quero participar do Workshop
             </WorkshopButton>
           </div>
         </div>
       </WorkshopSection>
 
+      {/* SEÇÃO: O QUE VOCÊ VAI APRENDER */}
+      <WorkshopSection background="card">
+        <div className="text-center max-w-6xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-black mb-16 text-gradient">
+            No Workshop Elite de Vendas, você vai descobrir:
+          </h2>
+          
+          <div className="grid gap-8">
+            <div className="bg-background border border-workshop-gold/20 p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
+              <div className="flex items-start gap-6">
+                <div className="bg-workshop-gold/20 text-workshop-gold font-black text-2xl w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">1</div>
+                <div className="text-left">
+                  <h3 className="text-xl md:text-2xl font-bold mb-4">Como vender todo dia, sem precisar de tráfego pago, agências, conteúdo ou influencers.</h3>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-background border border-workshop-gold/20 p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
+              <div className="flex items-start gap-6">
+                <div className="bg-workshop-gold/20 text-workshop-gold font-black text-2xl w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">2</div>
+                <div className="text-left">
+                  <h3 className="text-xl md:text-2xl font-bold mb-4">A estratégia para fechar R$10.000 em vendas nos próximos 7 dias usando contatos antigos de WhatsApp.</h3>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-background border border-workshop-gold/20 p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
+              <div className="flex items-start gap-6">
+                <div className="bg-workshop-gold/20 text-workshop-gold font-black text-2xl w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">3</div>
+                <div className="text-left">
+                  <h3 className="text-xl md:text-2xl font-bold mb-4">Como conseguir +5.000 contatos de potenciais clientes em 30s usando Google Maps, redes sociais e LinkedIn.</h3>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-background border border-workshop-gold/20 p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
+              <div className="flex items-start gap-6">
+                <div className="bg-workshop-gold/20 text-workshop-gold font-black text-2xl w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">4</div>
+                <div className="text-left">
+                  <h3 className="text-xl md:text-2xl font-bold mb-4">Como abordar, levar para reunião e vender para esses potenciais clientes - mesmo que eles não te conheçam.</h3>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-background border border-workshop-gold/20 p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
+              <div className="flex items-start gap-6">
+                <div className="bg-workshop-gold/20 text-workshop-gold font-black text-2xl w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">5</div>
+                <div className="text-left">
+                  <h3 className="text-xl md:text-2xl font-bold mb-4">O passo a passo para reativar o cliente sumido e fazer ele comprar/recomprar em até 24h.</h3>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-background border border-workshop-gold/20 p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
+              <div className="flex items-start gap-6">
+                <div className="bg-workshop-gold/20 text-workshop-gold font-black text-2xl w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">6</div>
+                <div className="text-left">
+                  <h3 className="text-xl md:text-2xl font-bold mb-4">Como manter sua agenda cheia de reuniões de venda com 30 minutos/dia de prospecção.</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="flex justify-center mt-12">
+            <WorkshopButton className="text-lg md:text-xl py-4 md:py-6 px-8 md:px-12">
+              Quero aprender isso
+            </WorkshopButton>
+          </div>
+        </div>
+      </WorkshopSection>
 
-      {/* Seção Bônus */}
-      <WorkshopSection background="card" className="relative overflow-hidden">
+      {/* SEÇÃO: O QUE VOCÊ RECEBE */}
+      <WorkshopSection background="gradient" className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-workshop-subtle opacity-10"></div>
         <div className="relative z-10">
           <div className="text-center max-w-6xl mx-auto">
-            <div className="bg-gradient-workshop text-black py-2 px-8 rounded-full inline-block mb-6">
-              <span className="font-bold text-lg">🎁 BÔNUS EXCLUSIVO</span>
-            </div>
-            
-            <h2 className="text-4xl md:text-5xl font-black mb-6 text-gradient">
-              Para os 10 Primeiros Inscritos
+            <h2 className="text-4xl md:text-5xl font-black mb-16 text-gradient">
+              Ao garantir sua vaga, você recebe:
             </h2>
             
-            <p className="text-2xl font-bold mb-8 text-workshop-gold">
-              +20 Materiais de Vendas, Marketing Estratégico e Gestão Comercial
-            </p>
-            
-            <div className="grid md:grid-cols-2 gap-12 items-center mb-8">
-              <div className="text-left space-y-6">
-                <div className="bg-background/80 backdrop-blur-sm border border-workshop-gold/30 p-6 rounded-2xl hover:shadow-glow transition-all duration-300">
-                  <h4 className="text-2xl font-bold mb-4 text-workshop-gold flex items-center gap-3">
-                    <CheckCircle className="w-6 h-6" />
-                    Processo de Prospecção Ativa
-                  </h4>
-                  <p className="text-lg text-muted-foreground">Material completo com roteiros testados</p>
-                </div>
-                
-                <div className="bg-background/80 backdrop-blur-sm border border-workshop-gold/30 p-6 rounded-2xl hover:shadow-glow transition-all duration-300">
-                  <h4 className="text-2xl font-bold mb-4 text-workshop-gold flex items-center gap-3">
-                    <CheckCircle className="w-6 h-6" />
-                    CRM Simples para WhatsApp
-                  </h4>
-                  <p className="text-lg text-muted-foreground">Sistema prático de gestão comercial</p>
-                </div>
-                
-                <div className="bg-background/80 backdrop-blur-sm border border-workshop-gold/30 p-6 rounded-2xl hover:shadow-glow transition-all duration-300">
-                  <h4 className="text-2xl font-bold mb-4 text-workshop-gold flex items-center gap-3">
-                    <CheckCircle className="w-6 h-6" />
-                    Mais 17 Materiais Exclusivos
-                  </h4>
-                  <p className="text-lg text-muted-foreground">Templates, roteiros e estratégias completas</p>
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div className="bg-background/80 backdrop-blur-sm border border-workshop-gold/30 p-8 rounded-2xl">
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-6 h-6 text-workshop-gold flex-shrink-0 mt-1" />
+                    <p className="text-lg font-medium text-left">Acesso ao Workshop Presencial Ao Vivo (2 dias)</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-6 h-6 text-workshop-gold flex-shrink-0 mt-1" />
+                    <p className="text-lg font-medium text-left">Método completo de Prospecção e Vendas</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-6 h-6 text-workshop-gold flex-shrink-0 mt-1" />
+                    <p className="text-lg font-medium text-left">Diagnóstico individual com nossos mentores</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-6 h-6 text-workshop-gold flex-shrink-0 mt-1" />
+                    <p className="text-lg font-medium text-left">Grupo VIP de Networking com empresários participantes</p>
+                  </div>
                 </div>
               </div>
               
-              <div className="flex justify-center">
-                <img src="/lovable-uploads/118f8b4b-5b9d-4fc8-9002-cc63d1e0131b.png" alt="Bônus - 20 Materiais de Vendas, Marketing e Gestão Comercial" className="max-w-full h-auto rounded-2xl shadow-2xl border border-workshop-gold/20 hover:shadow-glow transition-all duration-300" />
+              <div className="bg-gradient-workshop/20 border-2 border-workshop-gold p-8 rounded-2xl relative">
+                <div className="bg-gradient-workshop text-black py-2 px-6 rounded-full inline-block mb-6">
+                  <span className="font-bold text-lg">🎁 BÔNUS EXCLUSIVOS</span>
+                </div>
+                <p className="text-xl font-bold mb-6 text-workshop-gold">(PARA OS 10 PRIMEIROS)</p>
+                
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-6 h-6 text-workshop-gold flex-shrink-0 mt-1" />
+                    <p className="text-lg font-medium text-left">20 Materiais e Ferramentas de Vendas, Marketing e Gestão</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-6 h-6 text-workshop-gold flex-shrink-0 mt-1" />
+                    <p className="text-lg font-medium text-left">CRM Simples para WhatsApp</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-6 h-6 text-workshop-gold flex-shrink-0 mt-1" />
+                    <p className="text-lg font-medium text-left">Roteiros testados de prospecção</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-6 h-6 text-workshop-gold flex-shrink-0 mt-1" />
+                    <p className="text-lg font-medium text-left">Templates prontos de vendas e ativação</p>
+                  </div>
+                </div>
               </div>
             </div>
             
-            <div className="bg-gradient-workshop text-black p-6 rounded-2xl mb-8">
-              <p className="text-xl font-bold mb-2">⏰ ATENÇÃO: Apenas para os 10 Primeiros!</p>
-              <p className="text-lg">Garante sua vaga agora e receba todos esses materiais como bônus exclusivo</p>
+            <div className="bg-background border border-workshop-gold/20 p-8 rounded-2xl mb-8 max-w-2xl mx-auto">
+              <p className="text-3xl font-black mb-4 text-gradient">12x de R$19,94</p>
+              <p className="text-2xl font-bold text-workshop-gold">Ou R$197 à vista.</p>
             </div>
             
             <div className="flex justify-center">
               <WorkshopButton className="animate-pulse-glow text-xl py-6 px-12">
-                GARANTIR VAGA + BÔNUS AGORA
+                Quero tudo isso pra mim
               </WorkshopButton>
             </div>
           </div>
         </div>
       </WorkshopSection>
 
-      {/* Depoimentos */}
-      <WorkshopSection>
-        <h2 className="text-4xl font-black text-center mb-16 text-gradient">
-          Resultados Reais de Quem Aplicou
-        </h2>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          {[{
-          name: "Rafael",
-          business: "Consultório Odontológico",
-          testimonial: "Antes só vinha cliente por indicação. Apliquei o que aprendi no workshop e em 7 dias fechei 3 contratos novos.",
-          videoPlaceholder: true
-        }, {
-          name: "Patrícia",
-          business: "Assessoria Contábil",
-          testimonial: "Contratei agência, gastei quase 10 mil em tráfego e não fechei nenhum cliente. Com esse método, consegui 15 reuniões em duas semanas.",
-          videoPlaceholder: true
-        }, {
-          name: "João",
-          business: "Engenharia e Projetos",
-          testimonial: "Parei de esperar cliente aparecer e fui atrás. Hoje tenho mais controle e previsibilidade.",
-          videoPlaceholder: true
-        }].map((testimonial, index) => <Card key={index} className="bg-card border-workshop-gold/20 hover:shadow-glow transition-all duration-300">
-              <CardContent className="p-8">
-                {testimonial.videoPlaceholder && <div className="aspect-video bg-secondary rounded-xl flex items-center justify-center mb-6 border border-muted">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-gradient-workshop rounded-full flex items-center justify-center mx-auto mb-4">
-                        <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[14px] border-b-black ml-1"></div>
-                      </div>
-                      <p className="text-muted-foreground text-sm">Vídeo Depoimento</p>
-                    </div>
-                  </div>}
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-workshop-gold text-workshop-gold" />)}
-                </div>
-                <p className="text-lg mb-6 italic">"{testimonial.testimonial}"</p>
-                <div>
-                  <p className="font-bold text-workshop-gold">{testimonial.name}</p>
-                  <p className="text-muted-foreground">{testimonial.business}</p>
-                </div>
-              </CardContent>
-            </Card>)}
-        </div>
-        
-        <div className="text-center mt-12">
-          <div className="flex justify-center">
-            <WorkshopButton className="text-base md:text-lg py-3 px-6">
-              GARANTIR VAGA AGORA
-            </WorkshopButton>
-          </div>
-        </div>
-      </WorkshopSection>
-
-      {/* Para Quem É */}
-      <WorkshopSection background="card">
-        <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-4xl font-black mb-12 text-gradient">
-            Para Quem É o Workshop Elite de Vendas?
-          </h2>
-          
-          <div className="grid gap-6 text-left">
-            {["Prestadores de serviço", "Consultores e assessores", "Profissionais liberais (psicólogos, engenheiros, arquitetos, dentistas)", "Donos de clínicas (estética, odontologia, fisioterapia)", "Escritórios de advocacia, contabilidade e áreas técnicas", "Donos de loja física ou serviço local"].map((item, index) => <div key={index} className="flex items-start gap-4">
-                <CheckCircle className="w-6 h-6 text-workshop-gold flex-shrink-0 mt-1" />
-                <p className="text-lg">{item}</p>
-              </div>)}
-          </div>
-          
-          <div className="flex justify-center">
-            <WorkshopButton className="text-base md:text-lg py-3 px-6">
-              GARANTIR VAGA AGORA
-            </WorkshopButton>
-          </div>
-        </div>
-      </WorkshopSection>
-
-      {/* O que vai aprender */}
-      <WorkshopSection>
-        <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-4xl font-black mb-12 text-gradient">
-            O QUE VOCÊ VAI APRENDER NO WORKSHOP?
-          </h2>
-          
-          <div className="grid gap-6 text-left">
-            {["Como extrair contatos de WhatsApp de clientes prontos para comprar usando Google Maps, redes sociais e LinkedIn.", "Como disparar mensagens pra esses contatos e receber uma enxurrada de \"tenho interesse\" em menos de 10 minutos.", "Como tirar pelo menos R$10.000 dos seus contatos antigos do WhatsApp em 7 dias.", "O erro fatal que trava suas vendas no WhatsApp logo na primeira mensagem – e como evitá-lo com um simples ajuste no início da conversa.", "O CRM mais simples do mundo para controlar suas vendas - que até uma criança aprende a usar em 20 minutos.", "O passo a passo exato (com texto pronto) que reativa o cliente sumido e faz ele responder em menos de 24 horas.", "Como organizar sua rotina comercial em 15 minutos por dia – e manter o funil sempre cheio sem precisar contratar ninguém.", "Como agendar 2 a 4 reuniões por dia, mesmo sem aparecer no Instagram ou investir um centavo em anúncios."].map((item, index) => <div key={index} className="flex items-start gap-4">
-                <div className="w-8 h-8 bg-gradient-workshop rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-black font-bold text-sm">{index + 1}</span>
-                </div>
-                <p className="text-lg">{item}</p>
-              </div>)}
-          </div>
-          
-          <div className="mt-12 flex justify-center">
-            <WorkshopButton className="text-base md:text-lg py-3 px-6">
-              GARANTIR VAGA AGORA
-            </WorkshopButton>
-          </div>
-        </div>
-      </WorkshopSection>
-
-      {/* Seção Conheça Seus Mentores */}
+      {/* SEÇÃO: PROVAS / DEPOIMENTOS */}
       <WorkshopSection>
         <div className="text-center max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black mb-16 text-gradient">
-            CONHEÇA SEUS MENTORES
+            Resultados Reais de Quem Aplicou
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card className="bg-card border-workshop-gold/20 overflow-hidden">
+              <CardContent className="p-8">
+                <div className="aspect-video bg-secondary rounded-xl flex items-center justify-center mb-6 border border-muted">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-workshop rounded-full flex items-center justify-center mx-auto mb-4">
+                      <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[12px] border-b-black ml-1"></div>
+                    </div>
+                    <p className="text-muted-foreground text-sm">[ESPAÇO PARA VIDEO EMBED]</p>
+                  </div>
+                </div>
+                <blockquote className="text-xl font-bold mb-4 italic">
+                  "O principal diferencial do método do Rodrigo e Ana foi o RESULTADO"
+                </blockquote>
+                <p className="text-lg text-workshop-gold font-semibold">– Dirceu, corretor de imóveis</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-card border-workshop-gold/20 overflow-hidden">
+              <CardContent className="p-8">
+                <div className="aspect-video bg-secondary rounded-xl flex items-center justify-center mb-6 border border-muted">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-workshop rounded-full flex items-center justify-center mx-auto mb-4">
+                      <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[12px] border-b-black ml-1"></div>
+                    </div>
+                    <p className="text-muted-foreground text-sm">[ESPAÇO PARA VIDEO EMBED]</p>
+                  </div>
+                </div>
+                <blockquote className="text-xl font-bold mb-4 italic">
+                  "Hoje nós conseguimos rentabilizar muito mais nossos leads."
+                </blockquote>
+                <p className="text-lg text-workshop-gold font-semibold">– Milena</p>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="flex justify-center">
+            <WorkshopButton className="text-lg md:text-xl py-4 md:py-6 px-8 md:px-12">
+              Quero isso no meu negócio
+            </WorkshopButton>
+          </div>
+        </div>
+      </WorkshopSection>
+
+      {/* SEÇÃO: QUEM DEVE PARTICIPAR */}
+      <WorkshopSection background="card">
+        <div className="text-center max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-black mb-16 text-gradient">
+            Quem Deve Participar
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            <div className="flex items-center gap-4 p-4 bg-background border border-workshop-gold/20 rounded-xl hover:shadow-glow transition-all duration-300">
+              <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
+              <p className="text-lg font-medium text-left">Prestadores de serviço</p>
+            </div>
+            <div className="flex items-center gap-4 p-4 bg-background border border-workshop-gold/20 rounded-xl hover:shadow-glow transition-all duration-300">
+              <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
+              <p className="text-lg font-medium text-left">Corretores de imóveis</p>
+            </div>
+            <div className="flex items-center gap-4 p-4 bg-background border border-workshop-gold/20 rounded-xl hover:shadow-glow transition-all duration-300">
+              <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
+              <p className="text-lg font-medium text-left">Consultores e assessores</p>
+            </div>
+            <div className="flex items-center gap-4 p-4 bg-background border border-workshop-gold/20 rounded-xl hover:shadow-glow transition-all duration-300">
+              <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
+              <p className="text-lg font-medium text-left">Profissionais liberais (psicólogos, engenheiros, dentistas)</p>
+            </div>
+            <div className="flex items-center gap-4 p-4 bg-background border border-workshop-gold/20 rounded-xl hover:shadow-glow transition-all duration-300">
+              <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
+              <p className="text-lg font-medium text-left">Donos de clínica (estética, odontologia, fisioterapia)</p>
+            </div>
+            <div className="flex items-center gap-4 p-4 bg-background border border-workshop-gold/20 rounded-xl hover:shadow-glow transition-all duration-300">
+              <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
+              <p className="text-lg font-medium text-left">Escritórios de advocacia, contabilidade, arquitetura</p>
+            </div>
+            <div className="flex items-center gap-4 p-4 bg-background border border-workshop-gold/20 rounded-xl hover:shadow-glow transition-all duration-300 md:col-span-2">
+              <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
+              <p className="text-lg font-medium text-left">Donos de loja física ou serviço local</p>
+            </div>
+          </div>
+          
+          <div className="flex justify-center">
+            <WorkshopButton className="text-lg md:text-xl py-4 md:py-6 px-8 md:px-12">
+              Quero minha vaga
+            </WorkshopButton>
+          </div>
+        </div>
+      </WorkshopSection>
+
+      {/* SEÇÃO: GARANTIA */}
+      <WorkshopSection background="gradient" className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-workshop-subtle opacity-10"></div>
+        <div className="relative z-10">
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="mb-8">
+              <div className="w-24 h-24 bg-gradient-workshop rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-workshop-gold shadow-glow">
+                <Shield className="w-12 h-12 text-black" />
+              </div>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-black mb-8 text-gradient">
+              Garantia Incondicional
+            </h2>
+            
+            <div className="bg-background/80 backdrop-blur-sm border-2 border-workshop-gold p-8 rounded-2xl mb-8">
+              <p className="text-2xl md:text-3xl font-bold mb-6">
+                Ou você agenda <span className="text-gradient">5 reuniões em 14 dias</span> — ou recebe <span className="text-gradient">100% do seu dinheiro de volta.</span>
+              </p>
+              <p className="text-xl text-muted-foreground">
+                Sem perguntas. Sem letras miúdas. Só mandar mensagem. <span className="text-workshop-gold font-bold">Risco zero.</span>
+              </p>
+            </div>
+            
+            <div className="flex justify-center">
+              <WorkshopButton className="text-lg md:text-xl py-4 md:py-6 px-8 md:px-12">
+                Quero minha vaga com garantia
+              </WorkshopButton>
+            </div>
+          </div>
+        </div>
+      </WorkshopSection>
+
+      {/* SEÇÃO: SOBRE OS CRIADORES */}
+      <WorkshopSection>
+        <div className="text-center max-w-6xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-black mb-16 text-gradient">
+            Sobre os Criadores
           </h2>
           
           <div className="grid md:grid-cols-2 gap-12 mb-12">
-            {/* Ana Araújo */}
-            <Card className="bg-card border-workshop-gold/20 hover:shadow-glow transition-all duration-300">
+            <Card className="bg-card border-workshop-gold/20 overflow-hidden">
               <CardContent className="p-8">
-                <div className="flex justify-center mb-6">
-                  <img src="/lovable-uploads/61e38533-a3e9-4356-9fcc-4ec651057525.png" alt="Ana Araújo - CEO da Ás Marketing & Growth" className="w-48 h-48 object-cover rounded-full border-4 border-workshop-gold/30 shadow-xl" />
+                <div className="w-32 h-32 bg-gradient-workshop-subtle rounded-full mx-auto mb-6 flex items-center justify-center border-2 border-workshop-gold/30">
+                  <Users className="w-16 h-16 text-workshop-gold" />
                 </div>
-                
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-workshop-gold mb-2">Ana Araújo</h3>
-                  <p className="text-lg text-muted-foreground font-semibold">CEO da Ás Marketing & Growth</p>
-                  <p className="text-lg text-muted-foreground font-semibold">Head de Vendas da Alavanc Negócios</p>
-                </div>
-                
-                <div className="text-left space-y-4 text-muted-foreground">
-                  <p>
+                <h3 className="text-2xl font-bold mb-4 text-workshop-gold">Ana Araújo</h3>
+                <div className="space-y-4 text-left">
+                  <p className="font-semibold">CEO da Ás Marketing & Growth</p>
+                  <p className="font-semibold">Head de Vendas da Alavanc Negócios</p>
+                  <p className="text-muted-foreground">
                     Ao longo da minha carreira, me destaquei por realizar consultorias que realmente transformam negócios.
                   </p>
-                  <p>
-                    Entre as minhas conquistas notáveis, consegui aumentar o faturamento de uma empresa financeira em <span className="text-workshop-gold font-bold">1136%</span>, saltando de 25 mil para 300 mil reais em apenas um mês.
+                  <p className="text-muted-foreground">
+                    Entre as minhas conquistas notáveis, consegui aumentar o faturamento de uma empresa financeira em 1136%, saltando de 25 mil para 300 mil reais em apenas um mês.
                   </p>
-                  <p>
-                    Também impulsionei as vendas orgânicas de uma empresa de perfumes em <span className="text-workshop-gold font-bold">60%</span> e otimizei o atendimento de um cliente do ramo alimentício em <span className="text-workshop-gold font-bold">50%</span>, resultando em um crescimento impressionante de <span className="text-workshop-gold font-bold">300%</span> no faturamento.
+                  <p className="text-muted-foreground">
+                    Também impulsionei as vendas orgânicas de uma empresa de perfumes em 60% e otimizei o atendimento de um cliente do ramo alimentício em 50%, resultando em um crescimento impressionante de 300% no faturamento.
                   </p>
-                  <p>
+                  <p className="text-muted-foreground">
                     Em minha trajetória, continuo comprometida com a excelência, transformando desafios em oportunidades.
                   </p>
                 </div>
               </CardContent>
             </Card>
-
-            {/* Rodrigo Marques */}
-            <Card className="bg-card border-workshop-gold/20 hover:shadow-glow transition-all duration-300">
+            
+            <Card className="bg-card border-workshop-gold/20 overflow-hidden">
               <CardContent className="p-8">
-                <div className="flex justify-center mb-6">
-                  <img src="/lovable-uploads/4e302e75-2474-4c31-864f-5b7a9ee1cd56.png" alt="Rodrigo Marques - Fundador da Alavanc Negócios" className="w-48 h-48 object-cover rounded-full border-4 border-workshop-gold/30 shadow-xl" />
+                <div className="w-32 h-32 bg-gradient-workshop-subtle rounded-full mx-auto mb-6 flex items-center justify-center border-2 border-workshop-gold/30">
+                  <Target className="w-16 h-16 text-workshop-gold" />
                 </div>
-                
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-workshop-gold mb-2">Rodrigo Marques</h3>
-                  <p className="text-lg text-muted-foreground font-semibold">Fundador da Alavanc Negócios</p>
-                  <p className="text-lg text-muted-foreground font-semibold">Especialista em Estruturação Comercial</p>
-                </div>
-                
-                <div className="text-left space-y-4 text-muted-foreground">
-                  <p>
+                <h3 className="text-2xl font-bold mb-4 text-workshop-gold">Rodrigo Marques</h3>
+                <div className="space-y-4 text-left">
+                  <p className="font-semibold">Fundador da Alavanc Negócios</p>
+                  <p className="font-semibold">Especialista em Estruturação Comercial</p>
+                  <p className="text-muted-foreground">
                     Administrador por formação e especialista em Estruturação Comercial e Gestão de Times.
                   </p>
-                  <p>
-                    Fundador da Alavanc Negócios, consultoria que já ajudou empresas a organizar processos, estruturar times e crescer de forma sustentável — gerando mais de <span className="text-workshop-gold font-bold">R$ 10 milhões</span> em faturamento para os negócios de nossa carteira.
+                  <p className="text-muted-foreground">
+                    Fundador da Alavanc Negócios, consultoria que já ajudou empresas a organizar processos, estruturar times e crescer de forma sustentável — gerando mais de R$ 10 milhões em faturamento para os negócios de nossa carteira.
                   </p>
-                  <p>
+                  <p className="text-muted-foreground">
                     Tenho forte atuação no ecossistema de inovação e empreendedorismo, sendo Diretor de Comunidades e Eventos na Açaí Valley e Alumni da Enactus Brasil.
                   </p>
-                  <p>
+                  <p className="text-muted-foreground">
                     Sempre com o propósito de impulsionar negócios, pessoas e comunidades através de estratégias bem definidas e executadas.
                   </p>
                 </div>
@@ -470,236 +571,177 @@ const WorkshopPage = () => {
             </Card>
           </div>
           
+          <div className="flex justify-center">
+            <WorkshopButton className="text-lg md:text-xl py-4 md:py-6 px-8 md:px-12">
+              Quero aprender com quem faz acontecer
+            </WorkshopButton>
+          </div>
+        </div>
+      </WorkshopSection>
+
+      {/* SEÇÃO: DETALHES DO EVENTO */}
+      <WorkshopSection background="card">
+        <div className="text-center max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-black mb-16 text-gradient">
+            Detalhes do Evento
+          </h2>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-background border border-workshop-gold/20 p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
+              <Calendar className="w-12 h-12 text-workshop-gold mx-auto mb-4" />
+              <h3 className="text-xl font-bold mb-2 text-workshop-gold">Data</h3>
+              <p className="text-lg">15 e 16 de outubro de 2025</p>
+            </div>
+            
+            <div className="bg-background border border-workshop-gold/20 p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
+              <Clock className="w-12 h-12 text-workshop-gold mx-auto mb-4" />
+              <h3 className="text-xl font-bold mb-2 text-workshop-gold">Horário</h3>
+              <p className="text-lg">9h às 13h</p>
+            </div>
+            
+            <div className="bg-background border border-workshop-gold/20 p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
+              <MapPin className="w-12 h-12 text-workshop-gold mx-auto mb-4" />
+              <h3 className="text-xl font-bold mb-2 text-workshop-gold">Local</h3>
+              <p className="text-lg">ON Office – Belém/PA</p>
+            </div>
+          </div>
+          
           <div className="bg-gradient-workshop-subtle p-8 rounded-2xl border border-workshop-gold/20 mb-8">
-            <p className="text-xl font-bold text-center mb-4">💡 Experiência Combinada de Mais de 20 Anos em Vendas e Gestão Comercial</p>
-            <p className="text-lg text-center text-muted-foreground">
-              Juntos, Ana e Rodrigo já transformaram centenas de empresas, sempre com foco em resultados práticos e sustentáveis.
+            <p className="text-xl font-bold mb-4">O que trazer:</p>
+            <p className="text-lg text-muted-foreground">
+              Traga notebook, celular e um caderno. O ambiente é focado, climatizado e preparado para aplicação prática.
             </p>
           </div>
           
           <div className="flex justify-center">
-            <WorkshopButton className="text-lg md:text-xl py-3 md:py-4 px-6 md:px-8">
-              APRENDER COM OS ESPECIALISTAS
+            <WorkshopButton className="text-lg md:text-xl py-4 md:py-6 px-8 md:px-12">
+              Garanta sua vaga agora – R$197
             </WorkshopButton>
           </div>
         </div>
       </WorkshopSection>
 
-      {/* Informações do Evento */}
-      <WorkshopSection background="card">
-        <div className="text-center">
-          <h2 className="text-4xl font-black mb-12 text-gradient">Local do Evento</h2>
-          
-          <div className="grid md:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
-            <div>
-              <div className="aspect-video bg-secondary rounded-2xl overflow-hidden mb-4 border border-muted">
-                <img src="/lovable-uploads/3a5b9f84-ca5b-4466-87b9-1d6784156054.png" alt="ON Office Belém - Localização no Mapa" className="w-full h-full object-cover" />
-              </div>
-              <div className="aspect-video bg-secondary rounded-2xl overflow-hidden mb-6 border border-muted">
-                <img src="/lovable-uploads/ed4ea9d4-538a-4fbd-8859-0cb483d27cb4.png" alt="ON Office - Sala do Workshop Elite de Vendas" className="w-full h-full object-cover" />
-              </div>
+      {/* SEÇÃO: ESCASSEZ */}
+      <WorkshopSection background="gradient" className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-red-500/10"></div>
+        <div className="relative z-10">
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="bg-red-600 text-white py-3 px-8 rounded-full inline-block mb-8">
+              <span className="font-bold text-lg">⚠️ ÚLTIMAS VAGAS</span>
             </div>
             
-            <div className="text-left space-y-6">
-              <div>
-                <h3 className="text-2xl font-bold mb-2 text-workshop-gold">Endereço:</h3>
-                <p className="text-xl">ON Office – Av. Generalíssimo Deodoro, 1893</p>
-                <p className="text-xl">Belém – PA</p>
-              </div>
-              
-              <div>
-                <h3 className="text-2xl font-bold mb-2 text-workshop-gold">Data:</h3>
-                <p className="text-xl">15 e 16 de outubro de 2025</p>
-              </div>
-              
-              <div>
-                <h3 className="text-2xl font-bold mb-2 text-workshop-gold">Horário:</h3>
-                <p className="text-xl">das 9h às 13h</p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="mt-12 bg-gradient-workshop-subtle p-8 rounded-2xl border border-workshop-gold/20">
-            <h3 className="text-2xl font-bold mb-6 text-workshop-gold">Importante:</h3>
-            <div className="space-y-4 text-lg">
-              <p>• Chegue com 15 minutos de antecedência</p>
-              <p>• Traga seu notebook, celular e um caderno (você vai usar os dois)</p>
-              <p>• O ambiente é climatizado, com estrutura completa para foco total na aplicação do método.</p>
-            </div>
-          </div>
-        </div>
-      </WorkshopSection>
-
-      {/* Oferta */}
-      <WorkshopSection>
-        <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-4xl font-black mb-12 text-gradient">
-            TUDO O QUE VOCÊ VAI RECEBER:
-          </h2>
-          
-          <div className="bg-card border-2 border-workshop-gold rounded-2xl p-12 mb-12 shadow-glow">
             <div className="mb-8">
-              <img src="/lovable-uploads/e6ab246c-04f3-40f2-9409-e8d57d75a7d0.png" alt="Workshop Elite de Vendas" className="h-16 mx-auto object-contain" />
-            </div>
-            <div className="mb-8 flex justify-center">
-              <Card className="bg-card/90 border-border/40 max-w-lg w-full shadow-none">
-                <CardContent className="p-4 flex items-center justify-center gap-3 flex-wrap">
-                  <div className="bg-workshop-gold/20 p-2 rounded-lg">
-                    <Calendar className="w-5 h-5 text-workshop-gold" />
-                  </div>
-                  <div className="text-sm">
-                    <span className="font-semibold">15 e 16 de outubro</span>
-                  </div>
-                  <div className="bg-workshop-gold/20 p-2 rounded-lg">
-                    <Clock className="w-5 h-5 text-workshop-gold" />
-                  </div>
-                  <div className="text-sm">
-                    <span className="font-semibold">9h às 13h</span>
-                  </div>
-                  <div className="bg-workshop-gold/20 p-2 rounded-lg">
-                    <MapPin className="w-5 h-5 text-workshop-gold" />
-                  </div>
-                  <div className="text-sm">
-                    <span className="font-semibold">ON Office Belém</span>
-                  </div>
-                </CardContent>
-              </Card>
+              <VagasCounter />
             </div>
             
-            <h4 className="text-2xl font-bold mb-8">Você recebe:</h4>
+            <h2 className="text-3xl md:text-4xl font-black mb-6 text-red-600 dark:text-red-400">
+              21 de 30 vagas preenchidas
+            </h2>
             
-            <div className="grid gap-4 text-left max-w-2xl mx-auto mb-12">
-              {["Acesso aos 2 dias de Workshop Ao Vivo", "O Processo de Prospecção e Vendas que Gerou +R$10 Milhões para Nossos Clientes", "+20 Materiais e Ferramentas de Prospecção, Vendas, Marketing e Gestão Comercial", "Diagnóstico Comercial da sua Empresa com Especialista", "Grupo VIP com Empresários Participantes"].map((item, index) => <div key={index} className="flex items-center gap-4">
-                  <CheckCircle className="w-6 h-6 text-workshop-gold flex-shrink-0" />
-                  <p className="text-lg text-left">{item}</p>
-                </div>)}
-            </div>
-            
-            <div className="text-center">
-              <p className="md:text-6xl font-black mb-6 text-gradient text-6xl">R$197</p>
-              <div className="flex justify-center">
-                <WorkshopButton className="text-lg md:text-xl py-4 md:py-6 px-6 md:px-10 leading-tight">
-                  GARANTIR VAGA AGORA
-                </WorkshopButton>
-              </div>
-            </div>
-          </div>
-        </div>
-      </WorkshopSection>
-
-      {/* Garantia */}
-      <WorkshopSection background="card">
-        <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-4xl font-black mb-8 text-gradient">
-            TENHA RESULTADOS OU DEVOLVEMOS SEU DINHEIRO.
-          </h2>
-          
-          <div className="bg-gradient-workshop-subtle p-8 rounded-2xl border border-workshop-gold/20">
-            <Shield className="w-16 h-16 text-workshop-gold mx-auto mb-6" />
-            <p className="text-xl leading-relaxed">
-              Participe do workshop, aplique o método. Se em até 14 dias você não gerar pelo menos 5 reuniões com potenciais clientes, devolvemos 100% do seu investimento, basta mandar uma mensagem.
+            <p className="text-2xl font-bold mb-8 text-red-600 dark:text-red-400">
+              ⚠️ Resta apenas 1 vaga para acabar o bônus.
             </p>
-          </div>
-          
-          <div className="mt-12 flex justify-center">
-            <WorkshopButton className="text-base md:text-lg py-3 px-6">
-              GARANTIR VAGA AGORA
-            </WorkshopButton>
+            
+            <div className="flex justify-center">
+              <WorkshopButton className="animate-pulse-glow text-lg md:text-xl py-4 md:py-6 px-8 md:px-12 bg-red-600 hover:bg-red-700">
+                Quero uma das últimas vagas
+              </WorkshopButton>
+            </div>
           </div>
         </div>
       </WorkshopSection>
 
-      {/* Escassez */}
+      {/* SEÇÃO: FAQ */}
       <WorkshopSection>
-        <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-4xl font-black mb-8 text-gradient">
-            APENAS 30 VAGAS DISPONÍVEIS.
-          </h2>
-          
-          <div className="bg-card p-8 rounded-2xl border border-workshop-gold/20 mb-8">
-            <Users className="w-16 h-16 text-workshop-gold mx-auto mb-6" />
-            <p className="text-xl leading-relaxed mb-8">
-              O Workshop Elite de Vendas é ao vivo, com orientação individual – por isso, limitamos a apenas 30 empresários comprometidos. Se deixar pra depois, você vai ficar de fora.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <CountdownTimer />
-            <VagasCounter />
-          </div>
-          
-          <div className="flex justify-center">
-            <WorkshopButton className="text-base md:text-lg py-3 px-6">
-              GARANTIR VAGA AGORA
-            </WorkshopButton>
-          </div>
-        </div>
-      </WorkshopSection>
-
-      {/* FAQ */}
-      <WorkshopSection background="card">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-black text-center mb-12 text-gradient">
+          <h2 className="text-4xl md:text-5xl font-black text-center mb-16 text-gradient">
             Perguntas Frequentes
           </h2>
           
-          <Accordion type="single" collapsible className="w-full">
-            {[{
-            question: "Trabalho com serviço específico. Funciona pro meu tipo de negócio?",
-            answer: "Se você precisa atrair clientes, sim. Já aplicamos com sucesso em clínicas, escritórios, assessorias, consultorias, lojas, restaurantes, agências de marketing, construção e mais."
-          }, {
-            question: "E se eu não for \"bom de vendas\"?",
-            answer: "Não precisa ser. O processo é simples, direto e segue roteiro. Você vai saber exatamente o que falar, pra quem falar e quando falar."
-          }, {
-            question: "Preciso ter equipe ou alguém pra aplicar o processo?",
-            answer: "Não. O método foi feito pra funcionar mesmo se for só você. Se tiver equipe, melhor ainda – você só vai multiplicar."
-          }, {
-            question: "E se eu não conseguir aplicar depois?",
-            answer: "Você vai aplicar durante o workshop. Sai de lá com o processo rodando. Ainda assim, tem suporte por 7 dias e grupo exclusivo com a equipe."
-          }, {
-            question: "Vai ter gravação?",
-            answer: "Não. O foco é aplicação ao vivo, com suporte direto. Quer resultado? Senta, presta atenção e executa."
-          }, {
-            question: "Já tentei tráfego pago, agência, indicação... e nada funcionou. Isso é diferente?",
-            answer: "Sim. Aqui você assume o controle. Não depende de anúncio, não depende de indicação, não depende de ninguém. É processo testado com empresário real, como você."
-          }, {
-            question: "Já vendo bem com indicação. Preciso disso?",
-            answer: "Sim. Indicação é ótimo, mas não é escalável. Com o processo certo, você gera novas oportunidades todos os dias – sem depender da sorte."
-          }].map((faq, index) => <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left text-lg font-semibold text-workshop-gold hover:text-workshop-gold/80">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground pt-2">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>)}
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            <AccordionItem value="item-1" className="border border-workshop-gold/20 rounded-xl px-6">
+              <AccordionTrigger className="text-xl font-bold hover:no-underline hover:text-workshop-gold transition-colors">
+                Funciona para meu tipo de serviço?
+              </AccordionTrigger>
+              <AccordionContent className="text-lg text-muted-foreground">
+                Sim! O método funciona para qualquer negócio que vende serviços ou produtos de ticket médio/alto. Já ajudamos corretores, dentistas, advogados, consultores, donos de clínica e diversos outros segmentos.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="item-2" className="border border-workshop-gold/20 rounded-xl px-6">
+              <AccordionTrigger className="text-xl font-bold hover:no-underline hover:text-workshop-gold transition-colors">
+                E se eu não for "bom de vendas"?
+              </AccordionTrigger>
+              <AccordionContent className="text-lg text-muted-foreground">
+                Perfeito! O método foi criado justamente para quem não se considera "vendedor nato". Trabalhamos com roteiros, processos e técnicas que qualquer pessoa pode aplicar, independente da experiência em vendas.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="item-3" className="border border-workshop-gold/20 rounded-xl px-6">
+              <AccordionTrigger className="text-xl font-bold hover:no-underline hover:text-workshop-gold transition-colors">
+                Preciso de equipe pra aplicar?
+              </AccordionTrigger>
+              <AccordionContent className="text-lg text-muted-foreground">
+                Não! O método é desenhado para ser aplicado pelo próprio dono do negócio. Você mesmo pode prospectar, abordar e fechar seus clientes usando apenas seu celular.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="item-4" className="border border-workshop-gold/20 rounded-xl px-6">
+              <AccordionTrigger className="text-xl font-bold hover:no-underline hover:text-workshop-gold transition-colors">
+                Vai ter gravação?
+              </AccordionTrigger>
+              <AccordionContent className="text-lg text-muted-foreground">
+                Não, o Workshop é 100% presencial e ao vivo. Não haverá gravações para garantir a exclusividade do conteúdo e o foco total dos participantes.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="item-5" className="border border-workshop-gold/20 rounded-xl px-6">
+              <AccordionTrigger className="text-xl font-bold hover:no-underline hover:text-workshop-gold transition-colors">
+                Já tentei de tudo... isso é diferente?
+              </AccordionTrigger>
+              <AccordionContent className="text-lg text-muted-foreground">
+                Sim! Diferente de cursos teóricos ou métodos complexos, nosso foco é 100% prático. Você sai do workshop com um processo funcionando e já testado por dezenas de empresários em Belém.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="item-6" className="border border-workshop-gold/20 rounded-xl px-6">
+              <AccordionTrigger className="text-xl font-bold hover:no-underline hover:text-workshop-gold transition-colors">
+                Já vendo bem com indicação. Preciso disso?
+              </AccordionTrigger>
+              <AccordionContent className="text-lg text-muted-foreground">
+                Se você quer parar de depender da sorte e ter previsibilidade nas vendas, sim. Indicação é ótima, mas não é sustentável para crescer consistentemente. Com nosso método, você mantém as indicações E adiciona um fluxo previsível de novos clientes.
+              </AccordionContent>
+            </AccordionItem>
           </Accordion>
+          
+          <div className="text-center mt-16">
+            <p className="text-2xl md:text-3xl font-black mb-8 text-gradient">
+              Pare de depender da sorte. Construa um processo de vendas que funciona todo dia.
+            </p>
+            
+            <div className="flex justify-center">
+              <WorkshopButton className="text-xl py-6 px-12 animate-pulse-glow">
+                Quero esse processo no meu negócio agora
+              </WorkshopButton>
+            </div>
+          </div>
         </div>
       </WorkshopSection>
 
-      {/* CTA Final */}
-      <WorkshopSection padding="large" className="text-center">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-black mb-8">
-            Pare de depender da <span className="text-gradient">sorte</span>
-          </h2>
-          
-          <p className="text-2xl mb-12 text-muted-foreground">
-            Construa um processo de vendas que funciona todos os dias
-          </p>
-          
-          <div className="flex justify-center">
-            <WorkshopButton className="text-xl md:text-2xl py-6 md:py-8 px-8 md:px-16 animate-pulse-glow">
-              GARANTIR VAGA AGORA - R$197
-            </WorkshopButton>
+      {/* CTA Fixo Mobile */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur-sm border-t border-workshop-gold/20 p-4 z-50">
+        <div className="flex items-center justify-between gap-4">
+          <div className="text-left">
+            <p className="text-sm font-bold text-workshop-gold">Últimas vagas!</p>
+            <p className="text-xs text-muted-foreground">R$197 ou 12x R$19,94</p>
           </div>
-          
-          <div className="mt-8 flex justify-center items-center gap-4 text-lg">
-            <Shield className="w-6 h-6 text-workshop-gold" />
-            <span>Garantia de 14 dias ou seu dinheiro de volta</span>
-          </div>
+          <WorkshopButton className="px-6 py-3">
+            Garantir Vaga
+          </WorkshopButton>
         </div>
-      </WorkshopSection>
-    </div>;
+      </div>
+    </div>
+  );
 };
+
 export default WorkshopPage;
