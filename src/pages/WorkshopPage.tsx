@@ -441,7 +441,7 @@ const WorkshopPage = () => {
       <WorkshopSection background="card">
         <div className="text-center max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black mb-16 text-gradient">
-            Quem Deve Participar
+            Para Quem É Esse Workshop?
           </h2>
           
           <div className="grid md:grid-cols-2 gap-6 mb-12">
