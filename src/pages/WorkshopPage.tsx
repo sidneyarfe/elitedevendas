@@ -636,9 +636,7 @@ const WorkshopPage = () => {
               <VagasCounter />
             </div>
             
-            <h2 className="text-3xl md:text-4xl font-black mb-6 text-red-600 dark:text-red-400">
-              21 de 30 vagas preenchidas
-            </h2>
+            
             
             <p className="text-2xl font-bold mb-8 text-red-600 dark:text-red-400">
               ⚠️ Resta apenas 1 vaga para acabar o bônus.
