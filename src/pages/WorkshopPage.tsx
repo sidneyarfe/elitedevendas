@@ -142,7 +142,7 @@ const WorkshopPage = () => {
           </p>
           
           <p className="text-xl md:text-2xl mb-8">
-            Quem tem processo não depende de sorte. Fecha cliente todo dia. E faz isso de forma simples.
+            Quem tem processo não depende de sorte. Fecha cliente todo dia.
           </p>
           
           <div className="bg-gradient-workshop-subtle p-8 rounded-2xl border border-workshop-gold/20 mb-8 max-w-4xl mx-auto">
