@@ -11,6 +11,8 @@ import anaImage from "@/assets/foto_ana.jpg";
 import rodrigoImage from "@/assets/foto_rodrigo.jpg";
 import onOfficeSalaImage from "@/assets/onoffice_sala.png";
 import onOfficeLocalImage from "@/assets/onoffice_local.png";
+import rodrigoAnaMobile from "@/assets/rodrigo-ana-mobile.png";
+import rodrigoAnaDesktop from "@/assets/rodrigo-ana-desktop.png";
 const WorkshopPage = () => {
   return <div className="min-h-screen bg-background text-foreground">
       {/* Faixa Exclusiva */}
@@ -23,7 +25,18 @@ const WorkshopPage = () => {
         <div className="absolute inset-0 bg-gradient-workshop-subtle opacity-5"></div>
         <div className="relative z-10">
           <div className="mb-8">
-            <img src="/lovable-uploads/e6ab246c-04f3-40f2-9409-e8d57d75a7d0.png" alt="Workshop Elite de Vendas - Alavanc Consultoria" className="h-20 mx-auto mb-8 object-contain" />
+            {/* Mobile Image */}
+            <img 
+              src={rodrigoAnaMobile} 
+              alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
+              className="block md:hidden w-full max-w-sm mx-auto object-contain"
+            />
+            {/* Desktop Image */}
+            <img 
+              src={rodrigoAnaDesktop} 
+              alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
+              className="hidden md:block w-full max-w-2xl mx-auto object-contain"
+            />
           </div>
           
           <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
