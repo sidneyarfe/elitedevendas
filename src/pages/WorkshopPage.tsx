@@ -389,41 +389,45 @@ const WorkshopPage = () => {
             Resultados Reais de Quem Aplicou
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <Card className="bg-card border-workshop-gold/20 overflow-hidden">
-              <CardContent className="p-8">
-                <div className="aspect-video bg-secondary rounded-xl flex items-center justify-center mb-6 border border-muted">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-workshop rounded-full flex items-center justify-center mx-auto mb-4">
-                      <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[12px] border-b-black ml-1"></div>
-                    </div>
-                    <p className="text-muted-foreground text-sm">[ESPAÇO PARA VIDEO EMBED]</p>
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <Card className="bg-card border-workshop-gold/20 overflow-hidden">
+                <CardContent className="p-8">
+                  <div className="aspect-video rounded-xl mb-6 overflow-hidden">
+                    <iframe
+                      src="https://www.youtube.com/embed/B0cORHhpoQE"
+                      title="Depoimento Dirceu - Corretor de Imóveis"
+                      className="w-full h-full"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
                   </div>
-                </div>
-                <blockquote className="text-xl font-bold mb-4 italic">
-                  "O principal diferencial do método do Rodrigo e Ana foi o RESULTADO"
-                </blockquote>
-                <p className="text-lg text-workshop-gold font-semibold">– Dirceu, corretor de imóveis</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-card border-workshop-gold/20 overflow-hidden">
-              <CardContent className="p-8">
-                <div className="aspect-video bg-secondary rounded-xl flex items-center justify-center mb-6 border border-muted">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-workshop rounded-full flex items-center justify-center mx-auto mb-4">
-                      <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[12px] border-b-black ml-1"></div>
-                    </div>
-                    <p className="text-muted-foreground text-sm">[ESPAÇO PARA VIDEO EMBED]</p>
+                  <blockquote className="text-xl font-bold mb-4 italic">
+                    "O principal diferencial do método do Rodrigo e Ana foi o RESULTADO"
+                  </blockquote>
+                  <p className="text-lg text-workshop-gold font-semibold">– Dirceu, corretor de imóveis</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-card border-workshop-gold/20 overflow-hidden">
+                <CardContent className="p-8">
+                  <div className="aspect-video rounded-xl mb-6 overflow-hidden">
+                    <iframe
+                      src="https://www.youtube.com/embed/gNn-2u2ZhzU"
+                      title="Depoimento Milena"
+                      className="w-full h-full"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
                   </div>
-                </div>
-                <blockquote className="text-xl font-bold mb-4 italic">
-                  "Hoje nós conseguimos rentabilizar muito mais nossos leads."
-                </blockquote>
-                <p className="text-lg text-workshop-gold font-semibold">– Milena</p>
-              </CardContent>
-            </Card>
-          </div>
+                  <blockquote className="text-xl font-bold mb-4 italic">
+                    "Hoje nós conseguimos rentabilizar muito mais nossos leads."
+                  </blockquote>
+                  <p className="text-lg text-workshop-gold font-semibold">– Milena</p>
+                </CardContent>
+              </Card>
+            </div>
           
           <div className="flex justify-center">
             <WorkshopButton className="text-lg md:text-xl py-4 md:py-6 px-8 md:px-12">
