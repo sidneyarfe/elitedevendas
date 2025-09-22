@@ -511,26 +511,26 @@ const WorkshopPage = () => {
             Sobre os Criadores
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-12 mb-12">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-12 mb-12">
             <Card className="bg-card border-workshop-gold/20 overflow-hidden">
-              <CardContent className="p-8">
-                <div className="w-32 h-32 mx-auto mb-6 overflow-hidden rounded-full border-2 border-workshop-gold/30">
+              <CardContent className="p-4 md:p-8">
+                <div className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-4 md:mb-6 overflow-hidden rounded-full border-2 border-workshop-gold/30">
                   <img src={anaImage} alt="Ana Araújo" className="w-full h-full object-cover" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-workshop-gold">Ana Araújo</h3>
-                <div className="space-y-4 text-left">
-                  <p className="font-semibold">CEO da Ás Marketing & Growth</p>
-                  <p className="font-semibold">Head de Vendas da Alavanc Negócios</p>
-                  <p className="text-muted-foreground">
+                <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-workshop-gold">Ana Araújo</h3>
+                <div className="space-y-2 md:space-y-4 text-left">
+                  <p className="text-sm md:text-base font-semibold">CEO da Ás Marketing & Growth</p>
+                  <p className="text-sm md:text-base font-semibold">Head de Vendas da Alavanc Negócios</p>
+                  <p className="text-sm md:text-base text-muted-foreground">
                     Ao longo da minha carreira, me destaquei por realizar consultorias que realmente transformam negócios.
                   </p>
-                  <p className="text-muted-foreground">
+                  <p className="text-sm md:text-base text-muted-foreground">
                     Entre as minhas conquistas notáveis, consegui aumentar o faturamento de uma empresa financeira em 1136%, saltando de 25 mil para 300 mil reais em apenas um mês.
                   </p>
-                  <p className="text-muted-foreground">
+                  <p className="text-sm md:text-base text-muted-foreground">
                     Também impulsionei as vendas orgânicas de uma empresa de perfumes em 60% e otimizei o atendimento de um cliente do ramo alimentício em 50%, resultando em um crescimento impressionante de 300% no faturamento.
                   </p>
-                  <p className="text-muted-foreground">
+                  <p className="text-sm md:text-base text-muted-foreground">
                     Em minha trajetória, continuo comprometida com a excelência, transformando desafios em oportunidades.
                   </p>
                 </div>
@@ -538,24 +538,24 @@ const WorkshopPage = () => {
             </Card>
             
             <Card className="bg-card border-workshop-gold/20 overflow-hidden">
-              <CardContent className="p-8">
-                <div className="w-32 h-32 mx-auto mb-6 overflow-hidden rounded-full border-2 border-workshop-gold/30">
+              <CardContent className="p-4 md:p-8">
+                <div className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-4 md:mb-6 overflow-hidden rounded-full border-2 border-workshop-gold/30">
                   <img src={rodrigoImage} alt="Rodrigo Marques" className="w-full h-full object-cover" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-workshop-gold">Rodrigo Marques</h3>
-                <div className="space-y-4 text-left">
-                  <p className="font-semibold">Fundador da Alavanc Negócios</p>
-                  <p className="font-semibold">Especialista em Estruturação Comercial</p>
-                  <p className="text-muted-foreground">
+                <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-workshop-gold">Rodrigo Marques</h3>
+                <div className="space-y-2 md:space-y-4 text-left">
+                  <p className="text-sm md:text-base font-semibold">Fundador da Alavanc Negócios</p>
+                  <p className="text-sm md:text-base font-semibold">Especialista em Estruturação Comercial</p>
+                  <p className="text-sm md:text-base text-muted-foreground">
                     Administrador por formação e especialista em Estruturação Comercial e Gestão de Times.
                   </p>
-                  <p className="text-muted-foreground">
+                  <p className="text-sm md:text-base text-muted-foreground">
                     Fundador da Alavanc Negócios, consultoria que já ajudou empresas a organizar processos, estruturar times e crescer de forma sustentável — gerando mais de R$ 10 milhões em faturamento para os negócios de nossa carteira.
                   </p>
-                  <p className="text-muted-foreground">
+                  <p className="text-sm md:text-base text-muted-foreground">
                     Tenho forte atuação no ecossistema de inovação e empreendedorismo, sendo Diretor de Comunidades e Eventos na Açaí Valley e Alumni da Enactus Brasil.
                   </p>
-                  <p className="text-muted-foreground">
+                  <p className="text-sm md:text-base text-muted-foreground">
                     Sempre com o propósito de impulsionar negócios, pessoas e comunidades através de estratégias bem definidas e executadas.
                   </p>
                 </div>
@@ -578,23 +578,23 @@ const WorkshopPage = () => {
             Detalhes do Evento
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-background border border-workshop-gold/20 p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
-              <Calendar className="w-12 h-12 text-workshop-gold mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2 text-workshop-gold">Data</h3>
-              <p className="text-lg">15 e 16 de outubro de 2025</p>
+          <div className="grid md:grid-cols-3 gap-4 md:gap-8 mb-12">
+            <div className="bg-background border border-workshop-gold/20 p-4 md:p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
+              <Calendar className="w-8 h-8 md:w-12 md:h-12 text-workshop-gold mx-auto mb-2 md:mb-4" />
+              <h3 className="text-lg md:text-xl font-bold mb-1 md:mb-2 text-workshop-gold">Data</h3>
+              <p className="text-sm md:text-lg">15 e 16 de outubro de 2025</p>
             </div>
             
-            <div className="bg-background border border-workshop-gold/20 p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
-              <Clock className="w-12 h-12 text-workshop-gold mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2 text-workshop-gold">Horário</h3>
-              <p className="text-lg">9h às 13h</p>
+            <div className="bg-background border border-workshop-gold/20 p-4 md:p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
+              <Clock className="w-8 h-8 md:w-12 md:h-12 text-workshop-gold mx-auto mb-2 md:mb-4" />
+              <h3 className="text-lg md:text-xl font-bold mb-1 md:mb-2 text-workshop-gold">Horário</h3>
+              <p className="text-sm md:text-lg">9h às 13h</p>
             </div>
             
-            <div className="bg-background border border-workshop-gold/20 p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
-              <MapPin className="w-12 h-12 text-workshop-gold mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2 text-workshop-gold">Local</h3>
-              <p className="text-lg">ON Office Coworking Belém - Av. Gen. Deodoro, 1893. Nazaré, Belém/PA</p>
+            <div className="bg-background border border-workshop-gold/20 p-4 md:p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
+              <MapPin className="w-8 h-8 md:w-12 md:h-12 text-workshop-gold mx-auto mb-2 md:mb-4" />
+              <h3 className="text-lg md:text-xl font-bold mb-1 md:mb-2 text-workshop-gold">Local</h3>
+              <p className="text-xs md:text-lg">ON Office Coworking Belém - Av. Gen. Deodoro, 1893. Nazaré, Belém/PA</p>
             </div>
           </div>
           
