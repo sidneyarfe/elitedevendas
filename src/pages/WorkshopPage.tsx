@@ -184,18 +184,16 @@ const WorkshopPage = () => {
           </h1>
           
           <p className="text-2xl md:text-3xl font-bold mb-8">
-            O problema é que você está tentando vender <span className="text-gradient">sem ter um processo de vendas.</span>
+            O problema é que você está tentando vender <span className="text-gradient">sem.</span>
           </p>
           
           <p className="text-xl md:text-2xl mb-8">
             Quem tem processo não depende de sorte. Fecha cliente todo dia.
           </p>
           
-          <div className="bg-gradient-workshop-subtle p-8 rounded-2xl border border-workshop-gold/20 mb-8 max-w-4xl mx-auto">
-            <blockquote className="text-2xl md:text-3xl font-bold mb-4 italic">
-              "Antes só vinha cliente por indicação. Apliquei o que aprendi e em 7 dias fechei 3 contratos novos."
-            </blockquote>
-            <p className="text-xl text-workshop-gold font-semibold">– Rafael, consultório odontológico</p>
+          <div className="bg-gradient-workshop-subtle p-8 border border-workshop-gold/20 mb-8 max-w-4xl mx-auto rounded-3xl">
+            <blockquote className="text-2xl md:text-3xl font-bold mb-4 italic">"Antes só vinha cliente por indicação e raramente uns pelo marketing digital. Depois que aprendemos as mensagens de whatsapp do Rodrigo e Ana e em 7 dias fechei 8 contratos novos."</blockquote>
+            <p className="text-xl text-workshop-gold font-semibold">– Rafael, Dono de Consultório Odontológico.</p>
           </div>
           
           <div className="flex justify-center">
