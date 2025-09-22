@@ -542,7 +542,7 @@ const WorkshopPage = () => {
             
             <div className="bg-background/80 backdrop-blur-sm border-2 border-workshop-gold p-8 rounded-2xl mb-8">
               <p className="text-2xl md:text-3xl font-bold mb-6">
-                Ou você fecha <span className="text-gradient">5 vendas em 7 dias</span> com o que aplicou — ou recebe <span className="text-gradient">100% do seu dinheiro de volta.</span>
+                Ou você fecha <span className="text-gradient">10 vendas em 7 dias</span> com o que aplicou — ou recebe <span className="text-gradient">100% do seu dinheiro de volta.</span>
               </p>
               <p className="text-xl text-muted-foreground">
                 Sem perguntas. Sem letras miúdas. Só mandar mensagem. <span className="text-workshop-gold font-bold">Risco zero.</span>
