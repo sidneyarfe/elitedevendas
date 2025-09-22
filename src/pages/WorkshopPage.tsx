@@ -290,7 +290,7 @@ const WorkshopPage = () => {
         <div className="text-center max-w-6xl mx-auto">
           {/* Logo do Workshop */}
           <div className="mb-8 flex justify-center">
-            <img src={workshopLogo} alt="Workshop Elite de Vendas Logo" className="h-24 md:h-32 object-contain" />
+            <img src={workshopLogo} alt="Workshop Elite de Vendas Logo" className="h-36 md:h-48 object-contain" />
           </div>
           
           <h2 className="text-4xl md:text-5xl font-black mb-16 text-gradient">
@@ -366,6 +366,11 @@ const WorkshopPage = () => {
         <div className="absolute inset-0 bg-gradient-workshop-subtle opacity-10"></div>
         <div className="relative z-10">
           <div className="text-center max-w-6xl mx-auto">
+            {/* Logo do Workshop */}
+            <div className="mb-8 flex justify-center">
+              <img src={workshopLogo} alt="Workshop Elite de Vendas Logo" className="h-36 md:h-48 object-contain" />
+            </div>
+            
             <h2 className="text-4xl md:text-5xl font-black mb-16 text-gradient">
               Ao garantir sua vaga, você recebe:
             </h2>
@@ -790,6 +795,23 @@ const WorkshopPage = () => {
           </div>
         </div>}
       
+      {/* Rodapé */}
+      <footer className="bg-card border-t border-workshop-gold/20 py-8">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="flex flex-col items-center gap-6 text-center">
+            {/* Logo */}
+            <img src={workshopLogo} alt="Workshop Elite de Vendas Logo" className="h-16 object-contain" />
+            
+            {/* Informações da empresa */}
+            <div className="text-sm text-muted-foreground space-y-2">
+              <p className="font-semibold">COPYRIGHT 2025 - ALAVANC CONSULTORIA EMPRESARIAL</p>
+              <p>CNPJ: 30.177.445/0001-02</p>
+              <p>Av. Generalíssimo Deodoro, 1893 - Nazaré. Belém - PA, 66040-140</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
       {/* Lead Form Modal */}
       <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>;
