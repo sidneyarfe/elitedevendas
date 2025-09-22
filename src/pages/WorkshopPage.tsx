@@ -146,33 +146,6 @@ const WorkshopPage = () => {
         </div>
       </div>
 
-      {/* VSL Section com Prova Social */}
-      <WorkshopSection background="card">
-        <div className="text-center">
-          <div className="aspect-video bg-secondary rounded-2xl flex items-center justify-center mb-8 border border-muted">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-workshop rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[20px] border-b-black ml-1"></div>
-              </div>
-              <p className="text-muted-foreground">Vídeo: Depoimento + Apresentação do Workshop</p>
-            </div>
-          </div>
-          
-          {/* Prova Social */}
-          <div className="bg-gradient-workshop-subtle p-8 rounded-2xl border border-workshop-gold/20 mb-8 max-w-4xl mx-auto">
-            <blockquote className="text-2xl md:text-3xl font-bold mb-4 italic">
-              "Faturei R$32.526 em uma semana só mandando mensagem no WhatsApp."
-            </blockquote>
-            <p className="text-xl text-workshop-gold font-semibold">– João, dono de clínica</p>
-          </div>
-          
-          <div className="flex justify-center">
-            <WorkshopButton onClick={handleButtonClick} className="text-lg md:text-xl py-4 md:py-6 px-8 md:px-12">
-              Quero aplicar isso no meu negócio agora
-            </WorkshopButton>
-          </div>
-        </div>
-      </WorkshopSection>
 
       {/* SEÇÃO: DIAGNÓSTICO */}
       <WorkshopSection>
