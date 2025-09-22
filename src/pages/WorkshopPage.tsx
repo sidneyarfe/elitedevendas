@@ -39,8 +39,8 @@ const WorkshopPage = () => {
         </div>
         
         {/* Text Section with Black Background */}
-        <WorkshopSection padding="large" className="text-center bg-black text-white">
-          <div className="mb-8"></div>
+        <WorkshopSection padding="none" className="text-center bg-black text-white -mt-1 py-8">
+          <div className="pt-4"></div>
           
           <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight text-white">
             Você Já Gastou com Agências, Tráfego Pago, Conteúdo, Influencers… e <span className="text-gradient">Não Aumentou Suas Vendas?</span>
