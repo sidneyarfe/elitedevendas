@@ -21,23 +21,22 @@ const WorkshopPage = () => {
       </div>
 
       {/* Hero Section */}
-      <WorkshopSection padding="large" className="text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-workshop-subtle opacity-5"></div>
-        <div className="relative z-10">
-          <div className="mb-8">
-            {/* Mobile Image */}
-            <img 
-              src={rodrigoAnaMobile} 
-              alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
-              className="block md:hidden w-full max-w-sm mx-auto object-contain"
-            />
-            {/* Desktop Image */}
-            <img 
-              src={rodrigoAnaDesktop} 
-              alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
-              className="hidden md:block w-full max-w-2xl mx-auto object-contain"
-            />
-          </div>
+      <WorkshopSection padding="large" className="text-center relative overflow-hidden min-h-screen">
+        {/* Background Images */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
+          style={{ backgroundImage: `url(${rodrigoAnaMobile})` }}
+        ></div>
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat hidden md:block"
+          style={{ backgroundImage: `url(${rodrigoAnaDesktop})` }}
+        ></div>
+        
+        {/* Dark gradient overlay at bottom */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+        
+        <div className="relative z-10 flex flex-col justify-end min-h-screen pb-32">
+          <div className="mb-8"></div>
           
           <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
             Você Já Gastou com Agências, Tráfego Pago, Conteúdo, Influencers… e <span className="text-gradient">Não Aumentou Suas Vendas?</span>
