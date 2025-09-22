@@ -16,7 +16,7 @@ import onOfficeSalaImage from "@/assets/onoffice_sala.png";
 import onOfficeLocalImage from "@/assets/onoffice_local.png";
 import rodrigoAnaMobile from "@/assets/rodrigo-ana-mobile.png";
 import rodrigoAnaDesktop from "@/assets/rodrigo-ana-desktop.png";
-import workshopLogo from "@/assets/workshop-logo.png";
+import workshopLogo from "@/assets/workshop-elite-logo.png";
 const WorkshopPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showMobileCTA = useScrollVisibility("section-benefits");
