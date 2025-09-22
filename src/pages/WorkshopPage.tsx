@@ -49,8 +49,8 @@ const WorkshopPage = () => {
           />
           
           {/* Text Section Overlapping the Black Area */}
-          <div className="absolute inset-0 flex items-end md:items-center justify-center">
-            <div className="w-full text-center text-white px-4 pb-8 md:pb-0">
+          <div className="absolute inset-0 flex items-end md:items-end justify-center">
+            <div className="w-full text-center text-white px-4 pb-8 md:pb-32">
               <h1 className="text-2xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 leading-tight">
                 Você Já Gastou com Agências, Tráfego Pago, Conteúdo, Influencers… e <span className="text-gradient">Não Aumentou Suas Vendas?</span>
               </h1>
