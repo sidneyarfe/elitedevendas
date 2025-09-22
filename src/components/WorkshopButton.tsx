@@ -30,7 +30,7 @@ const WorkshopButton = ({
       onClick={handleClick}
       size={size}
       className={cn(
-        "bg-gradient-workshop hover:bg-gradient-workshop text-black font-bold transition-all duration-300 hover:scale-105 hover:shadow-glow border-0 min-h-[60px] px-4 md:px-8 py-3 md:py-4 rounded-xl text-sm md:text-lg font-extrabold tracking-normal md:tracking-wide uppercase shadow-lg whitespace-normal text-center max-w-full leading-tight flex items-center justify-center",
+        "bg-gradient-workshop hover:bg-gradient-workshop text-black font-bold transition-all duration-300 hover:scale-105 hover:shadow-glow border-0 min-h-[60px] px-3 md:px-6 py-3 md:py-4 rounded-xl text-xs md:text-base font-extrabold tracking-tight md:tracking-wide uppercase shadow-lg whitespace-normal text-center w-full leading-relaxed flex items-center justify-center break-words hyphens-auto",
         variant === "outline" && "bg-transparent border-workshop-gold border-2 text-workshop-gold hover:bg-gradient-workshop hover:text-black",
         variant === "ghost" && "bg-transparent text-workshop-gold hover:bg-gradient-workshop-subtle hover:text-black",
         className

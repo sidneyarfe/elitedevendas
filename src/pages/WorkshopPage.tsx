@@ -796,7 +796,7 @@ const WorkshopPage = () => {
         </div>}
       
       {/* Rodapé */}
-      <footer className="bg-card border-t border-workshop-gold/20 py-8">
+      <footer className="bg-card border-t border-workshop-gold/20 py-8 pb-32">
         <div className="container mx-auto max-w-6xl px-4">
           <div className="flex flex-col items-center gap-6 text-center">
             {/* Logo */}
