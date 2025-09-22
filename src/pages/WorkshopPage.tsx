@@ -420,8 +420,8 @@ const WorkshopPage = () => {
             </div>
             
             <div className="bg-background border border-workshop-gold/20 p-8 rounded-2xl mb-8 max-w-2xl mx-auto">
-              <p className="text-3xl font-black mb-4 text-gradient">12x de R$19,94</p>
-              <p className="text-2xl font-bold text-workshop-gold">Ou R$197 à vista.</p>
+              <p className="font-black mb-4 text-gradient text-4xl">12x de R$20,37</p>
+              <p className="text-workshop-gold text-sm font-semibold">Ou R$197 à vista.</p>
             </div>
             
             <div className="flex justify-center">
