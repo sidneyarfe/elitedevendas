@@ -5,19 +5,16 @@ interface WorkshopSectionProps {
   className?: string;
   background?: "default" | "card" | "gradient";
   padding?: "default" | "large" | "none";
-  id?: string;
 }
 
 const WorkshopSection = ({ 
   children, 
   className, 
   background = "default",
-  padding = "default",
-  id
+  padding = "default"
 }: WorkshopSectionProps) => {
   return (
     <section 
-      id={id}
       className={cn(
         "w-full",
         background === "card" && "bg-card shadow-card",

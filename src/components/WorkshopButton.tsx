@@ -17,12 +17,9 @@ const WorkshopButton = ({
   onClick 
 }: WorkshopButtonProps) => {
   const handleClick = () => {
-    if (onClick) {
-      onClick();
-    } else {
-      // Default behavior if no custom onClick is provided
-      window.open("https://wa.me/5591999999999?text=Quero%20garantir%20minha%20vaga%20no%20Workshop%20Elite%20de%20Vendas", "_blank");
-    }
+    // Scroll to a WhatsApp link or contact form
+    window.open("https://wa.me/5591999999999?text=Quero%20garantir%20minha%20vaga%20no%20Workshop%20Elite%20de%20Vendas", "_blank");
+    onClick?.();
   };
 
   return (
