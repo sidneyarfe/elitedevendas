@@ -293,7 +293,7 @@ const WorkshopPage = () => {
             <img src={workshopLogo} alt="Workshop Elite de Vendas Logo" className="h-24 md:h-48 object-contain" />
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-black mb-16 text-gradient">
+          <h2 className="md:text-5xl font-black mb-16 text-gradient text-2xl">
             No Workshop Elite de Vendas, você vai descobrir:
           </h2>
           
