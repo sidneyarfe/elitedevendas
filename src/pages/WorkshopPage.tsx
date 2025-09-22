@@ -21,28 +21,32 @@ const WorkshopPage = () => {
       </div>
 
       {/* Hero Section */}
-      <WorkshopSection padding="large" className="text-center relative overflow-hidden min-h-screen">
-        {/* Background Images */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
-          style={{ backgroundImage: `url(${rodrigoAnaMobile})` }}
-        ></div>
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat hidden md:block"
-          style={{ backgroundImage: `url(${rodrigoAnaDesktop})` }}
-        ></div>
+      <div className="relative">
+        {/* Images Section */}
+        <div className="w-full">
+          {/* Mobile Image - mais comprida */}
+          <img 
+            src={rodrigoAnaMobile} 
+            alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
+            className="block md:hidden w-full object-cover"
+          />
+          {/* Desktop Image - mais horizontalizada */}
+          <img 
+            src={rodrigoAnaDesktop} 
+            alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
+            className="hidden md:block w-full object-cover"
+          />
+        </div>
         
-        {/* Dark gradient overlay at bottom */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-        
-        <div className="relative z-10 flex flex-col justify-end min-h-screen pb-32">
+        {/* Text Section with Black Background */}
+        <WorkshopSection padding="large" className="text-center bg-black text-white">
           <div className="mb-8"></div>
           
-          <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight text-white">
             Você Já Gastou com Agências, Tráfego Pago, Conteúdo, Influencers… e <span className="text-gradient">Não Aumentou Suas Vendas?</span>
           </h1>
           
-          <div className="text-xl md:text-2xl mb-8 text-muted-foreground max-w-5xl mx-auto font-medium leading-relaxed">
+          <div className="text-xl md:text-2xl mb-8 text-gray-200 max-w-5xl mx-auto font-medium leading-relaxed">
             <p className="mb-6">A verdade é que você nunca precisou de nada disso.</p>
             <p className="mb-6">Com apenas</p>
             
@@ -84,8 +88,8 @@ const WorkshopPage = () => {
               Quero aplicar isso no meu negócio agora
             </WorkshopButton>
           </div>
-        </div>
-      </WorkshopSection>
+        </WorkshopSection>
+      </div>
 
       {/* VSL Section com Prova Social */}
       <WorkshopSection background="card">
