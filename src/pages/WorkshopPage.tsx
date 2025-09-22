@@ -17,11 +17,9 @@ import onOfficeLocalImage from "@/assets/onoffice_local.png";
 import rodrigoAnaMobile from "@/assets/rodrigo-ana-mobile.png";
 import rodrigoAnaDesktop from "@/assets/rodrigo-ana-desktop.png";
 import workshopLogo from "@/assets/workshop-logo.png";
-
 const WorkshopPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showMobileCTA = useScrollVisibility("section-benefits");
-
   const handleButtonClick = () => {
     setIsModalOpen(true);
   };
@@ -36,22 +34,14 @@ const WorkshopPage = () => {
         {/* Images Section */}
         <div className="w-full">
           {/* Mobile Image - mais comprida */}
-          <img 
-            src={rodrigoAnaMobile} 
-            alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
-            className="block md:hidden w-full object-cover"
-          />
+          <img src={rodrigoAnaMobile} alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" className="block md:hidden w-full object-cover" />
           {/* Desktop Image - mais horizontalizada */}
-          <img 
-            src={rodrigoAnaDesktop} 
-            alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
-            className="hidden md:block w-full object-cover"
-          />
+          <img src={rodrigoAnaDesktop} alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" className="hidden md:block w-full object-cover" />
           
           {/* Text Section Overlapping the Black Area */}
           <div className="absolute inset-0 flex items-end md:items-end justify-center md:hidden">
             <div className="w-full text-center text-white px-4 pb-8 md:pb-32">
-              <h1 className="text-2xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 leading-tight">
+              <h1 className="md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 leading-tight text-3xl">
                 Você Já Gastou com Agências, Tráfego Pago, Conteúdo, Influencers… e <span className="text-gradient">Não Aumentou Suas Vendas?</span>
               </h1>
               
@@ -327,11 +317,7 @@ const WorkshopPage = () => {
         <div className="text-center max-w-6xl mx-auto">
           {/* Logo do Workshop */}
           <div className="mb-8 flex justify-center">
-            <img 
-              src={workshopLogo} 
-              alt="Workshop Elite de Vendas Logo" 
-              className="h-16 md:h-24 object-contain"
-            />
+            <img src={workshopLogo} alt="Workshop Elite de Vendas Logo" className="h-16 md:h-24 object-contain" />
           </div>
           
           <h2 className="text-4xl md:text-5xl font-black mb-16 text-gradient">
@@ -819,8 +805,7 @@ const WorkshopPage = () => {
       </WorkshopSection>
 
       {/* CTA Fixo Mobile - Conditional */}
-      {showMobileCTA && (
-        <div className="md:hidden fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur-sm border-t border-workshop-gold/20 p-4 z-50">
+      {showMobileCTA && <div className="md:hidden fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur-sm border-t border-workshop-gold/20 p-4 z-50">
           <div className="flex items-center justify-between gap-4">
             <div className="text-left">
               <p className="text-sm font-bold text-workshop-gold">Últimas vagas!</p>
@@ -830,14 +815,10 @@ const WorkshopPage = () => {
               Garantir Vaga
             </WorkshopButton>
           </div>
-        </div>
-      )}
+        </div>}
       
       {/* Lead Form Modal */}
-      <LeadFormModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-      />
+      <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>;
 };
 export default WorkshopPage;
