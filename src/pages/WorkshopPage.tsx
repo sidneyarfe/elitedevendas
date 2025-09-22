@@ -394,7 +394,7 @@ const WorkshopPage = () => {
                 <CardContent className="p-8">
                   <div className="aspect-video rounded-xl mb-6 overflow-hidden">
                     <iframe
-                      src="https://www.youtube.com/embed/B0cORHhpoQE"
+                      src="https://www.youtube.com/embed/B0cORHhpoQE?modestbranding=1&rel=0&iv_load_policy=3"
                       title="Depoimento Dirceu - Corretor de Imóveis"
                       className="w-full h-full"
                       frameBorder="0"
@@ -413,7 +413,7 @@ const WorkshopPage = () => {
                 <CardContent className="p-8">
                   <div className="aspect-video rounded-xl mb-6 overflow-hidden">
                     <iframe
-                      src="https://www.youtube.com/embed/gNn-2u2ZhzU"
+                      src="https://www.youtube.com/embed/gNn-2u2ZhzU?modestbranding=1&rel=0&iv_load_policy=3"
                       title="Depoimento Milena"
                       className="w-full h-full"
                       frameBorder="0"
