@@ -368,7 +368,7 @@ const WorkshopPage = () => {
           <div className="text-center max-w-6xl mx-auto">
             {/* Logo do Workshop */}
             <div className="mb-8 flex justify-center">
-              <img src={workshopLogo} alt="Workshop Elite de Vendas Logo" className="h-36 md:h-48 object-contain" />
+              <img src={workshopLogo} alt="Workshop Elite de Vendas Logo" className="h-24 md:h-48 object-contain" />
             </div>
             
             <h2 className="text-4xl md:text-5xl font-black mb-16 text-gradient">
