@@ -103,7 +103,7 @@ const WorkshopPage = () => {
 
         {/* Desktop Text Section below the image */}
         <div className="hidden md:block">
-          <WorkshopSection padding="default" className="bg-black text-white">
+          <WorkshopSection padding="default" className="bg-black text-white -mt-20">
             <div className="text-center">
               <h1 className="text-5xl lg:text-6xl font-black mb-6 leading-tight">
                 Você Já Gastou com Agências, Tráfego Pago, Conteúdo, Influencers… e <span className="text-gradient">Não Aumentou Suas Vendas?</span>
