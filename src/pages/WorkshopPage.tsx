@@ -7,6 +7,10 @@ import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CheckCircle, Clock, MapPin, Users, Star, Shield, Zap, Target, Calendar } from "lucide-react";
 import onOfficeImage from "@/assets/on-office-interior.jpg";
+import anaImage from "@/assets/foto_ana.jpg";
+import rodrigoImage from "@/assets/foto_rodrigo.jpg";
+import onOfficeSalaImage from "@/assets/onoffice_sala.png";
+import onOfficeLocalImage from "@/assets/onoffice_local.png";
 
 const WorkshopPage = () => {
   return (
@@ -526,8 +530,8 @@ const WorkshopPage = () => {
           <div className="grid md:grid-cols-2 gap-12 mb-12">
             <Card className="bg-card border-workshop-gold/20 overflow-hidden">
               <CardContent className="p-8">
-                <div className="w-32 h-32 bg-gradient-workshop-subtle rounded-full mx-auto mb-6 flex items-center justify-center border-2 border-workshop-gold/30">
-                  <Users className="w-16 h-16 text-workshop-gold" />
+                <div className="w-32 h-32 mx-auto mb-6 overflow-hidden rounded-full border-2 border-workshop-gold/30">
+                  <img src={anaImage} alt="Ana Araújo" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-workshop-gold">Ana Araújo</h3>
                 <div className="space-y-4 text-left">
@@ -551,8 +555,8 @@ const WorkshopPage = () => {
             
             <Card className="bg-card border-workshop-gold/20 overflow-hidden">
               <CardContent className="p-8">
-                <div className="w-32 h-32 bg-gradient-workshop-subtle rounded-full mx-auto mb-6 flex items-center justify-center border-2 border-workshop-gold/30">
-                  <Target className="w-16 h-16 text-workshop-gold" />
+                <div className="w-32 h-32 mx-auto mb-6 overflow-hidden rounded-full border-2 border-workshop-gold/30">
+                  <img src={rodrigoImage} alt="Rodrigo Marques" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-workshop-gold">Rodrigo Marques</h3>
                 <div className="space-y-4 text-left">
@@ -610,6 +614,16 @@ const WorkshopPage = () => {
             </div>
           </div>
           
+          {/* Local - On Office Fotos */}
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div className="overflow-hidden rounded-2xl border border-workshop-gold/20">
+              <img src={onOfficeSalaImage} alt="Sala de treinamento On Office Belém" className="w-full h-full object-cover" />
+            </div>
+            <div className="overflow-hidden rounded-2xl border border-workshop-gold/20">
+              <img src={onOfficeLocalImage} alt="Fachada On Office Belém - Local do evento" className="w-full h-full object-cover" />
+            </div>
+          </div>
+
           <div className="bg-gradient-workshop-subtle p-8 rounded-2xl border border-workshop-gold/20 mb-8">
             <p className="text-xl font-bold mb-4">O que trazer:</p>
             <p className="text-lg text-muted-foreground">
