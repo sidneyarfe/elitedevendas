@@ -620,7 +620,7 @@ const WorkshopPage = () => {
               <img src={onOfficeSalaImage} alt="Sala de treinamento On Office Belém" className="w-full h-full object-cover" />
             </div>
             <div className="overflow-hidden rounded-2xl border border-workshop-gold/20">
-              <img src={onOfficeLocalImage} alt="Fachada On Office Belém - Local do evento" className="w-full h-full object-cover" />
+              <img src={onOfficeLocalImage} alt="Fachada On Office Belém - Local do evento" className="w-full h-full object-contain" />
             </div>
           </div>
 
