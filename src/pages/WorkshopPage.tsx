@@ -248,57 +248,57 @@ const WorkshopPage = () => {
             No Workshop Elite de Vendas, você vai descobrir:
           </h2>
           
-          <div className="grid gap-8">
-            <div className="bg-background border border-workshop-gold/20 p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
-              <div className="flex items-start gap-6">
-                <div className="bg-workshop-gold/20 text-workshop-gold font-black text-2xl w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">1</div>
+          <div className="grid gap-4 md:gap-8">
+            <div className="bg-background border border-workshop-gold/20 p-4 md:p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
+              <div className="flex items-start gap-3 md:gap-6">
+                <div className="bg-workshop-gold/20 text-workshop-gold font-black text-lg md:text-2xl w-8 h-8 md:w-12 md:h-12 rounded-full flex items-center justify-center flex-shrink-0">1</div>
                 <div className="text-left">
-                  <h3 className="text-xl md:text-2xl font-bold mb-4">Como vender todo dia, sem precisar de tráfego pago, agências, conteúdo ou influencers.</h3>
+                  <h3 className="text-base md:text-2xl font-bold mb-2 md:mb-4">Como vender todo dia, sem precisar de tráfego pago, agências, conteúdo ou influencers.</h3>
                 </div>
               </div>
             </div>
             
-            <div className="bg-background border border-workshop-gold/20 p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
-              <div className="flex items-start gap-6">
-                <div className="bg-workshop-gold/20 text-workshop-gold font-black text-2xl w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">2</div>
+            <div className="bg-background border border-workshop-gold/20 p-4 md:p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
+              <div className="flex items-start gap-3 md:gap-6">
+                <div className="bg-workshop-gold/20 text-workshop-gold font-black text-lg md:text-2xl w-8 h-8 md:w-12 md:h-12 rounded-full flex items-center justify-center flex-shrink-0">2</div>
                 <div className="text-left">
-                  <h3 className="text-xl md:text-2xl font-bold mb-4">A estratégia para fechar R$10.000 em vendas nos próximos 7 dias usando contatos antigos de WhatsApp.</h3>
+                  <h3 className="text-base md:text-2xl font-bold mb-2 md:mb-4">A estratégia para fechar R$10.000 em vendas nos próximos 7 dias usando contatos antigos de WhatsApp.</h3>
                 </div>
               </div>
             </div>
             
-            <div className="bg-background border border-workshop-gold/20 p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
-              <div className="flex items-start gap-6">
-                <div className="bg-workshop-gold/20 text-workshop-gold font-black text-2xl w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">3</div>
+            <div className="bg-background border border-workshop-gold/20 p-4 md:p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
+              <div className="flex items-start gap-3 md:gap-6">
+                <div className="bg-workshop-gold/20 text-workshop-gold font-black text-lg md:text-2xl w-8 h-8 md:w-12 md:h-12 rounded-full flex items-center justify-center flex-shrink-0">3</div>
                 <div className="text-left">
-                  <h3 className="text-xl md:text-2xl font-bold mb-4">Como conseguir +5.000 contatos de potenciais clientes em 30s usando Google Maps, redes sociais e LinkedIn.</h3>
+                  <h3 className="text-base md:text-2xl font-bold mb-2 md:mb-4">Como conseguir +5.000 contatos de potenciais clientes em 30s usando Google Maps, redes sociais e LinkedIn.</h3>
                 </div>
               </div>
             </div>
             
-            <div className="bg-background border border-workshop-gold/20 p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
-              <div className="flex items-start gap-6">
-                <div className="bg-workshop-gold/20 text-workshop-gold font-black text-2xl w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">4</div>
+            <div className="bg-background border border-workshop-gold/20 p-4 md:p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
+              <div className="flex items-start gap-3 md:gap-6">
+                <div className="bg-workshop-gold/20 text-workshop-gold font-black text-lg md:text-2xl w-8 h-8 md:w-12 md:h-12 rounded-full flex items-center justify-center flex-shrink-0">4</div>
                 <div className="text-left">
-                  <h3 className="text-xl md:text-2xl font-bold mb-4">Como abordar, levar para reunião e vender para esses potenciais clientes - mesmo que eles não te conheçam.</h3>
+                  <h3 className="text-base md:text-2xl font-bold mb-2 md:mb-4">Como abordar, levar para reunião e vender para esses potenciais clientes - mesmo que eles não te conheçam.</h3>
                 </div>
               </div>
             </div>
             
-            <div className="bg-background border border-workshop-gold/20 p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
-              <div className="flex items-start gap-6">
-                <div className="bg-workshop-gold/20 text-workshop-gold font-black text-2xl w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">5</div>
+            <div className="bg-background border border-workshop-gold/20 p-4 md:p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
+              <div className="flex items-start gap-3 md:gap-6">
+                <div className="bg-workshop-gold/20 text-workshop-gold font-black text-lg md:text-2xl w-8 h-8 md:w-12 md:h-12 rounded-full flex items-center justify-center flex-shrink-0">5</div>
                 <div className="text-left">
-                  <h3 className="text-xl md:text-2xl font-bold mb-4">O passo a passo para reativar o cliente sumido e fazer ele comprar/recomprar em até 24h.</h3>
+                  <h3 className="text-base md:text-2xl font-bold mb-2 md:mb-4">O passo a passo para reativar o cliente sumido e fazer ele comprar/recomprar em até 24h.</h3>
                 </div>
               </div>
             </div>
             
-            <div className="bg-background border border-workshop-gold/20 p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
-              <div className="flex items-start gap-6">
-                <div className="bg-workshop-gold/20 text-workshop-gold font-black text-2xl w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">6</div>
+            <div className="bg-background border border-workshop-gold/20 p-4 md:p-8 rounded-2xl hover:shadow-glow transition-all duration-300">
+              <div className="flex items-start gap-3 md:gap-6">
+                <div className="bg-workshop-gold/20 text-workshop-gold font-black text-lg md:text-2xl w-8 h-8 md:w-12 md:h-12 rounded-full flex items-center justify-center flex-shrink-0">6</div>
                 <div className="text-left">
-                  <h3 className="text-xl md:text-2xl font-bold mb-4">Como manter sua agenda cheia de reuniões de venda com 30 minutos/dia de prospecção.</h3>
+                  <h3 className="text-base md:text-2xl font-bold mb-2 md:mb-4">Como manter sua agenda cheia de reuniões de venda com 30 minutos/dia de prospecção.</h3>
                 </div>
               </div>
             </div>
