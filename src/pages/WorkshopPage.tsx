@@ -1,4 +1,4 @@
-import { Suspense, lazy, useState, useMemo } from "react";
+import { Suspense, useState, useMemo } from "react";
 import WorkshopButton from "@/components/WorkshopButton";
 import WorkshopSection from "@/components/WorkshopSection";
 import VagasCounter from "@/components/VagasCounter";
@@ -8,16 +8,10 @@ import CriticalCSS from "@/components/CriticalCSS";
 import ResourceHints from "@/components/ResourceHints";
 import { useScrollVisibility } from "@/hooks/useScrollVisibility";
 import { CheckCircle, Clock, MapPin, Users, Star, Shield, Zap, Target, Calendar } from "lucide-react";
-
-// Lazy load non-critical components
-const LeadFormModal = lazy(() => import("@/components/LeadFormModal").then(module => ({ default: module.LeadFormModal })));
-const Card = lazy(() => import("@/components/ui/card").then(module => ({ default: module.Card })));
-const CardContent = lazy(() => import("@/components/ui/card").then(module => ({ default: module.CardContent })));
-const Badge = lazy(() => import("@/components/ui/badge").then(module => ({ default: module.Badge })));
-const Accordion = lazy(() => import("@/components/ui/accordion").then(module => ({ default: module.Accordion })));
-const AccordionContent = lazy(() => import("@/components/ui/accordion").then(module => ({ default: module.AccordionContent })));
-const AccordionItem = lazy(() => import("@/components/ui/accordion").then(module => ({ default: module.AccordionItem })));
-const AccordionTrigger = lazy(() => import("@/components/ui/accordion").then(module => ({ default: module.AccordionTrigger })));
+import { LeadFormModal } from "@/components/LeadFormModal";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import onOfficeImage from "@/assets/on-office-interior.jpg";
 import anaImage from "@/assets/foto_ana.jpg";
 import rodrigoImage from "@/assets/foto_rodrigo.jpg";
