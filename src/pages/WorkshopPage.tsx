@@ -184,12 +184,10 @@ const WorkshopPage = () => {
           </h1>
           
           <p className="text-2xl md:text-3xl font-bold mb-8">
-            O problema é que você complicou o que era para ser simples: <span className="text-gradient">vender.</span>
+            O problema é que você está tentando vender <span className="text-gradient">sem ter um processo de vendas.</span>
           </p>
           
-          <p className="text-xl md:text-2xl mb-8">
-            Quem tem processo não depende de sorte. Fecha cliente todo dia.
-          </p>
+          <p className="text-xl md:text-2xl mb-8">E pra vender, basta enviar a mensagem certa...</p>
           
           <div className="bg-gradient-workshop-subtle p-8 rounded-2xl border border-workshop-gold/20 mb-8 max-w-4xl mx-auto">
             <blockquote className="text-2xl md:text-3xl font-bold mb-4 italic">
