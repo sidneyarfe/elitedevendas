@@ -10,40 +10,49 @@ const CountdownTimer = () => {
   });
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        let newSeconds = prev.seconds - 1;
-        let newMinutes = prev.minutes;
-        let newHours = prev.hours;
-        let newDays = prev.days;
+    let animationId: number;
+    let lastTime = Date.now();
 
-        if (newSeconds < 0) {
-          newSeconds = 59;
-          newMinutes--;
-        }
-        if (newMinutes < 0) {
-          newMinutes = 59;
-          newHours--;
-        }
-        if (newHours < 0) {
-          newHours = 23;
-          newDays--;
-        }
-        if (newDays < 0) {
-          // Reset to prevent negative values
-          return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-        }
+    const updateTimer = () => {
+      const now = Date.now();
+      if (now - lastTime >= 1000) {
+        lastTime = now;
+        setTimeLeft(prev => {
+          let newSeconds = prev.seconds - 1;
+          let newMinutes = prev.minutes;
+          let newHours = prev.hours;
+          let newDays = prev.days;
 
-        return {
-          days: newDays,
-          hours: newHours,
-          minutes: newMinutes,
-          seconds: newSeconds
-        };
-      });
-    }, 1000);
+          if (newSeconds < 0) {
+            newSeconds = 59;
+            newMinutes--;
+          }
+          if (newMinutes < 0) {
+            newMinutes = 59;
+            newHours--;
+          }
+          if (newHours < 0) {
+            newHours = 23;
+            newDays--;
+          }
+          if (newDays < 0) {
+            // Reset to prevent negative values
+            return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+          }
 
-    return () => clearInterval(timer);
+          return {
+            days: newDays,
+            hours: newHours,
+            minutes: newMinutes,
+            seconds: newSeconds
+          };
+        });
+      }
+      animationId = requestAnimationFrame(updateTimer);
+    };
+
+    animationId = requestAnimationFrame(updateTimer);
+    return () => cancelAnimationFrame(animationId);
   }, []);
 
   return (

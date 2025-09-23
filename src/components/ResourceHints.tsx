@@ -2,34 +2,47 @@ import { useEffect } from 'react';
 
 const ResourceHints = () => {
   useEffect(() => {
-    // Preconnect to external domains
+    // Preconnect to external domains with priority
     const preconnectUrls = [
-      'https://fonts.googleapis.com',
-      'https://fonts.gstatic.com',
-      'https://wa.me'
+      { url: 'https://fonts.googleapis.com', crossorigin: true },
+      { url: 'https://fonts.gstatic.com', crossorigin: true },
+      { url: 'https://wa.me', crossorigin: false },
+      { url: 'https://img.youtube.com', crossorigin: false },
+      { url: 'https://pay.kiwify.com.br', crossorigin: false }
     ];
 
-    preconnectUrls.forEach(url => {
+    preconnectUrls.forEach(({ url, crossorigin }) => {
       const link = document.createElement('link');
       link.rel = 'preconnect';
       link.href = url;
-      link.crossOrigin = 'anonymous';
+      if (crossorigin) link.crossOrigin = 'anonymous';
       document.head.appendChild(link);
     });
 
-    // Preload critical resources with priority
+    // Preload critical resources with priority and sizes
     const criticalImages = [
-      { src: '/src/assets/rodrigo-ana-mobile.png', media: '(max-width: 768px)' },
-      { src: '/src/assets/rodrigo-ana-desktop.png', media: '(min-width: 769px)' }
+      { 
+        src: '/src/assets/rodrigo-ana-mobile.png', 
+        media: '(max-width: 768px)',
+        sizes: '100vw',
+        priority: 'high'
+      },
+      { 
+        src: '/src/assets/rodrigo-ana-desktop.png', 
+        media: '(min-width: 769px)',
+        sizes: '50vw',
+        priority: 'high'
+      }
     ];
 
-    criticalImages.forEach(({ src, media }) => {
+    criticalImages.forEach(({ src, media, sizes, priority }) => {
       const link = document.createElement('link');
       link.rel = 'preload';
       link.as = 'image';
       link.href = src;
       if (media) link.media = media;
-      link.fetchPriority = 'high';
+      if (sizes) link.setAttribute('imagesizes', sizes);
+      link.fetchPriority = priority as any;
       document.head.appendChild(link);
     });
 
@@ -51,14 +64,32 @@ const ResourceHints = () => {
       '/src/assets/dr-rafael.png'
     ];
 
-    // Use requestIdleCallback for non-critical prefetching
+    // Use requestIdleCallback for non-critical prefetching with priority
     const prefetchCallback = () => {
-      prefetchImages.forEach(src => {
+      prefetchImages.forEach((src, index) => {
         const link = document.createElement('link');
         link.rel = 'prefetch';
         link.as = 'image';
         link.href = src;
-        document.head.appendChild(link);
+        // Stagger prefetch to avoid blocking critical resources
+        setTimeout(() => {
+          document.head.appendChild(link);
+        }, index * 100);
+      });
+      
+      // Prefetch critical JavaScript chunks
+      const criticalChunks = [
+        '/src/components/CountdownTimer.tsx',
+        '/src/components/LeadFormModal.tsx'
+      ];
+      
+      criticalChunks.forEach((chunk, index) => {
+        setTimeout(() => {
+          const link = document.createElement('link');
+          link.rel = 'modulepreload';
+          link.href = chunk;
+          document.head.appendChild(link);
+        }, (prefetchImages.length + index) * 100);
       });
     };
 

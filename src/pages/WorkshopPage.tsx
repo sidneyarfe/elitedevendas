@@ -1,14 +1,15 @@
 import { Suspense, useState, useMemo } from "react";
+import OptimizedImage from "@/components/OptimizedImage";
+import LazyCountdownTimer from "@/components/LazyCountdownTimer";
+import LazyLeadFormModal from "@/components/LazyLeadFormModal";
 import WorkshopButton from "@/components/WorkshopButton";
 import WorkshopSection from "@/components/WorkshopSection";
 import VagasCounter from "@/components/VagasCounter";
-import CountdownTimer from "@/components/CountdownTimer";
 import LazyYouTube from "@/components/LazyYouTube";
 import CriticalCSS from "@/components/CriticalCSS";
 import ResourceHints from "@/components/ResourceHints";
 import { useScrollVisibility } from "@/hooks/useScrollVisibility";
 import { CheckCircle, Clock, MapPin, Users, Star, Shield, Zap, Target, Calendar } from "lucide-react";
-import { LeadFormModal } from "@/components/LeadFormModal";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -48,20 +49,20 @@ const WorkshopPage = () => {
         {/* Images Section */}
         <div className="w-full">
           {/* Mobile Image - mais comprida */}
-          <img 
+          <OptimizedImage 
             src={rodrigoAnaMobile} 
             alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
-            className="block md:hidden w-full object-cover" 
-            loading="eager"
-            decoding="async"
+            className="block md:hidden w-full object-cover gpu-accelerated" 
+            priority={true}
+            sizes="100vw"
           />
           {/* Desktop Image - mais horizontalizada */}
-          <img 
+          <OptimizedImage 
             src={rodrigoAnaDesktop} 
             alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
-            className="hidden md:block w-full object-cover" 
-            loading="eager"
-            decoding="async"
+            className="hidden md:block w-full object-cover gpu-accelerated" 
+            priority={true}
+            sizes="100vw"
           />
           
           {/* Text Section Overlapping the Black Area */}
@@ -459,7 +460,7 @@ const WorkshopPage = () => {
           <div className="text-center max-w-6xl mx-auto">
             {/* Logo do Workshop */}
             <div className="mb-8 flex justify-center">
-              <img src={workshopLogo} alt="Workshop Elite de Vendas Logo" className="h-24 md:h-48 object-contain" />
+              <OptimizedImage src={workshopLogo} alt="Workshop Elite de Vendas Logo" className="h-24 md:h-48 object-contain" width={300} height={192} sizes="(max-width: 768px) 96px, 192px" />
             </div>
             
             <h2 className="text-4xl md:text-5xl font-black mb-16 text-gradient">
@@ -619,7 +620,7 @@ const WorkshopPage = () => {
             <Card className="bg-card border-workshop-gold/20 overflow-hidden">
               <CardContent className="p-4 md:p-8">
                 <div className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-4 md:mb-6 overflow-hidden rounded-full border-2 border-workshop-gold/30">
-                  <img src={anaImage} alt="Ana Araújo" className="w-full h-full object-cover" />
+                  <OptimizedImage src={anaImage} alt="Ana Araújo" className="w-full h-full object-cover" width={128} height={128} sizes="(max-width: 768px) 96px, 128px" />
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-workshop-gold">Ana Araújo</h3>
                 <div className="space-y-2 md:space-y-4 text-left">
@@ -644,7 +645,7 @@ const WorkshopPage = () => {
             <Card className="bg-card border-workshop-gold/20 overflow-hidden">
               <CardContent className="p-4 md:p-8">
                 <div className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-4 md:mb-6 overflow-hidden rounded-full border-2 border-workshop-gold/30">
-                  <img src={rodrigoImage} alt="Rodrigo Marques" className="w-full h-full object-cover" />
+                  <OptimizedImage src={rodrigoImage} alt="Rodrigo Marques" className="w-full h-full object-cover" width={128} height={128} sizes="(max-width: 768px) 96px, 128px" />
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-workshop-gold">Rodrigo Marques</h3>
                 <div className="space-y-2 md:space-y-4 text-left">
@@ -858,7 +859,7 @@ const WorkshopPage = () => {
         <div className="container mx-auto max-w-6xl px-4">
           <div className="flex flex-col items-center gap-6 text-center">
             {/* Logo */}
-            <img src={workshopLogo} alt="Workshop Elite de Vendas Logo" className="h-16 object-contain" />
+            <OptimizedImage src={workshopLogo} alt="Workshop Elite de Vendas Logo" className="h-16 object-contain" width={200} height={64} sizes="200px" />
             
             {/* Informações da empresa */}
             <div className="text-sm text-muted-foreground space-y-2">
@@ -872,7 +873,7 @@ const WorkshopPage = () => {
 
       {/* Lead Form Modal */}
       <Suspense fallback={<div className="fixed inset-0 bg-black/50 z-50" />}>
-        <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+        <LazyLeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </Suspense>
     </div>;
 };

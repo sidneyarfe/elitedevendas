@@ -123,39 +123,11 @@
 }
 
 @layer utilities {
-  .text-gradient {
-    background: var(--workshop-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .bg-gradient-workshop {
-    background: var(--workshop-gradient);
-  }
-  
-  .bg-gradient-workshop-subtle {
-    background: var(--workshop-gradient-subtle);
-  }
-  
-  .shadow-glow {
-    box-shadow: var(--shadow-glow);
-  }
-  
-  .shadow-card {
-    box-shadow: var(--shadow-card);
-  }
-  
-  .transition-smooth {
-    transition: var(--transition-smooth);
-  }
-  
-  .transition-bounce {
-    transition: var(--transition-bounce);
-  }
-  
+  /* Container and layout utilities with content visibility */
   .container {
     @apply px-4 mx-auto;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 500px;
   }
   
   @screen sm {
@@ -169,34 +141,114 @@
       @apply px-8;
     }
   }
-  
-/* Layout Shift Prevention */
-.contain-layout {
-  contain: layout style;
-}
 
-/* Performance optimizations */
-.will-change-transform {
-  will-change: transform;
-}
-
-.will-change-auto {
-  will-change: auto;
-}
-
-/* Lazy loading placeholder */
-.image-placeholder {
-  background: linear-gradient(90deg, #f0f0f0 25%, transparent 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
-  animation: loading 1.5s infinite;
-}
-
-@keyframes loading {
-  0% {
-    background-position: 200% 0;
+  /* Background gradients with GPU acceleration */
+  .bg-gradient-workshop {
+    background: var(--workshop-gradient);
+    will-change: auto;
   }
-  100% {
-    background-position: -200% 0;
+
+  .bg-gradient-workshop-subtle {
+    background: var(--workshop-gradient-subtle);
+    will-change: auto;
   }
-}
+
+  /* Text gradient utility with performance optimization */
+  .text-gradient {
+    background: var(--workshop-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    will-change: auto;
+  }
+
+  /* Shadow utilities */
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Optimized transition utilities */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Enhanced layout shift prevention */
+  .contain-layout {
+    contain: layout style paint;
+  }
+
+  .content-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 1000px;
+  }
+
+  /* Performance optimizations */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-auto {
+    will-change: auto;
+  }
+
+  .gpu-accelerated {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Optimized image placeholder animation */
+  .image-placeholder {
+    background: linear-gradient(90deg, hsl(var(--muted)) 25%, hsl(var(--muted-foreground) / 0.1) 50%, hsl(var(--muted)) 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    contain: layout style paint;
+  }
+
+  @keyframes loading {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  /* Intersection Observer animations */
+  .fade-in-view {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, transform;
+  }
+
+  .fade-in-view.in-view {
+    opacity: 1;
+    transform: translateY(0);
+    will-change: auto;
+  }
+
+  /* Optimized hover effects */
+  .hover-lift {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  .hover-lift:hover {
+    transform: translate3d(0, -2px, 0);
+  }
+
+  /* Scroll optimization */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+  }
 }
