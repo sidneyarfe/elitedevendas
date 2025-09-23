@@ -24,6 +24,13 @@ const WorkshopPage = () => {
   const handleButtonClick = () => {
     setIsModalOpen(true);
   };
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return <div className="min-h-screen bg-background text-foreground">
       {/* Faixa Exclusiva */}
       <div className="bg-gradient-workshop text-black py-3 text-center">
@@ -84,7 +91,7 @@ const WorkshopPage = () => {
               </div>
               
               <div className="flex justify-center">
-                <WorkshopButton onClick={handleButtonClick} className="animate-pulse-glow text-base md:text-lg lg:text-xl py-3 md:py-4 lg:py-6 px-6 md:px-8 lg:px-12">
+                <WorkshopButton onClick={() => scrollToSection('diagnostico')} className="animate-pulse-glow text-base md:text-lg lg:text-xl py-3 md:py-4 lg:py-6 px-6 md:px-8 lg:px-12">
                   Quero aplicar isso no meu negócio agora
                 </WorkshopButton>
               </div>
@@ -138,7 +145,7 @@ const WorkshopPage = () => {
               </div>
               
               <div className="flex justify-center">
-                <WorkshopButton onClick={handleButtonClick} className="animate-pulse-glow text-lg lg:text-xl py-4 lg:py-6 px-8 lg:px-12">
+                <WorkshopButton onClick={() => scrollToSection('diagnostico')} className="animate-pulse-glow text-lg lg:text-xl py-4 lg:py-6 px-8 lg:px-12">
                   Quero aplicar isso no meu negócio agora
                 </WorkshopButton>
               </div>
@@ -149,7 +156,7 @@ const WorkshopPage = () => {
 
 
       {/* SEÇÃO: DIAGNÓSTICO */}
-      <WorkshopSection>
+      <WorkshopSection id="diagnostico">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-black mb-12 text-gradient">
             Você já contratou agência, investiu em tráfego, postou no Instagram, contratou influencer...
@@ -207,7 +214,7 @@ const WorkshopPage = () => {
           </div>
           
           <div className="flex justify-center">
-            <WorkshopButton onClick={handleButtonClick} className="text-lg md:text-xl py-4 md:py-6 px-8 md:px-12">
+            <WorkshopButton onClick={() => scrollToSection('apresentacao-solucao')} className="text-lg md:text-xl py-4 md:py-6 px-8 md:px-12">
               Quero esse processo funcionando agora
             </WorkshopButton>
           </div>
@@ -215,7 +222,7 @@ const WorkshopPage = () => {
       </WorkshopSection>
 
       {/* SEÇÃO: APRESENTAÇÃO DA SOLUÇÃO */}
-      <WorkshopSection>
+      <WorkshopSection id="apresentacao-solucao">
         <div className="text-center max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black mb-12 text-gradient">
             Empresários de Belém estão enviando Simples Mensagens de Whatsapp e fechando vendas todos os dias.
@@ -288,6 +295,52 @@ const WorkshopPage = () => {
           <div className="flex justify-center">
             <WorkshopButton onClick={handleButtonClick} className="text-lg md:text-xl py-4 md:py-6 px-8 md:px-12">
               Quero participar do Workshop
+            </WorkshopButton>
+          </div>
+        </div>
+      </WorkshopSection>
+
+      {/* SEÇÃO: QUEM DEVE PARTICIPAR */}
+      <WorkshopSection background="card">
+        <div className="text-center max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-black mb-16 text-gradient">
+            Para Quem É Esse Workshop?
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            <div className="flex items-center gap-4 p-4 bg-background border border-workshop-gold/20 rounded-xl hover:shadow-glow transition-all duration-300">
+              <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
+              <p className="text-lg font-medium text-left">Prestadores de serviço</p>
+            </div>
+            <div className="flex items-center gap-4 p-4 bg-background border border-workshop-gold/20 rounded-xl hover:shadow-glow transition-all duration-300">
+              <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
+              <p className="text-lg font-medium text-left">Corretores de imóveis</p>
+            </div>
+            <div className="flex items-center gap-4 p-4 bg-background border border-workshop-gold/20 rounded-xl hover:shadow-glow transition-all duration-300">
+              <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
+              <p className="text-lg font-medium text-left">Consultores e assessores</p>
+            </div>
+            <div className="flex items-center gap-4 p-4 bg-background border border-workshop-gold/20 rounded-xl hover:shadow-glow transition-all duration-300">
+              <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
+              <p className="text-lg font-medium text-left">Profissionais liberais (psicólogos, engenheiros, dentistas)</p>
+            </div>
+            <div className="flex items-center gap-4 p-4 bg-background border border-workshop-gold/20 rounded-xl hover:shadow-glow transition-all duration-300">
+              <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
+              <p className="text-lg font-medium text-left">Donos de clínica (estética, odontologia, fisioterapia)</p>
+            </div>
+            <div className="flex items-center gap-4 p-4 bg-background border border-workshop-gold/20 rounded-xl hover:shadow-glow transition-all duration-300">
+              <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
+              <p className="text-lg font-medium text-left">Escritórios de advocacia, contabilidade, arquitetura</p>
+            </div>
+            <div className="flex items-center gap-4 p-4 bg-background border border-workshop-gold/20 rounded-xl hover:shadow-glow transition-all duration-300 md:col-span-2">
+              <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
+              <p className="text-lg font-medium text-left">Donos de loja física ou serviço local</p>
+            </div>
+          </div>
+          
+          <div className="flex justify-center">
+            <WorkshopButton onClick={handleButtonClick} className="text-lg md:text-xl py-4 md:py-6 px-8 md:px-12">
+              Quero minha vaga
             </WorkshopButton>
           </div>
         </div>
@@ -450,7 +503,7 @@ const WorkshopPage = () => {
       <WorkshopSection>
         <div className="text-center max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black mb-16 text-gradient">
-            Resultados Reais de Quem Aplicou
+            Depoimentos Reais de Quem Aplicou
           </h2>
           
             <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -487,51 +540,6 @@ const WorkshopPage = () => {
         </div>
       </WorkshopSection>
 
-      {/* SEÇÃO: QUEM DEVE PARTICIPAR */}
-      <WorkshopSection background="card">
-        <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black mb-16 text-gradient">
-            Para Quem É Esse Workshop?
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
-            <div className="flex items-center gap-4 p-4 bg-background border border-workshop-gold/20 rounded-xl hover:shadow-glow transition-all duration-300">
-              <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
-              <p className="text-lg font-medium text-left">Prestadores de serviço</p>
-            </div>
-            <div className="flex items-center gap-4 p-4 bg-background border border-workshop-gold/20 rounded-xl hover:shadow-glow transition-all duration-300">
-              <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
-              <p className="text-lg font-medium text-left">Corretores de imóveis</p>
-            </div>
-            <div className="flex items-center gap-4 p-4 bg-background border border-workshop-gold/20 rounded-xl hover:shadow-glow transition-all duration-300">
-              <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
-              <p className="text-lg font-medium text-left">Consultores e assessores</p>
-            </div>
-            <div className="flex items-center gap-4 p-4 bg-background border border-workshop-gold/20 rounded-xl hover:shadow-glow transition-all duration-300">
-              <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
-              <p className="text-lg font-medium text-left">Profissionais liberais (psicólogos, engenheiros, dentistas)</p>
-            </div>
-            <div className="flex items-center gap-4 p-4 bg-background border border-workshop-gold/20 rounded-xl hover:shadow-glow transition-all duration-300">
-              <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
-              <p className="text-lg font-medium text-left">Donos de clínica (estética, odontologia, fisioterapia)</p>
-            </div>
-            <div className="flex items-center gap-4 p-4 bg-background border border-workshop-gold/20 rounded-xl hover:shadow-glow transition-all duration-300">
-              <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
-              <p className="text-lg font-medium text-left">Escritórios de advocacia, contabilidade, arquitetura</p>
-            </div>
-            <div className="flex items-center gap-4 p-4 bg-background border border-workshop-gold/20 rounded-xl hover:shadow-glow transition-all duration-300 md:col-span-2">
-              <div className="w-3 h-3 bg-workshop-gold rounded-full flex-shrink-0"></div>
-              <p className="text-lg font-medium text-left">Donos de loja física ou serviço local</p>
-            </div>
-          </div>
-          
-          <div className="flex justify-center">
-            <WorkshopButton onClick={handleButtonClick} className="text-lg md:text-xl py-4 md:py-6 px-8 md:px-12">
-              Quero minha vaga
-            </WorkshopButton>
-          </div>
-        </div>
-      </WorkshopSection>
 
       {/* SEÇÃO: GARANTIA */}
       <WorkshopSection background="gradient" className="relative overflow-hidden">
