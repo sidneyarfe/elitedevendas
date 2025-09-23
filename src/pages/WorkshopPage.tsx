@@ -184,16 +184,16 @@ const WorkshopPage = () => {
           </h1>
           
           <p className="text-2xl md:text-3xl font-bold mb-8">
-            O problema é que você quis COMPLICAR o que é simples: <span className="text-gradient">vender.</span>
+            O problema é que você está tentando vender <span className="text-gradient">sem ter um processo de vendas.</span>
           </p>
           
           <p className="text-xl md:text-2xl mb-8">
-            E pra vender, basta mandar a mensagem certa pro cliente.
+            Quem tem processo não depende de sorte. Fecha cliente todo dia.
           </p>
           
           <div className="bg-gradient-workshop-subtle p-8 rounded-2xl border border-workshop-gold/20 mb-8 max-w-4xl mx-auto">
             <blockquote className="text-2xl md:text-3xl font-bold mb-4 italic">
-              "Antes só vinha cliente por indicação e raramente pelo marketing. Mas quando começamos a disparar essas Mensagens de Whatsapp, nosso faturamento bateu foi de R$1.000.000 pra R$2.000.000/mês."
+              "Antes só vinha cliente por indicação. Apliquei o que aprendi e em 7 dias fechei 3 contratos novos."
             </blockquote>
             <p className="text-xl text-workshop-gold font-semibold">– Rafael, consultório odontológico</p>
           </div>
@@ -210,7 +210,7 @@ const WorkshopPage = () => {
       <WorkshopSection>
         <div className="text-center max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black mb-12 text-gradient">
-            Empresários de Belém estão aplicando um método simples e fechando contrato toda semana.
+            Empresários de Belém estão enviando Simples Mensagens de Whatsapp e fechando vendas todos os dias.
           </h2>
           
           <h3 className="text-2xl font-bold mb-8">Sem depender de:</h3>
