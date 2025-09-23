@@ -22,6 +22,7 @@ import rodrigoAnaDesktop from "@/assets/rodrigo-ana-desktop.png";
 import workshopLogo from "@/assets/workshop-elite-logo.png";
 import drRafaelImage from "@/assets/dr-rafael.png";
 const WorkshopPage = () => {
+  // Performance optimization: replaced OptimizedImage with native img tags
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showMobileCTA = useScrollVisibility("section-benefits");
   const handleButtonClick = () => {
