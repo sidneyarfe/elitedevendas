@@ -24,27 +24,15 @@ export default defineConfig(({ mode }) => ({
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
-          'ui-components': [
-            '@radix-ui/react-accordion',
-            '@radix-ui/react-dialog',
-            '@radix-ui/react-hover-card',
-            '@radix-ui/react-popover'
-          ],
           'icons': ['lucide-react'],
-          'utils': ['clsx', 'tailwind-merge']
         }
       }
     },
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: mode === 'production',
-        drop_debugger: mode === 'production'
-      }
-    }
+    sourcemap: false,
+    cssCodeSplit: true,
+    minify: 'esbuild'
   },
   optimizeDeps: {
-    include: ['react', 'react-dom'],
-    exclude: ['@radix-ui/react-accordion', '@radix-ui/react-dialog']
+    include: ['react', 'react-dom']
   }
 }));

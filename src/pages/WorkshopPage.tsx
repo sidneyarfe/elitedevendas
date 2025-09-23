@@ -1,26 +1,36 @@
-import { Suspense, useState, useMemo } from "react";
+import { Suspense, useState, useMemo, lazy } from "react";
 import WorkshopButton from "@/components/WorkshopButton";
 import WorkshopSection from "@/components/WorkshopSection";
 import VagasCounter from "@/components/VagasCounter";
 import CountdownTimer from "@/components/CountdownTimer";
 import OptimizedImage from "@/components/OptimizedImage";
-import CriticalCSS from "@/components/CriticalCSS";
-import ResourceHints from "@/components/ResourceHints";
 import { useScrollVisibility } from "@/hooks/useScrollVisibility";
 import { CheckCircle, Clock, MapPin, Users, Star, Shield, Zap, Target, Calendar } from "lucide-react";
-import { LeadFormModal } from "@/components/LeadFormModal";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import onOfficeImage from "@/assets/on-office-interior.jpg";
-import anaImage from "@/assets/foto_ana.jpg";
-import rodrigoImage from "@/assets/foto_rodrigo.jpg";
-import onOfficeSalaImage from "@/assets/onoffice_sala.png";
-import onOfficeLocalImage from "@/assets/onoffice_local.png";
-import rodrigoAnaMobile from "@/assets/rodrigo-ana-mobile.png";
-import rodrigoAnaDesktop from "@/assets/rodrigo-ana-desktop.png";
-import workshopLogo from "@/assets/workshop-elite-logo.png";
-import drRafaelImage from "@/assets/dr-rafael.png";
+
+// Lazy load heavy components
+const LeadFormModal = lazy(() => import("@/components/LeadFormModal").then(m => ({ default: m.LeadFormModal })));
+const Card = lazy(() => import("@/components/ui/card").then(m => ({ default: m.Card })));
+const CardContent = lazy(() => import("@/components/ui/card").then(m => ({ default: m.CardContent })));
+const Badge = lazy(() => import("@/components/ui/badge").then(m => ({ default: m.Badge })));
+const Accordion = lazy(() => import("@/components/ui/accordion").then(m => ({ default: m.Accordion })));
+const AccordionContent = lazy(() => import("@/components/ui/accordion").then(m => ({ default: m.AccordionContent })));
+const AccordionItem = lazy(() => import("@/components/ui/accordion").then(m => ({ default: m.AccordionItem })));
+const AccordionTrigger = lazy(() => import("@/components/ui/accordion").then(m => ({ default: m.AccordionTrigger })));
+// Dynamic imports for images to reduce initial bundle size
+const loadImage = (imageName: string) => {
+  switch(imageName) {
+    case 'rodrigo-ana-mobile': return '/src/assets/rodrigo-ana-mobile.png';
+    case 'rodrigo-ana-desktop': return '/src/assets/rodrigo-ana-desktop.png';
+    case 'dr-rafael': return '/src/assets/dr-rafael.png';
+    case 'on-office-interior': return '/src/assets/on-office-interior.jpg';
+    case 'foto_ana': return '/src/assets/foto_ana.jpg';
+    case 'foto_rodrigo': return '/src/assets/foto_rodrigo.jpg';
+    case 'onoffice_sala': return '/src/assets/onoffice_sala.png';
+    case 'onoffice_local': return '/src/assets/onoffice_local.png';
+    case 'workshop-elite-logo': return '/src/assets/workshop-elite-logo.png';
+    default: return '';
+  }
+};
 const WorkshopPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showMobileCTA = useScrollVisibility("section-benefits");
@@ -35,8 +45,6 @@ const WorkshopPage = () => {
     }
   };
   return <div className="min-h-screen bg-background text-foreground">
-      <CriticalCSS />
-      <ResourceHints />
       {/* Faixa Exclusiva */}
       <div className="bg-gradient-workshop text-black py-3 text-center">
         <p className="font-bold text-lg">Para EMPRESÁRIOS de BELÉM-PA</p>
@@ -48,7 +56,7 @@ const WorkshopPage = () => {
         <div className="w-full">
           {/* Mobile Image - mais comprida */}
           <OptimizedImage 
-            src={rodrigoAnaMobile} 
+            src={loadImage('rodrigo-ana-mobile')} 
             alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
             className="block md:hidden w-full object-cover" 
             priority={true}
@@ -56,7 +64,7 @@ const WorkshopPage = () => {
           />
           {/* Desktop Image - mais horizontalizada */}
           <OptimizedImage 
-            src={rodrigoAnaDesktop} 
+            src={loadImage('rodrigo-ana-desktop')} 
             alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
             className="hidden md:block w-full object-cover" 
             priority={true}
@@ -222,7 +230,7 @@ const WorkshopPage = () => {
             </blockquote>
             <div className="flex items-center justify-center gap-4">
               <OptimizedImage 
-                src={drRafaelImage} 
+                src={loadImage('dr-rafael')} 
                 alt="Dr. Rafael Viera" 
                 className="w-16 h-16 rounded-full object-cover border-2 border-workshop-gold"
                 width={64}
@@ -371,7 +379,7 @@ const WorkshopPage = () => {
           {/* Logo do Workshop */}
           <div className="mb-8 flex justify-center">
             <OptimizedImage 
-              src={workshopLogo} 
+              src={loadImage('workshop-elite-logo')} 
               alt="Workshop Elite de Vendas Logo" 
               className="h-24 md:h-48 object-contain"
               width={300}
@@ -454,7 +462,7 @@ const WorkshopPage = () => {
           <div className="text-center max-w-6xl mx-auto">
             {/* Logo do Workshop */}
             <div className="mb-8 flex justify-center">
-              <img src={workshopLogo} alt="Workshop Elite de Vendas Logo" className="h-24 md:h-48 object-contain" />
+              <img src={loadImage('workshop-elite-logo')} alt="Workshop Elite de Vendas Logo" className="h-24 md:h-48 object-contain" />
             </div>
             
             <h2 className="text-4xl md:text-5xl font-black mb-16 text-gradient">
@@ -531,6 +539,20 @@ const WorkshopPage = () => {
             Depoimentos Reais de Quem Aplicou
           </h2>
           
+          <Suspense fallback={
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div className="bg-card border-workshop-gold/20 rounded-lg p-8 animate-pulse">
+                <div className="aspect-video rounded-xl mb-6 bg-muted"></div>
+                <div className="h-6 bg-muted rounded mb-4"></div>
+                <div className="h-4 bg-muted rounded w-1/2"></div>
+              </div>
+              <div className="bg-card border-workshop-gold/20 rounded-lg p-8 animate-pulse">
+                <div className="aspect-video rounded-xl mb-6 bg-muted"></div>
+                <div className="h-6 bg-muted rounded mb-4"></div>
+                <div className="h-4 bg-muted rounded w-1/2"></div>
+              </div>
+            </div>
+          }>
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <Card className="bg-card border-workshop-gold/20 overflow-hidden">
                 <CardContent className="p-8">
@@ -556,6 +578,7 @@ const WorkshopPage = () => {
                 </CardContent>
               </Card>
             </div>
+          </Suspense>
           
           <div className="flex justify-center">
             <WorkshopButton onClick={handleButtonClick} className="text-lg md:text-xl py-4 md:py-6 px-8 md:px-12">
@@ -606,57 +629,80 @@ const WorkshopPage = () => {
             Sobre os Criadores
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-6 md:gap-12 mb-12">
-            <Card className="bg-card border-workshop-gold/20 overflow-hidden">
-              <CardContent className="p-4 md:p-8">
-                <div className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-4 md:mb-6 overflow-hidden rounded-full border-2 border-workshop-gold/30">
-                  <img src={anaImage} alt="Ana Araújo" className="w-full h-full object-cover" />
+          <Suspense fallback={
+            <div className="grid md:grid-cols-2 gap-6 md:gap-12 mb-12">
+              <div className="bg-card border-workshop-gold/20 rounded-lg p-4 md:p-8 animate-pulse">
+                <div className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-4 md:mb-6 rounded-full bg-muted"></div>
+                <div className="h-6 bg-muted rounded mb-4"></div>
+                <div className="space-y-2">
+                  <div className="h-4 bg-muted rounded"></div>
+                  <div className="h-4 bg-muted rounded"></div>
+                  <div className="h-4 bg-muted rounded w-3/4"></div>
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-workshop-gold">Ana Araújo</h3>
-                <div className="space-y-2 md:space-y-4 text-left">
-                  <p className="text-sm md:text-base font-semibold">CEO da Ás Marketing & Growth</p>
-                  <p className="text-sm md:text-base font-semibold">Head de Vendas da Alavanc Negócios</p>
-                  <p className="text-sm md:text-base text-muted-foreground">
-                    Ao longo da minha carreira, me destaquei por realizar consultorias que realmente transformam negócios.
-                  </p>
-                  <p className="text-sm md:text-base text-muted-foreground">
-                    Entre as minhas conquistas notáveis, consegui aumentar o faturamento de uma empresa financeira em 1136%, saltando de 25 mil para 300 mil reais em apenas um mês.
-                  </p>
-                  <p className="text-sm md:text-base text-muted-foreground">
-                    Também impulsionei as vendas orgânicas de uma empresa de perfumes em 60% e otimizei o atendimento de um cliente do ramo alimentício em 50%, resultando em um crescimento impressionante de 300% no faturamento.
-                  </p>
-                  <p className="text-sm md:text-base text-muted-foreground">
-                    Em minha trajetória, continuo comprometida com a excelência, transformando desafios em oportunidades.
-                  </p>
+              </div>
+              <div className="bg-card border-workshop-gold/20 rounded-lg p-4 md:p-8 animate-pulse">
+                <div className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-4 md:mb-6 rounded-full bg-muted"></div>
+                <div className="h-6 bg-muted rounded mb-4"></div>
+                <div className="space-y-2">
+                  <div className="h-4 bg-muted rounded"></div>
+                  <div className="h-4 bg-muted rounded"></div>
+                  <div className="h-4 bg-muted rounded w-3/4"></div>
                 </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-card border-workshop-gold/20 overflow-hidden">
-              <CardContent className="p-4 md:p-8">
-                <div className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-4 md:mb-6 overflow-hidden rounded-full border-2 border-workshop-gold/30">
-                  <img src={rodrigoImage} alt="Rodrigo Marques" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-workshop-gold">Rodrigo Marques</h3>
-                <div className="space-y-2 md:space-y-4 text-left">
-                  <p className="text-sm md:text-base font-semibold">Fundador da Alavanc Negócios</p>
-                  <p className="text-sm md:text-base font-semibold">Especialista em Estruturação Comercial</p>
-                  <p className="text-sm md:text-base text-muted-foreground">
-                    Administrador por formação e especialista em Estruturação Comercial e Gestão de Times.
-                  </p>
-                  <p className="text-sm md:text-base text-muted-foreground">
-                    Fundador da Alavanc Negócios, consultoria que já ajudou empresas a organizar processos, estruturar times e crescer de forma sustentável — gerando mais de R$ 10 milhões em faturamento para os negócios de nossa carteira.
-                  </p>
-                  <p className="text-sm md:text-base text-muted-foreground">
-                    Tenho forte atuação no ecossistema de inovação e empreendedorismo, sendo Diretor de Comunidades e Eventos na Açaí Valley e Alumni da Enactus Brasil.
-                  </p>
-                  <p className="text-sm md:text-base text-muted-foreground">
-                    Sempre com o propósito de impulsionar negócios, pessoas e comunidades através de estratégias bem definidas e executadas.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+              </div>
+            </div>
+          }>
+            <div className="grid md:grid-cols-2 gap-6 md:gap-12 mb-12">
+              <Card className="bg-card border-workshop-gold/20 overflow-hidden">
+                <CardContent className="p-4 md:p-8">
+                  <div className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-4 md:mb-6 overflow-hidden rounded-full border-2 border-workshop-gold/30">
+                    <img src={loadImage('foto_ana')} alt="Ana Araújo" className="w-full h-full object-cover" />
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-workshop-gold">Ana Araújo</h3>
+                  <div className="space-y-2 md:space-y-4 text-left">
+                    <p className="text-sm md:text-base font-semibold">CEO da Ás Marketing & Growth</p>
+                    <p className="text-sm md:text-base font-semibold">Head de Vendas da Alavanc Negócios</p>
+                    <p className="text-sm md:text-base text-muted-foreground">
+                      Ao longo da minha carreira, me destaquei por realizar consultorias que realmente transformam negócios.
+                    </p>
+                    <p className="text-sm md:text-base text-muted-foreground">
+                      Entre as minhas conquistas notáveis, consegui aumentar o faturamento de uma empresa financeira em 1136%, saltando de 25 mil para 300 mil reais em apenas um mês.
+                    </p>
+                    <p className="text-sm md:text-base text-muted-foreground">
+                      Também impulsionei as vendas orgânicas de uma empresa de perfumes em 60% e otimizei o atendimento de um cliente do ramo alimentício em 50%, resultando em um crescimento impressionante de 300% no faturamento.
+                    </p>
+                    <p className="text-sm md:text-base text-muted-foreground">
+                      Em minha trajetória, continuo comprometida com a excelência, transformando desafios em oportunidades.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-card border-workshop-gold/20 overflow-hidden">
+                <CardContent className="p-4 md:p-8">
+                  <div className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-4 md:mb-6 overflow-hidden rounded-full border-2 border-workshop-gold/30">
+                    <img src={loadImage('foto_rodrigo')} alt="Rodrigo Marques" className="w-full h-full object-cover" />
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-workshop-gold">Rodrigo Marques</h3>
+                  <div className="space-y-2 md:space-y-4 text-left">
+                    <p className="text-sm md:text-base font-semibold">Fundador da Alavanc Negócios</p>
+                    <p className="text-sm md:text-base font-semibold">Especialista em Estruturação Comercial</p>
+                    <p className="text-sm md:text-base text-muted-foreground">
+                      Administrador por formação e especialista em Estruturação Comercial e Gestão de Times.
+                    </p>
+                    <p className="text-sm md:text-base text-muted-foreground">
+                      Fundador da Alavanc Negócios, consultoria que já ajudou empresas a organizar processos, estruturar times e crescer de forma sustentável — gerando mais de R$ 10 milhões em faturamento para os negócios de nossa carteira.
+                    </p>
+                    <p className="text-sm md:text-base text-muted-foreground">
+                      Tenho forte atuação no ecossistema de inovação e empreendedorismo, sendo Diretor de Comunidades e Eventos na Açaí Valley e Alumni da Enactus Brasil.
+                    </p>
+                    <p className="text-sm md:text-base text-muted-foreground">
+                      Sempre com o propósito de impulsionar negócios, pessoas e comunidades através de estratégias bem definidas e executadas.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </Suspense>
           
           <div className="flex justify-center">
             <WorkshopButton onClick={handleButtonClick} className="text-lg md:text-xl py-4 md:py-6 px-8 md:px-12">
@@ -696,11 +742,11 @@ const WorkshopPage = () => {
           {/* Local - On Office Fotos */}
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div className="overflow-hidden rounded-2xl border border-workshop-gold/20">
-              <img src={onOfficeSalaImage} alt="Sala de treinamento On Office Belém" className="w-full h-full object-cover" />
+              <img src={loadImage('onoffice_sala')} alt="Sala de treinamento On Office Belém" className="w-full h-full object-cover" />
             </div>
             <div className="overflow-hidden rounded-2xl border border-workshop-gold/20">
               <OptimizedImage 
-                src={onOfficeLocalImage} 
+                src={loadImage('onoffice_local')} 
                 alt="Fachada On Office Belém - Local do evento" 
                 className="w-full h-full object-contain"
                 width={400}
@@ -759,61 +805,74 @@ const WorkshopPage = () => {
             Perguntas Frequentes
           </h2>
           
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            <AccordionItem value="item-1" className="border border-workshop-gold/20 rounded-xl px-6">
-              <AccordionTrigger className="text-xl font-bold hover:no-underline hover:text-workshop-gold transition-colors">
-                Funciona para meu tipo de serviço?
-              </AccordionTrigger>
-              <AccordionContent className="text-lg text-muted-foreground">
-                Sim! O método funciona para qualquer negócio que vende serviços ou produtos de ticket médio/alto. Já ajudamos corretores, dentistas, advogados, consultores, donos de clínica e diversos outros segmentos.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-2" className="border border-workshop-gold/20 rounded-xl px-6">
-              <AccordionTrigger className="text-xl font-bold hover:no-underline hover:text-workshop-gold transition-colors">
-                E se eu não for "bom de vendas"?
-              </AccordionTrigger>
-              <AccordionContent className="text-lg text-muted-foreground">
-                Perfeito! O método foi criado justamente para quem não se considera "vendedor nato". Trabalhamos com roteiros, processos e técnicas que qualquer pessoa pode aplicar, independente da experiência em vendas.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-3" className="border border-workshop-gold/20 rounded-xl px-6">
-              <AccordionTrigger className="text-xl font-bold hover:no-underline hover:text-workshop-gold transition-colors">
-                Preciso de equipe pra aplicar?
-              </AccordionTrigger>
-              <AccordionContent className="text-lg text-muted-foreground">
-                Não! O método é desenhado para ser aplicado pelo próprio dono do negócio. Você mesmo pode prospectar, abordar e fechar seus clientes usando apenas seu celular.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-4" className="border border-workshop-gold/20 rounded-xl px-6">
-              <AccordionTrigger className="text-xl font-bold hover:no-underline hover:text-workshop-gold transition-colors">
-                Vai ter gravação?
-              </AccordionTrigger>
-              <AccordionContent className="text-lg text-muted-foreground">
-                Não, o Workshop é 100% presencial e ao vivo. Não haverá gravações para garantir a exclusividade do conteúdo e o foco total dos participantes.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-5" className="border border-workshop-gold/20 rounded-xl px-6">
-              <AccordionTrigger className="text-xl font-bold hover:no-underline hover:text-workshop-gold transition-colors">
-                Já tentei de tudo... isso é diferente?
-              </AccordionTrigger>
-              <AccordionContent className="text-lg text-muted-foreground">
-                Sim! Diferente de cursos teóricos ou métodos complexos, nosso foco é 100% prático. Você sai do workshop com um processo funcionando e já testado por dezenas de empresários em Belém.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-6" className="border border-workshop-gold/20 rounded-xl px-6">
-              <AccordionTrigger className="text-xl font-bold hover:no-underline hover:text-workshop-gold transition-colors">
-                Já vendo bem com indicação. Preciso disso?
-              </AccordionTrigger>
-              <AccordionContent className="text-lg text-muted-foreground">
-                Se você quer parar de depender da sorte e ter previsibilidade nas vendas, sim. Indicação é ótima, mas não é sustentável para crescer consistentemente. Com nosso método, você mantém as indicações E adiciona um fluxo previsível de novos clientes.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <Suspense fallback={
+            <div className="w-full space-y-4">
+              <div className="border border-workshop-gold/20 rounded-xl px-6 py-4 animate-pulse">
+                <div className="h-6 bg-muted rounded mb-2"></div>
+                <div className="h-4 bg-muted rounded"></div>
+              </div>
+              <div className="border border-workshop-gold/20 rounded-xl px-6 py-4 animate-pulse">
+                <div className="h-6 bg-muted rounded mb-2"></div>
+                <div className="h-4 bg-muted rounded"></div>
+              </div>
+            </div>
+          }>
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              <AccordionItem value="item-1" className="border border-workshop-gold/20 rounded-xl px-6">
+                <AccordionTrigger className="text-xl font-bold hover:no-underline hover:text-workshop-gold transition-colors">
+                  Funciona para meu tipo de serviço?
+                </AccordionTrigger>
+                <AccordionContent className="text-lg text-muted-foreground">
+                  Sim! O método funciona para qualquer negócio que vende serviços ou produtos de ticket médio/alto. Já ajudamos corretores, dentistas, advogados, consultores, donos de clínica e diversos outros segmentos.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-2" className="border border-workshop-gold/20 rounded-xl px-6">
+                <AccordionTrigger className="text-xl font-bold hover:no-underline hover:text-workshop-gold transition-colors">
+                  E se eu não for "bom de vendas"?
+                </AccordionTrigger>
+                <AccordionContent className="text-lg text-muted-foreground">
+                  Perfeito! O método foi criado justamente para quem não se considera "vendedor nato". Trabalhamos com roteiros, processos e técnicas que qualquer pessoa pode aplicar, independente da experiência em vendas.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-3" className="border border-workshop-gold/20 rounded-xl px-6">
+                <AccordionTrigger className="text-xl font-bold hover:no-underline hover:text-workshop-gold transition-colors">
+                  Preciso de equipe pra aplicar?
+                </AccordionTrigger>
+                <AccordionContent className="text-lg text-muted-foreground">
+                  Não! O método é desenhado para ser aplicado pelo próprio dono do negócio. Você mesmo pode prospectar, abordar e fechar seus clientes usando apenas seu celular.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-4" className="border border-workshop-gold/20 rounded-xl px-6">
+                <AccordionTrigger className="text-xl font-bold hover:no-underline hover:text-workshop-gold transition-colors">
+                  Vai ter gravação?
+                </AccordionTrigger>
+                <AccordionContent className="text-lg text-muted-foreground">
+                  Não, o Workshop é 100% presencial e ao vivo. Não haverá gravações para garantir a exclusividade do conteúdo e o foco total dos participantes.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-5" className="border border-workshop-gold/20 rounded-xl px-6">
+                <AccordionTrigger className="text-xl font-bold hover:no-underline hover:text-workshop-gold transition-colors">
+                  Já tentei de tudo... isso é diferente?
+                </AccordionTrigger>
+                <AccordionContent className="text-lg text-muted-foreground">
+                  Sim! Diferente de cursos teóricos ou métodos complexos, nosso foco é 100% prático. Você sai do workshop com um processo funcionando e já testado por dezenas de empresários em Belém.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-6" className="border border-workshop-gold/20 rounded-xl px-6">
+                <AccordionTrigger className="text-xl font-bold hover:no-underline hover:text-workshop-gold transition-colors">
+                  Já vendo bem com indicação. Preciso disso?
+                </AccordionTrigger>
+                <AccordionContent className="text-lg text-muted-foreground">
+                  Se você quer parar de depender da sorte e ter previsibilidade nas vendas, sim. Indicação é ótima, mas não é sustentável para crescer consistentemente. Com nosso método, você mantém as indicações E adiciona um fluxo previsível de novos clientes.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </Suspense>
           
           <div className="text-center mt-16">
             <p className="text-2xl md:text-3xl font-black mb-8 text-gradient">
@@ -847,7 +906,7 @@ const WorkshopPage = () => {
         <div className="container mx-auto max-w-6xl px-4">
           <div className="flex flex-col items-center gap-6 text-center">
             {/* Logo */}
-            <img src={workshopLogo} alt="Workshop Elite de Vendas Logo" className="h-16 object-contain" />
+            <img src={loadImage('workshop-elite-logo')} alt="Workshop Elite de Vendas Logo" className="h-16 object-contain" />
             
             {/* Informações da empresa */}
             <div className="text-sm text-muted-foreground space-y-2">
