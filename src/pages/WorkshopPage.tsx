@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import WorkshopButton from "@/components/WorkshopButton";
-
-console.log('WorkshopPage: Starting to load');
 import WorkshopSection from "@/components/WorkshopSection";
 import VagasCounter from "@/components/VagasCounter";  
 import CountdownTimer from "@/components/CountdownTimer";
