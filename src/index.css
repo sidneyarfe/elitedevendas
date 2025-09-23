@@ -169,4 +169,9 @@
       @apply px-8;
     }
   }
+  
+  /* Layout Shift Prevention */
+  .contain-layout {
+    contain: layout style;
+  }
 }

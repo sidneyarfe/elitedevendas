@@ -156,7 +156,7 @@ const WorkshopPage = () => {
 
 
       {/* SEÇÃO: DIAGNÓSTICO */}
-      <WorkshopSection id="diagnostico">
+      <WorkshopSection id="diagnostico" className="min-h-[600px] contain-layout">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-black mb-12 text-gradient">
             Você já contratou agência, investiu em tráfego, postou no Instagram, contratou influencer...
