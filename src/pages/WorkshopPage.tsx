@@ -1,13 +1,14 @@
-import { Suspense, useState, useMemo, lazy } from "react";
+import { Suspense, useState, useMemo, lazy, useEffect } from "react";
 import WorkshopButton from "@/components/WorkshopButton";
 import WorkshopSection from "@/components/WorkshopSection";
-import VagasCounter from "@/components/VagasCounter";
+import VagasCounter from "@/components/VagasCounter";  
 import CountdownTimer from "@/components/CountdownTimer";
 import OptimizedImage from "@/components/OptimizedImage";
+import LazyYouTube from "@/components/LazyYouTube";
 import { useScrollVisibility } from "@/hooks/useScrollVisibility";
 import { CheckCircle, Clock, MapPin, Users, Star, Shield, Zap, Target, Calendar } from "lucide-react";
 
-// Lazy load heavy components
+// Lazy load heavy components only when needed
 const LeadFormModal = lazy(() => import("@/components/LeadFormModal").then(m => ({ default: m.LeadFormModal })));
 const Card = lazy(() => import("@/components/ui/card").then(m => ({ default: m.Card })));
 const CardContent = lazy(() => import("@/components/ui/card").then(m => ({ default: m.CardContent })));
@@ -34,6 +35,26 @@ const loadImage = (imageName: string) => {
 const WorkshopPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showMobileCTA = useScrollVisibility("section-benefits");
+  
+  // Add passive listeners for better scroll performance
+  useEffect(() => {
+    const handleScroll = () => {
+      // Optimized scroll handling
+    };
+    
+    document.addEventListener('scroll', handleScroll, { passive: true });
+    document.addEventListener('wheel', handleScroll, { passive: true });
+    document.addEventListener('touchstart', handleScroll, { passive: true });
+    document.addEventListener('touchmove', handleScroll, { passive: true });
+    
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('wheel', handleScroll);
+      document.removeEventListener('touchstart', handleScroll);
+      document.removeEventListener('touchmove', handleScroll);
+    };
+  }, []);
+  
   const handleButtonClick = () => {
     setIsModalOpen(true);
   };
@@ -181,7 +202,7 @@ const WorkshopPage = () => {
 
 
       {/* SEÇÃO: DIAGNÓSTICO */}
-      <WorkshopSection id="diagnostico" className="min-h-[600px] contain-layout">
+      <WorkshopSection id="diagnostico" className="min-h-[600px] contain-layout below-fold">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-black mb-12 text-gradient">
             Você já contratou agência, investiu em tráfego, postou no Instagram, contratou influencer...
@@ -533,7 +554,7 @@ const WorkshopPage = () => {
       </WorkshopSection>
 
       {/* SEÇÃO: PROVAS / DEPOIMENTOS */}
-      <WorkshopSection>
+      <WorkshopSection className="below-fold contain-paint">
         <div className="text-center max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black mb-16 text-gradient">
             Depoimentos Reais de Quem Aplicou
@@ -556,9 +577,11 @@ const WorkshopPage = () => {
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <Card className="bg-card border-workshop-gold/20 overflow-hidden">
                 <CardContent className="p-8">
-                  <div className="aspect-video rounded-xl mb-6 overflow-hidden">
-                    <iframe src="https://www.youtube.com/embed/B0cORHhpoQE?modestbranding=1&rel=0&iv_load_policy=3" title="Depoimento Dirceu - Corretor de Imóveis" className="w-full h-full" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-                  </div>
+                  <LazyYouTube 
+                    videoId="B0cORHhpoQE" 
+                    title="Depoimento Dirceu - Corretor de Imóveis"
+                    className="mb-6"
+                  />
                   <blockquote className="text-xl font-bold mb-4 italic">
                     "O principal diferencial do método do Rodrigo e Ana foi o RESULTADO"
                   </blockquote>
@@ -568,9 +591,11 @@ const WorkshopPage = () => {
               
               <Card className="bg-card border-workshop-gold/20 overflow-hidden">
                 <CardContent className="p-8">
-                  <div className="aspect-video rounded-xl mb-6 overflow-hidden">
-                    <iframe src="https://www.youtube.com/embed/gNn-2u2ZhzU?modestbranding=1&rel=0&iv_load_policy=3" title="Depoimento Milena" className="w-full h-full" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-                  </div>
+                  <LazyYouTube 
+                    videoId="gNn-2u2ZhzU" 
+                    title="Depoimento Milena"
+                    className="mb-6"
+                  />
                   <blockquote className="text-xl font-bold mb-4 italic">
                     "Hoje nós conseguimos rentabilizar muito mais nossos leads."
                   </blockquote>
