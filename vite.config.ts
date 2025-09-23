@@ -22,40 +22,29 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: (id) => {
-          // Vendor chunks
-          if (id.includes('node_modules')) {
-            if (id.includes('@radix-ui')) {
-              return 'radix-ui';
-            }
-            if (id.includes('lucide-react')) {
-              return 'icons';
-            }
-            if (id.includes('react') || id.includes('react-dom')) {
-              return 'react-vendor';
-            }
-            return 'vendor';
-          }
-          
-          // Component chunks
-          if (id.includes('/components/ui/')) {
-            return 'ui';
-          }
-          
-          // Page chunks
-          if (id.includes('/pages/')) {
-            return 'pages';
-          }
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
+          'ui-components': [
+            '@radix-ui/react-accordion',
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-hover-card',
+            '@radix-ui/react-popover'
+          ],
+          'icons': ['lucide-react'],
+          'utils': ['clsx', 'tailwind-merge']
         }
       }
     },
-    sourcemap: false,
-    cssCodeSplit: true,
-    minify: 'esbuild',
-    chunkSizeWarningLimit: 1000
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: mode === 'production',
+        drop_debugger: mode === 'production'
+      }
+    }
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'lucide-react'],
+    include: ['react', 'react-dom'],
     exclude: ['@radix-ui/react-accordion', '@radix-ui/react-dialog']
   }
 }));

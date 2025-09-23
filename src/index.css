@@ -175,10 +175,6 @@
   contain: layout style;
 }
 
-.contain-paint {
-  contain: paint;
-}
-
 /* Performance optimizations */
 .will-change-transform {
   will-change: transform;
@@ -186,41 +182,6 @@
 
 .will-change-auto {
   will-change: auto;
-}
-
-.will-change-scroll {
-  will-change: scroll-position;
-}
-
-/* Optimize heavy animations */
-.animate-pulse-glow {
-  animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: .85;
-    transform: scale(1.02);
-  }
-}
-
-/* Reduce layout shifts */
-.aspect-video {
-  aspect-ratio: 16 / 9;
-}
-
-/* Critical rendering path optimization */
-.above-fold {
-  content-visibility: visible;
-}
-
-.below-fold {
-  content-visibility: auto;
-  contain-intrinsic-size: 0 500px;
 }
 
 /* Lazy loading placeholder */
