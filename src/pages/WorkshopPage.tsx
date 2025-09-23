@@ -17,6 +17,7 @@ import onOfficeLocalImage from "@/assets/onoffice_local.png";
 import rodrigoAnaMobile from "@/assets/rodrigo-ana-mobile.png";
 import rodrigoAnaDesktop from "@/assets/rodrigo-ana-desktop.png";
 import workshopLogo from "@/assets/workshop-elite-logo.png";
+import drRafaelImage from "@/assets/dr-rafael.png";
 const WorkshopPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showMobileCTA = useScrollVisibility("section-benefits");
@@ -195,7 +196,14 @@ const WorkshopPage = () => {
             <blockquote className="text-2xl md:text-3xl font-bold mb-4 italic">
               "Antes só vinha cliente por indicação e raramente pelo marketing. Mas quando começamos a disparar essas Mensagens de Whatsapp, nosso faturamento foi de R$1.000.000 pra R$2.000.000/mês."
             </blockquote>
-            <p className="text-xl text-workshop-gold font-semibold">– Rafael, consultório odontológico</p>
+            <div className="flex items-center justify-center gap-4">
+              <img 
+                src={drRafaelImage} 
+                alt="Dr. Rafael Viera" 
+                className="w-16 h-16 rounded-full object-cover border-2 border-workshop-gold"
+              />
+              <p className="text-xl text-workshop-gold font-semibold">– Dr. Rafael Viera, Dono de Consultório Odontológico | Belém-PA</p>
+            </div>
           </div>
           
           <div className="flex justify-center">
