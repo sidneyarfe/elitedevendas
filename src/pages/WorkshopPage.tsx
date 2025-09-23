@@ -84,21 +84,19 @@ const WorkshopPage = () => {
       <div className="relative">
         {/* Images Section */}
         <div className="w-full">
-          {/* Mobile Image - mais comprida */}
-          <OptimizedImage 
-            src={loadImage('rodrigo-ana-mobile')} 
+          <img 
+            src={rodrigoAnaMobile}
             alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
             className="block md:hidden w-full object-cover" 
-            priority={true}
             loading="eager"
+            decoding="async"
           />
-          {/* Desktop Image - mais horizontalizada */}
-          <OptimizedImage 
-            src={loadImage('rodrigo-ana-desktop')} 
+          <img 
+            src={rodrigoAnaDesktop}
             alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
             className="hidden md:block w-full object-cover" 
-            priority={true}
             loading="eager"
+            decoding="async"
           />
           
           {/* Text Section Overlapping the Black Area */}
