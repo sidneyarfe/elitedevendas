@@ -184,16 +184,18 @@ const WorkshopPage = () => {
           </h1>
           
           <p className="text-2xl md:text-3xl font-bold mb-8">
-            O problema é que você está tentando vender <span className="text-gradient">sem ter um processo de vendas.</span>
+            O problema é que você quis COMPLICAR o que é simples: <span className="text-gradient">vender.</span>
           </p>
           
-          <p className="text-xl md:text-2xl mb-8">E pra vender, basta enviar a mensagem certa...</p>
+          <p className="text-xl md:text-2xl mb-8">
+            E pra vender, basta mandar a mensagem certa pro cliente.
+          </p>
           
           <div className="bg-gradient-workshop-subtle p-8 rounded-2xl border border-workshop-gold/20 mb-8 max-w-4xl mx-auto">
             <blockquote className="text-2xl md:text-3xl font-bold mb-4 italic">
-              "Antes só vinha cliente por indicação. Apliquei o que aprendi e em 7 dias fechei 3 contratos novos."
+              "Antes só vinha cliente por indicação e raramente pelo marketing. Mas quando começamos a disparar essas Mensagens de Whatsapp, nosso faturamento bateu foi de R$1.000.000 pra R$2.000.000/mês."
             </blockquote>
-            <p className="text-xl text-workshop-gold font-semibold">– Dr. Rafael Vieira, Dono de Clínica Odontológica | Belém-PA</p>
+            <p className="text-xl text-workshop-gold font-semibold">– Rafael, consultório odontológico</p>
           </div>
           
           <div className="flex justify-center">
