@@ -3,7 +3,7 @@ import WorkshopButton from "@/components/WorkshopButton";
 import WorkshopSection from "@/components/WorkshopSection";
 import VagasCounter from "@/components/VagasCounter";
 import CountdownTimer from "@/components/CountdownTimer";
-import OptimizedImage from "@/components/OptimizedImage";
+import LazyYouTube from "@/components/LazyYouTube";
 import CriticalCSS from "@/components/CriticalCSS";
 import ResourceHints from "@/components/ResourceHints";
 import { useScrollVisibility } from "@/hooks/useScrollVisibility";
@@ -47,20 +47,20 @@ const WorkshopPage = () => {
         {/* Images Section */}
         <div className="w-full">
           {/* Mobile Image - mais comprida */}
-          <OptimizedImage 
+          <img 
             src={rodrigoAnaMobile} 
             alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
             className="block md:hidden w-full object-cover" 
-            priority={true}
             loading="eager"
+            decoding="async"
           />
           {/* Desktop Image - mais horizontalizada */}
-          <OptimizedImage 
+          <img 
             src={rodrigoAnaDesktop} 
             alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
             className="hidden md:block w-full object-cover" 
-            priority={true}
             loading="eager"
+            decoding="async"
           />
           
           {/* Text Section Overlapping the Black Area */}
@@ -221,12 +221,14 @@ const WorkshopPage = () => {
               "Antes só vinha cliente por indicação e raramente pelo marketing. Mas quando começamos a disparar essas Mensagens de Whatsapp, nosso faturamento foi de R$1.000.000 pra R$2.000.000/mês."
             </blockquote>
             <div className="flex items-center justify-center gap-4">
-              <OptimizedImage 
+              <img 
                 src={drRafaelImage} 
                 alt="Dr. Rafael Viera" 
                 className="w-16 h-16 rounded-full object-cover border-2 border-workshop-gold"
-                width={64}
-                height={64}
+                width="64"
+                height="64"
+                loading="lazy"
+                decoding="async"
               />
               <p className="text-xl text-workshop-gold font-semibold">– Dr. Rafael Viera, Dono de Consultório Odontológico | Belém-PA</p>
             </div>
@@ -370,12 +372,14 @@ const WorkshopPage = () => {
         <div className="text-center max-w-6xl mx-auto">
           {/* Logo do Workshop */}
           <div className="mb-8 flex justify-center">
-            <OptimizedImage 
+            <img 
               src={workshopLogo} 
               alt="Workshop Elite de Vendas Logo" 
               className="h-24 md:h-48 object-contain"
-              width={300}
-              height={192}
+              width="300"
+              height="192"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           
@@ -534,9 +538,11 @@ const WorkshopPage = () => {
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <Card className="bg-card border-workshop-gold/20 overflow-hidden">
                 <CardContent className="p-8">
-                  <div className="aspect-video rounded-xl mb-6 overflow-hidden">
-                    <iframe src="https://www.youtube.com/embed/B0cORHhpoQE?modestbranding=1&rel=0&iv_load_policy=3" title="Depoimento Dirceu - Corretor de Imóveis" className="w-full h-full" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-                  </div>
+                  <LazyYouTube 
+                    videoId="B0cORHhpoQE"
+                    title="Depoimento Dirceu - Corretor de Imóveis"
+                    className="mb-6"
+                  />
                   <blockquote className="text-xl font-bold mb-4 italic">
                     "O principal diferencial do método do Rodrigo e Ana foi o RESULTADO"
                   </blockquote>
@@ -546,9 +552,11 @@ const WorkshopPage = () => {
               
               <Card className="bg-card border-workshop-gold/20 overflow-hidden">
                 <CardContent className="p-8">
-                  <div className="aspect-video rounded-xl mb-6 overflow-hidden">
-                    <iframe src="https://www.youtube.com/embed/gNn-2u2ZhzU?modestbranding=1&rel=0&iv_load_policy=3" title="Depoimento Milena" className="w-full h-full" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-                  </div>
+                  <LazyYouTube 
+                    videoId="gNn-2u2ZhzU"
+                    title="Depoimento Milena"
+                    className="mb-6"
+                  />
                   <blockquote className="text-xl font-bold mb-4 italic">
                     "Hoje nós conseguimos rentabilizar muito mais nossos leads."
                   </blockquote>
@@ -699,12 +707,14 @@ const WorkshopPage = () => {
               <img src={onOfficeSalaImage} alt="Sala de treinamento On Office Belém" className="w-full h-full object-cover" />
             </div>
             <div className="overflow-hidden rounded-2xl border border-workshop-gold/20">
-              <OptimizedImage 
+              <img 
                 src={onOfficeLocalImage} 
                 alt="Fachada On Office Belém - Local do evento" 
                 className="w-full h-full object-contain"
-                width={400}
-                height={300}
+                width="400"
+                height="300"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
