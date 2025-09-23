@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import { Users } from "lucide-react";
 
-const VagasCounter = () => {
+const VagasCounter = memo(() => {
   const [vagasRestantes, setVagasRestantes] = useState(21); // Simula 8 vagas restantes
   
   useEffect(() => {
@@ -27,6 +27,8 @@ const VagasCounter = () => {
       )}
     </div>
   );
-};
+});
+
+VagasCounter.displayName = 'VagasCounter';
 
 export default VagasCounter;

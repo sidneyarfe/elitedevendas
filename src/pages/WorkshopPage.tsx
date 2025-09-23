@@ -1,14 +1,23 @@
+import { Suspense, lazy, useState, useMemo } from "react";
 import WorkshopButton from "@/components/WorkshopButton";
 import WorkshopSection from "@/components/WorkshopSection";
 import VagasCounter from "@/components/VagasCounter";
 import CountdownTimer from "@/components/CountdownTimer";
-import { LeadFormModal } from "@/components/LeadFormModal";
+import OptimizedImage from "@/components/OptimizedImage";
+import CriticalCSS from "@/components/CriticalCSS";
+import ResourceHints from "@/components/ResourceHints";
 import { useScrollVisibility } from "@/hooks/useScrollVisibility";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CheckCircle, Clock, MapPin, Users, Star, Shield, Zap, Target, Calendar } from "lucide-react";
-import { useState } from "react";
+
+// Lazy load non-critical components
+const LeadFormModal = lazy(() => import("@/components/LeadFormModal").then(module => ({ default: module.LeadFormModal })));
+const Card = lazy(() => import("@/components/ui/card").then(module => ({ default: module.Card })));
+const CardContent = lazy(() => import("@/components/ui/card").then(module => ({ default: module.CardContent })));
+const Badge = lazy(() => import("@/components/ui/badge").then(module => ({ default: module.Badge })));
+const Accordion = lazy(() => import("@/components/ui/accordion").then(module => ({ default: module.Accordion })));
+const AccordionContent = lazy(() => import("@/components/ui/accordion").then(module => ({ default: module.AccordionContent })));
+const AccordionItem = lazy(() => import("@/components/ui/accordion").then(module => ({ default: module.AccordionItem })));
+const AccordionTrigger = lazy(() => import("@/components/ui/accordion").then(module => ({ default: module.AccordionTrigger })));
 import onOfficeImage from "@/assets/on-office-interior.jpg";
 import anaImage from "@/assets/foto_ana.jpg";
 import rodrigoImage from "@/assets/foto_rodrigo.jpg";
@@ -32,6 +41,8 @@ const WorkshopPage = () => {
     }
   };
   return <div className="min-h-screen bg-background text-foreground">
+      <CriticalCSS />
+      <ResourceHints />
       {/* Faixa Exclusiva */}
       <div className="bg-gradient-workshop text-black py-3 text-center">
         <p className="font-bold text-lg">Para EMPRESÁRIOS de BELÉM-PA</p>
@@ -42,9 +53,21 @@ const WorkshopPage = () => {
         {/* Images Section */}
         <div className="w-full">
           {/* Mobile Image - mais comprida */}
-          <img src={rodrigoAnaMobile} alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" className="block md:hidden w-full object-cover" />
+          <OptimizedImage 
+            src={rodrigoAnaMobile} 
+            alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
+            className="block md:hidden w-full object-cover" 
+            priority={true}
+            loading="eager"
+          />
           {/* Desktop Image - mais horizontalizada */}
-          <img src={rodrigoAnaDesktop} alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" className="hidden md:block w-full object-cover" />
+          <OptimizedImage 
+            src={rodrigoAnaDesktop} 
+            alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
+            className="hidden md:block w-full object-cover" 
+            priority={true}
+            loading="eager"
+          />
           
           {/* Text Section Overlapping the Black Area */}
           <div className="absolute inset-0 flex items-end md:items-end justify-center md:hidden">
@@ -204,10 +227,12 @@ const WorkshopPage = () => {
               "Antes só vinha cliente por indicação e raramente pelo marketing. Mas quando começamos a disparar essas Mensagens de Whatsapp, nosso faturamento foi de R$1.000.000 pra R$2.000.000/mês."
             </blockquote>
             <div className="flex items-center justify-center gap-4">
-              <img 
+              <OptimizedImage 
                 src={drRafaelImage} 
                 alt="Dr. Rafael Viera" 
                 className="w-16 h-16 rounded-full object-cover border-2 border-workshop-gold"
+                width={64}
+                height={64}
               />
               <p className="text-xl text-workshop-gold font-semibold">– Dr. Rafael Viera, Dono de Consultório Odontológico | Belém-PA</p>
             </div>
@@ -351,7 +376,13 @@ const WorkshopPage = () => {
         <div className="text-center max-w-6xl mx-auto">
           {/* Logo do Workshop */}
           <div className="mb-8 flex justify-center">
-            <img src={workshopLogo} alt="Workshop Elite de Vendas Logo" className="h-24 md:h-48 object-contain" />
+            <OptimizedImage 
+              src={workshopLogo} 
+              alt="Workshop Elite de Vendas Logo" 
+              className="h-24 md:h-48 object-contain"
+              width={300}
+              height={192}
+            />
           </div>
           
           <h2 className="md:text-5xl font-black mb-16 text-gradient text-2xl">
@@ -674,7 +705,13 @@ const WorkshopPage = () => {
               <img src={onOfficeSalaImage} alt="Sala de treinamento On Office Belém" className="w-full h-full object-cover" />
             </div>
             <div className="overflow-hidden rounded-2xl border border-workshop-gold/20">
-              <img src={onOfficeLocalImage} alt="Fachada On Office Belém - Local do evento" className="w-full h-full object-contain" />
+              <OptimizedImage 
+                src={onOfficeLocalImage} 
+                alt="Fachada On Office Belém - Local do evento" 
+                className="w-full h-full object-contain"
+                width={400}
+                height={300}
+              />
             </div>
           </div>
 
@@ -829,7 +866,9 @@ const WorkshopPage = () => {
       </footer>
 
       {/* Lead Form Modal */}
-      <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <Suspense fallback={<div className="fixed inset-0 bg-black/50 z-50" />}>
+        <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      </Suspense>
     </div>;
 };
 export default WorkshopPage;
