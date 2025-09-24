@@ -43,73 +43,33 @@ const OptimizedImage = ({
     setHasError(true);
   }, []);
 
-  // Generate responsive srcSet with WebP support
-  const generateSrcSet = (baseSrc: string) => {
-    // For production, implement proper image optimization
-    // Generate multiple sizes for responsive loading
-    if (baseSrc.includes('rodrigo-ana')) {
-      return `${baseSrc} 1x, ${baseSrc} 2x`;
-    }
-    return baseSrc;
-  };
-
-  const generateWebPSrc = (baseSrc: string) => {
-    // In production, serve WebP versions when available
-    return baseSrc.replace(/\.(png|jpg|jpeg)$/, '.webp');
-  };
-
   return (
     <div
       ref={intersectionRef as React.RefObject<HTMLDivElement>}
       className={cn(
         'relative overflow-hidden',
-        !isLoaded && 'image-placeholder',
         className
       )}
       style={{ width, height }}
     >
-      {shouldLoad && (
-        <>
-          {!hasError ? (
-            <picture>
-              {/* WebP source for modern browsers */}
-              <source 
-                srcSet={generateSrcSet(generateWebPSrc(src))} 
-                type="image/webp"
-              />
-              {/* Fallback to original format */}
-              <img
-                ref={imgRef}
-                src={src}
-                alt={alt}
-                width={width}
-                height={height}
-                sizes={sizes}
-                srcSet={generateSrcSet(src)}
-                className={cn(
-                  'transition-opacity duration-300 will-change-transform',
-                  isLoaded ? 'opacity-100' : 'opacity-0',
-                  'w-full h-full object-cover'
-                )}
-                onLoad={handleLoad}
-                onError={handleError}
-                loading={priority ? 'eager' : 'lazy'}
-                decoding="async"
-                style={{
-                  contentVisibility: 'auto',
-                  containIntrinsicSize: width && height ? `${width}px ${height}px` : 'auto'
-                }}
-              />
-            </picture>
-          ) : (
-            <div 
-              className="w-full h-full bg-muted flex items-center justify-center"
-              style={{ width, height }}
-            >
-              <span className="text-muted-foreground text-sm">Imagem não encontrada</span>
-            </div>
+      {shouldLoad && !hasError && (
+        <img
+          ref={imgRef}
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          sizes={sizes}
+          className={cn(
+            'transition-opacity duration-300',
+            isLoaded ? 'opacity-100' : 'opacity-0',
+            'w-full h-full object-cover'
           )}
-        </>
+          onLoad={handleLoad}
+          onError={handleError}
+          loading={priority ? 'eager' : 'lazy'}
+          decoding="async"
+        />
       )}
       
       {!isLoaded && !hasError && shouldLoad && (
@@ -117,6 +77,15 @@ const OptimizedImage = ({
           className="absolute inset-0 loading-placeholder"
           style={{ width, height }}
         />
+      )}
+      
+      {hasError && (
+        <div 
+          className="w-full h-full bg-muted/20 flex items-center justify-center border border-muted"
+          style={{ width, height, minHeight: height || '200px' }}
+        >
+          <span className="text-muted-foreground text-xs opacity-50">Carregando...</span>
+        </div>
       )}
     </div>
   );
