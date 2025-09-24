@@ -124,7 +124,7 @@ export const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md mx-auto">
+      <DialogContent className="sm:max-w-md mx-auto max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center text-gradient">
             Garanta sua vaga!
