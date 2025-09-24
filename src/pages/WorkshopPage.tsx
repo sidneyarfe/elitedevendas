@@ -175,31 +175,37 @@ const WorkshopPage = () => {
 
 
       {/* SEÇÃO: DIAGNÓSTICO */}
-      <WorkshopSection id="diagnostico" className="min-h-[600px] contain-layout">
-        <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-black mb-12 text-gradient">
+      <WorkshopSection id="diagnostico" className="py-16 md:py-20">
+        <div className="text-center max-w-4xl mx-auto px-4">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-black mb-8 md:mb-12 text-gradient leading-tight">
             Você já contratou agência, investiu em tráfego, postou no Instagram, contratou influencer...
           </h1>
           
-          <h2 className="text-3xl font-bold mb-8">E o que conseguiu?</h2>
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-8 md:mb-12">E o que conseguiu?</h2>
           
-          <div className="space-y-4 text-xl md:text-2xl font-medium text-muted-foreground mb-12">
-            <div className="flex items-center gap-4 justify-center">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              <p>Um ou dois agendamentos que não vieram</p>
+          <div className="space-y-4 md:space-y-6 text-base md:text-xl lg:text-2xl font-medium text-muted-foreground mb-8 md:mb-12">
+            <div className="flex items-start md:items-center gap-3 md:gap-4 justify-start md:justify-center text-left md:text-center">
+              <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 mt-2 md:mt-0"></div>
+              <p className="flex-1">Um ou dois agendamentos que não vieram</p>
             </div>
-            <div className="flex items-center gap-4 justify-center">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              <p>Orçamento pedido e ignorado</p>
+            <div className="flex items-start md:items-center gap-3 md:gap-4 justify-start md:justify-center text-left md:text-center">
+              <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 mt-2 md:mt-0"></div>
+              <p className="flex-1">Orçamento pedido e ignorado</p>
             </div>
-            <div className="flex items-center gap-4 justify-center">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              <p>Clientes aparecendo só por indicação</p>
+            <div className="flex items-start md:items-center gap-3 md:gap-4 justify-start md:justify-center text-left md:text-center">
+              <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 mt-2 md:mt-0"></div>
+              <p className="flex-1">Clientes aparecendo só por indicação</p>
             </div>
-            <div className="flex items-center gap-4 justify-center">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              <p>Mais prejuízo do que retorno</p>
+            <div className="flex items-start md:items-center gap-3 md:gap-4 justify-start md:justify-center text-left md:text-center">
+              <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 mt-2 md:mt-0"></div>
+              <p className="flex-1">Mais prejuízo do que retorno</p>
             </div>
+          </div>
+          
+          <div className="bg-gradient-workshop-subtle/20 border border-workshop-gold/20 p-6 md:p-8 rounded-2xl mb-8 md:mb-12">
+            <p className="text-xl md:text-2xl lg:text-3xl font-bold text-center text-gradient">
+              O problema não é você. Não é seu produto. Não é o mercado.
+            </p>
           </div>
         </div>
       </WorkshopSection>
