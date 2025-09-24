@@ -25,39 +25,25 @@ const ResourceHints = () => {
         src: '/src/assets/rodrigo-ana-mobile.png', 
         media: '(max-width: 768px)',
         sizes: '100vw',
-        priority: 'high',
-        as: 'image',
-        fetchpriority: 'high'
+        priority: 'high'
       },
       { 
         src: '/src/assets/rodrigo-ana-desktop.png', 
         media: '(min-width: 769px)',
-        sizes: '100vw',
-        priority: 'high',
-        as: 'image',
-        fetchpriority: 'high'
+        sizes: '50vw',
+        priority: 'high'
       }
     ];
 
-    criticalImages.forEach(({ src, media, sizes, priority, as: asType, fetchpriority }) => {
+    criticalImages.forEach(({ src, media, sizes, priority }) => {
       const link = document.createElement('link');
       link.rel = 'preload';
-      link.as = asType;
+      link.as = 'image';
       link.href = src;
       if (media) link.media = media;
       if (sizes) link.setAttribute('imagesizes', sizes);
-      if (fetchpriority) link.fetchPriority = fetchpriority as any;
-      link.type = 'image/webp';
+      link.fetchPriority = priority as any;
       document.head.appendChild(link);
-      
-      // Fallback for browsers that don't support WebP
-      const fallbackLink = document.createElement('link');
-      fallbackLink.rel = 'preload';
-      fallbackLink.as = asType;
-      fallbackLink.href = src;
-      if (media) fallbackLink.media = media;
-      if (sizes) fallbackLink.setAttribute('imagesizes', sizes);
-      document.head.appendChild(fallbackLink);
     });
 
     // Early preload for YouTube thumbnails
@@ -87,9 +73,8 @@ const ResourceHints = () => {
         link.href = src;
         // Stagger prefetch to avoid blocking critical resources
         setTimeout(() => {
-          if (document.head.contains(link)) return; // Prevent duplicates
           document.head.appendChild(link);
-        }, index * 50); // Reduced delay for faster prefetching
+        }, index * 100);
       });
       
       // Prefetch critical JavaScript chunks
@@ -103,10 +88,8 @@ const ResourceHints = () => {
           const link = document.createElement('link');
           link.rel = 'modulepreload';
           link.href = chunk;
-          if (!document.head.contains(link)) {
-            document.head.appendChild(link);
-          }
-        }, (prefetchImages.length + index) * 50);
+          document.head.appendChild(link);
+        }, (prefetchImages.length + index) * 100);
       });
     };
 
