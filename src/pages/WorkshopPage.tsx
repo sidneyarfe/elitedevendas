@@ -201,12 +201,6 @@ const WorkshopPage = () => {
               <p className="flex-1">Mais prejuízo do que retorno</p>
             </div>
           </div>
-          
-          <div className="bg-gradient-workshop-subtle/20 border border-workshop-gold/20 p-6 md:p-8 rounded-2xl mb-8 md:mb-12">
-            <p className="text-xl md:text-2xl lg:text-3xl font-bold text-center text-gradient">
-              O problema não é você. Não é seu produto. Não é o mercado.
-            </p>
-          </div>
         </div>
       </WorkshopSection>
 
