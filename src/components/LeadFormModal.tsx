@@ -123,7 +123,7 @@ export const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
+    <Dialog open={isOpen} onOpenChange={(open) => { if (!open) onClose(); }}>
       <DialogContent className="sm:max-w-md w-full mx-4">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center text-gradient">
