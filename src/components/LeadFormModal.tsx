@@ -21,31 +21,16 @@ export const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Validar campos obrigatórios
+  const validateForm = () => {
     if (!formData.name.trim() || !formData.email.trim() || !formData.whatsapp.trim()) {
       toast({
         title: "Campos obrigatórios",
         description: "Por favor, preencha todos os campos.",
         variant: "destructive",
       });
-      return;
+      return false;
     }
 
-    // Validar formato do WhatsApp (números com DDD)
-    const whatsappRegex = /^\(\d{2}\)\s?\d{4,5}-?\d{4}$|^\d{2}\s?\d{4,5}-?\d{4}$|^\d{10,11}$/;
-    if (!whatsappRegex.test(formData.whatsapp.replace(/\s/g, ""))) {
-      toast({
-        title: "WhatsApp inválido",
-        description: "Por favor, insira um número de WhatsApp válido com DDD.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    // Validar email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       toast({
@@ -53,13 +38,30 @@ export const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
         description: "Por favor, insira um email válido.",
         variant: "destructive",
       });
-      return;
+      return false;
     }
+
+    const whatsappRegex = /^\(\d{2}\)\s?\d{4,5}-?\d{4}$|^\d{2}\s?\d{4,5}-?\d{4}$|^\d{10,11}$/;
+    if (!whatsappRegex.test(formData.whatsapp.replace(/\s/g, ""))) {
+      toast({
+        title: "WhatsApp inválido",
+        description: "Por favor, insira um número de WhatsApp válido com DDD.",
+        variant: "destructive",
+      });
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!validateForm()) return;
 
     setIsLoading(true);
 
     try {
-      // Salvar no Supabase
       const { error } = await supabase
         .from('leads')
         .insert([formData]);
@@ -73,10 +75,8 @@ export const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
         description: "Seus dados foram salvos. Redirecionando para o checkout...",
       });
 
-      // Fechar modal
       onClose();
       
-      // Redirecionar para o checkout após um breve delay
       setTimeout(() => {
         window.open("https://pay.kiwify.com.br/5zvVurg", "_blank");
       }, 1000);
@@ -93,18 +93,9 @@ export const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
     }
   };
 
-  const handleInputChange = (field: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [field]: e.target.value
-    }));
-  };
-
   const formatWhatsApp = (value: string) => {
-    // Remove tudo que não é número
     const numbers = value.replace(/\D/g, "");
     
-    // Aplica máscara (XX) XXXXX-XXXX
     if (numbers.length <= 2) {
       return `(${numbers}`;
     } else if (numbers.length <= 7) {
@@ -114,17 +105,19 @@ export const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
     }
   };
 
-  const handleWhatsAppChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const formatted = formatWhatsApp(e.target.value);
+  const handleInputChange = (field: string, value: string) => {
+    if (field === "whatsapp") {
+      value = formatWhatsApp(value);
+    }
     setFormData(prev => ({
       ...prev,
-      whatsapp: formatted
+      [field]: value
     }));
   };
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => { if (!open) onClose(); }}>
-      <DialogContent className="sm:max-w-md w-full mx-4">
+      <DialogContent className="sm:max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center text-gradient">
             Garanta sua vaga!
@@ -142,7 +135,7 @@ export const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
               type="text"
               placeholder="Digite seu nome completo"
               value={formData.name}
-              onChange={handleInputChange("name")}
+              onChange={(e) => handleInputChange("name", e.target.value)}
               required
               disabled={isLoading}
             />
@@ -155,7 +148,7 @@ export const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
               type="email"
               placeholder="seuemail@exemplo.com"
               value={formData.email}
-              onChange={handleInputChange("email")}
+              onChange={(e) => handleInputChange("email", e.target.value)}
               required
               disabled={isLoading}
             />
@@ -168,7 +161,7 @@ export const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
               type="tel"
               placeholder="(85) 99999-9999"
               value={formData.whatsapp}
-              onChange={handleWhatsAppChange}
+              onChange={(e) => handleInputChange("whatsapp", e.target.value)}
               maxLength={15}
               required
               disabled={isLoading}
