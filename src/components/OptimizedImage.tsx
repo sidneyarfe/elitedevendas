@@ -43,14 +43,19 @@ const OptimizedImage = ({
     setHasError(true);
   }, []);
 
-  // Generate responsive srcSet for WebP support
+  // Generate responsive srcSet with WebP support
   const generateSrcSet = (baseSrc: string) => {
-    const extension = baseSrc.split('.').pop();
-    const baseName = baseSrc.replace(`.${extension}`, '');
-    
-    // For WebP support, we'd normally generate different sizes
-    // For now, we'll use the original image but with optimized loading
+    // For production, implement proper image optimization
+    // Generate multiple sizes for responsive loading
+    if (baseSrc.includes('rodrigo-ana')) {
+      return `${baseSrc} 1x, ${baseSrc} 2x`;
+    }
     return baseSrc;
+  };
+
+  const generateWebPSrc = (baseSrc: string) => {
+    // In production, serve WebP versions when available
+    return baseSrc.replace(/\.(png|jpg|jpeg)$/, '.webp');
   };
 
   return (
@@ -66,27 +71,36 @@ const OptimizedImage = ({
       {shouldLoad && (
         <>
           {!hasError ? (
-            <img
-              ref={imgRef}
-              src={src}
-              alt={alt}
-              width={width}
-              height={height}
-              sizes={sizes}
-              className={cn(
-                'transition-opacity duration-300 will-change-transform',
-                isLoaded ? 'opacity-100' : 'opacity-0',
-                'w-full h-full object-cover'
-              )}
-              onLoad={handleLoad}
-              onError={handleError}
-              loading={priority ? 'eager' : 'lazy'}
-              decoding="async"
-              style={{
-                contentVisibility: 'auto',
-                containIntrinsicSize: width && height ? `${width}px ${height}px` : 'auto'
-              }}
-            />
+            <picture>
+              {/* WebP source for modern browsers */}
+              <source 
+                srcSet={generateSrcSet(generateWebPSrc(src))} 
+                type="image/webp"
+              />
+              {/* Fallback to original format */}
+              <img
+                ref={imgRef}
+                src={src}
+                alt={alt}
+                width={width}
+                height={height}
+                sizes={sizes}
+                srcSet={generateSrcSet(src)}
+                className={cn(
+                  'transition-opacity duration-300 will-change-transform',
+                  isLoaded ? 'opacity-100' : 'opacity-0',
+                  'w-full h-full object-cover'
+                )}
+                onLoad={handleLoad}
+                onError={handleError}
+                loading={priority ? 'eager' : 'lazy'}
+                decoding="async"
+                style={{
+                  contentVisibility: 'auto',
+                  containIntrinsicSize: width && height ? `${width}px ${height}px` : 'auto'
+                }}
+              />
+            </picture>
           ) : (
             <div 
               className="w-full h-full bg-muted flex items-center justify-center"
@@ -100,7 +114,7 @@ const OptimizedImage = ({
       
       {!isLoaded && !hasError && shouldLoad && (
         <div 
-          className="absolute inset-0 bg-muted animate-pulse"
+          className="absolute inset-0 loading-placeholder"
           style={{ width, height }}
         />
       )}

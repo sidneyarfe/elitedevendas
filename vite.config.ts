@@ -28,16 +28,40 @@ export default defineConfig(({ mode }) => ({
             '@radix-ui/react-accordion',
             '@radix-ui/react-dialog',
             '@radix-ui/react-hover-card',
-            '@radix-ui/react-popover'
+            '@radix-ui/react-popover',
+            '@radix-ui/react-tabs',
+            '@radix-ui/react-card'
+          ],
+          'form-components': [
+            '@radix-ui/react-label',
+            '@radix-ui/react-checkbox',
+            '@radix-ui/react-select'
           ],
           'icons': ['lucide-react'],
-          'utils': ['clsx', 'tailwind-merge']
-        }
+          'utils': ['clsx', 'tailwind-merge', 'date-fns']
+        },
+        assetFileNames: (assetInfo) => {
+          const name = assetInfo.name || 'asset';
+          const info = name.split('.');
+          const ext = info[info.length - 1];
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
+            return `assets/images/[name]-[hash][extname]`;
+          }
+          if (/css/i.test(ext)) {
+            return `assets/styles/[name]-[hash][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
+        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js'
       }
     },
     minify: 'esbuild',
     cssMinify: 'esbuild',
-    chunkSizeWarningLimit: 1000
+    chunkSizeWarningLimit: 1000,
+    cssCodeSplit: true,
+    sourcemap: false,
+    reportCompressedSize: false
   },
   optimizeDeps: {
     include: ['react', 'react-dom'],

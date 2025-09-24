@@ -1,7 +1,7 @@
 const CACHE_NAME = 'workshop-elite-v2';
-const STATIC_CACHE = 'static-v2';
-const DYNAMIC_CACHE = 'dynamic-v2';
+const DYNAMIC_CACHE = 'workshop-elite-dynamic-v2';
 
+// Static assets with cache TTL strategy
 const urlsToCache = [
   '/',
   '/src/assets/rodrigo-ana-mobile.png',
@@ -9,18 +9,28 @@ const urlsToCache = [
   '/src/assets/workshop-elite-logo.png',
   '/src/assets/dr-rafael.png',
   '/src/assets/foto_ana.jpg',
-  '/src/assets/foto_rodrigo.jpg'
+  '/src/assets/foto_rodrigo.jpg',
+  '/src/assets/on-office-interior.jpg'
 ];
 
+// Critical resources with high priority
 const criticalResources = [
   '/src/assets/rodrigo-ana-mobile.png',
   '/src/assets/rodrigo-ana-desktop.png'
 ];
 
+// Cache TTL settings (in milliseconds)
+const CACHE_TTL = {
+  images: 7 * 24 * 60 * 60 * 1000, // 7 days
+  scripts: 24 * 60 * 60 * 1000,    // 1 day
+  styles: 24 * 60 * 60 * 1000,     // 1 day
+  fonts: 30 * 24 * 60 * 60 * 1000  // 30 days
+};
+
 self.addEventListener('install', function(event) {
   event.waitUntil(
     Promise.all([
-      caches.open(STATIC_CACHE).then(cache => cache.addAll(urlsToCache)),
+      caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache)),
       caches.open(DYNAMIC_CACHE)
     ]).then(() => self.skipWaiting())
   );
@@ -31,7 +41,7 @@ self.addEventListener('activate', function(event) {
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames.map(cacheName => {
-          if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
+          if (cacheName !== CACHE_NAME && cacheName !== DYNAMIC_CACHE) {
             return caches.delete(cacheName);
           }
         })
@@ -40,42 +50,101 @@ self.addEventListener('activate', function(event) {
   );
 });
 
+// Fetch event - implement cache strategies with TTL
 self.addEventListener('fetch', function(event) {
-  const { request } = event;
-  const url = new URL(request.url);
-
-  // Handle critical resources with cache-first strategy
-  if (criticalResources.some(resource => url.pathname.includes(resource))) {
-    event.respondWith(
-      caches.match(request).then(cachedResponse => {
-        return cachedResponse || fetch(request).then(networkResponse => {
-          const responseClone = networkResponse.clone();
-          caches.open(STATIC_CACHE).then(cache => {
-            cache.put(request, responseClone);
-          });
-          return networkResponse;
-        });
-      })
-    );
+  if (event.request.method !== 'GET' || event.request.url.startsWith('chrome-extension://')) {
     return;
   }
 
-  // Handle other resources with network-first strategy
-  event.respondWith(
-    fetch(request)
-      .then(networkResponse => {
-        // Cache successful responses
-        if (networkResponse.status === 200) {
-          const responseClone = networkResponse.clone();
-          caches.open(DYNAMIC_CACHE).then(cache => {
-            cache.put(request, responseClone);
+  const url = new URL(event.request.url);
+  
+  // Cache-first with TTL for images
+  if (url.pathname.match(/\.(png|jpg|jpeg|gif|webp|svg)$/)) {
+    event.respondWith(
+      caches.match(event.request).then(function(response) {
+        if (response) {
+          const dateHeader = response.headers.get('date');
+          const date = new Date(dateHeader);
+          const now = new Date();
+          const age = now.getTime() - date.getTime();
+          
+          if (age < CACHE_TTL.images) {
+            return response;
+          }
+        }
+        
+        return fetch(event.request).then(function(fetchResponse) {
+          if (!fetchResponse || fetchResponse.status !== 200) {
+            return fetchResponse;
+          }
+          
+          const responseToCache = fetchResponse.clone();
+          const headers = new Headers(responseToCache.headers);
+          headers.set('date', new Date().toISOString());
+          
+          const newResponse = new Response(responseToCache.body, {
+            status: responseToCache.status,
+            statusText: responseToCache.statusText,
+            headers: headers
+          });
+          
+          caches.open(DYNAMIC_CACHE).then(function(cache) {
+            cache.put(event.request, newResponse.clone());
+          });
+          
+          return fetchResponse;
+        }).catch(function() {
+          return response || caches.match('/offline.html');
+        });
+      })
+    );
+  }
+  // Cache-first for scripts and styles with TTL
+  else if (url.pathname.match(/\.(js|css)$/)) {
+    event.respondWith(
+      caches.match(event.request).then(function(response) {
+        if (response) {
+          const dateHeader = response.headers.get('date');
+          if (dateHeader) {
+            const date = new Date(dateHeader);
+            const now = new Date();
+            const age = now.getTime() - date.getTime();
+            const ttl = url.pathname.endsWith('.js') ? CACHE_TTL.scripts : CACHE_TTL.styles;
+            
+            if (age < ttl) {
+              return response;
+            }
+          }
+        }
+        
+        return fetch(event.request).then(function(fetchResponse) {
+          if (fetchResponse.status === 200) {
+            const responseToCache = fetchResponse.clone();
+            caches.open(DYNAMIC_CACHE).then(function(cache) {
+              cache.put(event.request, responseToCache);
+            });
+          }
+          return fetchResponse;
+        }).catch(function() {
+          return response;
+        });
+      })
+    );
+  }
+  // Network-first for other resources
+  else {
+    event.respondWith(
+      fetch(event.request).then(function(response) {
+        if (response.status === 200) {
+          const responseToCache = response.clone();
+          caches.open(DYNAMIC_CACHE).then(function(cache) {
+            cache.put(event.request, responseToCache);
           });
         }
-        return networkResponse;
+        return response;
+      }).catch(function() {
+        return caches.match(event.request);
       })
-      .catch(() => {
-        // Fallback to cache
-        return caches.match(request);
-      })
-  );
+    );
+  }
 });

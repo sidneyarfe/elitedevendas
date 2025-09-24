@@ -40,12 +40,19 @@ const criticalStyles = `
     perspective: 1000px;
   }
   
-  /* Loading States */
-  .image-placeholder {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  /* Layout shift prevention for critical sections */
+  #diagnostico {
+    min-height: 600px;
+    aspect-ratio: 16/9;
+    contain: layout;
+  }
+  
+  /* Critical skeleton loading */
+  .loading-placeholder {
+    background: linear-gradient(90deg, hsl(var(--muted)) 25%, hsl(var(--muted-foreground)/10%) 50%, hsl(var(--muted)) 75%);
     background-size: 200% 100%;
     animation: loading 1.5s infinite;
-    contain: layout style paint;
+    border-radius: 0.5rem;
   }
   
   @keyframes loading {
@@ -98,15 +105,31 @@ const CriticalCSS = () => {
     style.textContent = criticalStyles;
     document.head.appendChild(style);
 
-    // Preload non-critical CSS
-    const nonCriticalCSS = document.createElement('link');
-    nonCriticalCSS.rel = 'preload';
-    nonCriticalCSS.as = 'style';
-    nonCriticalCSS.href = '/src/index.css';
-    nonCriticalCSS.onload = () => {
-      nonCriticalCSS.rel = 'stylesheet';
-    };
-    document.head.appendChild(nonCriticalCSS);
+      // Create preload link for main CSS with critical resource hints
+      const preloadLink = document.createElement('link');
+      preloadLink.rel = 'preload';
+      preloadLink.href = '/src/index.css';
+      preloadLink.as = 'style';
+      if ((preloadLink as any).fetchPriority !== undefined) {
+        (preloadLink as any).fetchPriority = 'high';
+      }
+      preloadLink.onload = () => {
+        preloadLink.rel = 'stylesheet';
+        preloadLink.media = 'all';
+      };
+      document.head.appendChild(preloadLink);
+      
+      // Preload critical fonts with display swap
+      const fontPreload = document.createElement('link');
+      fontPreload.rel = 'preload';
+      fontPreload.href = 'https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2';
+      fontPreload.as = 'font';
+      fontPreload.type = 'font/woff2';
+      fontPreload.crossOrigin = 'anonymous';
+      if ((fontPreload as any).fetchPriority !== undefined) {
+        (fontPreload as any).fetchPriority = 'high';
+      }
+      document.head.appendChild(fontPreload);
 
     return () => {
       document.head.removeChild(style);
