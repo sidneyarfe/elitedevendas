@@ -29,8 +29,7 @@ export default defineConfig(({ mode }) => ({
             '@radix-ui/react-dialog',
             '@radix-ui/react-hover-card',
             '@radix-ui/react-popover',
-            '@radix-ui/react-tabs',
-            '@radix-ui/react-card'
+            '@radix-ui/react-tabs'
           ],
           'form-components': [
             '@radix-ui/react-label',
