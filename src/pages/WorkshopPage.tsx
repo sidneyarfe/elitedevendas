@@ -183,7 +183,7 @@ const WorkshopPage = () => {
           
           <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-6 md:mb-8">E o que conseguiu?</h2>
           
-          <div className="space-y-3 md:space-y-4 text-base md:text-xl lg:text-2xl font-medium text-muted-foreground mb-6 md:mb-8">
+          <div className="space-y-3 md:space-y-4 text-base md:text-xl lg:text-2xl font-medium text-muted-foreground">
             <div className="flex items-start md:items-center gap-3 md:gap-4 justify-start md:justify-center text-left md:text-center">
               <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 mt-2 md:mt-0"></div>
               <p className="flex-1">Um ou dois agendamentos que não vieram</p>
@@ -218,21 +218,21 @@ const WorkshopPage = () => {
             E pra vender, basta mandar a mensagem certa pro cliente.
           </p>
           
-          <div className="bg-gradient-workshop-subtle p-8 rounded-2xl border border-workshop-gold/20 mb-8 max-w-4xl mx-auto">
-            <blockquote className="text-2xl md:text-3xl font-bold mb-4 italic">
+          <div className="bg-gradient-workshop-subtle p-6 md:p-8 rounded-2xl border border-workshop-gold/20 mb-8 max-w-4xl mx-auto">
+            <blockquote className="text-lg md:text-xl font-medium mb-4 italic text-muted-foreground">
               "Antes só vinha cliente por indicação e raramente pelo marketing. Mas quando começamos a disparar essas Mensagens de Whatsapp, nosso faturamento foi de R$1.000.000 pra R$2.000.000/mês."
             </blockquote>
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex items-center justify-center gap-3">
               <img 
                 src={drRafaelImage} 
                 alt="Dr. Rafael Viera" 
-                className="w-16 h-16 rounded-full object-cover border-2 border-workshop-gold"
-                width="64"
-                height="64"
+                className="w-12 h-12 rounded-full object-cover border-2 border-workshop-gold"
+                width="48"
+                height="48"
                 loading="lazy"
                 decoding="async"
               />
-              <p className="text-xl text-workshop-gold font-semibold">– Dr. Rafael Viera, Dono de Consultório Odontológico | Belém-PA</p>
+              <p className="text-sm md:text-base text-workshop-gold font-medium">– Dr. Rafael Viera, Dono de Consultório Odontológico | Belém-PA</p>
             </div>
           </div>
           
