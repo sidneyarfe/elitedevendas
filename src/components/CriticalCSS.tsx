@@ -19,6 +19,21 @@ const criticalStyles = `
     -moz-osx-font-smoothing: grayscale;
     font-display: swap;
     contain: layout style;
+    overflow-x: hidden;
+  }
+  
+  /* Prevent layout shifts */
+  img, picture {
+    height: auto;
+    max-width: 100%;
+  }
+  
+  /* Force hardware acceleration for better performance */
+  .gpu-accelerated {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    will-change: auto;
   }
   
   /* Content Visibility for Performance */
@@ -40,17 +55,26 @@ const criticalStyles = `
     perspective: 1000px;
   }
   
-  /* Loading States */
+  /* Loading States with Layout Stability */
   .image-placeholder {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background: linear-gradient(90deg, hsl(var(--muted)) 25%, hsl(var(--muted-foreground) / 0.1) 50%, hsl(var(--muted)) 75%);
     background-size: 200% 100%;
     animation: loading 1.5s infinite;
     contain: layout style paint;
+    display: block;
+    position: relative;
   }
   
   @keyframes loading {
     0% { background-position: 200% 0; }
     100% { background-position: -200% 0; }
+  }
+  
+  /* Prevent layout shifts */
+  .stable-layout {
+    contain: layout style paint;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 400px;
   }
   
   /* Button Styles with GPU Acceleration */

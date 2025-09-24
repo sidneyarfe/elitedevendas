@@ -7,6 +7,7 @@ import WorkshopSection from "@/components/WorkshopSection";
 import VagasCounter from "@/components/VagasCounter";
 import LazyYouTube from "@/components/LazyYouTube";
 import CriticalCSS from "@/components/CriticalCSS";
+import CriticalLayout from "@/components/CriticalLayout";
 import ResourceHints from "@/components/ResourceHints";
 import { useScrollVisibility } from "@/hooks/useScrollVisibility";
 import { CheckCircle, Clock, MapPin, Users, Star, Shield, Zap, Target, Calendar } from "lucide-react";
@@ -36,7 +37,8 @@ const WorkshopPage = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  return <div className="min-h-screen bg-background text-foreground">
+  return <div className="min-h-screen bg-background text-foreground scroll-optimized">
+      <CriticalLayout />
       <CriticalCSS />
       <ResourceHints />
       {/* Faixa Exclusiva */}
@@ -47,22 +49,26 @@ const WorkshopPage = () => {
       {/* Hero Section */}
       <div className="relative">
         {/* Images Section */}
-        <div className="w-full">
+        <div className="w-full hero-container">
           {/* Mobile Image - mais comprida */}
           <OptimizedImage 
             src={rodrigoAnaMobile} 
             alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
-            className="block md:hidden w-full object-cover gpu-accelerated" 
+            className="hero-mobile w-full object-cover gpu-accelerated" 
             priority={true}
             sizes="100vw"
+            width={768}
+            height={1024}
           />
           {/* Desktop Image - mais horizontalizada */}
           <OptimizedImage 
             src={rodrigoAnaDesktop} 
             alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
-            className="hidden md:block w-full object-cover gpu-accelerated" 
+            className="hero-desktop w-full object-cover gpu-accelerated" 
             priority={true}
             sizes="100vw"
+            width={1920}
+            height={800}
           />
           
           {/* Text Section Overlapping the Black Area */}
@@ -223,14 +229,12 @@ const WorkshopPage = () => {
               "Antes só vinha cliente por indicação e raramente pelo marketing. Mas quando começamos a disparar essas Mensagens de Whatsapp, nosso faturamento foi de R$1.000.000 pra R$2.000.000/mês."
             </blockquote>
             <div className="flex items-center justify-center gap-4">
-              <img 
+              <OptimizedImage 
                 src={drRafaelImage} 
                 alt="Dr. Rafael Viera" 
-                className="w-16 h-16 rounded-full object-cover border-2 border-workshop-gold"
-                width="64"
-                height="64"
-                loading="lazy"
-                decoding="async"
+                className="w-16 h-16 rounded-full object-cover border-2 border-workshop-gold gpu-accelerated"
+                width={64}
+                height={64}
               />
               <p className="text-xl text-workshop-gold font-semibold">– Dr. Rafael Viera, Dono de Consultório Odontológico | Belém-PA</p>
             </div>
