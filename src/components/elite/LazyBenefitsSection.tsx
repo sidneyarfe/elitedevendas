@@ -12,7 +12,7 @@ const LazyBenefitsSection = ({ onCTAClick }: LazyBenefitsSectionProps) => {
           <img 
             src={workshopEliteLogo}
             alt="Workshop Elite de Vendas Logo" 
-            className="h-24 w-auto object-contain"
+            className="h-16 w-auto object-contain"
             loading="lazy"
             decoding="async"
           />
