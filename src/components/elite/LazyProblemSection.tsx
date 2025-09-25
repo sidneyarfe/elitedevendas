@@ -37,7 +37,7 @@ const LazyProblemSection = ({
       </section>
 
       <section className="bg-card py-12 px-4">
-        <div className="text-center max-w-4xl mx-[30px]">
+        <div className="container mx-auto max-w-4xl text-center">
           <h2 className="md:text-5xl font-black mb-12 text-gradient text-3xl">
             O problema não é você. Não é seu produto. Não é o mercado.
           </h2>
