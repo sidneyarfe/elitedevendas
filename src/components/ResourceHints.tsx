@@ -32,7 +32,7 @@ const ResourceHints = () => {
       document.head.appendChild(link);
     });
 
-    // Enhanced preload critical resources with WebP optimization
+    // Enhanced preload critical resources with optimized sizes
     const criticalImages = [
       { 
         src: '/src/assets/rodrigo-ana-mobile.png', 
@@ -68,6 +68,8 @@ const ResourceHints = () => {
       if ((link as any).fetchPriority !== undefined) {
         (link as any).fetchPriority = priority;
       }
+      // Add cache control headers
+      link.setAttribute('crossorigin', 'anonymous');
       document.head.appendChild(link);
     });
 

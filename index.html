@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,11 +7,19 @@
     <meta name="description" content="Workshop 100% prático para empresários de Belém-PA que querem atrair clientes todos os dias, gastando R$0 com anúncios. Processo de vendas previsível sem depender de indicação." />
     <meta name="author" content="Alavanc Consultoria" />
     <meta name="keywords" content="workshop vendas, processo vendas, alavanc consultoria, belém, empresários, prospecção ativa, whatsapp vendas" />
+    
+    <!-- Cache Control -->
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable" />
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts - Optimized loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"></noscript>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" as="image" href="/src/assets/rodrigo-ana-mobile.png" media="(max-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="/src/assets/rodrigo-ana-desktop.png" media="(min-width: 769px)" fetchpriority="high">
 
     <meta property="og:title" content="Workshop Elite de Vendas - Alavanc Consultoria" />
     <meta property="og:description" content="Workshop 100% prático para empresários de Belém-PA que querem atrair clientes todos os dias, gastando R$0 com anúncios." />
@@ -50,11 +58,14 @@
     
     <!-- Meta Conversions API - PageView Event -->
     <script>
-      fetch('https://bnmyqamklrgovqpturmv.supabase.co/functions/v1/meta-conversions', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ eventName: 'PageView' })
-      }).catch(console.error);
+      // Defer non-critical API call
+      setTimeout(() => {
+        fetch('https://bnmyqamklrgovqpturmv.supabase.co/functions/v1/meta-conversions', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ eventName: 'PageView' })
+        }).catch(console.error);
+      }, 1000);
     </script>
   </body>
 </html>

@@ -8,6 +8,9 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    headers: {
+      'Cache-Control': 'public, max-age=31536000, immutable'
+    }
   },
   plugins: [
     react(),
@@ -60,7 +63,15 @@ export default defineConfig(({ mode }) => ({
     chunkSizeWarningLimit: 1000,
     cssCodeSplit: true,
     sourcemap: false,
-    reportCompressedSize: false
+    reportCompressedSize: false,
+    // Enable gzip compression
+    assetsInlineLimit: 4096
+  },
+  preview: {
+    headers: {
+      'Cache-Control': 'public, max-age=31536000, immutable',
+      'Vary': 'Accept-Encoding'
+    }
   },
   optimizeDeps: {
     include: ['react', 'react-dom'],

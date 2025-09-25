@@ -1,5 +1,6 @@
-const CACHE_NAME = 'workshop-elite-v2';
-const DYNAMIC_CACHE = 'workshop-elite-dynamic-v2';
+const CACHE_NAME = 'workshop-elite-v3';
+const DYNAMIC_CACHE = 'workshop-elite-dynamic-v3';
+const IMAGE_CACHE = 'workshop-images-v3';
 
 // Static assets with cache TTL strategy
 const urlsToCache = [
@@ -19,18 +20,20 @@ const criticalResources = [
   '/src/assets/rodrigo-ana-desktop.png'
 ];
 
-// Cache TTL settings (in milliseconds)
+// Enhanced cache TTL settings (in milliseconds)
 const CACHE_TTL = {
-  images: 7 * 24 * 60 * 60 * 1000, // 7 days
-  scripts: 24 * 60 * 60 * 1000,    // 1 day
-  styles: 24 * 60 * 60 * 1000,     // 1 day
-  fonts: 30 * 24 * 60 * 60 * 1000  // 30 days
+  images: 30 * 24 * 60 * 60 * 1000, // 30 days
+  scripts: 7 * 24 * 60 * 60 * 1000,  // 7 days
+  styles: 7 * 24 * 60 * 60 * 1000,   // 7 days
+  fonts: 365 * 24 * 60 * 60 * 1000,  // 1 year
+  youtube: 24 * 60 * 60 * 1000       // 1 day for YouTube thumbnails
 };
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
     Promise.all([
       caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache)),
+      caches.open(IMAGE_CACHE).then(cache => cache.addAll(criticalResources)),
       caches.open(DYNAMIC_CACHE)
     ]).then(() => self.skipWaiting())
   );
@@ -41,7 +44,7 @@ self.addEventListener('activate', function(event) {
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames.map(cacheName => {
-          if (cacheName !== CACHE_NAME && cacheName !== DYNAMIC_CACHE) {
+          if (cacheName !== CACHE_NAME && cacheName !== DYNAMIC_CACHE && cacheName !== IMAGE_CACHE) {
             return caches.delete(cacheName);
           }
         })
@@ -58,8 +61,8 @@ self.addEventListener('fetch', function(event) {
 
   const url = new URL(event.request.url);
   
-  // Cache-first with TTL for images
-  if (url.pathname.match(/\.(png|jpg|jpeg|gif|webp|svg)$/)) {
+  // Cache-first with TTL for images (including YouTube thumbnails)
+  if (url.pathname.match(/\.(png|jpg|jpeg|gif|webp|svg)$/) || url.hostname === 'img.youtube.com') {
     event.respondWith(
       caches.match(event.request).then(function(response) {
         if (response) {
@@ -67,8 +70,9 @@ self.addEventListener('fetch', function(event) {
           const date = new Date(dateHeader);
           const now = new Date();
           const age = now.getTime() - date.getTime();
+          const ttl = url.hostname === 'img.youtube.com' ? CACHE_TTL.youtube : CACHE_TTL.images;
           
-          if (age < CACHE_TTL.images) {
+          if (age < ttl) {
             return response;
           }
         }
@@ -81,6 +85,7 @@ self.addEventListener('fetch', function(event) {
           const responseToCache = fetchResponse.clone();
           const headers = new Headers(responseToCache.headers);
           headers.set('date', new Date().toISOString());
+          headers.set('Cache-Control', 'public, max-age=31536000');
           
           const newResponse = new Response(responseToCache.body, {
             status: responseToCache.status,
@@ -88,7 +93,8 @@ self.addEventListener('fetch', function(event) {
             headers: headers
           });
           
-          caches.open(DYNAMIC_CACHE).then(function(cache) {
+          const cacheToUse = url.hostname === 'img.youtube.com' ? DYNAMIC_CACHE : IMAGE_CACHE;
+          caches.open(cacheToUse).then(function(cache) {
             cache.put(event.request, newResponse.clone());
           });
           
