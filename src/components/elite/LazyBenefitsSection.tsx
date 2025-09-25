@@ -12,7 +12,7 @@ const LazyBenefitsSection = ({
         </div>
 
         <h2 className="md:text-4xl font-black mb-12 text-gradient text-xl">
-          Em 2 dias de workshop presencial, você vai aprender:
+          No Workshop Elite de Vendas, você vai descobrir:
         </h2>
 
         <div className="space-y-8 mb-12">
