@@ -1,13 +1,12 @@
 import rodrigoAnaMobile from "@/assets/rodrigo-ana-mobile.png";
 import rodrigoAnaDesktop from "@/assets/rodrigo-ana-desktop.png";
-
 interface CriticalHeroSectionProps {
   onCTAClick: () => void;
 }
-
-const CriticalHeroSection = ({ onCTAClick }: CriticalHeroSectionProps) => {
-  return (
-    <>
+const CriticalHeroSection = ({
+  onCTAClick
+}: CriticalHeroSectionProps) => {
+  return <>
       {/* Faixa Exclusiva */}
       <div className="bg-gradient-workshop text-black py-3 text-center">
         <p className="font-bold text-lg">Para EMPRESÁRIOS de BELÉM-PA</p>
@@ -19,38 +18,21 @@ const CriticalHeroSection = ({ onCTAClick }: CriticalHeroSectionProps) => {
         <div className="w-full">
           {/* Mobile Image - critical resource */}
           <picture>
-            <source 
-              media="(max-width: 768px)" 
-              srcSet={rodrigoAnaMobile}
-              type="image/png"
-            />
-            <source 
-              media="(min-width: 769px)" 
-              srcSet={rodrigoAnaDesktop}
-              type="image/png"
-            />
-            <img 
-              src={rodrigoAnaMobile}
-              alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
-              className="w-full object-cover gpu-accelerated"
-              loading="eager"
-              decoding="async"
-              fetchPriority="high"
-              width="800"
-              height="600"
-            />
+            <source media="(max-width: 768px)" srcSet={rodrigoAnaMobile} type="image/png" />
+            <source media="(min-width: 769px)" srcSet={rodrigoAnaDesktop} type="image/png" />
+            <img src={rodrigoAnaMobile} alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" className="w-full object-cover gpu-accelerated" loading="eager" decoding="async" fetchPriority="high" width="800" height="600" />
           </picture>
           
           {/* Text Section Overlapping the Black Area */}
-          <div className="absolute inset-0 flex items-end justify-center">
-            <div className="w-full text-center text-white px-4 pb-8 md:pb-32 max-w-7xl mx-auto">
+          <div className="absolute inset-0 flex items-end justify-center py-0 my-0">
+            <div className="w-full text-center text-white pb-8 md:pb-32 max-w-7xl mx-auto px-0 py-0">
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 leading-tight">
                 Você Já Gastou com Agências, Tráfego Pago, Conteúdo, Influencers… e{" "}
                 <span className="text-gradient">Não Aumentou Suas Vendas?</span>
               </h1>
               
               <div className="text-base md:text-xl lg:text-2xl mb-6 md:mb-8 text-gray-200 max-w-5xl mx-auto font-medium leading-relaxed">
-                <p className="mb-4 md:mb-6">A verdade é que você nunca precisou de nada disso.</p>
+                <p className="mb-4 md:mb-6 px-[30px]">A verdade é que você nunca precisou de nada disso.</p>
                 <p className="mb-4 md:mb-6">Com apenas</p>
                 
                 {/* Caixas semi-transparentes douradas - otimizadas */}
@@ -83,25 +65,18 @@ const CriticalHeroSection = ({ onCTAClick }: CriticalHeroSectionProps) => {
                   </div>
                 </div>
                 
-                <p className="text-lg md:text-2xl lg:text-3xl font-bold">
+                <p className="text-lg md:text-2xl lg:text-3xl font-bold px-[30px]">
                   você vai <span className="text-gradient">DOBRAR suas vendas em 7 dias</span> — sem gastar mais R$1.
                 </p>
               </div>
               
               <div className="flex justify-center">
-                <button
-                  onClick={onCTAClick}
-                  className="animate-pulse-glow text-base md:text-lg lg:text-xl py-3 md:py-4 lg:py-6 px-6 md:px-8 lg:px-12 bg-gradient-workshop text-black font-bold rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105"
-                >
-                  Quero aplicar isso no meu negócio agora
-                </button>
+                <button onClick={onCTAClick} className="animate-pulse-glow md:text-lg lg:text-xl py-3 md:py-4 lg:py-6 md:px-8 lg:px-12 bg-gradient-workshop text-black font-bold rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105 px-0 mx-[30px] text-xl">QUERO APLICAR NO MEU NEGÓCIO</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default CriticalHeroSection;

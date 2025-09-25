@@ -1,11 +1,11 @@
 interface CriticalCTAProps {
   onCTAClick: () => void;
 }
-
-const CriticalCTA = ({ onCTAClick }: CriticalCTAProps) => {
-  return (
-    <section className="bg-gradient-workshop py-16 px-4">
-      <div className="max-w-4xl mx-auto text-center">
+const CriticalCTA = ({
+  onCTAClick
+}: CriticalCTAProps) => {
+  return <section className="bg-gradient-workshop py-16 px-4">
+      <div className="max-w-4xl text-center mx-[20px]">
         <h2 className="text-3xl md:text-4xl font-black mb-6 text-black">
           ⚠️ ÚLTIMAS VAGAS
         </h2>
@@ -24,10 +24,7 @@ const CriticalCTA = ({ onCTAClick }: CriticalCTAProps) => {
           </div>
         </div>
 
-        <button
-          onClick={onCTAClick}
-          className="bg-black text-white font-bold text-xl py-6 px-12 rounded-xl shadow-2xl hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 animate-pulse-glow"
-        >
+        <button onClick={onCTAClick} className="bg-black text-white font-bold text-xl py-6 px-12 rounded-xl shadow-2xl hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 animate-pulse-glow">
           Quero uma das últimas vagas
         </button>
 
@@ -35,8 +32,6 @@ const CriticalCTA = ({ onCTAClick }: CriticalCTAProps) => {
           Pare de depender da sorte. Construa um processo de vendas que funciona todo dia.
         </p>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CriticalCTA;

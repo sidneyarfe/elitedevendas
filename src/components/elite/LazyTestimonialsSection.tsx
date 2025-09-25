@@ -1,10 +1,8 @@
 import LazyYouTube from "../LazyYouTube";
-
 const LazyTestimonialsSection = () => {
-  return (
-    <section className="py-12 px-4">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-black mb-12 text-center text-gradient">
+  return <section className="py-12 px-4">
+      <div className="max-w-6xl mx-[20px]">
+        <h2 className="md:text-4xl font-black mb-12 text-center text-gradient text-3xl">
           Depoimentos Reais de Quem Aplicou
         </h2>
 
@@ -12,11 +10,7 @@ const LazyTestimonialsSection = () => {
           {/* Depoimento Dirceu */}
           <div className="bg-card p-6 rounded-2xl border border-muted/20">
             <div className="mb-4">
-              <LazyYouTube 
-                videoId="B0cORHhpoQE"
-                title="Depoimento Dirceu - Corretor de Imóveis"
-                className="rounded-lg"
-              />
+              <LazyYouTube videoId="B0cORHhpoQE" title="Depoimento Dirceu - Corretor de Imóveis" className="rounded-lg" />
             </div>
             
             <blockquote className="text-lg font-medium mb-4 italic">
@@ -29,11 +23,7 @@ const LazyTestimonialsSection = () => {
           {/* Depoimento Milena */}
           <div className="bg-card p-6 rounded-2xl border border-muted/20">
             <div className="mb-4">
-              <LazyYouTube 
-                videoId="gNn-2u2ZhzU"
-                title="Depoimento Milena"
-                className="rounded-lg"
-              />
+              <LazyYouTube videoId="gNn-2u2ZhzU" title="Depoimento Milena" className="rounded-lg" />
             </div>
             
             <blockquote className="text-lg font-medium mb-4 italic">
@@ -44,8 +34,6 @@ const LazyTestimonialsSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default LazyTestimonialsSection;

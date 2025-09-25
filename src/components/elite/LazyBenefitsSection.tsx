@@ -1,70 +1,51 @@
 import workshopEliteLogo from "@/assets/workshop-elite-logo.png";
-
 interface LazyBenefitsSectionProps {
   onCTAClick: () => void;
 }
-
-const LazyBenefitsSection = ({ onCTAClick }: LazyBenefitsSectionProps) => {
-  return (
-    <section className="py-12 px-4 bg-card">
-      <div className="max-w-6xl mx-auto text-center">
+const LazyBenefitsSection = ({
+  onCTAClick
+}: LazyBenefitsSectionProps) => {
+  return <section className="py-12 px-4 bg-card">
+      <div className="max-w-6xl text-center mx-[20px]">
         <div className="flex justify-center mb-8">
-          <img 
-            src={workshopEliteLogo}
-            alt="Workshop Elite de Vendas Logo" 
-            className="h-16 w-auto object-contain"
-            loading="lazy"
-            decoding="async"
-          />
+          <img src={workshopEliteLogo} alt="Workshop Elite de Vendas Logo" className="h-16 w-auto object-contain" loading="lazy" decoding="async" />
         </div>
 
-        <h2 className="text-3xl md:text-4xl font-black mb-12 text-gradient">
+        <h2 className="md:text-4xl font-black mb-12 text-gradient text-2xl">
           No Workshop Elite de Vendas, você vai descobrir:
         </h2>
 
         <div className="space-y-8 mb-12">
-          {[
-            {
-              number: "1",
-              title: "Como vender todo dia, sem precisar de tráfego pago, agências, conteúdo ou influencers."
-            },
-            {
-              number: "2", 
-              title: "A estratégia para fechar R$10.000 em vendas nos próximos 7 dias usando contatos antigos de WhatsApp."
-            },
-            {
-              number: "3",
-              title: "Como conseguir +5.000 contatos de potenciais clientes em 30s usando Google Maps, redes sociais e LinkedIn."
-            },
-            {
-              number: "4",
-              title: "Como abordar, levar para reunião e vender para esses potenciais clientes - mesmo que eles não te conheçam."
-            },
-            {
-              number: "5",
-              title: "O passo a passo para reativar o cliente sumido e fazer ele comprar/recomprar em até 24h."
-            },
-            {
-              number: "6",
-              title: "Como manter sua agenda cheia de reuniões de venda com 30 minutos/dia de prospecção."
-            }
-          ].map((benefit, index) => (
-            <div key={index} className="flex items-start gap-4 text-left max-w-4xl mx-auto">
+          {[{
+          number: "1",
+          title: "Como vender todo dia, sem precisar de tráfego pago, agências, conteúdo ou influencers."
+        }, {
+          number: "2",
+          title: "A estratégia para fechar R$10.000 em vendas nos próximos 7 dias usando contatos antigos de WhatsApp."
+        }, {
+          number: "3",
+          title: "Como conseguir +5.000 contatos de potenciais clientes em 30s usando Google Maps, redes sociais e LinkedIn."
+        }, {
+          number: "4",
+          title: "Como abordar, levar para reunião e vender para esses potenciais clientes - mesmo que eles não te conheçam."
+        }, {
+          number: "5",
+          title: "O passo a passo para reativar o cliente sumido e fazer ele comprar/recomprar em até 24h."
+        }, {
+          number: "6",
+          title: "Como manter sua agenda cheia de reuniões de venda com 30 minutos/dia de prospecção."
+        }].map((benefit, index) => <div key={index} className="flex items-start gap-4 text-left max-w-4xl mx-auto">
               <div className="w-8 h-8 bg-workshop-gold text-black font-bold rounded-full flex items-center justify-center flex-shrink-0">
                 {benefit.number}
               </div>
               <div>
-                <h3 className="text-lg md:text-xl font-bold">{benefit.title}</h3>
+                <h3 className="md:text-xl font-bold text-base">{benefit.title}</h3>
               </div>
-            </div>
-          ))}
+            </div>)}
         </div>
 
         <div className="flex justify-center mb-12">
-          <button
-            onClick={onCTAClick}
-            className="text-lg py-4 px-8 bg-gradient-workshop text-black font-bold rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105"
-          >
+          <button onClick={onCTAClick} className="text-lg py-4 px-8 bg-gradient-workshop text-black font-bold rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105">
             Quero aprender isso
           </button>
         </div>
@@ -122,17 +103,10 @@ const LazyBenefitsSection = ({ onCTAClick }: LazyBenefitsSectionProps) => {
           </div>
 
           <div className="flex justify-center">
-            <button
-              onClick={onCTAClick}
-              className="text-xl py-6 px-12 bg-gradient-workshop text-black font-bold rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105"
-            >
-              Quero tudo isso pra mim
-            </button>
+            <button onClick={onCTAClick} className="text-xl py-6 px-12 bg-gradient-workshop text-black font-bold rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105">GARANTIR VAGA AGORA</button>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default LazyBenefitsSection;
