@@ -1,4 +1,4 @@
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet-async";
 import { Suspense, useState, lazy } from "react";
 
 // Critical components - loaded immediately
