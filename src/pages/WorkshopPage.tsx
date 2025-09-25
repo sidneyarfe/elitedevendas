@@ -18,10 +18,10 @@ import anaImage from "@/assets/foto_ana.jpg";
 import rodrigoImage from "@/assets/foto_rodrigo.jpg";
 import onOfficeSalaImage from "@/assets/onoffice_sala.png";
 import onOfficeLocalImage from "@/assets/onoffice_local.png";
-import rodrigoAnaMobile from "@/assets/rodrigo-ana-mobile.png";
+import rodrigoAnaMobile from "@/assets/rodrigo-ana-mobile.webp";
 import rodrigoAnaDesktop from "@/assets/rodrigo-ana-desktop.png";
 import workshopLogo from "@/assets/workshop-elite-logo.png";
-import drRafaelImage from "@/assets/dr-rafael.png";
+import drRafaelImage from "@/assets/dr-rafael.webp";
 const WorkshopPage = () => {
   // Performance optimization: replaced OptimizedImage with native img tags
   const [isModalOpen, setIsModalOpen] = useState(false);

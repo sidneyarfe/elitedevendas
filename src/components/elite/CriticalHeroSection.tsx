@@ -1,4 +1,4 @@
-import rodrigoAnaMobile from "@/assets/rodrigo-ana-mobile.png";
+import rodrigoAnaMobile from "@/assets/rodrigo-ana-mobile.webp";
 import rodrigoAnaDesktop from "@/assets/rodrigo-ana-desktop.png";
 interface CriticalHeroSectionProps {
   onCTAClick: () => void;
@@ -18,7 +18,7 @@ const CriticalHeroSection = ({
         <div className="w-full">
           {/* Mobile Image - critical resource */}
           <picture>
-            <source media="(max-width: 768px)" srcSet={rodrigoAnaMobile} type="image/png" />
+            <source media="(max-width: 768px)" srcSet={rodrigoAnaMobile} type="image/webp" />
             <source media="(min-width: 769px)" srcSet={rodrigoAnaDesktop} type="image/png" />
             <img src={rodrigoAnaMobile} alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" className="w-full object-cover gpu-accelerated" loading="eager" decoding="async" fetchPriority="high" width="800" height="600" />
           </picture>

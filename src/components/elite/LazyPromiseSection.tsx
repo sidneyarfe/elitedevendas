@@ -1,4 +1,4 @@
-import rodrigoAnaPromise from "@/assets/rodrigo-ana-promise.png";
+import rodrigoAnaPromise from "@/assets/rodrigo-ana-promise.webp";
 import workshopLogo from "@/assets/workshop-elite-logo.png";
 
 interface LazyPromiseSectionProps {

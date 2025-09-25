@@ -1,4 +1,4 @@
-import drRafael from "@/assets/dr-rafael.png";
+import drRafael from "@/assets/dr-rafael.webp";
 interface LazyProblemSectionProps {
   onCTAClick: () => void;
 }

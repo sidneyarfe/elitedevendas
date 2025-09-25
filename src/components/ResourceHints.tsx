@@ -35,11 +35,11 @@ const ResourceHints = () => {
     // Enhanced preload critical resources with optimized sizes
     const criticalImages = [
       { 
-        src: '/src/assets/rodrigo-ana-mobile.png', 
+        src: '/src/assets/rodrigo-ana-mobile.webp', 
         media: '(max-width: 768px)',
         sizes: '100vw',
         priority: 'high',
-        type: 'image/png'
+        type: 'image/webp'
       },
       { 
         src: '/src/assets/rodrigo-ana-desktop.png', 
@@ -87,7 +87,7 @@ const ResourceHints = () => {
       { src: '/src/assets/foto_ana.jpg', priority: 'medium' },
       { src: '/src/assets/foto_rodrigo.jpg', priority: 'medium' },
       { src: '/src/assets/on-office-interior.jpg', priority: 'low' },
-      { src: '/src/assets/dr-rafael.png', priority: 'high' }, // Small but visible
+      { src: '/src/assets/dr-rafael.webp', priority: 'high' }, // Small but visible
       { src: '/src/assets/onoffice_sala.png', priority: 'low' },
       { src: '/src/assets/onoffice_local.png', priority: 'low' }
     ];

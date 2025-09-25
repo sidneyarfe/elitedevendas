@@ -24,7 +24,7 @@ export const serviceWorkerContent = `
 const CACHE_NAME = 'workshop-elite-v1';
 const urlsToCache = [
   '/',
-  '/src/assets/rodrigo-ana-mobile.png',
+  '/src/assets/rodrigo-ana-mobile.webp',
   '/src/assets/rodrigo-ana-desktop.png',
   '/src/assets/workshop-elite-logo.png'
 ];
