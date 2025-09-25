@@ -23,9 +23,7 @@ const LazyGuaranteeSection = ({
             Sem perguntas. Sem letras miúdas. Só mandar mensagem. Risco zero.
           </p>
           
-          <button onClick={onCTAClick} className="text-lg md:text-xl py-4 md:py-6 px-8 md:px-12 bg-gradient-workshop text-black font-bold rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105">
-            Quero minha vaga com garantia
-          </button>
+          <button onClick={onCTAClick} className="text-lg md:text-xl py-4 md:py-6 px-8 md:px-12 bg-gradient-workshop text-black font-bold rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105">QUERO MINHA VAGA COM A GARANTIA</button>
         </div>
       </div>
     </section>;

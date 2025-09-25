@@ -53,9 +53,7 @@ const LazyBenefitsSection = ({
         </div>
 
         <div className="flex justify-center mb-12">
-          <button onClick={onFirstButtonClick} className="text-lg py-4 px-8 bg-gradient-workshop text-black font-bold rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105">
-            Quero aprender isso
-          </button>
+          <button onClick={onFirstButtonClick} className="text-lg py-4 px-8 bg-gradient-workshop text-black font-bold rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105">SIM! QUERO APLICAR ISSO</button>
         </div>
 
         {/* Ao garantir sua vaga, você recebe */}
