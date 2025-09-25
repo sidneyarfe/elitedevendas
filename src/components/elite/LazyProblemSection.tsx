@@ -1,3 +1,5 @@
+import drRafael from "@/assets/dr-rafael.png";
+
 interface LazyProblemSectionProps {
   onCTAClick: () => void;
 }
@@ -55,7 +57,7 @@ const LazyProblemSection = ({ onCTAClick }: LazyProblemSectionProps) => {
             </blockquote>
             <div className="flex items-center justify-center gap-3">
               <img 
-                src="/src/assets/dr-rafael.png"
+                src={drRafael}
                 alt="Dr. Rafael Viera" 
                 className="w-12 h-12 rounded-full object-cover border-2 border-workshop-gold"
                 width="48"

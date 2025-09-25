@@ -1,3 +1,6 @@
+import onOfficeSala from "@/assets/onoffice_sala.png";
+import onOfficeLocal from "@/assets/onoffice_local.png";
+
 interface LazyEventDetailsSectionProps {
   onCTAClick: () => void;
 }
@@ -53,7 +56,7 @@ const LazyEventDetailsSection = ({ onCTAClick }: LazyEventDetailsSectionProps) =
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="rounded-2xl overflow-hidden">
             <img 
-              src="/src/assets/onoffice_sala.png"
+              src={onOfficeSala}
               alt="Sala de treinamento On Office Belém"
               className="w-full h-64 object-cover"
               loading="lazy"
@@ -62,7 +65,7 @@ const LazyEventDetailsSection = ({ onCTAClick }: LazyEventDetailsSectionProps) =
           </div>
           <div className="rounded-2xl overflow-hidden">
             <img 
-              src="/src/assets/onoffice_local.png"
+              src={onOfficeLocal}
               alt="Fachada On Office Belém - Local do evento"
               className="w-full h-64 object-cover"
               loading="lazy"

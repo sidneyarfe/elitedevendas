@@ -1,3 +1,6 @@
+import rodrigoAnaMobile from "@/assets/rodrigo-ana-mobile.png";
+import rodrigoAnaDesktop from "@/assets/rodrigo-ana-desktop.png";
+
 interface CriticalHeroSectionProps {
   onCTAClick: () => void;
 }
@@ -18,16 +21,16 @@ const CriticalHeroSection = ({ onCTAClick }: CriticalHeroSectionProps) => {
           <picture>
             <source 
               media="(max-width: 768px)" 
-              srcSet="/src/assets/rodrigo-ana-mobile.png"
+              srcSet={rodrigoAnaMobile}
               type="image/png"
             />
             <source 
               media="(min-width: 769px)" 
-              srcSet="/src/assets/rodrigo-ana-desktop.png"
+              srcSet={rodrigoAnaDesktop}
               type="image/png"
             />
             <img 
-              src="/src/assets/rodrigo-ana-mobile.png"
+              src={rodrigoAnaMobile}
               alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
               className="w-full object-cover gpu-accelerated"
               loading="eager"

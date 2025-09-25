@@ -1,3 +1,5 @@
+import workshopEliteLogo from "@/assets/workshop-elite-logo.png";
+
 interface LazyBenefitsSectionProps {
   onCTAClick: () => void;
 }
@@ -8,7 +10,7 @@ const LazyBenefitsSection = ({ onCTAClick }: LazyBenefitsSectionProps) => {
       <div className="max-w-6xl mx-auto text-center">
         <div className="flex justify-center mb-8">
           <img 
-            src="/src/assets/workshop-elite-logo.png"
+            src={workshopEliteLogo}
             alt="Workshop Elite de Vendas Logo" 
             className="h-16 w-auto object-contain"
             loading="lazy"

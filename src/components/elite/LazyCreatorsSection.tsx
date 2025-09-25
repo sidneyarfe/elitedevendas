@@ -1,3 +1,6 @@
+import fotoAna from "@/assets/foto_ana.jpg";
+import fotoRodrigo from "@/assets/foto_rodrigo.jpg";
+
 interface LazyCreatorsSectionProps {
   onCTAClick: () => void;
 }
@@ -15,7 +18,7 @@ const LazyCreatorsSection = ({ onCTAClick }: LazyCreatorsSectionProps) => {
           <div className="bg-card p-8 rounded-2xl border border-muted/20">
             <div className="flex flex-col items-center text-center">
               <img 
-                src="/src/assets/foto_ana.jpg"
+                src={fotoAna}
                 alt="Ana Araújo"
                 className="w-32 h-32 rounded-full object-cover border-4 border-workshop-gold mb-6"
                 loading="lazy"
@@ -44,7 +47,7 @@ const LazyCreatorsSection = ({ onCTAClick }: LazyCreatorsSectionProps) => {
           <div className="bg-card p-8 rounded-2xl border border-muted/20">
             <div className="flex flex-col items-center text-center">
               <img 
-                src="/src/assets/foto_rodrigo.jpg"
+                src={fotoRodrigo}
                 alt="Rodrigo Marques"
                 className="w-32 h-32 rounded-full object-cover border-4 border-workshop-gold mb-6"
                 loading="lazy"
