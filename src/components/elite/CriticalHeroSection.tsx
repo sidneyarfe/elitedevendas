@@ -71,7 +71,7 @@ const CriticalHeroSection = ({
               </div>
               
               <div className="flex justify-center">
-                <button onClick={onCTAClick} className="animate-pulse-glow md:text-lg lg:text-xl py-3 md:py-4 lg:py-6 md:px-8 lg:px-12 bg-gradient-workshop text-black font-bold rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105 px-0 mx-[30px] text-xl">QUERO APLICAR NO MEU NEGÓCIO</button>
+                <button onClick={onCTAClick} className="animate-pulse-glow md:text-lg lg:text-xl md:py-4 lg:py-6 md:px-8 lg:px-12 bg-gradient-workshop text-black font-bold rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105 mx-[30px] text-xl px-[10px] py-[10px]">QUERO APLICAR NO MEU NEGÓCIO</button>
               </div>
             </div>
           </div>
