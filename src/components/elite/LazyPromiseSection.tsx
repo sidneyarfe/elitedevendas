@@ -7,10 +7,30 @@ interface LazyPromiseSectionProps {
 
 const LazyPromiseSection = ({ onCTAClick }: LazyPromiseSectionProps) => {
   return (
-    <section className="py-16 px-4 bg-card">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center">
-          {/* Image with Workshop Logo */}
+    <section className="bg-card">
+      {/* Mobile: Full-width image touching borders */}
+      <div className="md:hidden">
+        <div className="relative">
+          <img 
+            src={rodrigoAnaPromise} 
+            alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
+            className="w-full h-auto object-cover object-center"
+            loading="lazy"
+          />
+          <div className="absolute bottom-4 right-4">
+            <img 
+              src={workshopLogo} 
+              alt="Workshop Elite de Vendas Logo" 
+              className="h-12 opacity-90"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop: Contained image with padding */}
+      <div className="hidden md:block py-16 px-4">
+        <div className="container mx-auto max-w-6xl text-center">
           <div className="relative mb-12">
             <div className="relative inline-block">
               <img 
@@ -29,9 +49,13 @@ const LazyPromiseSection = ({ onCTAClick }: LazyPromiseSectionProps) => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          {/* Promise Content */}
-          <div className="max-w-4xl mx-auto">
+      {/* Promise Content */}
+      <div className="py-8 md:py-0 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-black mb-6 text-gradient">
               Nossa Promessa é Simples:
             </h2>
@@ -48,7 +72,7 @@ const LazyPromiseSection = ({ onCTAClick }: LazyPromiseSectionProps) => {
               Não é teoria. Não é enrolação. É um método testado e comprovado por centenas de empresários em Belém que já transformaram seus negócios.
             </p>
 
-            <div className="flex justify-center">
+            <div className="flex justify-center pb-8 md:pb-16">
               <button 
                 onClick={onCTAClick}
                 className="text-lg md:text-xl py-4 md:py-6 px-8 md:px-12 bg-gradient-workshop text-black font-bold rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105"

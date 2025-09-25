@@ -6,7 +6,7 @@ const LazyBenefitsSection = ({
   onCTAClick
 }: LazyBenefitsSectionProps) => {
   return <section className="py-12 px-4 bg-card">
-      <div className="max-w-6xl text-center mx-[20px]">
+      <div className="container mx-auto max-w-6xl text-center">
         <div className="flex justify-center mb-8">
           <img src={workshopEliteLogo} alt="Workshop Elite de Vendas Logo" className="h-16 w-auto object-contain" loading="lazy" decoding="async" />
         </div>

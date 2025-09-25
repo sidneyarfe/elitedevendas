@@ -7,7 +7,7 @@ const LazyEventDetailsSection = ({
   onCTAClick
 }: LazyEventDetailsSectionProps) => {
   return <section className="py-12 px-4 bg-card">
-      <div className="max-w-6xl mx-[20px]">
+      <div className="container mx-auto max-w-6xl">
         <h2 className="text-3xl md:text-4xl font-black mb-12 text-center text-gradient">
           Detalhes do Evento
         </h2>
