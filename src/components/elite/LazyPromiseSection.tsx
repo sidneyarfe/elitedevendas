@@ -52,15 +52,16 @@ const LazyPromiseSection = ({ onCTAClick }: LazyPromiseSectionProps) => {
                 Se você aplicar exatamente o que vamos ensinar no Workshop Elite de Vendas...
               </p>
               
-              <div className="relative">
+              <div className="relative mb-6">
                 <div className="absolute inset-0 bg-gradient-workshop opacity-10 rounded-xl"></div>
-                <p className="text-2xl md:text-3xl font-black mb-4 text-gradient p-6 relative">
+                <p className="text-2xl md:text-3xl font-black text-gradient p-6 relative">
                   Você vai DOBRAR suas vendas em 7 dias — ou devolvemos seu dinheiro.
                 </p>
-                <p className="text-lg md:text-xl font-semibold text-workshop-gold/90 mb-8 px-6">
-                  Sem gastar com tráfego pago, agências, conteúdo no instagram ou influencers!
-                </p>
               </div>
+              
+              <p className="text-lg md:text-xl font-semibold text-muted-foreground mb-8">
+                Sem gastar com tráfego pago, agências, conteúdo no instagram ou influencers!
+              </p>
               
             </div>
 
