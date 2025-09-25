@@ -8,7 +8,7 @@ const LazyBenefitsSection = ({
   onFirstButtonClick
 }: LazyBenefitsSectionProps) => {
   return <section id="benefits-section" className="py-12 px-4 bg-card">
-      <div className="max-w-6xl text-center mx-[20px]">
+      <div className="max-w-6xl text-center mx-[5px]">
         <div className="flex justify-center mb-8">
           <img src={workshopEliteLogo} alt="Workshop Elite de Vendas Logo" className="h-24 w-auto object-contain" loading="lazy" decoding="async" />
         </div>
