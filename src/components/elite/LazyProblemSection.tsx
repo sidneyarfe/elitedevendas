@@ -38,11 +38,11 @@ const LazyProblemSection = ({
 
       <section className="bg-card py-12 px-4">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="md:text-5xl font-black mb-12 text-gradient text-3xl">
+          <h2 className="md:text-5xl font-black mb-12 text-gradient text-2xl">
             O problema não é você. Não é seu produto. Não é o mercado.
           </h2>
           
-          <p className="md:text-3xl font-bold mb-8 text-xl">
+          <p className="md:text-3xl font-bold mb-8 text-lg">
             O problema é que você quis COMPLICAR o que é simples: <span className="text-gradient">vender.</span>
           </p>
           
