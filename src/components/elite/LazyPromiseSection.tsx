@@ -31,14 +31,6 @@ const LazyPromiseSection = ({ onCTAClick }: LazyPromiseSectionProps) => {
                 className="rounded-2xl shadow-2xl max-w-full h-auto"
                 loading="lazy"
               />
-              <div className="absolute bottom-4 right-4">
-                <img 
-                  src={workshopLogo} 
-                  alt="Workshop Elite de Vendas Logo" 
-                  className="h-16 md:h-20 opacity-90"
-                  loading="lazy"
-                />
-              </div>
             </div>
           </div>
         </div>
