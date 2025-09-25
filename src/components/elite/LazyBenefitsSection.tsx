@@ -13,6 +13,14 @@ const LazyBenefitsSection = ({
           <img src={workshopEliteLogo} alt="Workshop Elite de Vendas Logo" className="h-16 w-auto object-contain" loading="lazy" decoding="async" />
         </div>
 
+        <h1 className="text-2xl md:text-3xl font-black mb-4 text-gradient">
+          O QUE VAI SER?
+        </h1>
+        
+        <h2 className="text-lg md:text-xl font-semibold mb-12 text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+          Um Workshop 100% prático para empresários de Belém-PA que querem atrair clientes todos os dias processo de vendas previsível sem depender de indicações, tráfego pago, agências, conteúdo ou influencers.
+        </h2>
+
         <h2 className="md:text-4xl font-black mb-12 text-gradient text-xl">
           Em 2 dias de workshop presencial, você vai aprender...
         </h2>
