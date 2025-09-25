@@ -4,8 +4,8 @@ interface LazySolutionSectionProps {
 const LazySolutionSection = ({
   onCTAClick
 }: LazySolutionSectionProps) => {
-  return <section className="py-12 px-4">
-      <div className="text-center max-w-4xl mx-[20px]">
+  return <section className="py-16 px-4">
+      <div className="container mx-auto max-w-6xl text-center">
         <h2 className="md:text-5xl font-black mb-12 text-gradient text-2xl">
           Empresários de Belém estão enviando Simples Mensagens de Whatsapp e fechando vendas todos os dias.
         </h2>

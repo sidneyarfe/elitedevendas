@@ -23,9 +23,9 @@ const CriticalHeroSection = ({
             <img src={rodrigoAnaMobile} alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" className="w-full object-cover gpu-accelerated" loading="eager" decoding="async" fetchPriority="high" width="800" height="600" />
           </picture>
           
-          {/* Text Section Overlapping the Black Area */}
-          <div className="absolute inset-0 flex items-end justify-center py-0 my-0">
-            <div className="w-full text-center text-white pb-8 md:pb-32 max-w-7xl mx-auto px-0 py-0">
+          {/* Text Section - Mobile overlapping, Desktop below image */}
+          <div className="absolute inset-0 flex items-end justify-center py-0 my-0 md:relative md:items-start">
+            <div className="w-full text-center text-white pb-8 md:pb-16 md:pt-8 max-w-7xl mx-auto px-0 py-0 md:bg-background md:text-foreground">
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 leading-tight">
                 Você Já Gastou com Agências, Tráfego Pago, Conteúdo, Influencers… e{" "}
                 <span className="text-gradient">Não Aumentou Suas Vendas?</span>
