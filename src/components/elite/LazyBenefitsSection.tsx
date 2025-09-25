@@ -10,7 +10,7 @@ const LazyBenefitsSection = ({
   return <section id="benefits-section" className="py-12 px-4 bg-card">
       <div className="max-w-6xl text-center mx-[20px]">
         <div className="flex justify-center mb-8">
-          <img src={workshopEliteLogo} alt="Workshop Elite de Vendas Logo" className="h-16 w-auto object-contain" loading="lazy" decoding="async" />
+          <img src={workshopEliteLogo} alt="Workshop Elite de Vendas Logo" className="h-24 w-auto object-contain" loading="lazy" decoding="async" />
         </div>
 
         <h1 className="text-2xl md:text-3xl font-black mb-4 text-gradient">
