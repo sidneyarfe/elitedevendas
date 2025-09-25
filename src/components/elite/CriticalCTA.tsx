@@ -24,9 +24,7 @@ const CriticalCTA = ({
           </div>
         </div>
 
-        <button onClick={onCTAClick} className="bg-black text-white font-bold text-xl py-6 px-12 rounded-xl shadow-2xl hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 animate-pulse-glow">
-          Quero uma das últimas vagas
-        </button>
+        <button onClick={onCTAClick} className="bg-black text-white font-bold text-xl py-6 px-12 rounded-xl shadow-2xl hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 animate-pulse-glow">APROVEITAR A ÚLTIMA VAGA COM BÔNUS</button>
 
         <p className="text-black font-medium text-lg mt-6">
           Pare de depender da sorte. Construa um processo de vendas que funciona todo dia.
