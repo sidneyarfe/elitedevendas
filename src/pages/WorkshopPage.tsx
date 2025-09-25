@@ -29,11 +29,12 @@ const WorkshopPage = () => {
   const handleButtonClick = () => {
     setIsModalOpen(true);
   };
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
   return <div className="min-h-screen bg-background text-foreground">
@@ -41,7 +42,7 @@ const WorkshopPage = () => {
       <ResourceHints />
       {/* Faixa Exclusiva */}
       <div className="bg-gradient-workshop text-black py-3 text-center">
-        <p className="font-bold text-lg">Para EMPRESÁRIOS de BELÉM-PA</p>
+        <p className="font-bold text-lg">ATENÇÃO EMPRESÁRIOS de BELÉM-PA!</p>
       </div>
 
       {/* Hero Section */}
@@ -49,21 +50,9 @@ const WorkshopPage = () => {
         {/* Images Section */}
         <div className="w-full">
           {/* Mobile Image - mais comprida */}
-          <OptimizedImage 
-            src={rodrigoAnaMobile} 
-            alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
-            className="block md:hidden w-full object-cover gpu-accelerated" 
-            priority={true}
-            sizes="100vw"
-          />
+          <OptimizedImage src={rodrigoAnaMobile} alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" className="block md:hidden w-full object-cover gpu-accelerated" priority={true} sizes="100vw" />
           {/* Desktop Image - mais horizontalizada */}
-          <OptimizedImage 
-            src={rodrigoAnaDesktop} 
-            alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
-            className="hidden md:block w-full object-cover gpu-accelerated" 
-            priority={true}
-            sizes="100vw"
-          />
+          <OptimizedImage src={rodrigoAnaDesktop} alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" className="hidden md:block w-full object-cover gpu-accelerated" priority={true} sizes="100vw" />
           
           {/* Text Section Overlapping the Black Area */}
           <div className="absolute inset-0 flex items-end md:items-end justify-center md:hidden">
@@ -223,15 +212,7 @@ const WorkshopPage = () => {
               "Antes só vinha cliente por indicação e raramente pelo marketing. Mas quando começamos a disparar essas Mensagens de Whatsapp, nosso faturamento foi de R$1.000.000 pra R$2.000.000/mês."
             </blockquote>
             <div className="flex items-center justify-center gap-3">
-              <img 
-                src={drRafaelImage} 
-                alt="Dr. Rafael Viera" 
-                className="w-12 h-12 rounded-full object-cover border-2 border-workshop-gold"
-                width="48"
-                height="48"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src={drRafaelImage} alt="Dr. Rafael Viera" className="w-12 h-12 rounded-full object-cover border-2 border-workshop-gold" width="48" height="48" loading="lazy" decoding="async" />
               <p className="text-sm md:text-base text-workshop-gold font-medium">– Dr. Rafael Viera, Dono de Consultório Odontológico | Belém-PA</p>
             </div>
           </div>
@@ -374,15 +355,7 @@ const WorkshopPage = () => {
         <div className="text-center max-w-6xl mx-auto">
           {/* Logo do Workshop */}
           <div className="mb-8 flex justify-center">
-            <img 
-              src={workshopLogo} 
-              alt="Workshop Elite de Vendas Logo" 
-              className="h-24 md:h-48 object-contain"
-              width="300"
-              height="192"
-              loading="lazy"
-              decoding="async"
-            />
+            <img src={workshopLogo} alt="Workshop Elite de Vendas Logo" className="h-24 md:h-48 object-contain" width="300" height="192" loading="lazy" decoding="async" />
           </div>
           
           <h2 className="md:text-5xl font-black mb-16 text-gradient text-2xl">
@@ -540,11 +513,7 @@ const WorkshopPage = () => {
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <Card className="bg-card border-workshop-gold/20 overflow-hidden">
                 <CardContent className="p-8">
-                  <LazyYouTube 
-                    videoId="B0cORHhpoQE"
-                    title="Depoimento Dirceu - Corretor de Imóveis"
-                    className="mb-6"
-                  />
+                  <LazyYouTube videoId="B0cORHhpoQE" title="Depoimento Dirceu - Corretor de Imóveis" className="mb-6" />
                   <blockquote className="text-xl font-bold mb-4 italic">
                     "O principal diferencial do método do Rodrigo e Ana foi o RESULTADO"
                   </blockquote>
@@ -554,11 +523,7 @@ const WorkshopPage = () => {
               
               <Card className="bg-card border-workshop-gold/20 overflow-hidden">
                 <CardContent className="p-8">
-                  <LazyYouTube 
-                    videoId="gNn-2u2ZhzU"
-                    title="Depoimento Milena"
-                    className="mb-6"
-                  />
+                  <LazyYouTube videoId="gNn-2u2ZhzU" title="Depoimento Milena" className="mb-6" />
                   <blockquote className="text-xl font-bold mb-4 italic">
                     "Hoje nós conseguimos rentabilizar muito mais nossos leads."
                   </blockquote>
@@ -709,15 +674,7 @@ const WorkshopPage = () => {
               <img src={onOfficeSalaImage} alt="Sala de treinamento On Office Belém" className="w-full h-full object-cover" />
             </div>
             <div className="overflow-hidden rounded-2xl border border-workshop-gold/20">
-              <img 
-                src={onOfficeLocalImage} 
-                alt="Fachada On Office Belém - Local do evento" 
-                className="w-full h-full object-contain"
-                width="400"
-                height="300"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src={onOfficeLocalImage} alt="Fachada On Office Belém - Local do evento" className="w-full h-full object-contain" width="400" height="300" loading="lazy" decoding="async" />
             </div>
           </div>
 
