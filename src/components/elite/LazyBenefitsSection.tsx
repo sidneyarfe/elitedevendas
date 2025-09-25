@@ -1,9 +1,11 @@
 import workshopEliteLogo from "@/assets/workshop-elite-logo.png";
 interface LazyBenefitsSectionProps {
   onCTAClick: () => void;
+  onFirstButtonClick: () => void;
 }
 const LazyBenefitsSection = ({
-  onCTAClick
+  onCTAClick,
+  onFirstButtonClick
 }: LazyBenefitsSectionProps) => {
   return <section id="benefits-section" className="py-12 px-4 bg-card">
       <div className="max-w-6xl text-center mx-[20px]">
@@ -45,7 +47,7 @@ const LazyBenefitsSection = ({
         </div>
 
         <div className="flex justify-center mb-12">
-          <button onClick={onCTAClick} className="text-lg py-4 px-8 bg-gradient-workshop text-black font-bold rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105">
+          <button onClick={onFirstButtonClick} className="text-lg py-4 px-8 bg-gradient-workshop text-black font-bold rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105">
             Quero aprender isso
           </button>
         </div>
