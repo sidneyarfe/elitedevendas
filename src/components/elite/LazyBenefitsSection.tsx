@@ -17,9 +17,7 @@ const LazyBenefitsSection = ({
           O QUE VAI SER?
         </h1>
         
-        <h2 className="text-lg md:text-xl font-semibold mb-12 text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-          Um Workshop 100% prático para empresários de Belém-PA que querem atrair clientes todos os dias processo de vendas previsível sem depender de indicações, tráfego pago, agências, conteúdo ou influencers.
-        </h2>
+        <h2 className="text-lg md:text-xl font-semibold mb-12 text-muted-foreground max-w-4xl mx-auto leading-relaxed">Um Workshop 100% prático para EMPRESÁRIOS de Belém-PA que querem ATRAIR CLIENTES todos os dias com processo de vendas previsível sem depender de indicações, tráfego pago, agências, conteúdo ou influencers.</h2>
 
         <h2 className="md:text-4xl font-black mb-12 text-gradient text-xl">
           Em 2 dias de workshop presencial, você vai aprender...
