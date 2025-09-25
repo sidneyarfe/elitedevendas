@@ -70,6 +70,22 @@ export const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
         throw error;
       }
 
+      // Chamar webhook para N8N
+      try {
+        await supabase.functions.invoke('lead-webhook', {
+          body: {
+            leadData: {
+              name: formData.name,
+              email: formData.email,
+              whatsapp: formData.whatsapp,
+            }
+          }
+        });
+      } catch (webhookError) {
+        console.error('Erro no webhook:', webhookError);
+        // Não interrompe o fluxo se o webhook falhar
+      }
+
       toast({
         title: "Sucesso!",
         description: "Seus dados foram salvos. Redirecionando para o checkout...",
