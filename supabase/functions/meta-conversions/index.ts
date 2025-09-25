@@ -44,14 +44,14 @@ serve(async (req) => {
     const clientUserAgent = req.headers.get('user-agent')
 
     // Montar o payload base
-    const eventDataPayload = {
+    const eventDataPayload: any = {
       event_name: eventName,
       event_time: Math.floor(Date.now() / 1000),
       action_source: 'website',
       user_data: {
         client_ip_address: clientIpAddress,
         client_user_agent: clientUserAgent,
-      },
+      } as any,
     }
 
     // Adicionar dados específicos do usuário para o evento 'Lead'
