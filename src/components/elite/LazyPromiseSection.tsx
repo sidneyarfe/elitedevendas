@@ -75,11 +75,6 @@ const LazyPromiseSection = ({ onCTAClick }: LazyPromiseSectionProps) => {
                 </p>
               </div>
               
-              <div className="flex items-center justify-center gap-4 mb-8">
-                <div className="w-8 h-1 bg-workshop-gold rounded-full"></div>
-                <div className="w-4 h-1 bg-workshop-gold/60 rounded-full"></div>
-                <div className="w-2 h-1 bg-workshop-gold/30 rounded-full"></div>
-              </div>
             </div>
 
             <div className="flex justify-center pb-8 md:pb-16">
