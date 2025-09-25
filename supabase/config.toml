@@ -2,6 +2,3 @@ project_id = "bnmyqamklrgovqpturmv"
 
 [functions.meta-conversions]
 verify_jwt = false
-
-[functions.lead-webhook]
-verify_jwt = false
