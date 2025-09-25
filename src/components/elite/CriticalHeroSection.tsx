@@ -9,7 +9,7 @@ const CriticalHeroSection = ({
   return <>
       {/* Faixa Exclusiva */}
       <div className="bg-gradient-workshop text-black py-3 text-center">
-        <p className="font-bold text-lg">Para EMPRESÁRIOS de BELÉM-PA</p>
+        <p className="font-bold text-lg">ATENÇÃO EMPRESÁRIOS de BELÉM-PA</p>
       </div>
 
       {/* Hero Section */}
