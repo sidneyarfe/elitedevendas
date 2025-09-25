@@ -117,7 +117,7 @@ export const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => { if (!open) onClose(); }}>
-      <DialogContent className="sm:max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto">
+      <DialogContent className="sm:max-w-md w-full mx-6 sm:mx-8 my-8 max-h-[85vh] overflow-y-auto transform transition-all duration-200 ease-out">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center text-gradient">
             Garanta sua vaga!
@@ -127,7 +127,7 @@ export const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
           </p>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4" autoComplete="on">
           <div>
             <Label htmlFor="name">Nome completo *</Label>
             <Input
@@ -138,6 +138,7 @@ export const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
               onChange={(e) => handleInputChange("name", e.target.value)}
               required
               disabled={isLoading}
+              autoComplete="name"
             />
           </div>
 
@@ -151,6 +152,7 @@ export const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
               onChange={(e) => handleInputChange("email", e.target.value)}
               required
               disabled={isLoading}
+              autoComplete="email"
             />
           </div>
 
@@ -165,13 +167,14 @@ export const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
               maxLength={15}
               required
               disabled={isLoading}
+              autoComplete="tel"
             />
           </div>
 
           <div className="pt-4">
             <Button 
               type="submit" 
-              className="w-full bg-workshop-gold hover:bg-workshop-gold/90 text-black font-bold"
+              className="w-full bg-workshop-gold hover:bg-workshop-gold/90 text-black font-bold transition-colors duration-200"
               disabled={isLoading}
             >
               {isLoading ? (
