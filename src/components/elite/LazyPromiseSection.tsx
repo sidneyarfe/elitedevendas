@@ -14,7 +14,7 @@ const LazyPromiseSection = ({ onCTAClick }: LazyPromiseSectionProps) => {
           <img 
             src={rodrigoAnaPromise} 
             alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
-            className="w-full h-auto object-cover object-center"
+            className="w-full h-auto object-cover object-center scale-125 mx-4"
             loading="lazy"
           />
           <div className="absolute bottom-4 right-4">
