@@ -10,11 +10,11 @@ const LazyPromiseSection = ({ onCTAClick }: LazyPromiseSectionProps) => {
     <section className="bg-card">
       {/* Mobile: Full-width image touching borders */}
       <div className="md:hidden">
-        <div className="relative">
+        <div className="relative overflow-hidden">
           <img 
             src={rodrigoAnaPromise} 
             alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
-            className="w-full h-auto object-cover object-center scale-125 mx-4"
+            className="w-full h-auto object-cover object-center scale-125"
             loading="lazy"
           />
           <div className="absolute bottom-4 right-4">
