@@ -1,22 +1,16 @@
 import rodrigoAnaPromise from "@/assets/rodrigo-ana-promise.webp";
 import workshopLogo from "@/assets/workshop-elite-logo.png";
-
 interface LazyPromiseSectionProps {
   onCTAClick: () => void;
 }
-
-const LazyPromiseSection = ({ onCTAClick }: LazyPromiseSectionProps) => {
-  return (
-    <section className="bg-card">
+const LazyPromiseSection = ({
+  onCTAClick
+}: LazyPromiseSectionProps) => {
+  return <section className="bg-card">
       {/* Mobile: Full-width image touching borders */}
       <div className="md:hidden">
         <div className="relative overflow-hidden">
-          <img 
-            src={rodrigoAnaPromise} 
-            alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
-            className="w-full h-auto object-cover object-center scale-150 mt-4 mb-8"
-            loading="lazy"
-          />
+          <img src={rodrigoAnaPromise} alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" className="w-full h-auto object-cover object-center scale-150 mt-4 mb-8" loading="lazy" />
         </div>
       </div>
 
@@ -25,12 +19,7 @@ const LazyPromiseSection = ({ onCTAClick }: LazyPromiseSectionProps) => {
         <div className="container mx-auto max-w-6xl text-center">
           <div className="relative mb-12">
             <div className="relative inline-block">
-              <img 
-                src={rodrigoAnaPromise} 
-                alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" 
-                className="rounded-2xl shadow-2xl max-w-full h-auto"
-                loading="lazy"
-              />
+              <img src={rodrigoAnaPromise} alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" className="rounded-2xl shadow-2xl max-w-full h-auto" loading="lazy" />
             </div>
           </div>
         </div>
@@ -68,19 +57,12 @@ const LazyPromiseSection = ({ onCTAClick }: LazyPromiseSectionProps) => {
             <div className="flex justify-center pb-8 md:pb-16">
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-workshop rounded-xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
-                <button 
-                  onClick={onCTAClick}
-                  className="relative text-lg md:text-xl py-6 md:py-8 px-10 md:px-16 bg-gradient-workshop text-black font-black rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105"
-                >
-                  ✨ QUERO ESSA GARANTIA
-                </button>
+                <button onClick={onCTAClick} className="relative text-lg md:text-xl py-6 md:py-8 px-10 md:px-16 bg-gradient-workshop text-black font-black rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105">VAMOS PRA CIMA! GARANTA MINHA VAGA</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default LazyPromiseSection;
