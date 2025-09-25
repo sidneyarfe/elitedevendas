@@ -9,6 +9,7 @@ import CriticalCTA from "@/components/elite/CriticalCTA";
 const LazyProblemSection = lazy(() => import("@/components/elite/LazyProblemSection"));
 const LazySolutionSection = lazy(() => import("@/components/elite/LazySolutionSection"));
 const LazyPromiseSection = lazy(() => import("@/components/elite/LazyPromiseSection"));
+const LazyTargetAudienceSection = lazy(() => import("@/components/elite/LazyTargetAudienceSection"));
 const LazyBenefitsSection = lazy(() => import("@/components/elite/LazyBenefitsSection"));
 const LazyTestimonialsSection = lazy(() => import("@/components/elite/LazyTestimonialsSection"));
 const LazyGuaranteeSection = lazy(() => import("@/components/elite/LazyGuaranteeSection"));
@@ -92,6 +93,10 @@ const EliteVendasPage = () => {
 
         <Suspense fallback={<SectionLoading height="400px" />}>
           <LazyPromiseSection onCTAClick={handleCTAClick} />
+        </Suspense>
+
+        <Suspense fallback={<SectionLoading height="300px" />}>
+          <LazyTargetAudienceSection onCTAClick={handleCTAClick} />
         </Suspense>
 
         <Suspense fallback={<SectionLoading height="600px" />}>
