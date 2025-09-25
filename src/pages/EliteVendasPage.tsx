@@ -33,6 +33,16 @@ const EliteVendasPage = () => {
     setIsModalOpen(true);
   };
 
+  const scrollToBenefits = () => {
+    const benefitsSection = document.getElementById('benefits-section');
+    if (benefitsSection) {
+      benefitsSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <>
       <Helmet>
@@ -80,23 +90,23 @@ const EliteVendasPage = () => {
 
       <div className="min-h-screen bg-background text-foreground">
         {/* Critical Hero Section - loads immediately */}
-        <CriticalHeroSection onCTAClick={handleCTAClick} />
+        <CriticalHeroSection onCTAClick={scrollToBenefits} />
 
         {/* Lazy loaded sections with optimized loading */}
         <Suspense fallback={<SectionLoading height="400px" />}>
-          <LazyProblemSection onCTAClick={handleCTAClick} />
+          <LazyProblemSection onCTAClick={scrollToBenefits} />
         </Suspense>
 
         <Suspense fallback={<SectionLoading height="500px" />}>
-          <LazySolutionSection onCTAClick={handleCTAClick} />
+          <LazySolutionSection onCTAClick={scrollToBenefits} />
         </Suspense>
 
         <Suspense fallback={<SectionLoading height="400px" />}>
-          <LazyPromiseSection onCTAClick={handleCTAClick} />
+          <LazyPromiseSection onCTAClick={scrollToBenefits} />
         </Suspense>
 
         <Suspense fallback={<SectionLoading height="300px" />}>
-          <LazyTargetAudienceSection onCTAClick={handleCTAClick} />
+          <LazyTargetAudienceSection onCTAClick={scrollToBenefits} />
         </Suspense>
 
         <Suspense fallback={<SectionLoading height="600px" />}>
