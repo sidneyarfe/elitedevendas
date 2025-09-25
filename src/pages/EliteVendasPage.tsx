@@ -110,7 +110,7 @@ const EliteVendasPage = () => {
         </Suspense>
 
         <Suspense fallback={<SectionLoading height="600px" />}>
-          <LazyBenefitsSection onCTAClick={handleCTAClick} />
+          <LazyBenefitsSection onCTAClick={scrollToBenefits} />
         </Suspense>
 
         <Suspense fallback={<SectionLoading height="400px" />}>
