@@ -117,17 +117,17 @@ export const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => { if (!open) onClose(); }}>
-      <DialogContent className="sm:max-w-md w-full mx-6 sm:mx-8 my-8 max-h-[85vh] overflow-y-auto transform transition-all duration-200 ease-out">
+      <DialogContent className="sm:max-w-md w-full mx-4 sm:mx-8 my-4 sm:my-8 max-h-[80vh] sm:max-h-[85vh] overflow-y-auto transform transition-all duration-200 ease-out flex flex-col justify-center">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-center text-gradient">
+          <DialogTitle className="text-xl sm:text-2xl font-bold text-center text-gradient">
             Garanta sua vaga!
           </DialogTitle>
-          <p className="text-center text-muted-foreground">
+          <p className="text-center text-muted-foreground text-sm sm:text-base">
             Preencha seus dados para continuar com a inscrição
           </p>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit} className="space-y-4" autoComplete="on">
+        <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4" autoComplete="on">
           <div>
             <Label htmlFor="name">Nome completo *</Label>
             <Input
