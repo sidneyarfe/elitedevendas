@@ -88,9 +88,7 @@ const LazyEventDetailsSection = ({
         <div className="text-center">
           <p className="text-2xl font-bold mb-6">Garanta sua vaga agora – R$197</p>
           
-          <button onClick={onCTAClick} className="text-xl py-6 px-12 bg-gradient-workshop text-black font-bold rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105">
-            Garanto minha vaga agora
-          </button>
+          <button onClick={onCTAClick} className="text-xl py-6 px-12 bg-gradient-workshop text-black font-bold rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105">GARANTIR MINHA VAGA AGORA</button>
         </div>
       </div>
     </section>;
