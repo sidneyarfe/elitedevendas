@@ -80,10 +80,6 @@ const LazyPromiseSection = ({ onCTAClick }: LazyPromiseSectionProps) => {
                 <div className="w-4 h-1 bg-workshop-gold/60 rounded-full"></div>
                 <div className="w-2 h-1 bg-workshop-gold/30 rounded-full"></div>
               </div>
-              
-              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Não é teoria. Não é enrolação. É um método testado e comprovado por centenas de empresários em Belém que já transformaram seus negócios.
-              </p>
             </div>
 
             <div className="flex justify-center pb-8 md:pb-16">
