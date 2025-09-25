@@ -54,8 +54,11 @@ const LazyPromiseSection = ({ onCTAClick }: LazyPromiseSectionProps) => {
               
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-workshop opacity-10 rounded-xl"></div>
-                <p className="text-2xl md:text-3xl font-black mb-8 text-gradient p-6 relative">
+                <p className="text-2xl md:text-3xl font-black mb-4 text-gradient p-6 relative">
                   Você vai DOBRAR suas vendas em 7 dias — ou devolvemos seu dinheiro.
+                </p>
+                <p className="text-lg md:text-xl font-semibold text-workshop-gold/90 mb-8 px-6">
+                  Sem gastar com tráfego pago, agências, conteúdo no instagram ou influencers!
                 </p>
               </div>
               
