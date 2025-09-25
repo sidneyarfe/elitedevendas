@@ -17,6 +17,7 @@ const LazyCreatorsSection = lazy(() => import("@/components/elite/LazyCreatorsSe
 const LazyEventDetailsSection = lazy(() => import("@/components/elite/LazyEventDetailsSection"));
 const LazyFAQSection = lazy(() => import("@/components/elite/LazyFAQSection"));
 const LazyLeadFormModal = lazy(() => import("@/components/LazyLeadFormModal"));
+import Footer from "@/components/elite/Footer";
 
 // Loading fallback component
 const SectionLoading = ({ height = "300px" }: { height?: string }) => (
@@ -135,6 +136,9 @@ const EliteVendasPage = () => {
 
         {/* Critical Final CTA */}
         <CriticalCTA onCTAClick={handleCTAClick} />
+
+        {/* Footer */}
+        <Footer />
 
         {/* Lazy Modal - only loads when needed */}
         {isModalOpen && (
