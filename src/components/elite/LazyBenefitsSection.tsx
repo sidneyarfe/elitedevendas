@@ -105,7 +105,7 @@ const LazyBenefitsSection = ({
 
           <div className="text-center mb-8">
             <div className="text-3xl md:text-4xl font-black text-workshop-gold mb-2">12x de R$20,37</div>
-            <div className="text-xl font-bold">Ou R$197 à vista.</div>
+            <div className="text-xl font-semibold ">Ou R$197 à vista.</div>
           </div>
 
           <div className="flex justify-center">
