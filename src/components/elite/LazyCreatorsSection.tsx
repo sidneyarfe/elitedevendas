@@ -59,9 +59,7 @@ const LazyCreatorsSection = ({
         </div>
 
         <div className="flex justify-center mt-12">
-          <button onClick={onCTAClick} className="text-lg md:text-xl py-4 md:py-6 px-8 md:px-12 bg-gradient-workshop text-black font-bold rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105">
-            Quero aprender com quem faz acontecer
-          </button>
+          <button onClick={onCTAClick} className="text-lg md:text-xl py-4 md:py-6 px-8 md:px-12 bg-gradient-workshop text-black font-bold rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105">QUERO APRENDER COM QUEM VIVE DISSO!</button>
         </div>
       </div>
     </section>;
