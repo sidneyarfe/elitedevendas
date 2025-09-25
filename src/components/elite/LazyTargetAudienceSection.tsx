@@ -1,12 +1,11 @@
 import { Users } from "lucide-react";
-
 interface LazyTargetAudienceSectionProps {
   onCTAClick: () => void;
 }
-
-const LazyTargetAudienceSection = ({ onCTAClick }: LazyTargetAudienceSectionProps) => {
-  return (
-    <section className="py-16 px-4 bg-gradient-workshop-subtle relative overflow-hidden">
+const LazyTargetAudienceSection = ({
+  onCTAClick
+}: LazyTargetAudienceSectionProps) => {
+  return <section className="py-16 px-4 bg-gradient-workshop-subtle relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-br from-workshop-gold/5 via-transparent to-workshop-gold/5"></div>
       
@@ -26,19 +25,28 @@ const LazyTargetAudienceSection = ({ onCTAClick }: LazyTargetAudienceSectionProp
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {[
-            { icon: "💼", text: "Prestadores de serviço" },
-            { icon: "🏠", text: "Corretores de imóveis" }, 
-            { icon: "📊", text: "Consultores e assessores" },
-            { icon: "👨‍⚕️", text: "Profissionais liberais (psicólogos, engenheiros, dentistas)" },
-            { icon: "🏥", text: "Donos de clínica (estética, odontologia, fisioterapia)" },
-            { icon: "⚖️", text: "Escritórios de advocacia, contabilidade, arquitetura" },
-            { icon: "🏪", text: "Donos de loja física ou serviço local" }
-          ].map((item, index) => (
-            <div 
-              key={index} 
-              className="group bg-white/10 backdrop-blur-sm border border-workshop-gold/20 p-6 rounded-xl hover:bg-white/20 hover:border-workshop-gold/40 transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            >
+          {[{
+          icon: "💼",
+          text: "Prestadores de serviço"
+        }, {
+          icon: "🏠",
+          text: "Corretores de imóveis"
+        }, {
+          icon: "📊",
+          text: "Consultores e assessores"
+        }, {
+          icon: "👨‍⚕️",
+          text: "Profissionais liberais (psicólogos, engenheiros, dentistas)"
+        }, {
+          icon: "🏥",
+          text: "Donos de clínica (estética, odontologia, fisioterapia)"
+        }, {
+          icon: "⚖️",
+          text: "Escritórios de advocacia, contabilidade, arquitetura"
+        }, {
+          icon: "🏪",
+          text: "Donos de loja física ou serviço local"
+        }].map((item, index) => <div key={index} className="group bg-white/10 backdrop-blur-sm border border-workshop-gold/20 p-6 rounded-xl hover:bg-white/20 hover:border-workshop-gold/40 transition-all duration-300 hover:scale-105 hover:shadow-lg">
               <div className="flex items-start gap-4">
                 <div className="text-2xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                   {item.icon}
@@ -47,8 +55,7 @@ const LazyTargetAudienceSection = ({ onCTAClick }: LazyTargetAudienceSectionProp
                   {item.text}
                 </span>
               </div>
-            </div>
-          ))}
+            </div>)}
         </div>
 
         <div className="text-center">
@@ -61,16 +68,9 @@ const LazyTargetAudienceSection = ({ onCTAClick }: LazyTargetAudienceSectionProp
             </p>
           </div>
 
-          <button 
-            onClick={onCTAClick} 
-            className="text-lg md:text-xl py-6 px-12 bg-gradient-workshop text-black font-bold rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105"
-          >
-            GARANTIR MINHA VAGA
-          </button>
+          <button onClick={onCTAClick} className="text-lg md:text-xl py-6 px-12 bg-gradient-workshop text-black font-bold rounded-xl shadow-workshop hover:shadow-workshop-hover transition-all duration-300 transform hover:scale-105">É PRA MIM! GARANTIR MINHA VAGA</button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default LazyTargetAudienceSection;
