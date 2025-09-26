@@ -91,27 +91,27 @@ const EliteVendasPageV2 = () => {
 
       <div className="min-h-screen bg-background text-foreground">
         {/* Critical Hero Section V2 - loads immediately */}
-        <CriticalHeroSectionV2 onCTAClick={scrollToBenefits} />
+        <CriticalHeroSectionV2 onCTAClick={handleCTAClick} />
 
         {/* Lazy loaded sections with optimized loading */}
         <Suspense fallback={<SectionLoading height="400px" />}>
-          <LazyProblemSection onCTAClick={scrollToBenefits} />
+          <LazyProblemSection onCTAClick={handleCTAClick} />
         </Suspense>
 
         <Suspense fallback={<SectionLoading height="500px" />}>
-          <LazySolutionSection onCTAClick={scrollToBenefits} />
+          <LazySolutionSection onCTAClick={handleCTAClick} />
         </Suspense>
 
         <Suspense fallback={<SectionLoading height="400px" />}>
-          <LazyPromiseSection onCTAClick={scrollToBenefits} />
+          <LazyPromiseSection onCTAClick={handleCTAClick} />
         </Suspense>
 
         <Suspense fallback={<SectionLoading height="300px" />}>
-          <LazyTargetAudienceSection onCTAClick={scrollToBenefits} />
+          <LazyTargetAudienceSection onCTAClick={handleCTAClick} />
         </Suspense>
 
         <Suspense fallback={<SectionLoading height="600px" />}>
-          <LazyBenefitsSection onCTAClick={scrollToBenefits} onFirstButtonClick={handleCTAClick} />
+          <LazyBenefitsSection onCTAClick={handleCTAClick} onFirstButtonClick={handleCTAClick} />
         </Suspense>
 
         <Suspense fallback={<SectionLoading height="400px" />}>
