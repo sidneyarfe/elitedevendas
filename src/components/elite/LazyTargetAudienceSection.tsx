@@ -19,9 +19,7 @@ const LazyTargetAudienceSection = ({
             Para Quem É Esse Workshop?
           </h3>
           
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Transforme seu negócio com estratégias comprovadas de venda via WhatsApp
-          </p>
+          
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
