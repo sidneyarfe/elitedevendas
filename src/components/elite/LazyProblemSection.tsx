@@ -9,7 +9,7 @@ const LazyProblemSection = ({
       {/* SEÇÃO: DIAGNÓSTICO */}
       <section className="py-8 md:py-12 px-4">
         <div className="container max-w-4xl text-center mx-0">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-black mb-6 md:mb-8 text-gradient leading-tight mx-0 my-[20px]">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-black mb-6 md:mb-8 text-gradient leading-tight mx-0 my-0">
             Você já contratou agência, investiu em tráfego, postou no Instagram, contratou influencer...
           </h2>
           
