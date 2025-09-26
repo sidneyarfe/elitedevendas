@@ -24,8 +24,8 @@ const CriticalHeroSectionV2 = ({
           </picture>
           
           {/* Text Section - Mobile overlapping, Desktop below image */}
-          <div className="absolute inset-0 flex items-end justify-center py-0 md:relative md:items-start my-[15px] mx-0">
-            <div className="w-full text-center text-white pb-8 md:pb-16 md:pt-8 max-w-7xl mx-auto px-0 py-0 md:bg-background md:text-foreground my-[86px]">
+          <div className="absolute inset-0 flex items-center justify-center py-0 md:relative md:items-start my-[15px] mx-0">
+            <div className="w-full text-center text-white pb-2 md:pb-16 md:pt-8 max-w-7xl mx-auto px-0 py-0 md:bg-background md:text-foreground my-[60px] translate-y-[30%] md:translate-y-0">
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 leading-tight">
                 <span className="text-gradient">EMPRESÁRIO DE BELÉM:</span>{" "}
                 Em 2 dias, vamos <span className="text-gradient">DOBRAR suas vendas AO VIVO</span> — sem gastar R$1.
