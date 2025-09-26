@@ -68,15 +68,15 @@ const LazyBenefitsSection = ({
             </div>
             <div className="flex items-center gap-3">
               <div className="w-3 h-3 bg-workshop-gold rounded-full"></div>
-              <span className="text-lg font-medium">Método de Vendas que nos gerou+R$10 MILHÕES em faturamento.</span>
+              <span className="text-lg font-medium">Método de Vendas que nos Gerou +R$10 MILHÕES em faturamento.</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-3 h-3 bg-workshop-gold rounded-full"></div>
-              <span className="text-lg font-medium">Diagnóstico individual com nossos mentores</span>
+              <span className="text-lg font-medium">Análise Comercial Individual da sua Empresa pela Nossa Equipe.</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-3 h-3 bg-workshop-gold rounded-full"></div>
-              <span className="text-lg font-medium">Grupo VIP de Networking com empresários participantes</span>
+              <span className="text-lg font-medium">Grupo VIP de Networking com Empresários Participantes (Fat. +R$100.000/mês)</span>
             </div>
           </div>
 
