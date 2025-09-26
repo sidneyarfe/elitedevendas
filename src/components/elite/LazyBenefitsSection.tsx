@@ -24,22 +24,25 @@ const LazyBenefitsSection = ({
         <div className="space-y-8 mb-12">
           {[{
           number: "1",
-          title: "Como vender todo dia, sem precisar de tráfego pago, agências, conteúdo ou influencers."
+          title: "Vender ao vivo com nossa ajuda nos 2 dias de workshop."
         }, {
           number: "2",
-          title: "A estratégia para fechar R$10.000 em vendas nos próximos 7 dias usando contatos antigos de WhatsApp."
+          title: "Aprender a estratégia que gerou R$10 MILHÕES em vendas sem depender de tráfego pago, agências, conteúdo ou influencers."
         }, {
           number: "3",
-          title: "Como conseguir +5.000 contatos de potenciais clientes em 30s usando Google Maps, redes sociais e LinkedIn."
+          title: "Como extrair R$10.000 em 1h dos contatos antigos do seu whatsapp."
         }, {
           number: "4",
-          title: "Como abordar, levar para reunião e vender para esses potenciais clientes - mesmo que eles não te conheçam."
+          title: "Como conseguir +5.000 contatos de potenciais clientes em 30s usando Google Maps, redes sociais e LinkedIn."
         }, {
           number: "5",
-          title: "O passo a passo para reativar o cliente sumido e fazer ele comprar/recomprar em até 24h."
+          title: "Como chamar para reunião e vender de primeira para contatos desconhecidos que você extraiu."
         }, {
           number: "6",
-          title: "Como manter sua agenda cheia de reuniões de venda com 30 minutos/dia de prospecção."
+          title: "O passo a passo para fazer o cliente que some depois da proposta comprar em 24h."
+        }, {
+          number: "7",
+          title: "Como treinar seu time em 1 semana para aplicar a estratégia que gerou R$10 MILHÕES em vendas para nós."
         }].map((benefit, index) => <div key={index} className="flex items-start gap-4 text-left max-w-4xl mx-auto">
               <div className="w-8 h-8 bg-workshop-gold text-black font-bold rounded-full flex items-center justify-center flex-shrink-0">
                 {benefit.number}
