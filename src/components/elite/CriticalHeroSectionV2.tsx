@@ -1,15 +1,12 @@
 import rodrigoAnaMobile from "@/assets/rodrigo-ana-mobile.webp";
 import rodrigoAnaDesktop from "@/assets/rodrigo-ana-desktop.png";
-
 interface CriticalHeroSectionV2Props {
   onCTAClick: () => void;
 }
-
 const CriticalHeroSectionV2 = ({
   onCTAClick
 }: CriticalHeroSectionV2Props) => {
-  return (
-    <>
+  return <>
       {/* Faixa Exclusiva */}
       <div className="bg-gradient-workshop text-black py-3 text-center">
         <p className="font-bold text-lg">ATENÇÃO EMPRESÁRIOS de BELÉM-PA</p>
@@ -27,8 +24,8 @@ const CriticalHeroSectionV2 = ({
           </picture>
           
           {/* Text Section - Mobile overlapping, Desktop below image */}
-          <div className="absolute inset-0 flex items-end justify-center py-0 my-0 md:relative md:items-start">
-            <div className="w-full text-center text-white pb-8 md:pb-16 md:pt-8 max-w-7xl mx-auto px-0 py-0 md:bg-background md:text-foreground">
+          <div className="absolute inset-0 flex items-end justify-center py-0 md:relative md:items-start my-[15px] mx-0">
+            <div className="w-full text-center text-white pb-8 md:pb-16 md:pt-8 max-w-7xl mx-auto px-0 py-0 md:bg-background md:text-foreground my-[86px]">
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 leading-tight">
                 <span className="text-gradient">EMPRESÁRIO DE BELÉM:</span>{" "}
                 Em 2 dias, vamos <span className="text-gradient">DOBRAR suas vendas AO VIVO</span> — sem gastar R$1.
@@ -58,8 +55,6 @@ const CriticalHeroSectionV2 = ({
           </div>
         </div>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default CriticalHeroSectionV2;
