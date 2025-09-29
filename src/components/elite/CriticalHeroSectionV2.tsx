@@ -32,7 +32,7 @@ const CriticalHeroSectionV2 = ({
               </h1>
               
               <div className="text-base md:text-xl lg:text-2xl mb-6 md:mb-8 text-gray-200 max-w-5xl mx-auto font-medium leading-relaxed">
-                <p className="mb-4 md:mb-6 px-[30px]">No <span className="text-gradient font-bold">Workshop Elite de Vendas</span>, vamos instalar no seu negócio o Processo Comercial Simples que já gerou <span className="text-gradient font-bold">+R$10 MILHÕES</span> em faturamento para nossos clientes. Usando apenas um 📱 celular, 📋 sua lista de contatos e 💬 uma mensagem no whatsapp.</p>
+                <p className="mb-4 md:mb-6 px-[30px]">No <span className="text-gradient font-bold">Workshop Elite de Vendas</span>, vamos aplicar no seu negócio a Estratégia de Whatsapp que já gerou <span className="text-gradient font-bold">+R$10 MILHÕES</span> em faturamento para nossos clientes. Usando apenas um 📱 celular, 📋 sua lista de contatos e 💬 uma mensagem no whatsapp.</p>
                 
                 {/* Cards de informações do evento */}
                 <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-4 md:mb-6">
