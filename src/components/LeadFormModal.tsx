@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { toast } from "sonner";
+import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2 } from "lucide-react";
 
@@ -19,27 +19,34 @@ export const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
     whatsapp: ""
   });
   const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
 
   const validateForm = () => {
     if (!formData.name.trim() || !formData.email.trim() || !formData.whatsapp.trim()) {
-      toast.error("Campos obrigatórios", {
+      toast({
+        title: "Campos obrigatórios",
         description: "Por favor, preencha todos os campos.",
+        variant: "destructive",
       });
       return false;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      toast.error("Email inválido", {
+      toast({
+        title: "Email inválido",
         description: "Por favor, insira um email válido.",
+        variant: "destructive",
       });
       return false;
     }
 
     const whatsappRegex = /^\(\d{2}\)\s?\d{4,5}-?\d{4}$|^\d{2}\s?\d{4,5}-?\d{4}$|^\d{10,11}$/;
     if (!whatsappRegex.test(formData.whatsapp.replace(/\s/g, ""))) {
-      toast.error("WhatsApp inválido", {
+      toast({
+        title: "WhatsApp inválido",
         description: "Por favor, insira um número de WhatsApp válido com DDD.",
+        variant: "destructive",
       });
       return false;
     }
@@ -63,7 +70,8 @@ export const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
         throw error;
       }
 
-      toast.success("Sucesso!", {
+      toast({
+        title: "Sucesso!",
         description: "Seus dados foram salvos. Redirecionando para o checkout...",
       });
 
@@ -75,8 +83,10 @@ export const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
 
     } catch (error) {
       console.error("Erro ao salvar lead:", error);
-      toast.error("Erro", {
+      toast({
+        title: "Erro",
         description: "Ocorreu um erro ao salvar seus dados. Tente novamente.",
+        variant: "destructive",
       });
     } finally {
       setIsLoading(false);
