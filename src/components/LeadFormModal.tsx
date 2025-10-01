@@ -7,7 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 
 // Configurações - substitua com suas URLs reais
-const N8N_WEBHOOK_URL = "https://sidneyarfe.app.n8n.cloud/webhook-test/33e3577f-f51c-4a31-ac4b-4aca45f21b94";
+const N8N_WEBHOOK_URL = "https://sidneyarfe.app.n8n.cloud/webhook/33e3577f-f51c-4a31-ac4b-4aca45f21b94";
 const CHECKOUT_URL = "https://pay.kiwify.com.br/5zvVurg";
 
 interface LeadFormModalProps {

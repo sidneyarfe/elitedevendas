@@ -16,7 +16,7 @@ const LazyGuaranteeSection = lazy(() => import("@/components/elite/LazyGuarantee
 const LazyCreatorsSection = lazy(() => import("@/components/elite/LazyCreatorsSection"));
 const LazyEventDetailsSection = lazy(() => import("@/components/elite/LazyEventDetailsSection"));
 const LazyFAQSection = lazy(() => import("@/components/elite/LazyFAQSection"));
-import LazyLeadFormModal from "@/components/LazyLeadFormModal";
+const LazyLeadFormModal = lazy(() => import("@/components/LazyLeadFormModal"));
 import Footer from "@/components/elite/Footer";
 
 // Loading fallback component
@@ -132,7 +132,9 @@ const EliteVendasPageV4 = () => {
       </div>
 
       {/* Lead Form Modal */}
-      <LazyLeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <Suspense fallback={null}>
+        <LazyLeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      </Suspense>
     </>
   );
 };
