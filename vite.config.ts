@@ -79,6 +79,7 @@ export default defineConfig(({ mode }) => ({
     }
   },
   optimizeDeps: {
-    exclude: ['@radix-ui/react-accordion', '@radix-ui/react-dialog']
+    include: ['react', 'react-dom', 'react/jsx-runtime', 'react/jsx-dev-runtime'],
+    force: true
   }
 }));
