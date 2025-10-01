@@ -4,11 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import { Loader2 } from "lucide-react";
-
-// Configurações - substitua com suas URLs reais
-const N8N_WEBHOOK_URL = "https://sidneyarfe.app.n8n.cloud/webhook/33e3577f-f51c-4a31-ac4b-4aca45f21b94";
-const CHECKOUT_URL = "https://pay.kiwify.com.br/5zvVurg";
 
 interface LeadFormModalProps {
   isOpen: boolean;
@@ -65,23 +62,12 @@ export const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
     setIsLoading(true);
 
     try {
-      // Envia dados para o webhook n8n
-      const response = await fetch(N8N_WEBHOOK_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          whatsapp: formData.whatsapp,
-          origem: "elitedevendas-v4",
-          timestamp: new Date().toISOString(),
-        }),
-      });
+      const { error } = await supabase
+        .from('leads')
+        .insert([formData]);
 
-      if (!response.ok) {
-        console.warn("Webhook retornou erro, mas continuando o fluxo");
+      if (error) {
+        throw error;
       }
 
       toast({
@@ -91,22 +77,17 @@ export const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
 
       onClose();
       
-      // Redireciona para checkout após 1 segundo
       setTimeout(() => {
-        window.open(CHECKOUT_URL, "_blank");
+        window.open("https://pay.kiwify.com.br/5zvVurg", "_blank");
       }, 1000);
 
     } catch (error) {
-      // Mesmo com erro, redireciona para não perder a venda
-      console.error("Erro ao enviar para webhook:", error);
+      console.error("Erro ao salvar lead:", error);
       toast({
-        title: "Processando...",
-        description: "Redirecionando para o checkout...",
+        title: "Erro",
+        description: "Ocorreu um erro ao salvar seus dados. Tente novamente.",
+        variant: "destructive",
       });
-      
-      setTimeout(() => {
-        window.open(CHECKOUT_URL, "_blank");
-      }, 500);
     } finally {
       setIsLoading(false);
     }

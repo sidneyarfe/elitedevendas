@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { Suspense, lazy, useState } from "react";
+import { Suspense, lazy } from "react";
 
 // Critical components - loaded immediately
 import CriticalHeroSectionV2 from "@/components/elite/CriticalHeroSectionV2";
@@ -16,7 +16,6 @@ const LazyGuaranteeSection = lazy(() => import("@/components/elite/LazyGuarantee
 const LazyCreatorsSection = lazy(() => import("@/components/elite/LazyCreatorsSection"));
 const LazyEventDetailsSection = lazy(() => import("@/components/elite/LazyEventDetailsSection"));
 const LazyFAQSection = lazy(() => import("@/components/elite/LazyFAQSection"));
-const LazyLeadFormModal = lazy(() => import("@/components/LazyLeadFormModal"));
 import Footer from "@/components/elite/Footer";
 
 // Loading fallback component
@@ -28,10 +27,8 @@ const SectionLoading = ({ height = "300px" }: { height?: string }) => (
 );
 
 const EliteVendasPageV4 = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   const handleCTAClick = () => {
-    setIsModalOpen(true);
+    window.open("https://pay.kiwify.com.br/5zvVurg", "_blank");
   };
 
   return (
@@ -130,11 +127,6 @@ const EliteVendasPageV4 = () => {
         {/* Footer */}
         <Footer />
       </div>
-
-      {/* Lead Form Modal */}
-      <Suspense fallback={null}>
-        <LazyLeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-      </Suspense>
     </>
   );
 };
