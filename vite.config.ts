@@ -21,6 +21,7 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+    dedupe: ["react", "react-dom"],
   },
   build: {
     rollupOptions: {
@@ -74,7 +75,8 @@ export default defineConfig(({ mode }) => ({
     }
   },
   optimizeDeps: {
-    include: ['react', 'react-dom'],
-    exclude: ['@radix-ui/react-accordion', '@radix-ui/react-dialog']
+    include: ["react", "react-dom", "react/jsx-runtime", "react/jsx-dev-runtime"],
+    exclude: ["@radix-ui/react-accordion", "@radix-ui/react-dialog"],
+    force: true,
   }
 }));
