@@ -20,7 +20,7 @@ const CriticalHeroSectionV2 = ({
           <picture>
             <source media="(max-width: 768px)" srcSet={rodrigoAnaMobile} type="image/webp" />
             <source media="(min-width: 769px)" srcSet={rodrigoAnaDesktop} type="image/png" />
-            <img src={rodrigoAnaMobile} alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" className="w-full object-cover gpu-accelerated" loading="eager" decoding="async" fetchPriority="high" width="800" height="600" />
+            <img src={rodrigoAnaMobile} alt="Rodrigo e Ana - Mentores do Workshop Elite de Vendas" className="w-full object-cover gpu-accelerated" loading="eager" decoding="async" width="800" height="600" {...({ fetchpriority: 'high' } as any)} />
           </picture>
           
           {/* Text Section - Mobile overlapping, Desktop below image */}
