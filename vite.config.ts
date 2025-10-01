@@ -36,22 +36,25 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom'],
-          'ui-components': [
-            '@radix-ui/react-accordion',
-            '@radix-ui/react-dialog',
-            '@radix-ui/react-hover-card',
-            '@radix-ui/react-popover',
-            '@radix-ui/react-tabs'
-          ],
-          'form-components': [
-            '@radix-ui/react-label',
-            '@radix-ui/react-checkbox',
-            '@radix-ui/react-select'
-          ],
-          'icons': ['lucide-react'],
-          'utils': ['clsx', 'tailwind-merge', 'date-fns']
+        manualChunks: (id) => {
+          // Force React into a single vendor chunk
+          if (id.includes('node_modules/react') || 
+              id.includes('node_modules/react-dom') ||
+              id.includes('node_modules/scheduler')) {
+            return 'react-vendor';
+          }
+          // Radix UI components
+          if (id.includes('@radix-ui')) {
+            return 'radix-ui';
+          }
+          // Icons
+          if (id.includes('lucide-react')) {
+            return 'icons';
+          }
+          // Utils
+          if (id.includes('clsx') || id.includes('tailwind-merge') || id.includes('date-fns')) {
+            return 'utils';
+          }
         },
         assetFileNames: (assetInfo) => {
           const name = assetInfo.name || 'asset';
@@ -85,14 +88,17 @@ export default defineConfig(({ mode }) => ({
     }
   },
   optimizeDeps: {
-    exclude: [
+    include: [
       "react",
       "react-dom",
       "react/jsx-runtime",
-      "react/jsx-dev-runtime",
-      "@radix-ui/react-accordion",
-      "@radix-ui/react-dialog"
+      "react/jsx-dev-runtime"
     ],
-    force: true,
+    exclude: [],
+    esbuildOptions: {
+      define: {
+        global: 'globalThis'
+      }
+    }
   }
 }));
