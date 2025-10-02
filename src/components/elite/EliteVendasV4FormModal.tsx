@@ -82,32 +82,53 @@ const EliteVendasV4FormModal = ({ isOpen, onClose }: EliteVendasV4FormModalProps
     try {
       const whatsappNumbers = formData.whatsapp.replace(/\D/g, "");
       
-      const response = await fetch("https://sidneyarfe.app.n8n.cloud/webhook/33e3577f-f51c-4a31-ac4b-4aca45f21b94", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name.trim(),
-          email: formData.email.trim(),
-          whatsapp: whatsappNumbers,
-        }),
-      });
+      const payload = {
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        whatsapp: whatsappNumbers,
+      };
 
-      if (!response.ok) {
-        throw new Error("Erro ao enviar dados");
+      console.log("Enviando dados:", payload);
+      
+      // Try to send to webhook with timeout
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 8000); // 8 second timeout
+      
+      try {
+        const response = await fetch("https://sidneyarfe.app.n8n.cloud/webhook/33e3577f-f51c-4a31-ac4b-4aca45f21b94", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+          signal: controller.signal,
+        });
+
+        clearTimeout(timeoutId);
+
+        console.log("Resposta do webhook:", response.status);
+
+        if (!response.ok) {
+          console.warn("Webhook retornou erro, mas prosseguindo com redirecionamento");
+        }
+      } catch (fetchError) {
+        console.warn("Erro ao enviar para webhook, mas prosseguindo:", fetchError);
+        // Continue anyway - don't block the user from accessing checkout
       }
 
-      // Success - redirect to checkout
+      // Always redirect to checkout regardless of webhook status
+      console.log("Redirecionando para checkout...");
       onClose();
-      window.open("https://pay.kiwify.com.br/5zvVurg", "_blank");
       
       // Reset form
       setFormData({ name: "", email: "", whatsapp: "" });
+      
+      // Redirect to checkout
+      window.location.href = "https://pay.kiwify.com.br/5zvVurg";
+      
     } catch (error) {
-      setSubmitError("Erro ao processar sua solicitação. Por favor, tente novamente.");
-      console.error("Form submission error:", error);
-    } finally {
+      console.error("Erro inesperado:", error);
+      setSubmitError("Erro ao processar. Clique no botão abaixo para ir direto ao checkout.");
       setIsSubmitting(false);
     }
   };
@@ -188,8 +209,18 @@ const EliteVendasV4FormModal = ({ isOpen, onClose }: EliteVendasV4FormModalProps
           </div>
 
           {submitError && (
-            <div className="bg-red-50 border border-red-200 rounded-lg p-3">
+            <div className="bg-red-50 border border-red-200 rounded-lg p-3 space-y-2">
               <p className="text-sm text-red-700">{submitError}</p>
+              <button
+                type="button"
+                onClick={() => {
+                  onClose();
+                  window.location.href = "https://pay.kiwify.com.br/5zvVurg";
+                }}
+                className="w-full text-sm bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                Ir para o Checkout
+              </button>
             </div>
           )}
 
