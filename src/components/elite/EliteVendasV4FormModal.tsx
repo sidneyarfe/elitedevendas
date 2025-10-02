@@ -82,44 +82,42 @@ const EliteVendasV4FormModal = ({ isOpen, onClose }: EliteVendasV4FormModalProps
     try {
       const whatsappNumbers = formData.whatsapp.replace(/\D/g, "");
       
-      const payload = {
+      // Build urlencoded form body (separate fields)
+      const formBody = new URLSearchParams({
         name: formData.name.trim(),
         email: formData.email.trim(),
-        whatsapp: whatsappNumbers,
-      };
+        whatsapp: whatsappNumbers, // DDD + número (11 dígitos)
+      }).toString();
 
-      console.log("Enviando dados para n8n:", payload);
+      console.log("Enviando dados para n8n (urlencoded)");
       
-      // Send to n8n webhook
+      // Send to n8n webhook as a simple form POST (separate fields)
       try {
-        const response = await fetch("https://sidneyarfe.app.n8n.cloud/webhook/33e3577f-f51c-4a31-ac4b-4aca45f21b94", {
+        await fetch("https://sidneyarfe.app.n8n.cloud/webhook/33e3577f-f51c-4a31-ac4b-4aca45f21b94", {
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
           },
-          mode: "no-cors", // Handle CORS issues
-          body: JSON.stringify(payload),
+          mode: "no-cors", // simple request allowed, avoids CORS preflight
+          keepalive: true,  // ensure request completes even if navigating away
+          body: formBody,
         });
-
-        console.log("Dados enviados para n8n com sucesso");
+        console.log("Formulário enviado (no-cors, sem leitura de resposta)");
       } catch (fetchError) {
-        console.warn("Aviso ao enviar para n8n (esperado com no-cors):", fetchError);
-        // With no-cors mode, we can't read the response, but the request is sent
+        console.warn("Aviso ao enviar para n8n (continuará para o checkout):", fetchError);
       }
 
       // Always redirect to checkout
       console.log("Redirecionando para checkout...");
       
-      // Reset form
+      // Reset form e fechar modal
       setFormData({ name: "", email: "", whatsapp: "" });
-      
-      // Close modal and redirect
       onClose();
       
-      // Small delay to ensure modal closes smoothly
+      // Pequeno delay para fechamento suave do modal
       setTimeout(() => {
         window.location.href = "https://pay.kiwify.com.br/5zvVurg";
-      }, 300);
+      }, 250);
       
     } catch (error) {
       console.error("Erro inesperado:", error);
