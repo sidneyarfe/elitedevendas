@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import CriticalHeroSectionV2 from "@/components/elite/CriticalHeroSectionV2";
 import CriticalCTA from "@/components/elite/CriticalCTA";
@@ -12,10 +13,13 @@ import LazyCreatorsSection from "@/components/elite/LazyCreatorsSection";
 import LazyEventDetailsSection from "@/components/elite/LazyEventDetailsSection";
 import LazyFAQSection from "@/components/elite/LazyFAQSection";
 import Footer from "@/components/elite/Footer";
+import EliteVendasV4FormModal from "@/components/elite/EliteVendasV4FormModal";
 
 const EliteVendasPageV4 = () => {
+  const [isFormModalOpen, setIsFormModalOpen] = useState(false);
+
   const handleCTAClick = () => {
-    window.open("https://pay.kiwify.com.br/5zvVurg", "_blank");
+    setIsFormModalOpen(true);
   };
 
   return (
@@ -35,6 +39,7 @@ const EliteVendasPageV4 = () => {
         
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://pay.kiwify.com.br" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://sidneyarfe.app.n8n.cloud" crossOrigin="anonymous" />
       </Helmet>
 
       <div className="min-h-screen bg-background text-foreground">
@@ -77,6 +82,12 @@ const EliteVendasPageV4 = () => {
         {/* Footer */}
         <Footer />
       </div>
+
+      {/* Form Modal */}
+      <EliteVendasV4FormModal 
+        isOpen={isFormModalOpen} 
+        onClose={() => setIsFormModalOpen(false)} 
+      />
     </>
   );
 };
