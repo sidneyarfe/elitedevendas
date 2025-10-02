@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import CriticalHeroSectionV2 from "@/components/elite/CriticalHeroSectionV2";
 import CriticalCTA from "@/components/elite/CriticalCTA";
-import LazyProblemSection from "@/components/elite/LazyProblemSection";
+import LazyProofSection from "@/components/elite/LazyProofSection";
 import LazySolutionSection from "@/components/elite/LazySolutionSection";
 import LazyPromiseSection from "@/components/elite/LazyPromiseSection";
 import LazyTargetAudienceSection from "@/components/elite/LazyTargetAudienceSection";
@@ -41,8 +41,8 @@ const EliteVendasPageV4 = () => {
         {/* Hero Section */}
         <CriticalHeroSectionV2 onCTAClick={handleCTAClick} />
 
-        {/* Problem Section */}
-        <LazyProblemSection onCTAClick={handleCTAClick} />
+        {/* Proof Section */}
+        <LazyProofSection onCTAClick={handleCTAClick} />
 
         {/* Solution Section */}
         <LazySolutionSection onCTAClick={handleCTAClick} />
