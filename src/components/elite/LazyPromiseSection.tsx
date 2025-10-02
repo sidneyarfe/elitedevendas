@@ -44,7 +44,7 @@ const LazyPromiseSection = ({
               <div className="relative mb-6">
                 <div className="absolute inset-0 bg-gradient-workshop opacity-10 rounded-xl"></div>
                 <p className="text-2xl md:text-3xl font-black text-gradient p-6 relative">
-                  Você vai DOBRAR suas vendas em 7 dias — ou devolvemos seu dinheiro.
+                  Você vai fazer vendas ao vivo e dobrar seus resultados nos 7 dias depois do Workshop - ou devolvemos seu dinheiro.
                 </p>
               </div>
               
