@@ -27,12 +27,11 @@ const CriticalHeroSectionV2 = ({
           <div className="absolute inset-0 flex items-center justify-center py-0 md:relative md:items-start my-[15px] mx-0">
             <div className="w-full text-center text-white pb-2 md:pb-16 md:pt-8 max-w-7xl mx-auto px-0 py-0 md:bg-background md:text-foreground my-[60px] translate-y-[30%] md:translate-y-0">
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 leading-tight">
-                <span className="text-gradient">EMPRESÁRIO DE BELÉM:</span>{" "}
-                Em 2 dias, vamos <span className="text-gradient">DOBRAR suas vendas AO VIVO</span> — sem gastar R$1.
+                Empresários de Belém faturaram <span className="text-gradient">+R$10 MILHÕES</span> usando essa <span className="text-gradient">"Estratégia de WhatsApp"</span>.
               </h1>
               
               <div className="text-base md:text-xl lg:text-2xl mb-6 md:mb-8 text-gray-200 max-w-5xl mx-auto font-medium leading-relaxed">
-                <p className="mb-4 md:mb-6 px-[30px]">No <span className="text-gradient font-bold">Workshop Elite de Vendas</span>, vamos aplicar no seu negócio a Estratégia de Whatsapp que já gerou <span className="text-gradient font-bold">+R$10 MILHÕES</span> em faturamento para nossos clientes. Usando apenas um 📱 celular, 📋 sua lista de contatos e 💬 uma mensagem no whatsapp.</p>
+                <p className="mb-4 md:mb-6 px-[30px]">Agora é a sua vez: no <span className="text-gradient font-bold">Workshop Elite de Vendas Belém</span>, em 2 dias vamos aplicar essa estratégia no seu negócio, fazer vendas ao vivo e instalar um processo simples pra você vender todos os dias - apenas usando o WhatsApp.</p>
                 
                 {/* Cards de informações do evento */}
                 <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-4 md:mb-6">
