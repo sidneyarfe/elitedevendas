@@ -15,7 +15,7 @@ const LazyProofSection = ({ onCTAClick }: LazyProofSectionProps) => {
 
         <div className="mb-8 max-w-3xl mx-auto">
           <LazyYouTube 
-            videoId="B0cORHhpoQE" 
+            videoId="YWD6LsS39iQ" 
             title="Depoimento Dr. Rafael - Resultado Real" 
             className="rounded-2xl shadow-elegant" 
           />
