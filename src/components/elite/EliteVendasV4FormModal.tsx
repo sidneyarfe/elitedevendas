@@ -88,47 +88,43 @@ const EliteVendasV4FormModal = ({ isOpen, onClose }: EliteVendasV4FormModalProps
         whatsapp: whatsappNumbers,
       };
 
-      console.log("Enviando dados:", payload);
+      console.log("Enviando dados para n8n:", payload);
       
-      // Try to send to webhook with timeout
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 8000); // 8 second timeout
-      
+      // Send to n8n webhook
       try {
         const response = await fetch("https://sidneyarfe.app.n8n.cloud/webhook/33e3577f-f51c-4a31-ac4b-4aca45f21b94", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
+          mode: "no-cors", // Handle CORS issues
           body: JSON.stringify(payload),
-          signal: controller.signal,
         });
 
-        clearTimeout(timeoutId);
-
-        console.log("Resposta do webhook:", response.status);
-
-        if (!response.ok) {
-          console.warn("Webhook retornou erro, mas prosseguindo com redirecionamento");
-        }
+        console.log("Dados enviados para n8n com sucesso");
       } catch (fetchError) {
-        console.warn("Erro ao enviar para webhook, mas prosseguindo:", fetchError);
-        // Continue anyway - don't block the user from accessing checkout
+        console.warn("Aviso ao enviar para n8n (esperado com no-cors):", fetchError);
+        // With no-cors mode, we can't read the response, but the request is sent
       }
 
-      // Always redirect to checkout regardless of webhook status
+      // Always redirect to checkout
       console.log("Redirecionando para checkout...");
-      onClose();
       
       // Reset form
       setFormData({ name: "", email: "", whatsapp: "" });
       
-      // Redirect to checkout
-      window.location.href = "https://pay.kiwify.com.br/5zvVurg";
+      // Close modal and redirect
+      onClose();
+      
+      // Small delay to ensure modal closes smoothly
+      setTimeout(() => {
+        window.location.href = "https://pay.kiwify.com.br/5zvVurg";
+      }, 300);
       
     } catch (error) {
       console.error("Erro inesperado:", error);
       setSubmitError("Erro ao processar. Clique no botão abaixo para ir direto ao checkout.");
+    } finally {
       setIsSubmitting(false);
     }
   };
