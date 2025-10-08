@@ -21,8 +21,9 @@ const LazyEventDetailsSection = ({
               </svg>
             </div>
             <h3 className="text-xl font-bold mb-2">Data</h3>
-            <p className="text-2xl font-bold text-workshop-gold">15 e 16</p>
+            <p className="text-2xl font-bold text-workshop-gold">29 e 30</p>
             <p className="text-lg">de outubro de 2025</p>
+            <p className="text-sm mt-2 text-muted-foreground">Duas turmas: uma em cada dia</p>
           </div>
 
           {/* Horário */}
@@ -33,8 +34,8 @@ const LazyEventDetailsSection = ({
               </svg>
             </div>
             <h3 className="text-xl font-bold mb-2">Horário</h3>
-            <p className="text-2xl font-bold text-workshop-gold">9h às 13h</p>
-            <p className="text-lg">(ambos os dias)</p>
+            <p className="text-2xl font-bold text-workshop-gold">8h às 12h</p>
+            <p className="text-lg">(cada turma)</p>
           </div>
 
           {/* Local */}
