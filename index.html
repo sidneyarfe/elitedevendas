@@ -63,14 +63,16 @@
     
     <!-- Meta Conversions API - PageView Event -->
     <script>
-      // Defer non-critical API call
-      setTimeout(() => {
-        fetch('https://bnmyqamklrgovqpturmv.supabase.co/functions/v1/meta-conversions', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ eventName: 'PageView' })
-        }).catch(console.error);
-      }, 1000);
+      // Wait for page to fully load before making non-critical API call
+      window.addEventListener('load', function() {
+        setTimeout(() => {
+          fetch('https://bnmyqamklrgovqpturmv.supabase.co/functions/v1/meta-conversions', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ eventName: 'PageView' })
+          }).catch(console.error);
+        }, 1000);
+      });
     </script>
   </body>
 </html>

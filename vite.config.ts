@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -9,13 +10,21 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
     headers: {
-      'Cache-Control': 'public, max-age=31536000, immutable'
+      'Cache-Control': 'public, max-age=31536000, immutable',
+      'X-Content-Type-Options': 'nosniff',
+      'X-Frame-Options': 'DENY',
+      'X-XSS-Protection': '1; mode=block'
     }
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === 'development' && componentTagger(),
+    ViteImageOptimizer({
+      png: { quality: 85 },
+      jpeg: { quality: 85 },
+      jpg: { quality: 85 },
+      webp: { quality: 85 },
+    }),
   ].filter(Boolean),
   resolve: {
     alias: {
@@ -34,6 +43,7 @@ export default defineConfig(({ mode }) => ({
     ],
   },
   build: {
+    target: 'esnext', // Modern browsers only - no legacy polyfills
     rollupOptions: {
       output: {
         manualChunks: (id) => {
