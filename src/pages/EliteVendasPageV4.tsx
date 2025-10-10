@@ -2,18 +2,8 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import CriticalHeroSectionV2 from "@/components/elite/CriticalHeroSectionV2";
 import CriticalCTA from "@/components/elite/CriticalCTA";
-import LazyProofSection from "@/components/elite/LazyProofSection";
-import LazySolutionSection from "@/components/elite/LazySolutionSection";
-import LazyPromiseSection from "@/components/elite/LazyPromiseSection";
-import LazyTargetAudienceSection from "@/components/elite/LazyTargetAudienceSection";
-import LazyBenefitsSection from "@/components/elite/LazyBenefitsSection";
-import LazyTestimonialsSection from "@/components/elite/LazyTestimonialsSection";
-import LazyGuaranteeSection from "@/components/elite/LazyGuaranteeSection";
-import LazyCreatorsSection from "@/components/elite/LazyCreatorsSection";
-import LazyEventDetailsSection from "@/components/elite/LazyEventDetailsSection";
-import LazyFAQSection from "@/components/elite/LazyFAQSection";
-import Footer from "@/components/elite/Footer";
-import EliteVendasV4FormModal from "@/components/elite/EliteVendasV4FormModal";
+import LazySection from "@/components/LazySection";
+import LazyEliteVendasV4FormModal from "@/components/elite/LazyEliteVendasV4FormModal";
 
 const EliteVendasPageV4 = () => {
   const [isFormModalOpen, setIsFormModalOpen] = useState(false);
@@ -40,51 +30,107 @@ const EliteVendasPageV4 = () => {
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://pay.kiwify.com.br" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://sidneyarfe.app.n8n.cloud" crossOrigin="anonymous" />
+        
+        {/* DNS prefetch for YouTube thumbnails */}
+        <link rel="dns-prefetch" href="https://img.youtube.com" />
+        <link rel="dns-prefetch" href="https://www.youtube.com" />
       </Helmet>
 
       <div className="min-h-screen bg-background text-foreground">
-        {/* Hero Section */}
+        {/* Hero Section - Critical, loaded immediately */}
         <CriticalHeroSectionV2 onCTAClick={handleCTAClick} />
 
-        {/* Proof Section */}
-        <LazyProofSection onCTAClick={handleCTAClick} />
+        {/* Proof Section - Lazy loaded with Intersection Observer */}
+        <LazySection 
+          componentLoader={() => import("@/components/elite/LazyProofSection")}
+          componentProps={{ onCTAClick: handleCTAClick }}
+          rootMargin="200px"
+          skeletonHeight="h-[500px]"
+        />
 
         {/* Solution Section */}
-        <LazySolutionSection onCTAClick={handleCTAClick} />
+        <LazySection 
+          componentLoader={() => import("@/components/elite/LazySolutionSection")}
+          componentProps={{ onCTAClick: handleCTAClick }}
+          rootMargin="300px"
+          skeletonHeight="h-[600px]"
+        />
 
         {/* Promise Section */}
-        <LazyPromiseSection onCTAClick={handleCTAClick} />
+        <LazySection 
+          componentLoader={() => import("@/components/elite/LazyPromiseSection")}
+          componentProps={{ onCTAClick: handleCTAClick }}
+          rootMargin="300px"
+          skeletonHeight="h-[700px]"
+        />
 
         {/* Target Audience Section */}
-        <LazyTargetAudienceSection onCTAClick={handleCTAClick} />
+        <LazySection 
+          componentLoader={() => import("@/components/elite/LazyTargetAudienceSection")}
+          componentProps={{ onCTAClick: handleCTAClick }}
+          rootMargin="300px"
+          skeletonHeight="h-[600px]"
+        />
 
         {/* Benefits Section */}
-        <LazyBenefitsSection onCTAClick={handleCTAClick} onFirstButtonClick={handleCTAClick} />
+        <LazySection 
+          componentLoader={() => import("@/components/elite/LazyBenefitsSection")}
+          componentProps={{ onCTAClick: handleCTAClick, onFirstButtonClick: handleCTAClick }}
+          rootMargin="300px"
+          skeletonHeight="h-[800px]"
+        />
 
         {/* Testimonials Section */}
-        <LazyTestimonialsSection />
+        <LazySection 
+          componentLoader={() => import("@/components/elite/LazyTestimonialsSection")}
+          rootMargin="300px"
+          skeletonHeight="h-[600px]"
+        />
 
         {/* Guarantee Section */}
-        <LazyGuaranteeSection onCTAClick={handleCTAClick} />
+        <LazySection 
+          componentLoader={() => import("@/components/elite/LazyGuaranteeSection")}
+          componentProps={{ onCTAClick: handleCTAClick }}
+          rootMargin="300px"
+          skeletonHeight="h-[500px]"
+        />
 
         {/* Creators Section */}
-        <LazyCreatorsSection onCTAClick={handleCTAClick} />
+        <LazySection 
+          componentLoader={() => import("@/components/elite/LazyCreatorsSection")}
+          componentProps={{ onCTAClick: handleCTAClick }}
+          rootMargin="300px"
+          skeletonHeight="h-[700px]"
+        />
 
         {/* Event Details Section */}
-        <LazyEventDetailsSection onCTAClick={handleCTAClick} />
+        <LazySection 
+          componentLoader={() => import("@/components/elite/LazyEventDetailsSection")}
+          componentProps={{ onCTAClick: handleCTAClick }}
+          rootMargin="300px"
+          skeletonHeight="h-[600px]"
+        />
 
         {/* FAQ Section */}
-        <LazyFAQSection />
+        <LazySection 
+          componentLoader={() => import("@/components/elite/LazyFAQSection")}
+          rootMargin="300px"
+          skeletonHeight="h-[500px]"
+        />
 
-        {/* Final CTA */}
+        {/* Final CTA - Critical */}
         <CriticalCTA onCTAClick={handleCTAClick} />
 
         {/* Footer */}
-        <Footer />
+        <LazySection 
+          componentLoader={() => import("@/components/elite/Footer")}
+          rootMargin="200px"
+          skeletonHeight="h-[200px]"
+        />
       </div>
 
-      {/* Form Modal */}
-      <EliteVendasV4FormModal 
+      {/* Form Modal - Only loaded when opened */}
+      <LazyEliteVendasV4FormModal 
         isOpen={isFormModalOpen} 
         onClose={() => setIsFormModalOpen(false)} 
       />

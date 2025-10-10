@@ -15,7 +15,8 @@ const LazyYouTube = ({ videoId, title, className }: LazyYouTubeProps) => {
     setIsLoaded(true);
   }, []);
 
-  const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  // Use sddefault.jpg for smaller file size (640x480 vs 1280x720)
+  const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/sddefault.jpg`;
 
   if (!isLoaded) {
     return (
@@ -29,9 +30,10 @@ const LazyYouTube = ({ videoId, title, className }: LazyYouTubeProps) => {
         <img
           src={thumbnailUrl}
           alt={title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-opacity duration-300"
           loading="lazy"
           decoding="async"
+          fetchPriority="low"
         />
         <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/30 transition-colors">
           <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
