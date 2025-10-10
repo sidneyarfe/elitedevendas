@@ -8,18 +8,18 @@ interface UrgencySectionProps {
 
 const UrgencySection = memo(({ onCTAClick }: UrgencySectionProps) => {
   return (
-    <section className="py-16 md:py-24 px-4 bg-gradient-workshop">
+    <section className="py-16 md:py-24 px-4 bg-card">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-5xl font-black text-center mb-12 text-black">
-          ⏳ ÚLTIMAS VAGAS
+        <h2 className="text-3xl md:text-5xl font-black text-center mb-12 text-foreground">
+          ⏳ Últimas vagas
         </h2>
 
-        <div className="mb-8">
+        <div className="mb-10">
           <VagasCounter />
         </div>
 
-        <div className="bg-black/20 backdrop-blur-sm rounded-2xl p-6 mb-8 text-center">
-          <p className="text-xl md:text-2xl font-black text-black">
+        <div className="bg-gradient-workshop backdrop-blur-sm rounded-2xl p-6 md:p-8 mb-10 text-center border-2 border-workshop-gold/50 shadow-glow">
+          <p className="text-xl md:text-3xl font-black text-black">
             🎁 ÚLTIMA VAGA COM BÔNUS LIBERADO
           </p>
         </div>
@@ -27,13 +27,12 @@ const UrgencySection = memo(({ onCTAClick }: UrgencySectionProps) => {
         <div className="text-center">
           <WorkshopButton 
             onClick={onCTAClick}
-            className="max-w-xl mx-auto bg-black hover:bg-gray-800 border-0"
-            variant="default"
+            className="max-w-xl mx-auto mb-6"
           >
             APROVEITAR A ÚLTIMA VAGA COM BÔNUS
           </WorkshopButton>
           
-          <p className="text-black font-bold text-lg mt-6">
+          <p className="text-foreground font-bold text-base md:text-lg max-w-2xl mx-auto">
             Pare de depender da sorte. Construa um processo de vendas que funciona todo dia.
           </p>
         </div>

@@ -30,19 +30,14 @@ const PromiseSection = memo(({ onCTAClick }: PromiseSectionProps) => {
           />
         </div>
 
-        {/* Main Promise */}
-        <h2 className="text-3xl md:text-5xl font-black mb-8 text-foreground leading-tight">
-          💡 A GRANDE PROMESSA DO WORKSHOP
-        </h2>
-
         <div className="bg-card rounded-2xl p-8 md:p-12 shadow-card mb-8">
-          <p className="text-xl md:text-3xl font-bold text-foreground mb-8 leading-relaxed">
+          <h2 className="text-2xl md:text-4xl font-black text-foreground mb-8 leading-tight">
             Neste workshop, você vai <span className="text-gradient">VENDER AO VIVO</span> e{' '}
             <span className="text-gradient">DOBRAR SUAS VENDAS</span> usando{' '}
             <span className="text-gradient">APENAS o WHATSAPP</span>
-          </p>
+          </h2>
 
-          <div className="bg-background rounded-xl p-6 md:p-8 mb-8">
+          <div className="bg-background rounded-xl p-6 md:p-8 mb-8 border border-workshop-gold/30">
             <p className="text-xl md:text-2xl font-bold mb-6 text-foreground">
               Nunca mais vai depender de:
             </p>

@@ -37,28 +37,28 @@ const FAQSection = memo(() => {
   ];
 
   return (
-    <section className="py-16 md:py-24 px-4 bg-background">
+    <section className="py-16 md:py-24 px-4 bg-gradient-workshop-subtle">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-5xl font-black text-center mb-12 text-gradient">
-          ❓ PERGUNTAS FREQUENTES
+        <h2 className="text-3xl md:text-5xl font-black text-center mb-16 text-foreground">
+          ❓ Perguntas frequentes
         </h2>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-card rounded-xl shadow-card overflow-hidden hover:shadow-glow transition-all duration-300"
+              className="bg-card rounded-xl shadow-card overflow-hidden hover:shadow-glow transition-all duration-300 border border-muted/10 hover:border-workshop-gold/30"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full text-left p-6 flex items-center justify-between gap-4 hover:bg-card/80 transition-colors"
+                className="w-full text-left p-6 md:p-8 flex items-center justify-between gap-4 hover:bg-card/80 transition-colors"
               >
-                <span className="text-lg font-bold text-foreground pr-4">
+                <span className="text-base md:text-lg font-black text-foreground pr-4 leading-relaxed">
                   {faq.question}
                 </span>
                 <ChevronDown
                   className={cn(
-                    'w-6 h-6 text-workshop-gold flex-shrink-0 transition-transform duration-300',
+                    'w-6 h-6 md:w-7 md:h-7 text-workshop-gold flex-shrink-0 transition-transform duration-300',
                     openIndex === index && 'rotate-180'
                   )}
                 />
@@ -70,7 +70,7 @@ const FAQSection = memo(() => {
                   openIndex === index ? 'max-h-96' : 'max-h-0'
                 )}
               >
-                <div className="p-6 pt-0 text-muted-foreground">
+                <div className="px-6 md:px-8 pb-6 md:pb-8 text-muted-foreground text-sm md:text-base leading-relaxed">
                   {faq.answer}
                 </div>
               </div>

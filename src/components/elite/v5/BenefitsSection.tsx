@@ -17,22 +17,22 @@ const BenefitsSection = memo(({ onCTAClick }: BenefitsSectionProps) => {
   ];
 
   return (
-    <section className="py-16 md:py-24 px-4 bg-background">
+    <section className="py-16 md:py-24 px-4 bg-gradient-workshop-subtle">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl md:text-5xl font-black text-center mb-12 text-gradient">
-          🧠 NESTE WORKSHOP, VOCÊ VAI:
+        <h2 className="text-3xl md:text-5xl font-black text-center mb-16 text-foreground">
+          🧠 Neste workshop, você vai:
         </h2>
 
-        <div className="grid gap-6 mb-12">
+        <div className="max-w-4xl mx-auto mb-12">
           {benefits.map((benefit, index) => (
             <div 
               key={index}
-              className="flex items-start gap-4 bg-card p-6 rounded-xl shadow-card hover:shadow-glow transition-all duration-300 hover:scale-[1.02]"
+              className="flex items-start gap-4 bg-card p-6 md:p-8 rounded-xl shadow-card hover:shadow-glow transition-all duration-300 hover:scale-[1.01] mb-4 border border-muted/10 hover:border-workshop-gold/30"
             >
-              <div className="flex-shrink-0 w-8 h-8 bg-gradient-workshop rounded-full flex items-center justify-center">
-                <Check className="w-5 h-5 text-black" strokeWidth={3} />
+              <div className="flex-shrink-0 w-10 h-10 bg-gradient-workshop rounded-full flex items-center justify-center">
+                <Check className="w-6 h-6 text-black" strokeWidth={3} />
               </div>
-              <p className="text-lg md:text-xl text-foreground font-medium">
+              <p className="text-lg md:text-xl text-foreground font-medium leading-relaxed">
                 {benefit}
               </p>
             </div>
