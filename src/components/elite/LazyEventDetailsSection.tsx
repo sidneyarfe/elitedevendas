@@ -25,12 +25,12 @@ const LazyEventDetailsSection = ({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
               <div className="bg-card/50 backdrop-blur-sm border border-workshop-gold/30 rounded-xl p-4">
                 <p className="text-lg font-bold text-workshop-gold mb-1">SESSÃO 1</p>
-                <p className="text-2xl font-black">29 de Outubro</p>
+                <p className="text-2xl font-black">05 de Novembro</p>
                 <p className="text-lg">8h às 12h</p>
               </div>
               <div className="bg-card/50 backdrop-blur-sm border border-workshop-gold/30 rounded-xl p-4">
                 <p className="text-lg font-bold text-workshop-gold mb-1">SESSÃO 2</p>
-                <p className="text-2xl font-black">30 de Outubro</p>
+                <p className="text-2xl font-black">06 de Novembro</p>
                 <p className="text-lg">8h às 12h</p>
               </div>
             </div>
