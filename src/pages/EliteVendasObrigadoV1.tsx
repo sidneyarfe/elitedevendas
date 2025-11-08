@@ -46,13 +46,13 @@ const EliteVendasObrigadoV1 = () => {
                 <div className="flex flex-col items-center">
                   <Calendar className="w-8 h-8 text-workshop-gold mb-3" />
                   <p className="font-bold text-lg mb-1">Data</p>
-                  <p className="text-muted-foreground">15 e 16 de outubro de 2025</p>
+                  <p className="text-muted-foreground">04 e 05 de dezembro de 2025</p>
                 </div>
                 
                 <div className="flex flex-col items-center">
                   <Clock className="w-8 h-8 text-workshop-gold mb-3" />
                   <p className="font-bold text-lg mb-1">Horário</p>
-                  <p className="text-muted-foreground">9h às 13h</p>
+                  <p className="text-muted-foreground">8h às 12h</p>
                 </div>
                 
                 <div className="flex flex-col items-center">
